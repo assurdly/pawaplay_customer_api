@@ -1,0 +1,1 @@
+{"data":{"id":"77c427e8-c82b-46c7-9dea-795fce6d56e4","email":"pawa1@yopmail.com","phoneNumber":"07081556097"},"message":"Request was processed successfully.","isSuccessful":true,"messages":[],"timeGenerated":"2025-06-05T12:17:25.8293201Z"}

@@ -1,0 +1,10 @@
+{
+    "accept": "application/json",
+    "phoneNumber": "08153353131",
+    "User-Agent": "PostmanRuntime/7.39.1",
+    "Cache-Control": "no-cache",
+    "Postman-Token": "4e09bd0c-77bb-4cf5-9e91-018b1685e335",
+    "Host": "pawaplay.ng:6200",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Connection": "keep-alive"
+}
