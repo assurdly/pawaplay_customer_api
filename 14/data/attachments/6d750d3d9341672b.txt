@@ -1,0 +1,4 @@
+{
+  "newPin": "labore pariatur velit Excepteur",
+  "currentPin": "adipisicing non officia Ut Lorem"
+}

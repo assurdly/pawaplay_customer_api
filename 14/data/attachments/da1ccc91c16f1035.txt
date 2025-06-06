@@ -1,0 +1,21 @@
+const jsonData = pm.response.json();
+
+pm.test("Status code is 200", () => {
+    pm.response.to.have.status(200);
+});
+
+pm.test("Data object contains expected fields", () => {
+    pm.expect(jsonData.data).to.be.an("object");
+    pm.expect(jsonData.data).to.have.property("id").that.is.a("string");
+    pm.expect(jsonData.data).to.have.property("email").that.is.a("string");
+    pm.expect(jsonData.data).to.have.property("phoneNumber").that.is.a("string");
+});
+
+pm.test("Top-level response fields are present", () => {
+    pm.expect(jsonData).to.have.property("message").that.is.a("string");
+    pm.expect(jsonData.message).to.include("Request was processed successfully.");
+    pm.expect(jsonData).to.have.property("isSuccessful", true);
+    pm.expect(jsonData).to.have.property("messages").that.is.an("array").that.is.empty;
+    pm.expect(jsonData).to.have.property("timeGenerated").that.is.a("string");
+});
+
