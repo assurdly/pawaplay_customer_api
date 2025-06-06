@@ -64,7 +64,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"firstName\": \"Zeeman\",\n  \"password\": \"Pawaplay1!\",\n  \"phoneNumber\": \"+2347081556097\",\n  \"referrerCode\": \"cu\"\n}",
+													"raw": "{\n  \"firstName\": \"zeeTest\",\n  \"password\": \"Pawaplay1!\",\n  \"phoneNumber\": \"+2347081556097\",\n  \"referrerCode\": \"cu\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
