@@ -1,0 +1,7 @@
+{
+  "isSetAllAsRead": true,
+  "notificationIDs": [
+    "urn:uuid:a4234785-37f4-2238-064f-838066781d8d",
+    "urn:uuid:6d058791-468b-1d2c-fd4c-e2cccbdbde81"
+  ]
+}

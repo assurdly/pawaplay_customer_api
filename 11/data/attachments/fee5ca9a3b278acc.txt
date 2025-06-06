@@ -1,0 +1,5 @@
+{
+  "recipient": "0708155609",
+  "usageReason": "OnboardingValidation",
+  "deliveryType": "Both"
+}
