@@ -1,0 +1,6 @@
+{
+  "amount": -26645730.588837147,
+  "walletPin": "et in ex",
+  "destinationBankCode": "sint in dolor dolore",
+  "destinationAccountNumber": "proident aliquip dolor pariatur"
+}
