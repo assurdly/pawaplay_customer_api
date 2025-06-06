@@ -7210,54 +7210,6 @@
 				}
 			],
 			"id": "f758df99-8356-431a-9a0d-2ac7352fe1e9"
-		},
-		{
-			"name": "http://pawaplay.ng:6200/api/QA/customer/delete",
-			"id": "c7e22d86-7d20-419f-b080-38ce29f453ff",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"auth": {
-					"type": "noauth"
-				},
-				"method": "DELETE",
-				"header": [
-					{
-						"key": "accept",
-						"value": "application/json"
-					},
-					{
-						"key": "phoneNumber",
-						"value": "08153353131",
-						"type": "text",
-						"disabled": true
-					}
-				],
-				"url": {
-					"raw": "http://pawaplay.ng:6200/api/QA/customer/delete?parameter=07081556097",
-					"protocol": "http",
-					"host": [
-						"pawaplay",
-						"ng"
-					],
-					"port": "6200",
-					"path": [
-						"api",
-						"QA",
-						"customer",
-						"delete"
-					],
-					"query": [
-						{
-							"key": "parameter",
-							"value": "07081556097"
-						}
-					]
-				},
-				"description": "Generated from cURL: curl -X 'DELETE' \\\r\n  'http://pawaplay.ng:6200/api/QA/customer/delete' \\\r\n  -H 'accept: application/json'"
-			},
-			"response": []
 		}
 	],
 	"auth": {
