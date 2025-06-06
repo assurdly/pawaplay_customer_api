@@ -72,7 +72,7 @@
 														}
 													}
 												},
-												"url": "{{baseUrl_Sandbox}}/api/Onboarding/customer/sign_up"
+												"url": "{{baseUrl_Dev}}/api/Onboarding/customer/sign_up"
 											},
 											"response": [
 												{
