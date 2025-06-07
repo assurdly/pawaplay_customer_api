@@ -5335,10 +5335,10 @@
 									"name": "customer",
 									"item": [
 										{
-											"name": "wallet_creation",
+											"name": "Wallet",
 											"item": [
 												{
-													"name": "validate_otp",
+													"name": "Wallet_creation",
 													"item": [
 														{
 															"name": "Wallet_Creation_Link_NIN_Successful",
@@ -5425,7 +5425,7 @@
 															]
 														},
 														{
-															"name": "(USAGE: To authorize wallet-creation request via OTP.)",
+															"name": "Authorize_WalletCreation_OTP.)",
 															"id": "a1e795a6-be7e-4242-828d-254815a28572",
 															"protocolProfileBehavior": {
 																"disableBodyPruning": true
