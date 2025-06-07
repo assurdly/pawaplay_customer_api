@@ -4124,7 +4124,7 @@
 													]
 												},
 												{
-													"name": "Save_PaymentOption_Successful Copy",
+													"name": "Save_PaymentOption_Invalid_CVV",
 													"event": [
 														{
 															"listen": "test",
@@ -4133,8 +4133,8 @@
 																"exec": [
 																	"const jsonData = pm.response.json();\r",
 																	"\r",
-																	"pm.test(\"Status code is 400 or appropriate for validation error\", () => {\r",
-																	"    pm.response.to.have.status(400); // Adjust if your API returns a different status\r",
+																	"pm.test(\"Status code is 400\", () => {\r",
+																	"    pm.response.to.have.status(400); \r",
 																	"});\r",
 																	"\r",
 																	"pm.test(\"Response fields for invalid CVV are correct\", () => {\r",
@@ -4233,7 +4233,7 @@
 													]
 												},
 												{
-													"name": "Save_PaymentOption_Successful Copy 2",
+													"name": "Save_PaymentOption_Invalid_cardNumber",
 													"event": [
 														{
 															"listen": "test",
@@ -4283,7 +4283,7 @@
 														],
 														"body": {
 															"mode": "raw",
-															"raw": "{\n  \"type\": \"Card\", //or Bank\n  \"cardInformation\": {\n    \"cvv\": \"058\",\n    \"cardNumber\": \"53994122105581\",\n    \"expiresInMMYY\": \"08/28\"\n  }\n}",
+															"raw": "{\n  \"type\": \"Card\", //or Bank\n  \"cardInformation\": {\n    \"cvv\": \"058\",\n    \"cardNumber\": \"539\",\n    \"expiresInMMYY\": \"08/28\"\n  }\n}",
 															"options": {
 																"raw": {
 																	"headerFamily": "json",
