@@ -9238,7 +9238,7 @@
 									]
 								},
 								{
-									"name": "Already_Subscribe_Newsletter Copy",
+									"name": "Subscribe_Newsletter_InvalidEmail",
 									"event": [
 										{
 											"listen": "test",
@@ -9247,18 +9247,17 @@
 												"exec": [
 													"const jsonData = pm.response.json();\r",
 													"\r",
-													"pm.test(\"Status code is 200\", () => {\r",
-													"    pm.response.to.have.status(200);\r",
+													"pm.test(\"Status code is 400\", () => {\r",
+													"    pm.response.to.have.status(400);\r",
 													"});\r",
 													"\r",
-													"pm.test(\"Response indicates email is already subscribed\", () => {\r",
-													"    pm.expect(jsonData).to.have.property(\"data\", \"Email is already subscribed.\");\r",
-													"    pm.expect(jsonData).to.have.property(\"message\", \"\");\r",
-													"    pm.expect(jsonData).to.have.property(\"isSuccessful\", true);\r",
+													"pm.test(\"Response indicates invalid email address input\", () => {\r",
+													"    pm.expect(jsonData).to.have.property(\"data\", \"\");\r",
+													"    pm.expect(jsonData).to.have.property(\"message\", \"Invalid email address input. Please, check and try again.\");\r",
+													"    pm.expect(jsonData).to.have.property(\"isSuccessful\", false);\r",
 													"    pm.expect(jsonData).to.have.property(\"messages\").that.is.an(\"array\").that.is.empty;\r",
 													"    pm.expect(jsonData).to.have.property(\"timeGenerated\").that.is.a(\"string\");\r",
-													"});\r",
-													""
+													"});"
 												],
 												"type": "text/javascript",
 												"packages": {}
@@ -9417,6 +9416,226 @@
 									"response": [
 										{
 											"id": "3b98a5cd-e97c-4742-a000-49eb5bbaf48e",
+											"name": "Success",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/Subscription/unsubscribe_from_newsletter?email=incididunt commodo",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Subscription",
+														"unsubscribe_from_newsletter"
+													],
+													"query": [
+														{
+															"key": "email",
+															"value": "incididunt commodo"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n  \"data\": \"nulla sunt\",\n  \"message\": \"Duis magna\",\n  \"isSuccessful\": true,\n  \"messages\": [\n    \"eu\",\n    \"d\"\n  ],\n  \"timeGenerated\": \"2001-06-23T03:36:40.151Z\"\n}"
+										}
+									]
+								},
+								{
+									"name": "EmailNotSubscribe_Newsletter",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "0560f1ff-d2b0-4427-822d-eef9e4bbf1ec",
+												"exec": [
+													"const jsonData = pm.response.json();\r",
+													"\r",
+													"pm.test(\"Status code is 400\", () => {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Response indicates email is not subscribed\", () => {\r",
+													"    pm.expect(jsonData).to.have.property(\"data\", \"\");\r",
+													"    pm.expect(jsonData).to.have.property(\"message\", \"Email is not subscribed. Please, confirm your input and try again.\");\r",
+													"    pm.expect(jsonData).to.have.property(\"isSuccessful\", false);\r",
+													"    pm.expect(jsonData).to.have.property(\"messages\").that.is.an(\"array\").that.is.empty;\r",
+													"    pm.expect(jsonData).to.have.property(\"timeGenerated\").that.is.a(\"string\");\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "39ee04c6-c83c-405d-b492-3fd6656398d2",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl_Dev}}/api/Subscription/unsubscribe_from_newsletter?email=pawa@yopmail.com",
+											"host": [
+												"{{baseUrl_Dev}}"
+											],
+											"path": [
+												"api",
+												"Subscription",
+												"unsubscribe_from_newsletter"
+											],
+											"query": [
+												{
+													"key": "email",
+													"value": "pawa@yopmail.com"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"id": "a7b568bb-960d-4796-8670-cc8d2e5f2595",
+											"name": "Success",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/Subscription/unsubscribe_from_newsletter?email=incididunt commodo",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Subscription",
+														"unsubscribe_from_newsletter"
+													],
+													"query": [
+														{
+															"key": "email",
+															"value": "incididunt commodo"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n  \"data\": \"nulla sunt\",\n  \"message\": \"Duis magna\",\n  \"isSuccessful\": true,\n  \"messages\": [\n    \"eu\",\n    \"d\"\n  ],\n  \"timeGenerated\": \"2001-06-23T03:36:40.151Z\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Unsubscribe_Newsletter_Successful Copy 2",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "0560f1ff-d2b0-4427-822d-eef9e4bbf1ec",
+												"exec": [
+													"const jsonData = pm.response.json();\r",
+													"\r",
+													"pm.test(\"Status code is 200\", () => {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Response indicates successful newsletter unsubscription\", () => {\r",
+													"    pm.expect(jsonData).to.have.property(\"data\", \"You have successfully unsubscribed from our newsletter.\");\r",
+													"    pm.expect(jsonData).to.have.property(\"message\", \"\");\r",
+													"    pm.expect(jsonData).to.have.property(\"isSuccessful\", true);\r",
+													"    pm.expect(jsonData).to.have.property(\"messages\").that.is.an(\"array\").that.is.empty;\r",
+													"    pm.expect(jsonData).to.have.property(\"timeGenerated\").that.is.a(\"string\");\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "fd06e0b5-df73-474f-84e6-0a4093578f0b",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl_Dev}}/api/Subscription/unsubscribe_from_newsletter?email=pawayopmail.com",
+											"host": [
+												"{{baseUrl_Dev}}"
+											],
+											"path": [
+												"api",
+												"Subscription",
+												"unsubscribe_from_newsletter"
+											],
+											"query": [
+												{
+													"key": "email",
+													"value": "pawayopmail.com"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"id": "eeb29968-e4c4-4160-a1a0-db2a68e91bab",
 											"name": "Success",
 											"originalRequest": {
 												"method": "POST",
