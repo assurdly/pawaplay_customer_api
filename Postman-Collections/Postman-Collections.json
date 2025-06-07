@@ -1995,7 +1995,7 @@
 									]
 								},
 								{
-									"name": "Login_Incorrect_PhoneNumber",
+									"name": "Login_PhoneNumber_NotConnected",
 									"event": [
 										{
 											"listen": "test",
@@ -2145,6 +2145,9 @@
 										"disableBodyPruning": true
 									},
 									"request": {
+										"auth": {
+											"type": "noauth"
+										},
 										"method": "PATCH",
 										"header": [
 											{
