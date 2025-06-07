@@ -9876,111 +9876,579 @@
 									"name": "meter_number",
 									"item": [
 										{
-											"name": "New Folder",
-											"item": [],
+											"name": "Prepaid",
+											"item": [
+												{
+													"name": "Validate_MeterNumber_Prepaid",
+													"event": [
+														{
+															"listen": "test",
+															"script": {
+																"id": "625bce4a-cb5d-49d7-87bc-3b00c2f95c8e",
+																"exec": [
+																	"const jsonData = pm.response.json();\r",
+																	"\r",
+																	"pm.test(\"Status code is 200\", () => {\r",
+																	"    pm.response.to.have.status(200);\r",
+																	"});\r",
+																	"\r",
+																	"pm.test(\"Response indicates successful processing\", () => {\r",
+																	"    pm.expect(jsonData).to.have.property(\"isSuccessful\", true);\r",
+																	"    pm.expect(jsonData).to.have.property(\"message\").that.is.a(\"string\").and.not.empty;\r",
+																	"    pm.expect(jsonData).to.have.property(\"messages\").that.is.an(\"array\").that.is.empty;\r",
+																	"    pm.expect(jsonData).to.have.property(\"timeGenerated\").that.is.a(\"string\");\r",
+																	"});\r",
+																	"\r",
+																	"pm.test(\"Response contains data object with expected properties\", () => {\r",
+																	"    pm.expect(jsonData).to.have.property(\"data\").that.is.an(\"object\");\r",
+																	"    pm.expect(jsonData.data).to.have.property(\"state\").that.is.a(\"string\");\r",
+																	"    pm.expect(jsonData.data).to.have.property(\"address\").that.is.a(\"string\");\r",
+																	"    pm.expect(jsonData.data).to.have.property(\"meterType\").that.is.a(\"string\");\r",
+																	"    pm.expect(jsonData.data).to.have.property(\"meterAccountOwner\").that.is.a(\"string\");\r",
+																	"    pm.expect(jsonData.data).to.have.property(\"minimumPurchasbleTokenAmount\").that.is.a(\"number\");\r",
+																	"});"
+																],
+																"type": "text/javascript",
+																"packages": {}
+															}
+														}
+													],
+													"id": "130d6ffc-ffb3-45a1-9ff9-16d6d0a54667",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
+														"auth": {
+															"type": "bearer",
+															"bearer": {
+																"token": "{{bearerToken}}"
+															}
+														},
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl_Dev}}/api/TokenPurchase/validate/meter_number?meterNumber=1111111111111&meterType=Prepaid&distributorID=47f48bbb-91bd-40a9-9537-c2a0a7a51b1e",
+															"host": [
+																"{{baseUrl_Dev}}"
+															],
+															"path": [
+																"api",
+																"TokenPurchase",
+																"validate",
+																"meter_number"
+															],
+															"query": [
+																{
+																	"key": "meterNumber",
+																	"value": "1111111111111"
+																},
+																{
+																	"key": "meterType",
+																	"value": "Prepaid"
+																},
+																{
+																	"key": "distributorID",
+																	"value": "47f48bbb-91bd-40a9-9537-c2a0a7a51b1e"
+																}
+															]
+														}
+													},
+													"response": [
+														{
+															"id": "ca359e4a-2db8-4177-9a54-3b5715fc093e",
+															"name": "Success",
+															"originalRequest": {
+																"method": "GET",
+																"header": [
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	},
+																	{
+																		"description": "Added as a part of security scheme: bearer",
+																		"key": "Authorization",
+																		"value": "Bearer <token>"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/api/TokenPurchase/validate/meter_number?meterNumber=incididunt commodo&meterType=Prepaid&distributorID=urn:uuid:2ec58017-79ee-1e8f-5971-a5156d2671e3",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"TokenPurchase",
+																		"validate",
+																		"meter_number"
+																	],
+																	"query": [
+																		{
+																			"key": "meterNumber",
+																			"value": "incididunt commodo"
+																		},
+																		{
+																			"key": "meterType",
+																			"value": "Prepaid"
+																		},
+																		{
+																			"key": "distributorID",
+																			"value": "urn:uuid:2ec58017-79ee-1e8f-5971-a5156d2671e3"
+																		}
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																}
+															],
+															"cookie": [],
+															"responseTime": null,
+															"body": "{\n  \"data\": {\n    \"state\": \"amet in est\",\n    \"address\": \"anim proident\",\n    \"meterType\": \"Postpaid\",\n    \"meterAccountOwner\": \"eu sit commodo\"\n  },\n  \"message\": \"ipsum\",\n  \"isSuccessful\": false,\n  \"messages\": [\n    \"officia \",\n    \"mollit occaecat irure eiusmod\"\n  ],\n  \"timeGenerated\": \"1961-05-01T23:45:06.882Z\"\n}"
+														}
+													]
+												},
+												{
+													"name": "Validate_MeterNumber_Prepaid-Unauthorized",
+													"event": [
+														{
+															"listen": "test",
+															"script": {
+																"id": "625bce4a-cb5d-49d7-87bc-3b00c2f95c8e",
+																"exec": [
+																	"//Unauthorized not catered for"
+																],
+																"type": "text/javascript",
+																"packages": {}
+															}
+														}
+													],
+													"id": "f553f090-6e3e-442c-86f4-b17d3755f24d",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
+														"auth": {
+															"type": "bearer",
+															"bearer": {
+																"token": "{{bearerToken_Expired}}"
+															}
+														},
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl_Dev}}/api/TokenPurchase/validate/meter_number?meterNumber=1111111111111&meterType=Prepaid&distributorID=47f48bbb-91bd-40a9-9537-c2a0a7a51b1e",
+															"host": [
+																"{{baseUrl_Dev}}"
+															],
+															"path": [
+																"api",
+																"TokenPurchase",
+																"validate",
+																"meter_number"
+															],
+															"query": [
+																{
+																	"key": "meterNumber",
+																	"value": "1111111111111"
+																},
+																{
+																	"key": "meterType",
+																	"value": "Prepaid"
+																},
+																{
+																	"key": "distributorID",
+																	"value": "47f48bbb-91bd-40a9-9537-c2a0a7a51b1e"
+																}
+															]
+														}
+													},
+													"response": [
+														{
+															"id": "27d6702c-98d8-4ecb-9d91-c88782787a09",
+															"name": "Success",
+															"originalRequest": {
+																"method": "GET",
+																"header": [
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	},
+																	{
+																		"description": "Added as a part of security scheme: bearer",
+																		"key": "Authorization",
+																		"value": "Bearer <token>"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/api/TokenPurchase/validate/meter_number?meterNumber=incididunt commodo&meterType=Prepaid&distributorID=urn:uuid:2ec58017-79ee-1e8f-5971-a5156d2671e3",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"TokenPurchase",
+																		"validate",
+																		"meter_number"
+																	],
+																	"query": [
+																		{
+																			"key": "meterNumber",
+																			"value": "incididunt commodo"
+																		},
+																		{
+																			"key": "meterType",
+																			"value": "Prepaid"
+																		},
+																		{
+																			"key": "distributorID",
+																			"value": "urn:uuid:2ec58017-79ee-1e8f-5971-a5156d2671e3"
+																		}
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																}
+															],
+															"cookie": [],
+															"responseTime": null,
+															"body": "{\n  \"data\": {\n    \"state\": \"amet in est\",\n    \"address\": \"anim proident\",\n    \"meterType\": \"Postpaid\",\n    \"meterAccountOwner\": \"eu sit commodo\"\n  },\n  \"message\": \"ipsum\",\n  \"isSuccessful\": false,\n  \"messages\": [\n    \"officia \",\n    \"mollit occaecat irure eiusmod\"\n  ],\n  \"timeGenerated\": \"1961-05-01T23:45:06.882Z\"\n}"
+														}
+													]
+												},
+												{
+													"name": "Invalid_DistributoID_MeterNumber_Prepaid",
+													"event": [
+														{
+															"listen": "test",
+															"script": {
+																"id": "625bce4a-cb5d-49d7-87bc-3b00c2f95c8e",
+																"exec": [
+																	"//This would be updated when the error message is catered for "
+																],
+																"type": "text/javascript",
+																"packages": {}
+															}
+														}
+													],
+													"id": "304a1aec-8425-40ee-b14a-8167bb0e916b",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
+														"auth": {
+															"type": "bearer",
+															"bearer": {
+																"token": "{{bearerToken}}"
+															}
+														},
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl_Dev}}/api/TokenPurchase/validate/meter_number?meterNumber=1111111111111&meterType=Prepaid&distributorID=47f48bbb-91bd-40a9-9537-c2a0a7",
+															"host": [
+																"{{baseUrl_Dev}}"
+															],
+															"path": [
+																"api",
+																"TokenPurchase",
+																"validate",
+																"meter_number"
+															],
+															"query": [
+																{
+																	"key": "meterNumber",
+																	"value": "1111111111111"
+																},
+																{
+																	"key": "meterType",
+																	"value": "Prepaid"
+																},
+																{
+																	"key": "distributorID",
+																	"value": "47f48bbb-91bd-40a9-9537-c2a0a7"
+																}
+															]
+														}
+													},
+													"response": [
+														{
+															"id": "f8ff4550-027f-48b7-aeb0-39dab0c81125",
+															"name": "Success",
+															"originalRequest": {
+																"method": "GET",
+																"header": [
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	},
+																	{
+																		"description": "Added as a part of security scheme: bearer",
+																		"key": "Authorization",
+																		"value": "Bearer <token>"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/api/TokenPurchase/validate/meter_number?meterNumber=incididunt commodo&meterType=Prepaid&distributorID=urn:uuid:2ec58017-79ee-1e8f-5971-a5156d2671e3",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"TokenPurchase",
+																		"validate",
+																		"meter_number"
+																	],
+																	"query": [
+																		{
+																			"key": "meterNumber",
+																			"value": "incididunt commodo"
+																		},
+																		{
+																			"key": "meterType",
+																			"value": "Prepaid"
+																		},
+																		{
+																			"key": "distributorID",
+																			"value": "urn:uuid:2ec58017-79ee-1e8f-5971-a5156d2671e3"
+																		}
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																}
+															],
+															"cookie": [],
+															"responseTime": null,
+															"body": "{\n  \"data\": {\n    \"state\": \"amet in est\",\n    \"address\": \"anim proident\",\n    \"meterType\": \"Postpaid\",\n    \"meterAccountOwner\": \"eu sit commodo\"\n  },\n  \"message\": \"ipsum\",\n  \"isSuccessful\": false,\n  \"messages\": [\n    \"officia \",\n    \"mollit occaecat irure eiusmod\"\n  ],\n  \"timeGenerated\": \"1961-05-01T23:45:06.882Z\"\n}"
+														}
+													]
+												},
+												{
+													"name": "InValidate_MeterNumber_Prepaid",
+													"event": [
+														{
+															"listen": "test",
+															"script": {
+																"id": "625bce4a-cb5d-49d7-87bc-3b00c2f95c8e",
+																"exec": [
+																	"const jsonData = pm.response.json();\r",
+																	"\r",
+																	"pm.test(\"Status code is 400\", () => {\r",
+																	"    pm.response.to.have.status(400);\r",
+																	"});\r",
+																	"\r",
+																	"pm.test(\"Response indicates invalid meter number\", () => {\r",
+																	"    pm.expect(jsonData).to.have.property(\"data\", \"\");\r",
+																	"    pm.expect(jsonData).to.have.property(\"message\").that.includes(\"This meter is not correct\");\r",
+																	"    pm.expect(jsonData).to.have.property(\"isSuccessful\", false);\r",
+																	"    pm.expect(jsonData).to.have.property(\"messages\").that.is.an(\"array\").that.is.empty;\r",
+																	"    pm.expect(jsonData).to.have.property(\"timeGenerated\").that.is.a(\"string\");\r",
+																	"});"
+																],
+																"type": "text/javascript",
+																"packages": {}
+															}
+														}
+													],
+													"id": "58b211e1-7b35-4aa8-a7ff-75384ef546ca",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
+														"auth": {
+															"type": "bearer",
+															"bearer": {
+																"token": "{{bearerToken}}"
+															}
+														},
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl_Dev}}/api/TokenPurchase/validate/meter_number?meterNumber=1111111111&meterType=Prepaid&distributorID=47f48bbb-91bd-40a9-9537-c2a0a7a51b1e",
+															"host": [
+																"{{baseUrl_Dev}}"
+															],
+															"path": [
+																"api",
+																"TokenPurchase",
+																"validate",
+																"meter_number"
+															],
+															"query": [
+																{
+																	"key": "meterNumber",
+																	"value": "1111111111"
+																},
+																{
+																	"key": "meterType",
+																	"value": "Prepaid"
+																},
+																{
+																	"key": "distributorID",
+																	"value": "47f48bbb-91bd-40a9-9537-c2a0a7a51b1e"
+																}
+															]
+														}
+													},
+													"response": [
+														{
+															"id": "afa29bc3-e0d9-4a07-a80f-74937f5618b8",
+															"name": "Success",
+															"originalRequest": {
+																"method": "GET",
+																"header": [
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	},
+																	{
+																		"description": "Added as a part of security scheme: bearer",
+																		"key": "Authorization",
+																		"value": "Bearer <token>"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/api/TokenPurchase/validate/meter_number?meterNumber=incididunt commodo&meterType=Prepaid&distributorID=urn:uuid:2ec58017-79ee-1e8f-5971-a5156d2671e3",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"TokenPurchase",
+																		"validate",
+																		"meter_number"
+																	],
+																	"query": [
+																		{
+																			"key": "meterNumber",
+																			"value": "incididunt commodo"
+																		},
+																		{
+																			"key": "meterType",
+																			"value": "Prepaid"
+																		},
+																		{
+																			"key": "distributorID",
+																			"value": "urn:uuid:2ec58017-79ee-1e8f-5971-a5156d2671e3"
+																		}
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																}
+															],
+															"cookie": [],
+															"responseTime": null,
+															"body": "{\n  \"data\": {\n    \"state\": \"amet in est\",\n    \"address\": \"anim proident\",\n    \"meterType\": \"Postpaid\",\n    \"meterAccountOwner\": \"eu sit commodo\"\n  },\n  \"message\": \"ipsum\",\n  \"isSuccessful\": false,\n  \"messages\": [\n    \"officia \",\n    \"mollit occaecat irure eiusmod\"\n  ],\n  \"timeGenerated\": \"1961-05-01T23:45:06.882Z\"\n}"
+														}
+													]
+												}
+											],
 											"id": "2daa7fca-8868-4127-a12f-895a00b556ad"
 										},
 										{
-											"name": "Validate_MeterNumber_Prepaid",
-											"event": [
+											"name": "Postpaid",
+											"item": [
 												{
-													"listen": "test",
-													"script": {
-														"id": "625bce4a-cb5d-49d7-87bc-3b00c2f95c8e",
-														"exec": [
-															"const jsonData = pm.response.json();\r",
-															"\r",
-															"pm.test(\"Status code is 200\", () => {\r",
-															"    pm.response.to.have.status(200);\r",
-															"});\r",
-															"\r",
-															"pm.test(\"Response indicates successful processing\", () => {\r",
-															"    pm.expect(jsonData).to.have.property(\"isSuccessful\", true);\r",
-															"    pm.expect(jsonData).to.have.property(\"message\").that.is.a(\"string\").and.not.empty;\r",
-															"    pm.expect(jsonData).to.have.property(\"messages\").that.is.an(\"array\").that.is.empty;\r",
-															"    pm.expect(jsonData).to.have.property(\"timeGenerated\").that.is.a(\"string\");\r",
-															"});\r",
-															"\r",
-															"pm.test(\"Response contains data object with expected properties\", () => {\r",
-															"    pm.expect(jsonData).to.have.property(\"data\").that.is.an(\"object\");\r",
-															"    pm.expect(jsonData.data).to.have.property(\"state\").that.is.a(\"string\");\r",
-															"    pm.expect(jsonData.data).to.have.property(\"address\").that.is.a(\"string\");\r",
-															"    pm.expect(jsonData.data).to.have.property(\"meterType\").that.is.a(\"string\");\r",
-															"    pm.expect(jsonData.data).to.have.property(\"meterAccountOwner\").that.is.a(\"string\");\r",
-															"    pm.expect(jsonData.data).to.have.property(\"minimumPurchasbleTokenAmount\").that.is.a(\"number\");\r",
-															"});"
-														],
-														"type": "text/javascript",
-														"packages": {}
-													}
-												}
-											],
-											"id": "130d6ffc-ffb3-45a1-9ff9-16d6d0a54667",
-											"protocolProfileBehavior": {
-												"disableBodyPruning": true
-											},
-											"request": {
-												"auth": {
-													"type": "bearer",
-													"bearer": {
-														"token": "{{bearerToken}}"
-													}
-												},
-												"method": "GET",
-												"header": [
-													{
-														"key": "Accept",
-														"value": "application/json"
-													}
-												],
-												"url": {
-													"raw": "{{baseUrl_Dev}}/api/TokenPurchase/validate/meter_number?meterNumber=1111111111111&meterType=Prepaid&distributorID=47f48bbb-91bd-40a9-9537-c2a0a7a51b1e",
-													"host": [
-														"{{baseUrl_Dev}}"
-													],
-													"path": [
-														"api",
-														"TokenPurchase",
-														"validate",
-														"meter_number"
-													],
-													"query": [
+													"name": "Validate_MeterNumber_Postpaid",
+													"event": [
 														{
-															"key": "meterNumber",
-															"value": "1111111111111"
-														},
-														{
-															"key": "meterType",
-															"value": "Prepaid"
-														},
-														{
-															"key": "distributorID",
-															"value": "47f48bbb-91bd-40a9-9537-c2a0a7a51b1e"
+															"listen": "test",
+															"script": {
+																"id": "625bce4a-cb5d-49d7-87bc-3b00c2f95c8e",
+																"exec": [
+																	"const jsonData = pm.response.json();\r",
+																	"\r",
+																	"pm.test(\"Status code is 200\", () => {\r",
+																	"    pm.response.to.have.status(200);\r",
+																	"});\r",
+																	"\r",
+																	"pm.test(\"Response indicates successful processing\", () => {\r",
+																	"    pm.expect(jsonData).to.have.property(\"isSuccessful\", true);\r",
+																	"    pm.expect(jsonData).to.have.property(\"message\").that.is.a(\"string\").and.not.empty;\r",
+																	"    pm.expect(jsonData).to.have.property(\"messages\").that.is.an(\"array\").that.is.empty;\r",
+																	"    pm.expect(jsonData).to.have.property(\"timeGenerated\").that.is.a(\"string\");\r",
+																	"});\r",
+																	"\r",
+																	"pm.test(\"Response contains data object with expected properties\", () => {\r",
+																	"    pm.expect(jsonData).to.have.property(\"data\").that.is.an(\"object\");\r",
+																	"    pm.expect(jsonData.data).to.have.property(\"state\").that.is.a(\"string\");\r",
+																	"    pm.expect(jsonData.data).to.have.property(\"address\").that.is.a(\"string\");\r",
+																	"    pm.expect(jsonData.data).to.have.property(\"meterType\").that.is.a(\"string\");\r",
+																	"    pm.expect(jsonData.data).to.have.property(\"meterAccountOwner\").that.is.a(\"string\");\r",
+																	"    pm.expect(jsonData.data).to.have.property(\"minimumPurchasbleTokenAmount\").that.is.a(\"number\");\r",
+																	"});"
+																],
+																"type": "text/javascript",
+																"packages": {}
+															}
 														}
-													]
-												}
-											},
-											"response": [
-												{
-													"id": "ca359e4a-2db8-4177-9a54-3b5715fc093e",
-													"name": "Success",
-													"originalRequest": {
+													],
+													"id": "336299ae-3de8-4662-ba82-d514e44faf69",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
+														"auth": {
+															"type": "bearer",
+															"bearer": {
+																"token": "{{bearerToken}}"
+															}
+														},
 														"method": "GET",
 														"header": [
 															{
 																"key": "Accept",
 																"value": "application/json"
-															},
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
 															}
 														],
 														"url": {
-															"raw": "{{baseUrl}}/api/TokenPurchase/validate/meter_number?meterNumber=incididunt commodo&meterType=Prepaid&distributorID=urn:uuid:2ec58017-79ee-1e8f-5971-a5156d2671e3",
+															"raw": "{{baseUrl_Dev}}/api/TokenPurchase/validate/meter_number?meterNumber=1010101010101 &meterType=Postpaid&distributorID=47f48bbb-91bd-40a9-9537-c2a0a7a51b1e",
 															"host": [
-																"{{baseUrl}}"
+																"{{baseUrl_Dev}}"
 															],
 															"path": [
 																"api",
@@ -9991,115 +10459,115 @@
 															"query": [
 																{
 																	"key": "meterNumber",
-																	"value": "incididunt commodo"
+																	"value": "1010101010101 "
 																},
 																{
 																	"key": "meterType",
-																	"value": "Prepaid"
+																	"value": "Postpaid"
 																},
 																{
 																	"key": "distributorID",
-																	"value": "urn:uuid:2ec58017-79ee-1e8f-5971-a5156d2671e3"
+																	"value": "47f48bbb-91bd-40a9-9537-c2a0a7a51b1e"
 																}
 															]
 														}
 													},
-													"status": "OK",
-													"code": 200,
-													"_postman_previewlanguage": "json",
-													"header": [
+													"response": [
 														{
-															"key": "Content-Type",
-															"value": "application/json"
-														}
-													],
-													"cookie": [],
-													"responseTime": null,
-													"body": "{\n  \"data\": {\n    \"state\": \"amet in est\",\n    \"address\": \"anim proident\",\n    \"meterType\": \"Postpaid\",\n    \"meterAccountOwner\": \"eu sit commodo\"\n  },\n  \"message\": \"ipsum\",\n  \"isSuccessful\": false,\n  \"messages\": [\n    \"officia \",\n    \"mollit occaecat irure eiusmod\"\n  ],\n  \"timeGenerated\": \"1961-05-01T23:45:06.882Z\"\n}"
-												}
-											]
-										},
-										{
-											"name": "Validate_MeterNumber_Prepaid-Unauthorized",
-											"event": [
-												{
-													"listen": "test",
-													"script": {
-														"id": "625bce4a-cb5d-49d7-87bc-3b00c2f95c8e",
-														"exec": [
-															"//Unauthorized not catered for"
-														],
-														"type": "text/javascript",
-														"packages": {}
-													}
-												}
-											],
-											"id": "f553f090-6e3e-442c-86f4-b17d3755f24d",
-											"protocolProfileBehavior": {
-												"disableBodyPruning": true
-											},
-											"request": {
-												"auth": {
-													"type": "bearer",
-													"bearer": {
-														"token": "{{bearerToken_Expired}}"
-													}
-												},
-												"method": "GET",
-												"header": [
-													{
-														"key": "Accept",
-														"value": "application/json"
-													}
-												],
-												"url": {
-													"raw": "{{baseUrl_Dev}}/api/TokenPurchase/validate/meter_number?meterNumber=1111111111111&meterType=Prepaid&distributorID=47f48bbb-91bd-40a9-9537-c2a0a7a51b1e",
-													"host": [
-														"{{baseUrl_Dev}}"
-													],
-													"path": [
-														"api",
-														"TokenPurchase",
-														"validate",
-														"meter_number"
-													],
-													"query": [
-														{
-															"key": "meterNumber",
-															"value": "1111111111111"
-														},
-														{
-															"key": "meterType",
-															"value": "Prepaid"
-														},
-														{
-															"key": "distributorID",
-															"value": "47f48bbb-91bd-40a9-9537-c2a0a7a51b1e"
+															"id": "4b3cb5cd-8455-4ac1-b693-2cdff4ecccfe",
+															"name": "Success",
+															"originalRequest": {
+																"method": "GET",
+																"header": [
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	},
+																	{
+																		"description": "Added as a part of security scheme: bearer",
+																		"key": "Authorization",
+																		"value": "Bearer <token>"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/api/TokenPurchase/validate/meter_number?meterNumber=incididunt commodo&meterType=Prepaid&distributorID=urn:uuid:2ec58017-79ee-1e8f-5971-a5156d2671e3",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"TokenPurchase",
+																		"validate",
+																		"meter_number"
+																	],
+																	"query": [
+																		{
+																			"key": "meterNumber",
+																			"value": "incididunt commodo"
+																		},
+																		{
+																			"key": "meterType",
+																			"value": "Prepaid"
+																		},
+																		{
+																			"key": "distributorID",
+																			"value": "urn:uuid:2ec58017-79ee-1e8f-5971-a5156d2671e3"
+																		}
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																}
+															],
+															"cookie": [],
+															"responseTime": null,
+															"body": "{\n  \"data\": {\n    \"state\": \"amet in est\",\n    \"address\": \"anim proident\",\n    \"meterType\": \"Postpaid\",\n    \"meterAccountOwner\": \"eu sit commodo\"\n  },\n  \"message\": \"ipsum\",\n  \"isSuccessful\": false,\n  \"messages\": [\n    \"officia \",\n    \"mollit occaecat irure eiusmod\"\n  ],\n  \"timeGenerated\": \"1961-05-01T23:45:06.882Z\"\n}"
 														}
 													]
-												}
-											},
-											"response": [
+												},
 												{
-													"id": "27d6702c-98d8-4ecb-9d91-c88782787a09",
-													"name": "Success",
-													"originalRequest": {
+													"name": "InValidate_DistributoID_MeterNumber_Postpaid",
+													"event": [
+														{
+															"listen": "test",
+															"script": {
+																"id": "625bce4a-cb5d-49d7-87bc-3b00c2f95c8e",
+																"exec": [
+																	"//This would be updated when the error message is catered for "
+																],
+																"type": "text/javascript",
+																"packages": {}
+															}
+														}
+													],
+													"id": "0a445384-d543-4746-acba-f95a8ee5e9d9",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
+														"auth": {
+															"type": "bearer",
+															"bearer": {
+																"token": "{{bearerToken}}"
+															}
+														},
 														"method": "GET",
 														"header": [
 															{
 																"key": "Accept",
 																"value": "application/json"
-															},
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
 															}
 														],
 														"url": {
-															"raw": "{{baseUrl}}/api/TokenPurchase/validate/meter_number?meterNumber=incididunt commodo&meterType=Prepaid&distributorID=urn:uuid:2ec58017-79ee-1e8f-5971-a5156d2671e3",
+															"raw": "{{baseUrl_Dev}}/api/TokenPurchase/validate/meter_number?meterNumber=1010101010101 &meterType=Postpaid&distributorID=47f48bbb-91bd-40a9-9537-c2",
 															"host": [
-																"{{baseUrl}}"
+																"{{baseUrl_Dev}}"
 															],
 															"path": [
 																"api",
@@ -10110,115 +10578,115 @@
 															"query": [
 																{
 																	"key": "meterNumber",
-																	"value": "incididunt commodo"
+																	"value": "1010101010101 "
 																},
 																{
 																	"key": "meterType",
-																	"value": "Prepaid"
+																	"value": "Postpaid"
 																},
 																{
 																	"key": "distributorID",
-																	"value": "urn:uuid:2ec58017-79ee-1e8f-5971-a5156d2671e3"
+																	"value": "47f48bbb-91bd-40a9-9537-c2"
 																}
 															]
 														}
 													},
-													"status": "OK",
-													"code": 200,
-													"_postman_previewlanguage": "json",
-													"header": [
+													"response": [
 														{
-															"key": "Content-Type",
-															"value": "application/json"
-														}
-													],
-													"cookie": [],
-													"responseTime": null,
-													"body": "{\n  \"data\": {\n    \"state\": \"amet in est\",\n    \"address\": \"anim proident\",\n    \"meterType\": \"Postpaid\",\n    \"meterAccountOwner\": \"eu sit commodo\"\n  },\n  \"message\": \"ipsum\",\n  \"isSuccessful\": false,\n  \"messages\": [\n    \"officia \",\n    \"mollit occaecat irure eiusmod\"\n  ],\n  \"timeGenerated\": \"1961-05-01T23:45:06.882Z\"\n}"
-												}
-											]
-										},
-										{
-											"name": "Invalid_DistributoID_MeterNumber_Prepaid",
-											"event": [
-												{
-													"listen": "test",
-													"script": {
-														"id": "625bce4a-cb5d-49d7-87bc-3b00c2f95c8e",
-														"exec": [
-															"//This would be updated when the error message is catered for "
-														],
-														"type": "text/javascript",
-														"packages": {}
-													}
-												}
-											],
-											"id": "304a1aec-8425-40ee-b14a-8167bb0e916b",
-											"protocolProfileBehavior": {
-												"disableBodyPruning": true
-											},
-											"request": {
-												"auth": {
-													"type": "bearer",
-													"bearer": {
-														"token": "{{bearerToken}}"
-													}
-												},
-												"method": "GET",
-												"header": [
-													{
-														"key": "Accept",
-														"value": "application/json"
-													}
-												],
-												"url": {
-													"raw": "{{baseUrl_Dev}}/api/TokenPurchase/validate/meter_number?meterNumber=1111111111111&meterType=Prepaid&distributorID=47f48bbb-91bd-40a9-9537-c2a0a7",
-													"host": [
-														"{{baseUrl_Dev}}"
-													],
-													"path": [
-														"api",
-														"TokenPurchase",
-														"validate",
-														"meter_number"
-													],
-													"query": [
-														{
-															"key": "meterNumber",
-															"value": "1111111111111"
-														},
-														{
-															"key": "meterType",
-															"value": "Prepaid"
-														},
-														{
-															"key": "distributorID",
-															"value": "47f48bbb-91bd-40a9-9537-c2a0a7"
+															"id": "ea7431a9-fedc-4094-b494-7f3c75923e5b",
+															"name": "Success",
+															"originalRequest": {
+																"method": "GET",
+																"header": [
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	},
+																	{
+																		"description": "Added as a part of security scheme: bearer",
+																		"key": "Authorization",
+																		"value": "Bearer <token>"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/api/TokenPurchase/validate/meter_number?meterNumber=incididunt commodo&meterType=Prepaid&distributorID=urn:uuid:2ec58017-79ee-1e8f-5971-a5156d2671e3",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"TokenPurchase",
+																		"validate",
+																		"meter_number"
+																	],
+																	"query": [
+																		{
+																			"key": "meterNumber",
+																			"value": "incididunt commodo"
+																		},
+																		{
+																			"key": "meterType",
+																			"value": "Prepaid"
+																		},
+																		{
+																			"key": "distributorID",
+																			"value": "urn:uuid:2ec58017-79ee-1e8f-5971-a5156d2671e3"
+																		}
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																}
+															],
+															"cookie": [],
+															"responseTime": null,
+															"body": "{\n  \"data\": {\n    \"state\": \"amet in est\",\n    \"address\": \"anim proident\",\n    \"meterType\": \"Postpaid\",\n    \"meterAccountOwner\": \"eu sit commodo\"\n  },\n  \"message\": \"ipsum\",\n  \"isSuccessful\": false,\n  \"messages\": [\n    \"officia \",\n    \"mollit occaecat irure eiusmod\"\n  ],\n  \"timeGenerated\": \"1961-05-01T23:45:06.882Z\"\n}"
 														}
 													]
-												}
-											},
-											"response": [
+												},
 												{
-													"id": "f8ff4550-027f-48b7-aeb0-39dab0c81125",
-													"name": "Success",
-													"originalRequest": {
+													"name": "INValidate_MeterNumber_Postpaid",
+													"event": [
+														{
+															"listen": "test",
+															"script": {
+																"id": "625bce4a-cb5d-49d7-87bc-3b00c2f95c8e",
+																"exec": [
+																	"// This would be updated when the endpoint is fixed "
+																],
+																"type": "text/javascript",
+																"packages": {}
+															}
+														}
+													],
+													"id": "5dc16c98-eafc-4e96-8e90-ccc09d2d6d95",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
+														"auth": {
+															"type": "bearer",
+															"bearer": {
+																"token": "{{bearerToken}}"
+															}
+														},
 														"method": "GET",
 														"header": [
 															{
 																"key": "Accept",
 																"value": "application/json"
-															},
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
 															}
 														],
 														"url": {
-															"raw": "{{baseUrl}}/api/TokenPurchase/validate/meter_number?meterNumber=incididunt commodo&meterType=Prepaid&distributorID=urn:uuid:2ec58017-79ee-1e8f-5971-a5156d2671e3",
+															"raw": "{{baseUrl_Dev}}/api/TokenPurchase/validate/meter_number?meterNumber=101&meterType=Postpaid&distributorID=47f48bbb-91bd-40a9-9537-c2a0a7a51b1e",
 															"host": [
-																"{{baseUrl}}"
+																"{{baseUrl_Dev}}"
 															],
 															"path": [
 																"api",
@@ -10229,127 +10697,115 @@
 															"query": [
 																{
 																	"key": "meterNumber",
-																	"value": "incididunt commodo"
+																	"value": "101"
 																},
 																{
 																	"key": "meterType",
-																	"value": "Prepaid"
+																	"value": "Postpaid"
 																},
 																{
 																	"key": "distributorID",
-																	"value": "urn:uuid:2ec58017-79ee-1e8f-5971-a5156d2671e3"
+																	"value": "47f48bbb-91bd-40a9-9537-c2a0a7a51b1e"
 																}
 															]
 														}
 													},
-													"status": "OK",
-													"code": 200,
-													"_postman_previewlanguage": "json",
-													"header": [
+													"response": [
 														{
-															"key": "Content-Type",
-															"value": "application/json"
-														}
-													],
-													"cookie": [],
-													"responseTime": null,
-													"body": "{\n  \"data\": {\n    \"state\": \"amet in est\",\n    \"address\": \"anim proident\",\n    \"meterType\": \"Postpaid\",\n    \"meterAccountOwner\": \"eu sit commodo\"\n  },\n  \"message\": \"ipsum\",\n  \"isSuccessful\": false,\n  \"messages\": [\n    \"officia \",\n    \"mollit occaecat irure eiusmod\"\n  ],\n  \"timeGenerated\": \"1961-05-01T23:45:06.882Z\"\n}"
-												}
-											]
-										},
-										{
-											"name": "InValidate_MeterNumber_Prepaid",
-											"event": [
-												{
-													"listen": "test",
-													"script": {
-														"id": "625bce4a-cb5d-49d7-87bc-3b00c2f95c8e",
-														"exec": [
-															"const jsonData = pm.response.json();\r",
-															"\r",
-															"pm.test(\"Status code is 400\", () => {\r",
-															"    pm.response.to.have.status(400);\r",
-															"});\r",
-															"\r",
-															"pm.test(\"Response indicates invalid meter number\", () => {\r",
-															"    pm.expect(jsonData).to.have.property(\"data\", \"\");\r",
-															"    pm.expect(jsonData).to.have.property(\"message\").that.includes(\"This meter is not correct\");\r",
-															"    pm.expect(jsonData).to.have.property(\"isSuccessful\", false);\r",
-															"    pm.expect(jsonData).to.have.property(\"messages\").that.is.an(\"array\").that.is.empty;\r",
-															"    pm.expect(jsonData).to.have.property(\"timeGenerated\").that.is.a(\"string\");\r",
-															"});"
-														],
-														"type": "text/javascript",
-														"packages": {}
-													}
-												}
-											],
-											"id": "58b211e1-7b35-4aa8-a7ff-75384ef546ca",
-											"protocolProfileBehavior": {
-												"disableBodyPruning": true
-											},
-											"request": {
-												"auth": {
-													"type": "bearer",
-													"bearer": {
-														"token": "{{bearerToken}}"
-													}
-												},
-												"method": "GET",
-												"header": [
-													{
-														"key": "Accept",
-														"value": "application/json"
-													}
-												],
-												"url": {
-													"raw": "{{baseUrl_Dev}}/api/TokenPurchase/validate/meter_number?meterNumber=1111111111&meterType=Prepaid&distributorID=47f48bbb-91bd-40a9-9537-c2a0a7a51b1e",
-													"host": [
-														"{{baseUrl_Dev}}"
-													],
-													"path": [
-														"api",
-														"TokenPurchase",
-														"validate",
-														"meter_number"
-													],
-													"query": [
-														{
-															"key": "meterNumber",
-															"value": "1111111111"
-														},
-														{
-															"key": "meterType",
-															"value": "Prepaid"
-														},
-														{
-															"key": "distributorID",
-															"value": "47f48bbb-91bd-40a9-9537-c2a0a7a51b1e"
+															"id": "cdbb05c1-6a7f-49a0-9e4e-fc4574de2153",
+															"name": "Success",
+															"originalRequest": {
+																"method": "GET",
+																"header": [
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	},
+																	{
+																		"description": "Added as a part of security scheme: bearer",
+																		"key": "Authorization",
+																		"value": "Bearer <token>"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/api/TokenPurchase/validate/meter_number?meterNumber=incididunt commodo&meterType=Prepaid&distributorID=urn:uuid:2ec58017-79ee-1e8f-5971-a5156d2671e3",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"TokenPurchase",
+																		"validate",
+																		"meter_number"
+																	],
+																	"query": [
+																		{
+																			"key": "meterNumber",
+																			"value": "incididunt commodo"
+																		},
+																		{
+																			"key": "meterType",
+																			"value": "Prepaid"
+																		},
+																		{
+																			"key": "distributorID",
+																			"value": "urn:uuid:2ec58017-79ee-1e8f-5971-a5156d2671e3"
+																		}
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																}
+															],
+															"cookie": [],
+															"responseTime": null,
+															"body": "{\n  \"data\": {\n    \"state\": \"amet in est\",\n    \"address\": \"anim proident\",\n    \"meterType\": \"Postpaid\",\n    \"meterAccountOwner\": \"eu sit commodo\"\n  },\n  \"message\": \"ipsum\",\n  \"isSuccessful\": false,\n  \"messages\": [\n    \"officia \",\n    \"mollit occaecat irure eiusmod\"\n  ],\n  \"timeGenerated\": \"1961-05-01T23:45:06.882Z\"\n}"
 														}
 													]
-												}
-											},
-											"response": [
+												},
 												{
-													"id": "afa29bc3-e0d9-4a07-a80f-74937f5618b8",
-													"name": "Success",
-													"originalRequest": {
+													"name": "INValidate_MeterNumber_Postpaid_Unauthourized",
+													"event": [
+														{
+															"listen": "test",
+															"script": {
+																"id": "625bce4a-cb5d-49d7-87bc-3b00c2f95c8e",
+																"exec": [
+																	"//Unauthorized error message not catered for"
+																],
+																"type": "text/javascript",
+																"packages": {}
+															}
+														}
+													],
+													"id": "00b36fce-16f2-45ca-b650-315781ecb2fe",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
+														"auth": {
+															"type": "bearer",
+															"bearer": {
+																"token": "{{bearerToken_Expired}}"
+															}
+														},
 														"method": "GET",
 														"header": [
 															{
 																"key": "Accept",
 																"value": "application/json"
-															},
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
 															}
 														],
 														"url": {
-															"raw": "{{baseUrl}}/api/TokenPurchase/validate/meter_number?meterNumber=incididunt commodo&meterType=Prepaid&distributorID=urn:uuid:2ec58017-79ee-1e8f-5971-a5156d2671e3",
+															"raw": "{{baseUrl_Dev}}/api/TokenPurchase/validate/meter_number?meterNumber=101&meterType=Postpaid&distributorID=47f48bbb-91bd-40a9-9537-c2a0a7a51b1e",
 															"host": [
-																"{{baseUrl}}"
+																"{{baseUrl_Dev}}"
 															],
 															"path": [
 																"api",
@@ -10360,529 +10816,80 @@
 															"query": [
 																{
 																	"key": "meterNumber",
-																	"value": "incididunt commodo"
+																	"value": "101"
 																},
 																{
 																	"key": "meterType",
-																	"value": "Prepaid"
+																	"value": "Postpaid"
 																},
 																{
 																	"key": "distributorID",
-																	"value": "urn:uuid:2ec58017-79ee-1e8f-5971-a5156d2671e3"
+																	"value": "47f48bbb-91bd-40a9-9537-c2a0a7a51b1e"
 																}
 															]
 														}
 													},
-													"status": "OK",
-													"code": 200,
-													"_postman_previewlanguage": "json",
-													"header": [
+													"response": [
 														{
-															"key": "Content-Type",
-															"value": "application/json"
-														}
-													],
-													"cookie": [],
-													"responseTime": null,
-													"body": "{\n  \"data\": {\n    \"state\": \"amet in est\",\n    \"address\": \"anim proident\",\n    \"meterType\": \"Postpaid\",\n    \"meterAccountOwner\": \"eu sit commodo\"\n  },\n  \"message\": \"ipsum\",\n  \"isSuccessful\": false,\n  \"messages\": [\n    \"officia \",\n    \"mollit occaecat irure eiusmod\"\n  ],\n  \"timeGenerated\": \"1961-05-01T23:45:06.882Z\"\n}"
-												}
-											]
-										},
-										{
-											"name": "Validate_MeterNumber_Postpaid",
-											"event": [
-												{
-													"listen": "test",
-													"script": {
-														"id": "625bce4a-cb5d-49d7-87bc-3b00c2f95c8e",
-														"exec": [
-															"const jsonData = pm.response.json();\r",
-															"\r",
-															"pm.test(\"Status code is 200\", () => {\r",
-															"    pm.response.to.have.status(200);\r",
-															"});\r",
-															"\r",
-															"pm.test(\"Response indicates successful processing\", () => {\r",
-															"    pm.expect(jsonData).to.have.property(\"isSuccessful\", true);\r",
-															"    pm.expect(jsonData).to.have.property(\"message\").that.is.a(\"string\").and.not.empty;\r",
-															"    pm.expect(jsonData).to.have.property(\"messages\").that.is.an(\"array\").that.is.empty;\r",
-															"    pm.expect(jsonData).to.have.property(\"timeGenerated\").that.is.a(\"string\");\r",
-															"});\r",
-															"\r",
-															"pm.test(\"Response contains data object with expected properties\", () => {\r",
-															"    pm.expect(jsonData).to.have.property(\"data\").that.is.an(\"object\");\r",
-															"    pm.expect(jsonData.data).to.have.property(\"state\").that.is.a(\"string\");\r",
-															"    pm.expect(jsonData.data).to.have.property(\"address\").that.is.a(\"string\");\r",
-															"    pm.expect(jsonData.data).to.have.property(\"meterType\").that.is.a(\"string\");\r",
-															"    pm.expect(jsonData.data).to.have.property(\"meterAccountOwner\").that.is.a(\"string\");\r",
-															"    pm.expect(jsonData.data).to.have.property(\"minimumPurchasbleTokenAmount\").that.is.a(\"number\");\r",
-															"});"
-														],
-														"type": "text/javascript",
-														"packages": {}
-													}
-												}
-											],
-											"id": "336299ae-3de8-4662-ba82-d514e44faf69",
-											"protocolProfileBehavior": {
-												"disableBodyPruning": true
-											},
-											"request": {
-												"auth": {
-													"type": "bearer",
-													"bearer": {
-														"token": "{{bearerToken}}"
-													}
-												},
-												"method": "GET",
-												"header": [
-													{
-														"key": "Accept",
-														"value": "application/json"
-													}
-												],
-												"url": {
-													"raw": "{{baseUrl_Dev}}/api/TokenPurchase/validate/meter_number?meterNumber=1010101010101 &meterType=Postpaid&distributorID=47f48bbb-91bd-40a9-9537-c2a0a7a51b1e",
-													"host": [
-														"{{baseUrl_Dev}}"
-													],
-													"path": [
-														"api",
-														"TokenPurchase",
-														"validate",
-														"meter_number"
-													],
-													"query": [
-														{
-															"key": "meterNumber",
-															"value": "1010101010101 "
-														},
-														{
-															"key": "meterType",
-															"value": "Postpaid"
-														},
-														{
-															"key": "distributorID",
-															"value": "47f48bbb-91bd-40a9-9537-c2a0a7a51b1e"
+															"id": "06052839-de4e-440a-9e78-38b634d3e9c7",
+															"name": "Success",
+															"originalRequest": {
+																"method": "GET",
+																"header": [
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	},
+																	{
+																		"description": "Added as a part of security scheme: bearer",
+																		"key": "Authorization",
+																		"value": "Bearer <token>"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/api/TokenPurchase/validate/meter_number?meterNumber=incididunt commodo&meterType=Prepaid&distributorID=urn:uuid:2ec58017-79ee-1e8f-5971-a5156d2671e3",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"TokenPurchase",
+																		"validate",
+																		"meter_number"
+																	],
+																	"query": [
+																		{
+																			"key": "meterNumber",
+																			"value": "incididunt commodo"
+																		},
+																		{
+																			"key": "meterType",
+																			"value": "Prepaid"
+																		},
+																		{
+																			"key": "distributorID",
+																			"value": "urn:uuid:2ec58017-79ee-1e8f-5971-a5156d2671e3"
+																		}
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																}
+															],
+															"cookie": [],
+															"responseTime": null,
+															"body": "{\n  \"data\": {\n    \"state\": \"amet in est\",\n    \"address\": \"anim proident\",\n    \"meterType\": \"Postpaid\",\n    \"meterAccountOwner\": \"eu sit commodo\"\n  },\n  \"message\": \"ipsum\",\n  \"isSuccessful\": false,\n  \"messages\": [\n    \"officia \",\n    \"mollit occaecat irure eiusmod\"\n  ],\n  \"timeGenerated\": \"1961-05-01T23:45:06.882Z\"\n}"
 														}
 													]
 												}
-											},
-											"response": [
-												{
-													"id": "4b3cb5cd-8455-4ac1-b693-2cdff4ecccfe",
-													"name": "Success",
-													"originalRequest": {
-														"method": "GET",
-														"header": [
-															{
-																"key": "Accept",
-																"value": "application/json"
-															},
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"url": {
-															"raw": "{{baseUrl}}/api/TokenPurchase/validate/meter_number?meterNumber=incididunt commodo&meterType=Prepaid&distributorID=urn:uuid:2ec58017-79ee-1e8f-5971-a5156d2671e3",
-															"host": [
-																"{{baseUrl}}"
-															],
-															"path": [
-																"api",
-																"TokenPurchase",
-																"validate",
-																"meter_number"
-															],
-															"query": [
-																{
-																	"key": "meterNumber",
-																	"value": "incididunt commodo"
-																},
-																{
-																	"key": "meterType",
-																	"value": "Prepaid"
-																},
-																{
-																	"key": "distributorID",
-																	"value": "urn:uuid:2ec58017-79ee-1e8f-5971-a5156d2671e3"
-																}
-															]
-														}
-													},
-													"status": "OK",
-													"code": 200,
-													"_postman_previewlanguage": "json",
-													"header": [
-														{
-															"key": "Content-Type",
-															"value": "application/json"
-														}
-													],
-													"cookie": [],
-													"responseTime": null,
-													"body": "{\n  \"data\": {\n    \"state\": \"amet in est\",\n    \"address\": \"anim proident\",\n    \"meterType\": \"Postpaid\",\n    \"meterAccountOwner\": \"eu sit commodo\"\n  },\n  \"message\": \"ipsum\",\n  \"isSuccessful\": false,\n  \"messages\": [\n    \"officia \",\n    \"mollit occaecat irure eiusmod\"\n  ],\n  \"timeGenerated\": \"1961-05-01T23:45:06.882Z\"\n}"
-												}
-											]
-										},
-										{
-											"name": "InValidate_DistributoID_MeterNumber_Postpaid",
-											"event": [
-												{
-													"listen": "test",
-													"script": {
-														"id": "625bce4a-cb5d-49d7-87bc-3b00c2f95c8e",
-														"exec": [
-															"//This would be updated when the error message is catered for "
-														],
-														"type": "text/javascript",
-														"packages": {}
-													}
-												}
 											],
-											"id": "0a445384-d543-4746-acba-f95a8ee5e9d9",
-											"protocolProfileBehavior": {
-												"disableBodyPruning": true
-											},
-											"request": {
-												"auth": {
-													"type": "bearer",
-													"bearer": {
-														"token": "{{bearerToken}}"
-													}
-												},
-												"method": "GET",
-												"header": [
-													{
-														"key": "Accept",
-														"value": "application/json"
-													}
-												],
-												"url": {
-													"raw": "{{baseUrl_Dev}}/api/TokenPurchase/validate/meter_number?meterNumber=1010101010101 &meterType=Postpaid&distributorID=47f48bbb-91bd-40a9-9537-c2",
-													"host": [
-														"{{baseUrl_Dev}}"
-													],
-													"path": [
-														"api",
-														"TokenPurchase",
-														"validate",
-														"meter_number"
-													],
-													"query": [
-														{
-															"key": "meterNumber",
-															"value": "1010101010101 "
-														},
-														{
-															"key": "meterType",
-															"value": "Postpaid"
-														},
-														{
-															"key": "distributorID",
-															"value": "47f48bbb-91bd-40a9-9537-c2"
-														}
-													]
-												}
-											},
-											"response": [
-												{
-													"id": "ea7431a9-fedc-4094-b494-7f3c75923e5b",
-													"name": "Success",
-													"originalRequest": {
-														"method": "GET",
-														"header": [
-															{
-																"key": "Accept",
-																"value": "application/json"
-															},
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"url": {
-															"raw": "{{baseUrl}}/api/TokenPurchase/validate/meter_number?meterNumber=incididunt commodo&meterType=Prepaid&distributorID=urn:uuid:2ec58017-79ee-1e8f-5971-a5156d2671e3",
-															"host": [
-																"{{baseUrl}}"
-															],
-															"path": [
-																"api",
-																"TokenPurchase",
-																"validate",
-																"meter_number"
-															],
-															"query": [
-																{
-																	"key": "meterNumber",
-																	"value": "incididunt commodo"
-																},
-																{
-																	"key": "meterType",
-																	"value": "Prepaid"
-																},
-																{
-																	"key": "distributorID",
-																	"value": "urn:uuid:2ec58017-79ee-1e8f-5971-a5156d2671e3"
-																}
-															]
-														}
-													},
-													"status": "OK",
-													"code": 200,
-													"_postman_previewlanguage": "json",
-													"header": [
-														{
-															"key": "Content-Type",
-															"value": "application/json"
-														}
-													],
-													"cookie": [],
-													"responseTime": null,
-													"body": "{\n  \"data\": {\n    \"state\": \"amet in est\",\n    \"address\": \"anim proident\",\n    \"meterType\": \"Postpaid\",\n    \"meterAccountOwner\": \"eu sit commodo\"\n  },\n  \"message\": \"ipsum\",\n  \"isSuccessful\": false,\n  \"messages\": [\n    \"officia \",\n    \"mollit occaecat irure eiusmod\"\n  ],\n  \"timeGenerated\": \"1961-05-01T23:45:06.882Z\"\n}"
-												}
-											]
-										},
-										{
-											"name": "INValidate_MeterNumber_Postpaid",
-											"event": [
-												{
-													"listen": "test",
-													"script": {
-														"id": "625bce4a-cb5d-49d7-87bc-3b00c2f95c8e",
-														"exec": [
-															"// This would be updated when the endpoint is fixed "
-														],
-														"type": "text/javascript",
-														"packages": {}
-													}
-												}
-											],
-											"id": "5dc16c98-eafc-4e96-8e90-ccc09d2d6d95",
-											"protocolProfileBehavior": {
-												"disableBodyPruning": true
-											},
-											"request": {
-												"auth": {
-													"type": "bearer",
-													"bearer": {
-														"token": "{{bearerToken}}"
-													}
-												},
-												"method": "GET",
-												"header": [
-													{
-														"key": "Accept",
-														"value": "application/json"
-													}
-												],
-												"url": {
-													"raw": "{{baseUrl_Dev}}/api/TokenPurchase/validate/meter_number?meterNumber=101&meterType=Postpaid&distributorID=47f48bbb-91bd-40a9-9537-c2a0a7a51b1e",
-													"host": [
-														"{{baseUrl_Dev}}"
-													],
-													"path": [
-														"api",
-														"TokenPurchase",
-														"validate",
-														"meter_number"
-													],
-													"query": [
-														{
-															"key": "meterNumber",
-															"value": "101"
-														},
-														{
-															"key": "meterType",
-															"value": "Postpaid"
-														},
-														{
-															"key": "distributorID",
-															"value": "47f48bbb-91bd-40a9-9537-c2a0a7a51b1e"
-														}
-													]
-												}
-											},
-											"response": [
-												{
-													"id": "cdbb05c1-6a7f-49a0-9e4e-fc4574de2153",
-													"name": "Success",
-													"originalRequest": {
-														"method": "GET",
-														"header": [
-															{
-																"key": "Accept",
-																"value": "application/json"
-															},
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"url": {
-															"raw": "{{baseUrl}}/api/TokenPurchase/validate/meter_number?meterNumber=incididunt commodo&meterType=Prepaid&distributorID=urn:uuid:2ec58017-79ee-1e8f-5971-a5156d2671e3",
-															"host": [
-																"{{baseUrl}}"
-															],
-															"path": [
-																"api",
-																"TokenPurchase",
-																"validate",
-																"meter_number"
-															],
-															"query": [
-																{
-																	"key": "meterNumber",
-																	"value": "incididunt commodo"
-																},
-																{
-																	"key": "meterType",
-																	"value": "Prepaid"
-																},
-																{
-																	"key": "distributorID",
-																	"value": "urn:uuid:2ec58017-79ee-1e8f-5971-a5156d2671e3"
-																}
-															]
-														}
-													},
-													"status": "OK",
-													"code": 200,
-													"_postman_previewlanguage": "json",
-													"header": [
-														{
-															"key": "Content-Type",
-															"value": "application/json"
-														}
-													],
-													"cookie": [],
-													"responseTime": null,
-													"body": "{\n  \"data\": {\n    \"state\": \"amet in est\",\n    \"address\": \"anim proident\",\n    \"meterType\": \"Postpaid\",\n    \"meterAccountOwner\": \"eu sit commodo\"\n  },\n  \"message\": \"ipsum\",\n  \"isSuccessful\": false,\n  \"messages\": [\n    \"officia \",\n    \"mollit occaecat irure eiusmod\"\n  ],\n  \"timeGenerated\": \"1961-05-01T23:45:06.882Z\"\n}"
-												}
-											]
-										},
-										{
-											"name": "INValidate_MeterNumber_Postpaid Copy",
-											"event": [
-												{
-													"listen": "test",
-													"script": {
-														"id": "625bce4a-cb5d-49d7-87bc-3b00c2f95c8e",
-														"exec": [
-															"//Unauthorized error message not catered for"
-														],
-														"type": "text/javascript",
-														"packages": {}
-													}
-												}
-											],
-											"id": "00b36fce-16f2-45ca-b650-315781ecb2fe",
-											"protocolProfileBehavior": {
-												"disableBodyPruning": true
-											},
-											"request": {
-												"auth": {
-													"type": "bearer",
-													"bearer": {
-														"token": "{{bearerToken_Expired}}"
-													}
-												},
-												"method": "GET",
-												"header": [
-													{
-														"key": "Accept",
-														"value": "application/json"
-													}
-												],
-												"url": {
-													"raw": "{{baseUrl_Dev}}/api/TokenPurchase/validate/meter_number?meterNumber=101&meterType=Postpaid&distributorID=47f48bbb-91bd-40a9-9537-c2a0a7a51b1e",
-													"host": [
-														"{{baseUrl_Dev}}"
-													],
-													"path": [
-														"api",
-														"TokenPurchase",
-														"validate",
-														"meter_number"
-													],
-													"query": [
-														{
-															"key": "meterNumber",
-															"value": "101"
-														},
-														{
-															"key": "meterType",
-															"value": "Postpaid"
-														},
-														{
-															"key": "distributorID",
-															"value": "47f48bbb-91bd-40a9-9537-c2a0a7a51b1e"
-														}
-													]
-												}
-											},
-											"response": [
-												{
-													"id": "06052839-de4e-440a-9e78-38b634d3e9c7",
-													"name": "Success",
-													"originalRequest": {
-														"method": "GET",
-														"header": [
-															{
-																"key": "Accept",
-																"value": "application/json"
-															},
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"url": {
-															"raw": "{{baseUrl}}/api/TokenPurchase/validate/meter_number?meterNumber=incididunt commodo&meterType=Prepaid&distributorID=urn:uuid:2ec58017-79ee-1e8f-5971-a5156d2671e3",
-															"host": [
-																"{{baseUrl}}"
-															],
-															"path": [
-																"api",
-																"TokenPurchase",
-																"validate",
-																"meter_number"
-															],
-															"query": [
-																{
-																	"key": "meterNumber",
-																	"value": "incididunt commodo"
-																},
-																{
-																	"key": "meterType",
-																	"value": "Prepaid"
-																},
-																{
-																	"key": "distributorID",
-																	"value": "urn:uuid:2ec58017-79ee-1e8f-5971-a5156d2671e3"
-																}
-															]
-														}
-													},
-													"status": "OK",
-													"code": 200,
-													"_postman_previewlanguage": "json",
-													"header": [
-														{
-															"key": "Content-Type",
-															"value": "application/json"
-														}
-													],
-													"cookie": [],
-													"responseTime": null,
-													"body": "{\n  \"data\": {\n    \"state\": \"amet in est\",\n    \"address\": \"anim proident\",\n    \"meterType\": \"Postpaid\",\n    \"meterAccountOwner\": \"eu sit commodo\"\n  },\n  \"message\": \"ipsum\",\n  \"isSuccessful\": false,\n  \"messages\": [\n    \"officia \",\n    \"mollit occaecat irure eiusmod\"\n  ],\n  \"timeGenerated\": \"1961-05-01T23:45:06.882Z\"\n}"
-												}
-											]
+											"id": "055e49d3-09cc-4731-8236-c901efc0af1b"
 										}
 									],
 									"id": "988a98f5-23d9-4272-8e23-cb7a6f5f20e1"
