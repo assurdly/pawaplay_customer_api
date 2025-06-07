@@ -8874,7 +8874,7 @@
 										"auth": {
 											"type": "bearer",
 											"bearer": {
-												"token": "{{bearerToken_Expired}}"
+												"token": "{{bearerToken}}"
 											}
 										},
 										"method": "POST",
