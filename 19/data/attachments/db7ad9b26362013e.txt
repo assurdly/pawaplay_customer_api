@@ -1,0 +1,4 @@
+{
+  "password": "Pawaplay1!",
+  "phoneNumberOrEmail": "07081556098"
+}
