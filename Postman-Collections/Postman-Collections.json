@@ -6099,6 +6099,31 @@
 									"item": [
 										{
 											"name": "(USAGE: To set wallet pin, if one hasn't already been set. Information about this is returned by the login endpoint.)",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "65ab0e03-2f7d-4302-a8a3-43f5736d1129",
+														"exec": [
+															"const jsonData = pm.response.json();\r",
+															"\r",
+															"pm.test(\"Status code is 200\", () => {\r",
+															"    pm.response.to.have.status(200);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Response fields for successful PIN creation are correct\", () => {\r",
+															"    pm.expect(jsonData).to.have.property(\"data\", null);\r",
+															"    pm.expect(jsonData).to.have.property(\"message\").that.includes(\"Your pin has been successfully created.\");\r",
+															"    pm.expect(jsonData).to.have.property(\"isSuccessful\", true);\r",
+															"    pm.expect(jsonData).to.have.property(\"messages\").that.is.an(\"array\").that.is.empty;\r",
+															"    pm.expect(jsonData).to.have.property(\"timeGenerated\").that.is.a(\"string\");\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
 											"id": "0864fbb7-4b35-4e07-b54d-9955f780945c",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -6117,7 +6142,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"pin\": \"magna voluptate\"\n}",
+													"raw": "{\n  \"pin\": \"0000\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
@@ -6125,7 +6150,7 @@
 														}
 													}
 												},
-												"url": "{{baseUrl}}/api/ProfileMaintenance/customer/set_wallet_pin"
+												"url": "{{baseUrl_Dev}}/api/ProfileMaintenance/customer/set_wallet_pin"
 											},
 											"response": [
 												{
