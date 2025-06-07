@@ -8220,7 +8220,7 @@
 									"name": "Read_notification",
 									"item": [
 										{
-											"name": "(USAGE: To change the status of a notification (or all notifications) from 'unread' to 'read'.)",
+											"name": "Update_Notification_Read_Successful",
 											"event": [
 												{
 													"listen": "test",
@@ -8283,6 +8283,103 @@
 											"response": [
 												{
 													"id": "8851dd3c-5620-4355-b83e-022576514ceb",
+													"name": "Success",
+													"originalRequest": {
+														"method": "PATCH",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"isSetAllAsRead\": true,\n  \"notificationIDs\": [\n    \"urn:uuid:a4234785-37f4-2238-064f-838066781d8d\",\n    \"urn:uuid:6d058791-468b-1d2c-fd4c-e2cccbdbde81\"\n  ]\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/Notifications/customer/read_notification"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"data\": \"nulla sunt\",\n  \"message\": \"Duis magna\",\n  \"isSuccessful\": true,\n  \"messages\": [\n    \"eu\",\n    \"d\"\n  ],\n  \"timeGenerated\": \"2001-06-23T03:36:40.151Z\"\n}"
+												}
+											]
+										},
+										{
+											"name": "Update_Notification_Read_InvalidID",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "820f88ce-90b2-47b8-9740-257a2f9cf85a",
+														"exec": [
+															"// To be updated when this endpiont is fixed"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "6e67796d-f7ab-44da-96ac-bcc52d11c3c4",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "PATCH",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"isSetAllAsRead\": true,\n  \"notificationIDs\": [\n    \"738d2f21-44fc-42ba-92da-3b84d329c19\"\n  ]\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl_Dev}}/api/Notifications/customer/read_notification"
+											},
+											"response": [
+												{
+													"id": "800d7e6d-595a-41d6-8132-1e8ada1fbf1b",
 													"name": "Success",
 													"originalRequest": {
 														"method": "PATCH",
