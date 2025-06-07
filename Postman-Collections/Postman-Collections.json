@@ -4024,6 +4024,115 @@
 																"exec": [
 																	"const jsonData = pm.response.json();\r",
 																	"\r",
+																	"pm.test(\"Status code is 200\", () => {\r",
+																	"    pm.response.to.have.status(200);\r",
+																	"});\r",
+																	"\r",
+																	"pm.test(\"Response fields are valid\", () => {\r",
+																	"    pm.expect(jsonData).to.have.property(\"data\", null);\r",
+																	"    pm.expect(jsonData).to.have.property(\"message\").that.includes(\"Your card information has been successfully saved.\");\r",
+																	"    pm.expect(jsonData).to.have.property(\"isSuccessful\", true);\r",
+																	"    pm.expect(jsonData).to.have.property(\"messages\").that.is.an(\"array\").that.is.empty;\r",
+																	"    pm.expect(jsonData).to.have.property(\"timeGenerated\").that.is.a(\"string\");\r",
+																	"});"
+																],
+																"type": "text/javascript",
+																"packages": {}
+															}
+														}
+													],
+													"id": "f899c03a-6cea-4b38-a524-b725dc6c37fc",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
+														"auth": {
+															"type": "bearer",
+															"bearer": {
+																"token": "{{bearerToken}}"
+															}
+														},
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"type\": \"Card\", //or Bank\n  \"cardInformation\": {\n    \"cvv\": \"058\",\n    \"cardNumber\": \"5399412210558123\",\n    \"expiresInMMYY\": \"08/28\"\n  }\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl_Dev}}/api/ProfileMaintenance/customer/save_payment_option"
+													},
+													"response": [
+														{
+															"id": "913227d1-8bda-4775-8847-ee720e89d976",
+															"name": "Success",
+															"originalRequest": {
+																"method": "POST",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	},
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	},
+																	{
+																		"description": "Added as a part of security scheme: bearer",
+																		"key": "Authorization",
+																		"value": "Bearer <token>"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"type\": \"Card\",\n  \"cardInformation\": {\n    \"cvv\": 50287222,\n    \"cardNumber\": \"commodo nulla\",\n    \"expiresInMMYY\": \"minim fugiat voluptate deserunt\"\n  }\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": "{{baseUrl}}/api/ProfileMaintenance/customer/save_payment_option"
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																}
+															],
+															"cookie": [],
+															"responseTime": null,
+															"body": "{\n  \"data\": \"nulla sunt\",\n  \"message\": \"Duis magna\",\n  \"isSuccessful\": true,\n  \"messages\": [\n    \"eu\",\n    \"d\"\n  ],\n  \"timeGenerated\": \"2001-06-23T03:36:40.151Z\"\n}"
+														}
+													]
+												},
+												{
+													"name": "Save_PaymentOption_AlreadyAdded",
+													"event": [
+														{
+															"listen": "test",
+															"script": {
+																"id": "fcb85d63-19f1-4af4-a527-f461133a783c",
+																"exec": [
+																	"const jsonData = pm.response.json();\r",
+																	"\r",
 																	"pm.test(\"Status code is 400 error code\", () => {\r",
 																	"    pm.response.to.have.status(400); \r",
 																	"});\r",
@@ -4124,33 +4233,21 @@
 													]
 												},
 												{
-													"name": "Save_PaymentOption_AlreadyAdded",
+													"name": "Save_PaymentOption_Unauthorized",
 													"event": [
 														{
 															"listen": "test",
 															"script": {
 																"id": "fcb85d63-19f1-4af4-a527-f461133a783c",
 																"exec": [
-																	"const jsonData = pm.response.json();\r",
-																	"\r",
-																	"pm.test(\"Status code is 200\", () => {\r",
-																	"    pm.response.to.have.status(200);\r",
-																	"});\r",
-																	"\r",
-																	"pm.test(\"Response fields are valid\", () => {\r",
-																	"    pm.expect(jsonData).to.have.property(\"data\", null);\r",
-																	"    pm.expect(jsonData).to.have.property(\"message\").that.includes(\"Your card information has been successfully saved.\");\r",
-																	"    pm.expect(jsonData).to.have.property(\"isSuccessful\", true);\r",
-																	"    pm.expect(jsonData).to.have.property(\"messages\").that.is.an(\"array\").that.is.empty;\r",
-																	"    pm.expect(jsonData).to.have.property(\"timeGenerated\").that.is.a(\"string\");\r",
-																	"});"
+																	"// Unauthorized not catered for"
 																],
 																"type": "text/javascript",
 																"packages": {}
 															}
 														}
 													],
-													"id": "f899c03a-6cea-4b38-a524-b725dc6c37fc",
+													"id": "15eaf461-be66-4d1d-a4a7-0d1ddbf61f89",
 													"protocolProfileBehavior": {
 														"disableBodyPruning": true
 													},
@@ -4158,7 +4255,7 @@
 														"auth": {
 															"type": "bearer",
 															"bearer": {
-																"token": "{{bearerToken}}"
+																"token": "{{bearerToken_Expired}}"
 															}
 														},
 														"method": "POST",
@@ -4186,7 +4283,104 @@
 													},
 													"response": [
 														{
-															"id": "913227d1-8bda-4775-8847-ee720e89d976",
+															"id": "eeae443b-71f6-4338-840b-a8c5a1566793",
+															"name": "Success",
+															"originalRequest": {
+																"method": "POST",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	},
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	},
+																	{
+																		"description": "Added as a part of security scheme: bearer",
+																		"key": "Authorization",
+																		"value": "Bearer <token>"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"type\": \"Card\",\n  \"cardInformation\": {\n    \"cvv\": 50287222,\n    \"cardNumber\": \"commodo nulla\",\n    \"expiresInMMYY\": \"minim fugiat voluptate deserunt\"\n  }\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": "{{baseUrl}}/api/ProfileMaintenance/customer/save_payment_option"
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																}
+															],
+															"cookie": [],
+															"responseTime": null,
+															"body": "{\n  \"data\": \"nulla sunt\",\n  \"message\": \"Duis magna\",\n  \"isSuccessful\": true,\n  \"messages\": [\n    \"eu\",\n    \"d\"\n  ],\n  \"timeGenerated\": \"2001-06-23T03:36:40.151Z\"\n}"
+														}
+													]
+												},
+												{
+													"name": "Save_PaymentOption_Unauthorized Copy",
+													"event": [
+														{
+															"listen": "test",
+															"script": {
+																"id": "fcb85d63-19f1-4af4-a527-f461133a783c",
+																"exec": [
+																	"// Unauthorized not catered for"
+																],
+																"type": "text/javascript",
+																"packages": {}
+															}
+														}
+													],
+													"id": "f4d4b08c-c416-45f4-a441-8aca40fe56cf",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
+														"auth": {
+															"type": "bearer",
+															"bearer": {
+																"token": "{{bearerToken_Expired}}"
+															}
+														},
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"type\": \"Card\", //or Bank\n  \"cardInformation\": {\n    \"cvv\": \"05\",\n    \"cardNumber\": \"5399412210558123\",\n    \"expiresInMMYY\": \"08/28\"\n  }\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl_Dev}}/api/ProfileMaintenance/customer/save_payment_option"
+													},
+													"response": [
+														{
+															"id": "c4d10181-2481-4379-8f14-9370e3d4b48e",
 															"name": "Success",
 															"originalRequest": {
 																"method": "POST",
