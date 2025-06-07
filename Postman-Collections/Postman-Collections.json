@@ -8865,17 +8865,39 @@
 							"name": "public",
 							"item": [
 								{
-									"name": "/api/ServerTest/public",
+									"name": "ServerTest/public",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "4514fbf3-1f77-49de-86be-47aa1db86093",
+												"exec": [
+													"const jsonData = pm.response.json();\r",
+													"\r",
+													"pm.test(\"Status code is 200\", () => {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Response indicates server is running\", () => {\r",
+													"    pm.expect(jsonData).to.have.property(\"data\", \"Server is up and running.\");\r",
+													"    pm.expect(jsonData).to.have.property(\"message\", \"\");\r",
+													"    pm.expect(jsonData).to.have.property(\"isSuccessful\", true);\r",
+													"    pm.expect(jsonData).to.have.property(\"messages\").that.is.an(\"array\").that.is.empty;\r",
+													"    pm.expect(jsonData).to.have.property(\"timeGenerated\").that.is.a(\"string\");\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
 									"id": "89190c50-4776-482a-8941-ea63a5d329a4",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
 									},
 									"request": {
 										"auth": {
-											"type": "bearer",
-											"bearer": {
-												"token": "{{bearerToken}}"
-											}
+											"type": "noauth"
 										},
 										"method": "POST",
 										"header": [
@@ -8933,6 +8955,12 @@
 										"disableBodyPruning": true
 									},
 									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "{{bearerToken}}"
+											}
+										},
 										"method": "POST",
 										"header": [
 											{
@@ -8940,7 +8968,7 @@
 												"value": "application/json"
 											}
 										],
-										"url": "{{baseUrl}}/api/ServerTest/protected"
+										"url": "{{baseUrl_Dev}}/api/ServerTest/protected"
 									},
 									"response": [
 										{
