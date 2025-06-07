@@ -6213,6 +6213,115 @@
 											]
 										},
 										{
+											"name": "Set_Wallet_PIN_Invalid_PIN",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "65ab0e03-2f7d-4302-a8a3-43f5736d1129",
+														"exec": [
+															"const jsonData = pm.response.json();\r",
+															"\r",
+															"pm.test(\"Status code is 400\", () => {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Response indicates invalid PIN format\", () => {\r",
+															"    pm.expect(jsonData).to.have.property(\"data\", \"\");\r",
+															"    pm.expect(jsonData).to.have.property(\"message\", \"Invalid pin format. Please, confirm and try again.\");\r",
+															"    pm.expect(jsonData).to.have.property(\"isSuccessful\", false);\r",
+															"    pm.expect(jsonData).to.have.property(\"messages\").that.is.an(\"array\").that.is.empty;\r",
+															"    pm.expect(jsonData).to.have.property(\"timeGenerated\").that.is.a(\"string\");\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "489264d3-294a-4f65-916a-3a92e8058698",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"pin\": \"00\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl_Dev}}/api/ProfileMaintenance/customer/set_wallet_pin"
+											},
+											"response": [
+												{
+													"id": "b37ea2db-8c80-4ab2-b9b4-4cff56a7a575",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"pin\": \"magna voluptate\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/ProfileMaintenance/customer/set_wallet_pin"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"data\": \"nulla sunt\",\n  \"message\": \"Duis magna\",\n  \"isSuccessful\": true,\n  \"messages\": [\n    \"eu\",\n    \"d\"\n  ],\n  \"timeGenerated\": \"2001-06-23T03:36:40.151Z\"\n}"
+												}
+											]
+										},
+										{
 											"name": "Set_Wallet_PIN_AlreadySet",
 											"event": [
 												{
