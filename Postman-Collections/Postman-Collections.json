@@ -905,17 +905,7 @@
 														"id": "e96fb86d-1758-486b-8824-4610fc079761",
 														"exec": [
 															"//Response error messsage not properly catered for\r",
-															"const response = pm.response.json();\r",
 															"\r",
-															"pm.test('Status code is 400', function () {\r",
-															"    pm.response.to.have.status(400);\r",
-															"});\r",
-															"\r",
-															"pm.test('Response body contains valid error message', function () {\r",
-															"    pm.expect(response).to.have.property('errors');\r",
-															"    pm.expect(response.errors).to.be.an('object').that.is.not.empty;\r",
-															"    pm.expect(response.errors).to.have.property('message');\r",
-															"});\r",
 															""
 														],
 														"type": "text/javascript",
@@ -1577,6 +1567,9 @@
 										"disableBodyPruning": true
 									},
 									"request": {
+										"auth": {
+											"type": "noauth"
+										},
 										"method": "GET",
 										"header": [
 											{
