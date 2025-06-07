@@ -7713,6 +7713,12 @@
 										"disableBodyPruning": true
 									},
 									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "{{bearerToken_Expired}}"
+											}
+										},
 										"method": "POST",
 										"header": [
 											{
@@ -7720,7 +7726,7 @@
 												"value": "application/json"
 											}
 										],
-										"url": "{{baseUrl}}/api/ServerTest/public"
+										"url": "{{baseUrl_Dev}}/api/ServerTest/public"
 									},
 									"response": [
 										{
