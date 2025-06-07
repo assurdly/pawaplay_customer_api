@@ -7406,7 +7406,7 @@
 									"name": "Feedback complaint",
 									"item": [
 										{
-											"name": "(USAGE: To send a feedback or raise a complaint.)",
+											"name": "Raise_Feedback_Complaint_Successful",
 											"id": "eb047a9a-cb1a-473a-b475-8e4df11ded17",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
