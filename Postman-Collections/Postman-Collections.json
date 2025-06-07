@@ -5518,7 +5518,7 @@
 											"name": "resend_wallet_creation",
 											"item": [
 												{
-													"name": "(USAGE: To re-initite wallet-creation request in situations when customer does not receive authorization code or authorization failed.)",
+													"name": "Re-initiate_WalletCreation_successful",
 													"id": "bc002fe4-cba9-4bcd-ad9a-dee6583f85e8",
 													"protocolProfileBehavior": {
 														"disableBodyPruning": true
@@ -5739,7 +5739,7 @@
 																"value": "application/json"
 															}
 														],
-														"url": "{{baseUrl}}/api/WalletMaintenance/get/all_banks"
+														"url": "{{baseUrl_Dev}}/api/WalletMaintenance/get/all_banks"
 													},
 													"response": [
 														{
