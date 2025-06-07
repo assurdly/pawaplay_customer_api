@@ -1,1 +1,0 @@
-{"type":"https://tools.ietf.org/html/rfc7231#section-6.5.1","title":"One or more validation errors occurred.","status":400,"traceId":"00-0ae29aeda46e0fafd06546c45cba272b-8e1a07c397844042-00","errors":{"$.usageReason":["The JSON value could not be converted to PawaplaySharedKernel.Enums+OTPUsageReason. Path: $.usageReason | LineNumber: 3 | BytePositionInLine: 29."]}}
