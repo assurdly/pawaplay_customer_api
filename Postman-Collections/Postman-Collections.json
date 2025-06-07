@@ -3181,7 +3181,7 @@
 											"script": {
 												"id": "5b9b1dba-ff60-430b-a7fb-d7cd7a727e9f",
 												"exec": [
-													"//To be upadted when a bill payment trasnaction is made"
+													"//To be updated when a bill and payment trasnaction is made"
 												],
 												"type": "text/javascript",
 												"packages": {}
@@ -3309,7 +3309,7 @@
 									]
 								},
 								{
-									"name": "Retrieve_BillPayment_Transaction_NoHitory",
+									"name": "Retrieve_Bill/Payment_Transaction_NoHitory",
 									"event": [
 										{
 											"listen": "test",
@@ -3460,7 +3460,7 @@
 									]
 								},
 								{
-									"name": "Retrieve_BillPayment_Transaction_Unauthorized",
+									"name": "Retrieve_Bill/Payment_Transaction_Unauthorized",
 									"event": [
 										{
 											"listen": "test",
