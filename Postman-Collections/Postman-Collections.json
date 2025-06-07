@@ -7808,7 +7808,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"customerProfileID\": \"urn:uuid:c4310fd6-a97c-e42f-ccd4-5cb3195bc4fc\",\n  \"notificationTitle\": \"dolore in\",\n  \"notificationMessage\": \"magna adipisici\"\n}",
+													"raw": "{\n  \"customerProfileID\": \"ff45989f-0acb-48d2-8016-625e13b98a44\",\n  \"notificationTitle\": \"Test\",\n  \"notificationMessage\": \"API test\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
@@ -7816,7 +7816,7 @@
 														}
 													}
 												},
-												"url": "{{baseUrl}}/api/Notifications/customer/add_notification"
+												"url": "{{baseUrl_Dev}}/api/Notifications/customer/add_notification"
 											},
 											"response": [
 												{
