@@ -9690,7 +9690,7 @@
 					"id": "8295cd15-9fab-43b4-ac42-5a342648572d"
 				},
 				{
-					"name": "TokenPurchase",
+					"name": "Power",
 					"item": [
 						{
 							"name": "get",
@@ -9795,41 +9795,14 @@
 											]
 										},
 										{
-											"name": "States_ServiceProviders_Successful Copy",
+											"name": "States_ServiceProviders_Unauthorized",
 											"event": [
 												{
 													"listen": "test",
 													"script": {
 														"id": "b296ebcc-9214-41b5-b473-d99130ae7477",
 														"exec": [
-															"const jsonData = pm.response.json();\r",
-															"\r",
-															"pm.test(\"Status code is 200\", () => {\r",
-															"    pm.response.to.have.status(200);\r",
-															"});\r",
-															"\r",
-															"pm.test(\"Response indicates successful processing\", () => {\r",
-															"    pm.expect(jsonData).to.have.property(\"isSuccessful\", true);\r",
-															"    pm.expect(jsonData).to.have.property(\"message\", \"Request was processed successfully.\");\r",
-															"    pm.expect(jsonData).to.have.property(\"messages\").that.is.an(\"array\").that.is.empty;\r",
-															"    pm.expect(jsonData).to.have.property(\"timeGenerated\").that.is.a(\"string\");\r",
-															"});\r",
-															"\r",
-															"pm.test(\"Response contains states array with 37 states\", () => {\r",
-															"    pm.expect(jsonData.data).to.have.property(\"states\").that.is.an(\"array\").with.lengthOf(37);\r",
-															"});\r",
-															"\r",
-															"pm.test(\"Response contains serviceProviders array with at least one provider\", () => {\r",
-															"    pm.expect(jsonData.data).to.have.property(\"serviceProviders\").that.is.an(\"array\").that.is.not.empty;\r",
-															"});\r",
-															"\r",
-															"pm.test(\"Service provider has required properties\", () => {\r",
-															"    const firstProvider = jsonData.data.serviceProviders[0];\r",
-															"    pm.expect(firstProvider).to.have.property(\"code\").that.is.a(\"string\");\r",
-															"    pm.expect(firstProvider).to.have.property(\"name\").that.is.a(\"string\");\r",
-															"    pm.expect(firstProvider).to.have.property(\"state\").that.is.a(\"string\");\r",
-															"    pm.expect(firstProvider).to.have.property(\"minPurchaseableAmount\").that.is.a(\"number\");\r",
-															"});"
+															"//Unauthorized not catered for"
 														],
 														"type": "text/javascript",
 														"packages": {}
@@ -9842,7 +9815,10 @@
 											},
 											"request": {
 												"auth": {
-													"type": "noauth"
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken_Expired}}"
+													}
 												},
 												"method": "GET",
 												"header": [
@@ -9906,6 +9882,12 @@
 												"disableBodyPruning": true
 											},
 											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
 												"method": "GET",
 												"header": [
 													{
@@ -9914,9 +9896,9 @@
 													}
 												],
 												"url": {
-													"raw": "{{baseUrl}}/api/TokenPurchase/validate/meter_number?meterNumber=incididunt commodo&meterType=Prepaid&distributorID=urn:uuid:2ec58017-79ee-1e8f-5971-a5156d2671e3",
+													"raw": "{{baseUrl_Dev}}/api/TokenPurchase/validate/meter_number?meterNumber=1111111111111&meterType=Prepaid&distributorID=47f48bbb-91bd-40a9-9537-c2a0a7a51b1e",
 													"host": [
-														"{{baseUrl}}"
+														"{{baseUrl_Dev}}"
 													],
 													"path": [
 														"api",
@@ -9927,7 +9909,7 @@
 													"query": [
 														{
 															"key": "meterNumber",
-															"value": "incididunt commodo"
+															"value": "1111111111111"
 														},
 														{
 															"key": "meterType",
@@ -9935,7 +9917,7 @@
 														},
 														{
 															"key": "distributorID",
-															"value": "urn:uuid:2ec58017-79ee-1e8f-5971-a5156d2671e3"
+															"value": "47f48bbb-91bd-40a9-9537-c2a0a7a51b1e"
 														}
 													]
 												}
