@@ -10651,7 +10651,7 @@
 													]
 												},
 												{
-													"name": "INValidate_MeterNumber_Postpaid",
+													"name": "Invalidate_MeterNumber_Postpaid",
 													"event": [
 														{
 															"listen": "test",
