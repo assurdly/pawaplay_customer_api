@@ -7897,7 +7897,7 @@
 											]
 										},
 										{
-											"name": "Add_Notification_Invalid_ProfileID",
+											"name": "Add_Notification_InvalidRequest",
 											"event": [
 												{
 													"listen": "test",
@@ -7917,6 +7917,108 @@
 															"    pm.expect(jsonData).to.have.property(\"messages\").that.is.an(\"array\").that.is.empty;\r",
 															"    pm.expect(jsonData).to.have.property(\"timeGenerated\").that.is.a(\"string\");\r",
 															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "fb57d757-dcd9-4378-a903-c9a78d32ed1b",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													},
+													{
+														"key": "x-api-key",
+														"value": "PawaPlaySecretAPIKeyYBnWEoF9gPHVfJwriI4QC41eb+X",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"customerProfileID\": \"ff45989f-0acb-48d2-8016-625e13b98a44\",\n  \"notificationTitle\": \"Test\",\n  \"notificationMessage\": \"\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl_Dev}}/api/Notifications/customer/add_notification"
+											},
+											"response": [
+												{
+													"id": "9c356698-041f-4a3d-a9e0-9e9e0a0d89c6",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"customerProfileID\": \"urn:uuid:c4310fd6-a97c-e42f-ccd4-5cb3195bc4fc\",\n  \"notificationTitle\": \"dolore in\",\n  \"notificationMessage\": \"magna adipisici\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/Notifications/customer/add_notification"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"data\": \"nulla sunt\",\n  \"message\": \"Duis magna\",\n  \"isSuccessful\": true,\n  \"messages\": [\n    \"eu\",\n    \"d\"\n  ],\n  \"timeGenerated\": \"2001-06-23T03:36:40.151Z\"\n}"
+												}
+											]
+										},
+										{
+											"name": "Add_Notification_Invalid_ProfileID",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "4b828d06-e8f4-4365-af0f-41b70be2373a",
+														"exec": [
+															"// To be updated when the error message is fixed."
 														],
 														"type": "text/javascript",
 														"packages": {}
