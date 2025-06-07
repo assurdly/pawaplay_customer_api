@@ -7182,7 +7182,104 @@
 											]
 										},
 										{
-											"name": "Reset_Wallet_PIN_Successful Copy",
+											"name": "Reset_Wallet_PIN_Unauthorized",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "dceb66de-a311-45f0-bb73-1413aba1d1a2",
+														"exec": [
+															"//Unauthorized not caterd for"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "1b788d20-6bfe-44e7-85c8-20a3f81c690c",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken_Expired}}"
+													}
+												},
+												"method": "PATCH",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"pin\": \"2222\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl_Dev}}/api/ProfileMaintenance/customer/reset_transaction_pin"
+											},
+											"response": [
+												{
+													"id": "6a95051b-198c-404b-9d57-5ccdb35a8b29",
+													"name": "Success",
+													"originalRequest": {
+														"method": "PATCH",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"pin\": \"magna voluptate\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/ProfileMaintenance/customer/reset_transaction_pin"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"data\": \"nulla sunt\",\n  \"message\": \"Duis magna\",\n  \"isSuccessful\": true,\n  \"messages\": [\n    \"eu\",\n    \"d\"\n  ],\n  \"timeGenerated\": \"2001-06-23T03:36:40.151Z\"\n}"
+												}
+											]
+										},
+										{
+											"name": "Reset_Wallet_Invalid_PIN",
 											"event": [
 												{
 													"listen": "test",
@@ -7191,17 +7288,17 @@
 														"exec": [
 															"const jsonData = pm.response.json();\r",
 															"\r",
-															"pm.test(\"Status code is 200\", () => {\r",
-															"    pm.response.to.have.status(200);\r",
+															"pm.test(\"Status code is 400\", () => {\r",
+															"    pm.response.to.have.status(400);\r",
 															"});\r",
 															"\r",
-															"pm.test(\"Response indicates PIN change was successful\", () => {\r",
-															"    pm.expect(jsonData).to.have.property(\"data\", null);\r",
-															"    pm.expect(jsonData).to.have.property(\"message\", \"Your pin has been successfully changed.\");\r",
-															"    pm.expect(jsonData).to.have.property(\"isSuccessful\", true);\r",
+															"pm.test(\"Response indicates invalid PIN format\", () => {\r",
+															"    pm.expect(jsonData).to.have.property(\"data\", \"\");\r",
+															"    pm.expect(jsonData).to.have.property(\"message\", \"Invalid pin format. Please, confirm and try again.\");\r",
+															"    pm.expect(jsonData).to.have.property(\"isSuccessful\", false);\r",
 															"    pm.expect(jsonData).to.have.property(\"messages\").that.is.an(\"array\").that.is.empty;\r",
 															"    pm.expect(jsonData).to.have.property(\"timeGenerated\").that.is.a(\"string\");\r",
-															"});"
+															"    });"
 														],
 														"type": "text/javascript",
 														"packages": {}
