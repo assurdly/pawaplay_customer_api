@@ -1,0 +1,5 @@
+{
+  "customerProfileID": "urn:uuid:c4310fd6-a97c-e42f-ccd4-5cb3195bc4fc",
+  "notificationTitle": "dolore in",
+  "notificationMessage": "magna adipisici"
+}

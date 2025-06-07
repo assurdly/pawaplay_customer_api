@@ -1,0 +1,5 @@
+{
+  "phoneNumber": "nisi exercitation adipisicing non",
+  "generatedWalletNumber": "Lorem officia aute esse",
+  "generatedWalletHolderName": "laborum"
+}
