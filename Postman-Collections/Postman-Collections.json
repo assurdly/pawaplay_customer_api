@@ -10910,7 +10910,7 @@
 													"name": "token_purhcase_wallet",
 													"item": [
 														{
-															"name": "(USAGE: To process token purchase.)",
+															"name": "Process_token_purchase_wallet",
 															"id": "d6f15f4f-25f7-4992-b48d-c920c25a4a92",
 															"protocolProfileBehavior": {
 																"disableBodyPruning": true
