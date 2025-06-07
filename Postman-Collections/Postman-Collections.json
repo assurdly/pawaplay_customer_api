@@ -10901,21 +10901,46 @@
 							"name": "purchase",
 							"item": [
 								{
-									"name": "token_purchase_wallet",
+									"name": "token_purchase_card",
 									"item": [
 										{
-											"name": "Process token purchase-Wallet",
+											"name": "token_purhcase_card",
 											"item": [
 												{
-													"name": "token_purhcase_wallet",
-													"item": [
-														{
-															"name": "Process_token_purchase_wallet",
-															"id": "d6f15f4f-25f7-4992-b48d-c920c25a4a92",
-															"protocolProfileBehavior": {
-																"disableBodyPruning": true
+													"name": "Process_token_purchase_card",
+													"id": "d6f15f4f-25f7-4992-b48d-c920c25a4a92",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
 															},
-															"request": {
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"amount\": -21839000.639209777,\n  \"paymentDetails\": {\n    \"type\": \"Card\",\n    \"cardDetails\": {\n      \"referenceNumber\": \"voluptate sint eu\"\n    },\n    \"walletDetails\": {\n      \"pin\": \"Ut laborum Lorem do\"\n    }\n  },\n  \"uniqueTokenDistibutorID\": \"urn:uuid:b1792088-f899-d8c9-fd34-f7a2a72a6878\",\n  \"meterDetails\": {\n    \"meterNumber\": \"labore tempor\",\n    \"meterType\": \"Postpaid\",\n    \"meterActionIndicator\": \"DontSave\",\n    \"saveMeterDetailsAs\": \"\"\n  }\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/TokenPurchase/purchase/token"
+													},
+													"response": [
+														{
+															"id": "769076f7-88b2-4d28-b4a1-d144082cb470",
+															"name": "Success",
+															"originalRequest": {
 																"method": "POST",
 																"header": [
 																	{
@@ -10925,6 +10950,11 @@
 																	{
 																		"key": "Accept",
 																		"value": "application/json"
+																	},
+																	{
+																		"description": "Added as a part of security scheme: bearer",
+																		"key": "Authorization",
+																		"value": "Bearer <token>"
 																	}
 																],
 																"body": {
@@ -10939,85 +10969,89 @@
 																},
 																"url": "{{baseUrl}}/api/TokenPurchase/purchase/token"
 															},
-															"response": [
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "json",
+															"header": [
 																{
-																	"id": "769076f7-88b2-4d28-b4a1-d144082cb470",
-																	"name": "Success",
-																	"originalRequest": {
-																		"method": "POST",
-																		"header": [
-																			{
-																				"key": "Content-Type",
-																				"value": "application/json"
-																			},
-																			{
-																				"key": "Accept",
-																				"value": "application/json"
-																			},
-																			{
-																				"description": "Added as a part of security scheme: bearer",
-																				"key": "Authorization",
-																				"value": "Bearer <token>"
-																			}
-																		],
-																		"body": {
-																			"mode": "raw",
-																			"raw": "{\n  \"amount\": -21839000.639209777,\n  \"paymentDetails\": {\n    \"type\": \"Card\",\n    \"cardDetails\": {\n      \"referenceNumber\": \"voluptate sint eu\"\n    },\n    \"walletDetails\": {\n      \"pin\": \"Ut laborum Lorem do\"\n    }\n  },\n  \"uniqueTokenDistibutorID\": \"urn:uuid:b1792088-f899-d8c9-fd34-f7a2a72a6878\",\n  \"meterDetails\": {\n    \"meterNumber\": \"labore tempor\",\n    \"meterType\": \"Postpaid\",\n    \"meterActionIndicator\": \"DontSave\",\n    \"saveMeterDetailsAs\": \"\"\n  }\n}",
-																			"options": {
-																				"raw": {
-																					"headerFamily": "json",
-																					"language": "json"
-																				}
-																			}
-																		},
-																		"url": "{{baseUrl}}/api/TokenPurchase/purchase/token"
-																	},
-																	"status": "OK",
-																	"code": 200,
-																	"_postman_previewlanguage": "json",
-																	"header": [
-																		{
-																			"key": "Content-Type",
-																			"value": "application/json"
-																		}
-																	],
-																	"cookie": [],
-																	"responseTime": null,
-																	"body": "{\n  \"data\": {\n    \"token\": \"veniam dolore\",\n    \"status\": \"Failed\",\n    \"uniqueReferenceID\": \"dolore nulla\"\n  },\n  \"message\": \"dolore in ea cillum\",\n  \"isSuccessful\": false,\n  \"messages\": [\n    \"est officia non ullamco quis\",\n    \"culpa fugiat esse\"\n  ],\n  \"timeGenerated\": \"1947-08-06T19:35:13.424Z\"\n}"
+																	"key": "Content-Type",
+																	"value": "application/json"
+																}
+															],
+															"cookie": [],
+															"responseTime": null,
+															"body": "{\n  \"data\": {\n    \"token\": \"veniam dolore\",\n    \"status\": \"Failed\",\n    \"uniqueReferenceID\": \"dolore nulla\"\n  },\n  \"message\": \"dolore in ea cillum\",\n  \"isSuccessful\": false,\n  \"messages\": [\n    \"est officia non ullamco quis\",\n    \"culpa fugiat esse\"\n  ],\n  \"timeGenerated\": \"1947-08-06T19:35:13.424Z\"\n}"
+														}
+													]
+												}
+											],
+											"id": "fcbc04e7-66f2-4f1c-be68-20ea2f15e2cc"
+										},
+										{
+											"name": "status",
+											"item": [
+												{
+													"name": "(USAGE: To get an updated status on a pending/processing token-purchase request, using received unique reference ID.)",
+													"event": [
+														{
+															"listen": "test",
+															"script": {
+																"id": "e23052a1-12a3-4545-915f-d7c32979983a",
+																"exec": [
+																	"// Not yet tested as no purchase has been made yet "
+																],
+																"type": "text/javascript",
+																"packages": {}
+															}
+														}
+													],
+													"id": "9b936b0e-dd56-4709-82cc-84aa8fd5dde8",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/TokenPurchase/purchase/token/status?uniqueReferenceID=incididunt commodo",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"TokenPurchase",
+																"purchase",
+																"token",
+																"status"
+															],
+															"query": [
+																{
+																	"key": "uniqueReferenceID",
+																	"value": "incididunt commodo"
 																}
 															]
 														}
-													],
-													"id": "fcbc04e7-66f2-4f1c-be68-20ea2f15e2cc"
-												},
-												{
-													"name": "status",
-													"item": [
+													},
+													"response": [
 														{
-															"name": "(USAGE: To get an updated status on a pending/processing token-purchase request, using received unique reference ID.)",
-															"event": [
-																{
-																	"listen": "test",
-																	"script": {
-																		"id": "e23052a1-12a3-4545-915f-d7c32979983a",
-																		"exec": [
-																			"// Not yet tested as no purchase has been made yet "
-																		],
-																		"type": "text/javascript",
-																		"packages": {}
-																	}
-																}
-															],
-															"id": "9b936b0e-dd56-4709-82cc-84aa8fd5dde8",
-															"protocolProfileBehavior": {
-																"disableBodyPruning": true
-															},
-															"request": {
+															"id": "d27c02a7-076d-422c-9a46-ed1f5c127436",
+															"name": "Success",
+															"originalRequest": {
 																"method": "GET",
 																"header": [
 																	{
 																		"key": "Accept",
 																		"value": "application/json"
+																	},
+																	{
+																		"description": "Added as a part of security scheme: bearer",
+																		"key": "Authorization",
+																		"value": "Bearer <token>"
 																	}
 																],
 																"url": {
@@ -11040,63 +11074,23 @@
 																	]
 																}
 															},
-															"response": [
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "json",
+															"header": [
 																{
-																	"id": "d27c02a7-076d-422c-9a46-ed1f5c127436",
-																	"name": "Success",
-																	"originalRequest": {
-																		"method": "GET",
-																		"header": [
-																			{
-																				"key": "Accept",
-																				"value": "application/json"
-																			},
-																			{
-																				"description": "Added as a part of security scheme: bearer",
-																				"key": "Authorization",
-																				"value": "Bearer <token>"
-																			}
-																		],
-																		"url": {
-																			"raw": "{{baseUrl}}/api/TokenPurchase/purchase/token/status?uniqueReferenceID=incididunt commodo",
-																			"host": [
-																				"{{baseUrl}}"
-																			],
-																			"path": [
-																				"api",
-																				"TokenPurchase",
-																				"purchase",
-																				"token",
-																				"status"
-																			],
-																			"query": [
-																				{
-																					"key": "uniqueReferenceID",
-																					"value": "incididunt commodo"
-																				}
-																			]
-																		}
-																	},
-																	"status": "OK",
-																	"code": 200,
-																	"_postman_previewlanguage": "json",
-																	"header": [
-																		{
-																			"key": "Content-Type",
-																			"value": "application/json"
-																		}
-																	],
-																	"cookie": [],
-																	"responseTime": null,
-																	"body": "{\n  \"data\": {\n    \"token\": \"veniam dolore\",\n    \"status\": \"Failed\",\n    \"uniqueReferenceID\": \"dolore nulla\"\n  },\n  \"message\": \"dolore in ea cillum\",\n  \"isSuccessful\": false,\n  \"messages\": [\n    \"est officia non ullamco quis\",\n    \"culpa fugiat esse\"\n  ],\n  \"timeGenerated\": \"1947-08-06T19:35:13.424Z\"\n}"
+																	"key": "Content-Type",
+																	"value": "application/json"
 																}
-															]
+															],
+															"cookie": [],
+															"responseTime": null,
+															"body": "{\n  \"data\": {\n    \"token\": \"veniam dolore\",\n    \"status\": \"Failed\",\n    \"uniqueReferenceID\": \"dolore nulla\"\n  },\n  \"message\": \"dolore in ea cillum\",\n  \"isSuccessful\": false,\n  \"messages\": [\n    \"est officia non ullamco quis\",\n    \"culpa fugiat esse\"\n  ],\n  \"timeGenerated\": \"1947-08-06T19:35:13.424Z\"\n}"
 														}
-													],
-													"id": "ab7ef5d8-2ecc-4299-8ad9-8de25eb97ff4"
+													]
 												}
 											],
-											"id": "365d0868-6136-442c-9c7f-4d18dc035a30"
+											"id": "ab7ef5d8-2ecc-4299-8ad9-8de25eb97ff4"
 										}
 									],
 									"id": "6f8a2c20-0262-4adb-a0f3-7e9473e73879"
