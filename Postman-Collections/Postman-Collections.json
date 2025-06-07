@@ -7783,7 +7783,32 @@
 									"name": "Add_notification",
 									"item": [
 										{
-											"name": "(USAGE: To add notification for a customer (BE use only).)",
+											"name": "Add_Notification_Successful",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "4b828d06-e8f4-4365-af0f-41b70be2373a",
+														"exec": [
+															"const jsonData = pm.response.json();\r",
+															"\r",
+															"pm.test(\"Status code is 200\", () => {\r",
+															"    pm.response.to.have.status(200);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Response indicates successful notification addition\", () => {\r",
+															"    pm.expect(jsonData).to.have.property(\"data\", \"Notification was added successfully.\");\r",
+															"    pm.expect(jsonData).to.have.property(\"message\", \"\");\r",
+															"    pm.expect(jsonData).to.have.property(\"isSuccessful\", true);\r",
+															"    pm.expect(jsonData).to.have.property(\"messages\").that.is.an(\"array\").that.is.empty;\r",
+															"    pm.expect(jsonData).to.have.property(\"timeGenerated\").that.is.a(\"string\");\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
 											"id": "7d8ad05f-b0bc-4573-a3ae-28f051f56de5",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -7804,6 +7829,11 @@
 													{
 														"key": "Accept",
 														"value": "application/json"
+													},
+													{
+														"key": "x-api-key",
+														"value": "PawaPlaySecretAPIKeyYBnWEoF9gPHVfJwriI4QC41eb+X",
+														"type": "text"
 													}
 												],
 												"body": {
@@ -7821,6 +7851,120 @@
 											"response": [
 												{
 													"id": "224a80b8-f3f1-4be8-a35b-b5f67ad564f3",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"customerProfileID\": \"urn:uuid:c4310fd6-a97c-e42f-ccd4-5cb3195bc4fc\",\n  \"notificationTitle\": \"dolore in\",\n  \"notificationMessage\": \"magna adipisici\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/Notifications/customer/add_notification"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"data\": \"nulla sunt\",\n  \"message\": \"Duis magna\",\n  \"isSuccessful\": true,\n  \"messages\": [\n    \"eu\",\n    \"d\"\n  ],\n  \"timeGenerated\": \"2001-06-23T03:36:40.151Z\"\n}"
+												}
+											]
+										},
+										{
+											"name": "Add_Notification_Successful Copy",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "4b828d06-e8f4-4365-af0f-41b70be2373a",
+														"exec": [
+															"const jsonData = pm.response.json();\r",
+															"\r",
+															"pm.test(\"Status code is 200\", () => {\r",
+															"    pm.response.to.have.status(200);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Response indicates successful notification addition\", () => {\r",
+															"    pm.expect(jsonData).to.have.property(\"data\", \"Notification was added successfully.\");\r",
+															"    pm.expect(jsonData).to.have.property(\"message\", \"\");\r",
+															"    pm.expect(jsonData).to.have.property(\"isSuccessful\", true);\r",
+															"    pm.expect(jsonData).to.have.property(\"messages\").that.is.an(\"array\").that.is.empty;\r",
+															"    pm.expect(jsonData).to.have.property(\"timeGenerated\").that.is.a(\"string\");\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "c4d17ed1-3458-47dc-ae67-b97f5ef8e5c3",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													},
+													{
+														"key": "x-api-key",
+														"value": "PawaPlaySecretAPIKeyYBnWEoF9gPHVfJwriI4QC41eb+X",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"customerProfileID\": \"ff45989f-0acb-48d2-8016-625e13\",\n  \"notificationTitle\": \"Test\",\n  \"notificationMessage\": \"API test for this endpoint\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl_Dev}}/api/Notifications/customer/add_notification"
+											},
+											"response": [
+												{
+													"id": "28d73e90-5491-4f52-b178-6cec55881b43",
 													"name": "Success",
 													"originalRequest": {
 														"method": "POST",
