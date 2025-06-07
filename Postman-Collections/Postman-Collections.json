@@ -4899,7 +4899,7 @@
 											"id": "fcbc04e7-66f2-4f1c-be68-20ea2f15e2cc"
 										},
 										{
-											"name": "status",
+											"name": "Status",
 											"item": [
 												{
 													"name": "(USAGE: To get an updated status on a pending/processing token-purchase request, using received unique reference ID.)",
