@@ -2140,13 +2140,16 @@
 											}
 										}
 									],
-									"id": "8a43f432-8a04-458c-83d9-034f6f8b08e0",
+									"id": "1795b7e4-f25b-476a-bb7a-c1edf4416e73",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
 									},
 									"request": {
 										"auth": {
-											"type": "noauth"
+											"type": "bearer",
+											"bearer": {
+												"token": "{{bearerToken}}"
+											}
 										},
 										"method": "PATCH",
 										"header": [
@@ -2173,7 +2176,7 @@
 									},
 									"response": [
 										{
-											"id": "ecd133bc-b86e-43a2-b3aa-ba464df3468d",
+											"id": "b5791fa9-6134-4da6-8a9a-4b5fd349a144",
 											"name": "Success",
 											"originalRequest": {
 												"method": "PATCH",
@@ -2229,19 +2232,15 @@
 												"exec": [
 													"const jsonData = pm.response.json();\r",
 													"\r",
-													"pm.test(\"Response status code is 400\", () => {\r",
+													"pm.test(\"Status code is 400\", () => {\r",
 													"    pm.response.to.have.status(400);\r",
 													"});\r",
 													"\r",
-													"pm.test(\"Response body contains expected fields\", () => {\r",
+													"pm.test(\"Response indicates password is not acceptable\", () => {\r",
 													"    pm.expect(jsonData).to.have.property(\"data\", \"\");\r",
-													"    pm.expect(jsonData).to.have.property(\"message\").that.includes(\"Please, try another password\");\r",
+													"    pm.expect(jsonData).to.have.property(\"message\").that.includes(\"Hi. Please, try another password.\");\r",
 													"    pm.expect(jsonData).to.have.property(\"isSuccessful\", false);\r",
-													"});\r",
-													"\r",
-													"pm.test(\"Response structure is correct\", () => {\r",
-													"    pm.expect(jsonData).to.have.property(\"messages\").that.is.an(\"array\");\r",
-													"    pm.expect(jsonData.messages).to.be.empty;\r",
+													"    pm.expect(jsonData).to.have.property(\"messages\").that.is.an(\"array\").that.is.empty;\r",
 													"    pm.expect(jsonData).to.have.property(\"timeGenerated\").that.is.a(\"string\");\r",
 													"});"
 												],
@@ -2250,7 +2249,7 @@
 											}
 										}
 									],
-									"id": "d2739dcc-714c-4b65-9ccd-9984cdbbdb1a",
+									"id": "8a43f432-8a04-458c-83d9-034f6f8b08e0",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
 									},
@@ -2286,7 +2285,7 @@
 									},
 									"response": [
 										{
-											"id": "ae76b369-9d19-4f44-853f-eb4060a1136f",
+											"id": "ecd133bc-b86e-43a2-b3aa-ba464df3468d",
 											"name": "Success",
 											"originalRequest": {
 												"method": "PATCH",
