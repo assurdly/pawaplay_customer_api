@@ -5726,7 +5726,20 @@
 											"name": "all_banks",
 											"item": [
 												{
-													"name": "(USAGE: To get a list of all banks.)",
+													"name": "Get_All_Banks",
+													"event": [
+														{
+															"listen": "test",
+															"script": {
+																"id": "6d894141-b47b-4049-b1fd-887c9be6a99c",
+																"exec": [
+																	"//This would be updated after fix"
+																],
+																"type": "text/javascript",
+																"packages": {}
+															}
+														}
+													],
 													"id": "a1dabfda-62f0-4ca0-984f-d57d062997e9",
 													"protocolProfileBehavior": {
 														"disableBodyPruning": true
