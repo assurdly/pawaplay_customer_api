@@ -3174,7 +3174,20 @@
 							"name": "activity_history",
 							"item": [
 								{
-									"name": "Retrieve_BillPayment_Transaction_Successful",
+									"name": "Retrieve_Bill/Payment_Transaction_Successful",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "5b9b1dba-ff60-430b-a7fb-d7cd7a727e9f",
+												"exec": [
+													"//To be upadted when a bill payment trasnaction is made"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
 									"id": "4c8469fd-02b7-42ef-866d-ecb3dbafeac0",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
