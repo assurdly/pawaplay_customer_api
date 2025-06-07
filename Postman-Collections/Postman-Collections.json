@@ -7838,7 +7838,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"customerProfileID\": \"ff45989f-0acb-48d2-8016-625e13b98a44\",\n  \"notificationTitle\": \"Yo\",\n  \"notificationMessage\": \"API test for this endpoint\"\n}",
+													"raw": "{\n  \"customerProfileID\": \"ff45989f-0acb-48d2-8016-625e13b98a44\",\n  \"notificationTitle\": \"Big woman\",\n  \"notificationMessage\": \"API test for this endpoint\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
@@ -8226,6 +8226,12 @@
 												"disableBodyPruning": true
 											},
 											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
 												"method": "PATCH",
 												"header": [
 													{
@@ -8239,7 +8245,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"isSetAllAsRead\": true,\n  \"notificationIDs\": [\n    \"urn:uuid:a4234785-37f4-2238-064f-838066781d8d\",\n    \"urn:uuid:6d058791-468b-1d2c-fd4c-e2cccbdbde81\"\n  ]\n}",
+													"raw": "{\n  \"isSetAllAsRead\": true,\n  \"notificationIDs\": [\n    \"98f289cf-229d-4b54-b80a-a897856b3a8a\"\n  ]\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
