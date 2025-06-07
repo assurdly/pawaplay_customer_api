@@ -2107,7 +2107,7 @@
 							"id": "f9311817-efd3-4ddd-b68d-71834479066f"
 						},
 						{
-							"name": "Reset_password",
+							"name": "Reset_password_Outside",
 							"item": [
 								{
 									"name": "Reset_Password-Successful",
@@ -2255,6 +2255,12 @@
 										"disableBodyPruning": true
 									},
 									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "{{bearerToken}}"
+											}
+										},
 										"method": "PATCH",
 										"header": [
 											{
