@@ -4812,10 +4812,10 @@
 							"name": "purchase",
 							"item": [
 								{
-									"name": "token_purchase_card",
+									"name": "Token_purchase_card",
 									"item": [
 										{
-											"name": "token_purhcase_card",
+											"name": "Token_purhcase_card",
 											"item": [
 												{
 													"name": "Process_token_purchase_card",
