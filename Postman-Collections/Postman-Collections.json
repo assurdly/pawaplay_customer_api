@@ -10025,7 +10025,7 @@
 															"script": {
 																"id": "625bce4a-cb5d-49d7-87bc-3b00c2f95c8e",
 																"exec": [
-																	"//Unauthorized not catered for"
+																	"//Unauthorized error message not catered for"
 																],
 																"type": "text/javascript",
 																"packages": {}
@@ -10908,6 +10908,19 @@
 											"item": [
 												{
 													"name": "(USAGE: To get an updated status on a pending/processing token-purchase request, using received unique reference ID.)",
+													"event": [
+														{
+															"listen": "test",
+															"script": {
+																"id": "e23052a1-12a3-4545-915f-d7c32979983a",
+																"exec": [
+																	"// Not yet tested as no purchase has been made yet "
+																],
+																"type": "text/javascript",
+																"packages": {}
+															}
+														}
+													],
 													"id": "9b936b0e-dd56-4709-82cc-84aa8fd5dde8",
 													"protocolProfileBehavior": {
 														"disableBodyPruning": true
