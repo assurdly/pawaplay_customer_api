@@ -3171,7 +3171,7 @@
 					"name": "Dashboard",
 					"item": [
 						{
-							"name": "activity_history",
+							"name": "Activity_history",
 							"item": [
 								{
 									"name": "Retrieve_Bill/Payment_Transaction_Successful",
@@ -3604,10 +3604,10 @@
 					"name": "Power",
 					"item": [
 						{
-							"name": "get",
+							"name": "Get",
 							"item": [
 								{
-									"name": "token_purchase_dropdowns",
+									"name": "Token_purchase_dropdowns",
 									"item": [
 										{
 											"name": "States_ServiceProviders_Successful",
@@ -3713,7 +3713,7 @@
 													"script": {
 														"id": "b296ebcc-9214-41b5-b473-d99130ae7477",
 														"exec": [
-															"//Unauthorized not catered for"
+															"//Unauthorized error message not catered for"
 														],
 														"type": "text/javascript",
 														"packages": {}
@@ -3781,10 +3781,10 @@
 							"id": "b7fad494-42dc-48a5-96e5-284a0f018d48"
 						},
 						{
-							"name": "validate",
+							"name": "Validate",
 							"item": [
 								{
-									"name": "meter_number",
+									"name": "Meter_number",
 									"item": [
 										{
 											"name": "Prepaid",
