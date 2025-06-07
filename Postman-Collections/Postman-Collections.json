@@ -6098,7 +6098,7 @@
 									"name": "set_wallet_pin",
 									"item": [
 										{
-											"name": "(USAGE: To set wallet pin, if one hasn't already been set. Information about this is returned by the login endpoint.)",
+											"name": "Set_Wallet_PIN_Successful",
 											"event": [
 												{
 													"listen": "test",
@@ -6155,6 +6155,109 @@
 											"response": [
 												{
 													"id": "40141eef-fe84-4589-b27d-6ebc4c2ace7d",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"pin\": \"magna voluptate\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/ProfileMaintenance/customer/set_wallet_pin"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"data\": \"nulla sunt\",\n  \"message\": \"Duis magna\",\n  \"isSuccessful\": true,\n  \"messages\": [\n    \"eu\",\n    \"d\"\n  ],\n  \"timeGenerated\": \"2001-06-23T03:36:40.151Z\"\n}"
+												}
+											]
+										},
+										{
+											"name": "Set_Wallet_PIN_AlreadySet",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "65ab0e03-2f7d-4302-a8a3-43f5736d1129",
+														"exec": [
+															"const jsonData = pm.response.json();\r",
+															"\r",
+															"pm.test(\"Status code is 200\", () => {\r",
+															"    pm.response.to.have.status(200);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Response fields for successful PIN creation are correct\", () => {\r",
+															"    pm.expect(jsonData).to.have.property(\"data\", null);\r",
+															"    pm.expect(jsonData).to.have.property(\"message\").that.includes(\"Your pin has been successfully created.\");\r",
+															"    pm.expect(jsonData).to.have.property(\"isSuccessful\", true);\r",
+															"    pm.expect(jsonData).to.have.property(\"messages\").that.is.an(\"array\").that.is.empty;\r",
+															"    pm.expect(jsonData).to.have.property(\"timeGenerated\").that.is.a(\"string\");\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "da4cc8cd-2c32-4aa7-a5ab-d037c77c771d",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"pin\": \"0000\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl_Dev}}/api/ProfileMaintenance/customer/set_wallet_pin"
+											},
+											"response": [
+												{
+													"id": "22f7b8f7-4424-4575-a09e-e35223874b53",
 													"name": "Success",
 													"originalRequest": {
 														"method": "POST",
