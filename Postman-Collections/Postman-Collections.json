@@ -9018,11 +9018,39 @@
 							"item": [
 								{
 									"name": "(USAGE: To subscribe for email updates (newsletter))",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "e6a4e466-742c-4c3d-b1c8-7c725c1be973",
+												"exec": [
+													"const jsonData = pm.response.json();\r",
+													"\r",
+													"pm.test(\"Status code is 200\", () => {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Response indicates successful newsletter subscription\", () => {\r",
+													"    pm.expect(jsonData).to.have.property(\"data\", \"You have successfully subscribed to our newsletter.\");\r",
+													"    pm.expect(jsonData).to.have.property(\"message\", \"\");\r",
+													"    pm.expect(jsonData).to.have.property(\"isSuccessful\", true);\r",
+													"    pm.expect(jsonData).to.have.property(\"messages\").that.is.an(\"array\").that.is.empty;\r",
+													"    pm.expect(jsonData).to.have.property(\"timeGenerated\").that.is.a(\"string\");\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
 									"id": "7c23864e-fd10-4313-bf15-6a18ba10037d",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
 									},
 									"request": {
+										"auth": {
+											"type": "noauth"
+										},
 										"method": "POST",
 										"header": [
 											{
@@ -9031,9 +9059,9 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl}}/api/Subscription/subscribe_to_newsletter?email=incididunt commodo",
+											"raw": "{{baseUrl_Dev}}/api/Subscription/subscribe_to_newsletter?email=pawa1@yopmail.com",
 											"host": [
-												"{{baseUrl}}"
+												"{{baseUrl_Dev}}"
 											],
 											"path": [
 												"api",
@@ -9043,7 +9071,7 @@
 											"query": [
 												{
 													"key": "email",
-													"value": "incididunt commodo"
+													"value": "pawa1@yopmail.com"
 												}
 											]
 										}
