@@ -8529,7 +8529,7 @@
 									"name": "Delete_notification",
 									"item": [
 										{
-											"name": "(USAGE: To delete a notification.)",
+											"name": "Delete_Notification_Successful",
 											"event": [
 												{
 													"listen": "test",
@@ -8595,6 +8595,212 @@
 											"response": [
 												{
 													"id": "de9ce99a-2847-4a7a-9ebb-90514df5a2b3",
+													"name": "Success",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/Notifications/customer/delete_notification?notificationID=urn:uuid:2ec58017-79ee-1e8f-5971-a5156d2671e3",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"Notifications",
+																"customer",
+																"delete_notification"
+															],
+															"query": [
+																{
+																	"key": "notificationID",
+																	"value": "urn:uuid:2ec58017-79ee-1e8f-5971-a5156d2671e3"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"data\": \"nulla sunt\",\n  \"message\": \"Duis magna\",\n  \"isSuccessful\": true,\n  \"messages\": [\n    \"eu\",\n    \"d\"\n  ],\n  \"timeGenerated\": \"2001-06-23T03:36:40.151Z\"\n}"
+												}
+											]
+										},
+										{
+											"name": "Delete_Notification_InvalidID",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "7a4d233b-d61e-4551-b832-3c9ba0899237",
+														"exec": [
+															"// Would be updated when the error message is fixed."
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "063e39f5-8c0b-4255-a69c-1946ff8f37ba",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl_Dev}}/api/Notifications/customer/delete_notification?notificationID=40c48c68-b6ce-483e-ae74-dba65",
+													"host": [
+														"{{baseUrl_Dev}}"
+													],
+													"path": [
+														"api",
+														"Notifications",
+														"customer",
+														"delete_notification"
+													],
+													"query": [
+														{
+															"key": "notificationID",
+															"value": "40c48c68-b6ce-483e-ae74-dba65"
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "4095c59f-7023-465b-9be6-7e21cd0f10cf",
+													"name": "Success",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/Notifications/customer/delete_notification?notificationID=urn:uuid:2ec58017-79ee-1e8f-5971-a5156d2671e3",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"Notifications",
+																"customer",
+																"delete_notification"
+															],
+															"query": [
+																{
+																	"key": "notificationID",
+																	"value": "urn:uuid:2ec58017-79ee-1e8f-5971-a5156d2671e3"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"data\": \"nulla sunt\",\n  \"message\": \"Duis magna\",\n  \"isSuccessful\": true,\n  \"messages\": [\n    \"eu\",\n    \"d\"\n  ],\n  \"timeGenerated\": \"2001-06-23T03:36:40.151Z\"\n}"
+												}
+											]
+										},
+										{
+											"name": "Delete_Notification_Unauthourized",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "7a4d233b-d61e-4551-b832-3c9ba0899237",
+														"exec": [
+															"//Unauthourized not catered for"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "062352e7-5ccb-4e38-8572-314c33a9cfc6",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken_Expired}}"
+													}
+												},
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl_Dev}}/api/Notifications/customer/delete_notification?notificationID=40c48c68-b6ce-483e-ae74-dba650a85526",
+													"host": [
+														"{{baseUrl_Dev}}"
+													],
+													"path": [
+														"api",
+														"Notifications",
+														"customer",
+														"delete_notification"
+													],
+													"query": [
+														{
+															"key": "notificationID",
+															"value": "40c48c68-b6ce-483e-ae74-dba650a85526"
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "d0320121-0c0e-4c1d-885a-8bf183684aee",
 													"name": "Success",
 													"originalRequest": {
 														"method": "DELETE",
