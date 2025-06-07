@@ -7412,6 +7412,12 @@
 												"disableBodyPruning": true
 											},
 											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
 												"method": "POST",
 												"header": [
 													{
@@ -7425,7 +7431,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"message\": \"dolor ea qu\",\n  \"category\": \"do mollit dolore\"\n}",
+													"raw": "{\n  \"message\": \"How are you today\",\n  \"category\": \"Other\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
@@ -7433,7 +7439,7 @@
 														}
 													}
 												},
-												"url": "{{baseUrl}}/api/CustomerSupport/feedback/complaint"
+												"url": "{{baseUrl_Dev}}/api/CustomerSupport/feedback/complaint"
 											},
 											"response": [
 												{
