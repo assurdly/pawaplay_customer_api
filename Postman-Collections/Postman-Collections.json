@@ -7838,7 +7838,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"customerProfileID\": \"ff45989f-0acb-48d2-8016-625e13b98a44\",\n  \"notificationTitle\": \"Test\",\n  \"notificationMessage\": \"API test for this endpoint\"\n}",
+													"raw": "{\n  \"customerProfileID\": \"ff45989f-0acb-48d2-8016-625e13b98a44\",\n  \"notificationTitle\": \"Yo\",\n  \"notificationMessage\": \"API test for this endpoint\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
@@ -8247,7 +8247,7 @@
 														}
 													}
 												},
-												"url": "{{baseUrl}}/api/Notifications/customer/read_notification"
+												"url": "{{baseUrl_Dev}}/api/Notifications/customer/read_notification"
 											},
 											"response": [
 												{
