@@ -1,0 +1,13 @@
+const jsonData = pm.response.json();
+
+pm.test("Status code is 200", () => {
+    pm.response.to.have.status(200);
+});
+
+pm.test("Response indicates successful newsletter subscription", () => {
+    pm.expect(jsonData).to.have.property("data", "You have successfully subscribed to our newsletter.");
+    pm.expect(jsonData).to.have.property("message", "");
+    pm.expect(jsonData).to.have.property("isSuccessful", true);
+    pm.expect(jsonData).to.have.property("messages").that.is.an("array").that.is.empty;
+    pm.expect(jsonData).to.have.property("timeGenerated").that.is.a("string");
+});
