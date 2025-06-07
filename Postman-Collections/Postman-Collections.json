@@ -10068,7 +10068,7 @@
 													}
 												],
 												"url": {
-													"raw": "{{baseUrl_Dev}}/api/TokenPurchase/validate/meter_number?meterNumber=1111111111111&meterType=Prepaid&distributorID=47f48bbb-91bd-40a9-9537-c2a0a7a51b1e",
+													"raw": "{{baseUrl_Dev}}/api/TokenPurchase/validate/meter_number?meterNumber=1111111111&meterType=Prepaid&distributorID=47f48bbb-91bd-40a9-9537-c2a0a7a51b1e",
 													"host": [
 														"{{baseUrl_Dev}}"
 													],
@@ -10081,7 +10081,7 @@
 													"query": [
 														{
 															"key": "meterNumber",
-															"value": "1111111111111"
+															"value": "1111111111"
 														},
 														{
 															"key": "meterType",
