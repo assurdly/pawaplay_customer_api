@@ -4815,6 +4815,188 @@
 									"name": "Token_purchase_card",
 									"item": [
 										{
+											"name": "Payment",
+											"item": [
+												{
+													"name": "card",
+													"item": [
+														{
+															"name": "(USAGE: To initiate token purchase using card.)",
+															"id": "ab8df288-83ba-4531-a843-8427f0c635a6",
+															"protocolProfileBehavior": {
+																"disableBodyPruning": true
+															},
+															"request": {
+																"method": "POST",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	},
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"amount\": -55890856.454744056\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": "{{baseUrl}}/api/TokenPurchase/token_purchase/payment/card"
+															},
+															"response": [
+																{
+																	"id": "e3264c2f-d4b5-49b3-8b01-d6745df5e80a",
+																	"name": "Success",
+																	"originalRequest": {
+																		"method": "POST",
+																		"header": [
+																			{
+																				"key": "Content-Type",
+																				"value": "application/json"
+																			},
+																			{
+																				"key": "Accept",
+																				"value": "application/json"
+																			},
+																			{
+																				"description": "Added as a part of security scheme: bearer",
+																				"key": "Authorization",
+																				"value": "Bearer <token>"
+																			}
+																		],
+																		"body": {
+																			"mode": "raw",
+																			"raw": "{\n  \"amount\": -55890856.454744056\n}",
+																			"options": {
+																				"raw": {
+																					"headerFamily": "json",
+																					"language": "json"
+																				}
+																			}
+																		},
+																		"url": "{{baseUrl}}/api/TokenPurchase/token_purchase/payment/card"
+																	},
+																	"status": "OK",
+																	"code": 200,
+																	"_postman_previewlanguage": "json",
+																	"header": [
+																		{
+																			"key": "Content-Type",
+																			"value": "application/json"
+																		}
+																	],
+																	"cookie": [],
+																	"responseTime": null,
+																	"body": "{\n  \"data\": \"nulla sunt\",\n  \"message\": \"Duis magna\",\n  \"isSuccessful\": true,\n  \"messages\": [\n    \"eu\",\n    \"d\"\n  ],\n  \"timeGenerated\": \"2001-06-23T03:36:40.151Z\"\n}"
+																}
+															]
+														}
+													],
+													"id": "fceaf3fc-9eb7-424c-9fe3-2c4b6f4ac429"
+												},
+												{
+													"name": "Confirm card payemnt token purchase status",
+													"item": [
+														{
+															"name": "(USAGE: To confirm the status of a payment made with card (e.g: for token purchase) using the unique transaction reference",
+															"id": "822cdf5c-75c6-469d-b345-d8ae1e517b8c",
+															"protocolProfileBehavior": {
+																"disableBodyPruning": true
+															},
+															"request": {
+																"method": "POST",
+																"header": [
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/api/TokenPurchase/payment/card/status?uniqueTransactionReference=incididunt commodo",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"TokenPurchase",
+																		"payment",
+																		"card",
+																		"status"
+																	],
+																	"query": [
+																		{
+																			"key": "uniqueTransactionReference",
+																			"value": "incididunt commodo"
+																		}
+																	]
+																}
+															},
+															"response": [
+																{
+																	"id": "3ff84a91-cdc0-4c29-811a-92e08e11b08c",
+																	"name": "Success",
+																	"originalRequest": {
+																		"method": "POST",
+																		"header": [
+																			{
+																				"key": "Accept",
+																				"value": "application/json"
+																			},
+																			{
+																				"description": "Added as a part of security scheme: bearer",
+																				"key": "Authorization",
+																				"value": "Bearer <token>"
+																			}
+																		],
+																		"url": {
+																			"raw": "{{baseUrl}}/api/TokenPurchase/payment/card/status?uniqueTransactionReference=incididunt commodo",
+																			"host": [
+																				"{{baseUrl}}"
+																			],
+																			"path": [
+																				"api",
+																				"TokenPurchase",
+																				"payment",
+																				"card",
+																				"status"
+																			],
+																			"query": [
+																				{
+																					"key": "uniqueTransactionReference",
+																					"value": "incididunt commodo"
+																				}
+																			]
+																		}
+																	},
+																	"status": "OK",
+																	"code": 200,
+																	"_postman_previewlanguage": "json",
+																	"header": [
+																		{
+																			"key": "Content-Type",
+																			"value": "application/json"
+																		}
+																	],
+																	"cookie": [],
+																	"responseTime": null,
+																	"body": "{\n  \"data\": \"nulla sunt\",\n  \"message\": \"Duis magna\",\n  \"isSuccessful\": true,\n  \"messages\": [\n    \"eu\",\n    \"d\"\n  ],\n  \"timeGenerated\": \"2001-06-23T03:36:40.151Z\"\n}"
+																}
+															]
+														}
+													],
+													"id": "8d967286-0323-46a0-b4b2-ab2fe9e8d8c3"
+												}
+											],
+											"id": "63cb5675-9d57-43b4-b97c-0c789d45f34b"
+										},
+										{
 											"name": "Token_purhcase_card",
 											"item": [
 												{
@@ -4899,7 +5081,7 @@
 											"id": "fcbc04e7-66f2-4f1c-be68-20ea2f15e2cc"
 										},
 										{
-											"name": "Get token-purchase staus",
+											"name": "Get token-purchase status",
 											"item": [
 												{
 													"name": "(USAGE: To get an updated status on a pending/processing token-purchase request, using received unique reference ID.)",
@@ -5002,206 +5184,12 @@
 												}
 											],
 											"id": "ab7ef5d8-2ecc-4299-8ad9-8de25eb97ff4"
-										},
-										{
-											"name": "Payment",
-											"item": [
-												{
-													"name": "card",
-													"item": [
-														{
-															"name": "(USAGE: To initiate token purchase using card.)",
-															"id": "ab8df288-83ba-4531-a843-8427f0c635a6",
-															"protocolProfileBehavior": {
-																"disableBodyPruning": true
-															},
-															"request": {
-																"method": "POST",
-																"header": [
-																	{
-																		"key": "Content-Type",
-																		"value": "application/json"
-																	},
-																	{
-																		"key": "Accept",
-																		"value": "application/json"
-																	}
-																],
-																"body": {
-																	"mode": "raw",
-																	"raw": "{\n  \"amount\": -55890856.454744056\n}",
-																	"options": {
-																		"raw": {
-																			"headerFamily": "json",
-																			"language": "json"
-																		}
-																	}
-																},
-																"url": "{{baseUrl}}/api/TokenPurchase/token_purchase/payment/card"
-															},
-															"response": [
-																{
-																	"id": "e3264c2f-d4b5-49b3-8b01-d6745df5e80a",
-																	"name": "Success",
-																	"originalRequest": {
-																		"method": "POST",
-																		"header": [
-																			{
-																				"key": "Content-Type",
-																				"value": "application/json"
-																			},
-																			{
-																				"key": "Accept",
-																				"value": "application/json"
-																			},
-																			{
-																				"description": "Added as a part of security scheme: bearer",
-																				"key": "Authorization",
-																				"value": "Bearer <token>"
-																			}
-																		],
-																		"body": {
-																			"mode": "raw",
-																			"raw": "{\n  \"amount\": -55890856.454744056\n}",
-																			"options": {
-																				"raw": {
-																					"headerFamily": "json",
-																					"language": "json"
-																				}
-																			}
-																		},
-																		"url": "{{baseUrl}}/api/TokenPurchase/token_purchase/payment/card"
-																	},
-																	"status": "OK",
-																	"code": 200,
-																	"_postman_previewlanguage": "json",
-																	"header": [
-																		{
-																			"key": "Content-Type",
-																			"value": "application/json"
-																		}
-																	],
-																	"cookie": [],
-																	"responseTime": null,
-																	"body": "{\n  \"data\": \"nulla sunt\",\n  \"message\": \"Duis magna\",\n  \"isSuccessful\": true,\n  \"messages\": [\n    \"eu\",\n    \"d\"\n  ],\n  \"timeGenerated\": \"2001-06-23T03:36:40.151Z\"\n}"
-																}
-															]
-														}
-													],
-													"id": "fceaf3fc-9eb7-424c-9fe3-2c4b6f4ac429"
-												}
-											],
-											"id": "63cb5675-9d57-43b4-b97c-0c789d45f34b"
 										}
 									],
 									"id": "6f8a2c20-0262-4adb-a0f3-7e9473e73879"
 								}
 							],
 							"id": "4f1a5bd1-7059-4775-91b1-d8f18181dd23"
-						},
-						{
-							"name": "payment",
-							"item": [
-								{
-									"name": "card",
-									"item": [
-										{
-											"name": "Confirm card payemnt token purchase status",
-											"item": [
-												{
-													"name": "(USAGE: To confirm the status of a payment made with card (e.g: for token purchase) using the unique transaction reference",
-													"id": "822cdf5c-75c6-469d-b345-d8ae1e517b8c",
-													"protocolProfileBehavior": {
-														"disableBodyPruning": true
-													},
-													"request": {
-														"method": "POST",
-														"header": [
-															{
-																"key": "Accept",
-																"value": "application/json"
-															}
-														],
-														"url": {
-															"raw": "{{baseUrl}}/api/TokenPurchase/payment/card/status?uniqueTransactionReference=incididunt commodo",
-															"host": [
-																"{{baseUrl}}"
-															],
-															"path": [
-																"api",
-																"TokenPurchase",
-																"payment",
-																"card",
-																"status"
-															],
-															"query": [
-																{
-																	"key": "uniqueTransactionReference",
-																	"value": "incididunt commodo"
-																}
-															]
-														}
-													},
-													"response": [
-														{
-															"id": "3ff84a91-cdc0-4c29-811a-92e08e11b08c",
-															"name": "Success",
-															"originalRequest": {
-																"method": "POST",
-																"header": [
-																	{
-																		"key": "Accept",
-																		"value": "application/json"
-																	},
-																	{
-																		"description": "Added as a part of security scheme: bearer",
-																		"key": "Authorization",
-																		"value": "Bearer <token>"
-																	}
-																],
-																"url": {
-																	"raw": "{{baseUrl}}/api/TokenPurchase/payment/card/status?uniqueTransactionReference=incididunt commodo",
-																	"host": [
-																		"{{baseUrl}}"
-																	],
-																	"path": [
-																		"api",
-																		"TokenPurchase",
-																		"payment",
-																		"card",
-																		"status"
-																	],
-																	"query": [
-																		{
-																			"key": "uniqueTransactionReference",
-																			"value": "incididunt commodo"
-																		}
-																	]
-																}
-															},
-															"status": "OK",
-															"code": 200,
-															"_postman_previewlanguage": "json",
-															"header": [
-																{
-																	"key": "Content-Type",
-																	"value": "application/json"
-																}
-															],
-															"cookie": [],
-															"responseTime": null,
-															"body": "{\n  \"data\": \"nulla sunt\",\n  \"message\": \"Duis magna\",\n  \"isSuccessful\": true,\n  \"messages\": [\n    \"eu\",\n    \"d\"\n  ],\n  \"timeGenerated\": \"2001-06-23T03:36:40.151Z\"\n}"
-														}
-													]
-												}
-											],
-											"id": "8d967286-0323-46a0-b4b2-ab2fe9e8d8c3"
-										}
-									],
-									"id": "be325fb9-672f-4b4a-8238-8f9544bfc241"
-								}
-							],
-							"id": "52e107f5-a000-4ad8-a6a4-650aa06ee8f5"
 						}
 					],
 					"id": "e85b9c73-bd0b-40d0-be19-7b29dcd3a935"
