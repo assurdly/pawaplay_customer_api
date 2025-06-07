@@ -8424,6 +8424,103 @@
 													"body": "{\n  \"data\": \"nulla sunt\",\n  \"message\": \"Duis magna\",\n  \"isSuccessful\": true,\n  \"messages\": [\n    \"eu\",\n    \"d\"\n  ],\n  \"timeGenerated\": \"2001-06-23T03:36:40.151Z\"\n}"
 												}
 											]
+										},
+										{
+											"name": "Update_Notification_Read_Unauthorized",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "820f88ce-90b2-47b8-9740-257a2f9cf85a",
+														"exec": [
+															"// Unauthourized not caterd for"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "916856cc-fe5f-4e8a-8c00-d1aff38b778a",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken_Expired}}"
+													}
+												},
+												"method": "PATCH",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"isSetAllAsRead\": true,\n  \"notificationIDs\": [\n    \"738d2f21-44fc-42ba-92da-3b84d329c197\"\n  ]\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl_Dev}}/api/Notifications/customer/read_notification"
+											},
+											"response": [
+												{
+													"id": "bf9e6774-bdbb-44fd-8f1d-1cc80d90655e",
+													"name": "Success",
+													"originalRequest": {
+														"method": "PATCH",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"isSetAllAsRead\": true,\n  \"notificationIDs\": [\n    \"urn:uuid:a4234785-37f4-2238-064f-838066781d8d\",\n    \"urn:uuid:6d058791-468b-1d2c-fd4c-e2cccbdbde81\"\n  ]\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/Notifications/customer/read_notification"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"data\": \"nulla sunt\",\n  \"message\": \"Duis magna\",\n  \"isSuccessful\": true,\n  \"messages\": [\n    \"eu\",\n    \"d\"\n  ],\n  \"timeGenerated\": \"2001-06-23T03:36:40.151Z\"\n}"
+												}
+											]
 										}
 									],
 									"id": "9d8229fb-4b7a-4b45-b9f5-6c98e5929d98"
@@ -8438,6 +8535,12 @@
 												"disableBodyPruning": true
 											},
 											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken_Expired}}"
+													}
+												},
 												"method": "DELETE",
 												"header": [
 													{
@@ -8446,7 +8549,7 @@
 													}
 												],
 												"url": {
-													"raw": "{{baseUrl}}/api/Notifications/customer/delete_notification?notificationID=urn:uuid:2ec58017-79ee-1e8f-5971-a5156d2671e3",
+													"raw": "{{baseUrl}}/api/Notifications/customer/delete_notification?notificationID=028ebbdb-37ef-483e-b6a3-8c44a0200a71",
 													"host": [
 														"{{baseUrl}}"
 													],
@@ -8459,7 +8562,7 @@
 													"query": [
 														{
 															"key": "notificationID",
-															"value": "urn:uuid:2ec58017-79ee-1e8f-5971-a5156d2671e3"
+															"value": "028ebbdb-37ef-483e-b6a3-8c44a0200a71"
 														}
 													]
 												}
