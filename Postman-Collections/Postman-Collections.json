@@ -7073,12 +7073,43 @@
 									"name": "reset_transaction_pin",
 									"item": [
 										{
-											"name": "(USAGE: To reset wallet pin (when customer DOES NOT remember the current). NOTE: Use after sending and validating OTP. The customer must also have set a pin before. Information about this is returned by the login endpoint.)",
+											"name": "Reset_Wallet_PIN_Successful",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "dceb66de-a311-45f0-bb73-1413aba1d1a2",
+														"exec": [
+															"const jsonData = pm.response.json();\r",
+															"\r",
+															"pm.test(\"Status code is 200\", () => {\r",
+															"    pm.response.to.have.status(200);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Response indicates PIN change was successful\", () => {\r",
+															"    pm.expect(jsonData).to.have.property(\"data\", null);\r",
+															"    pm.expect(jsonData).to.have.property(\"message\", \"Your pin has been successfully changed.\");\r",
+															"    pm.expect(jsonData).to.have.property(\"isSuccessful\", true);\r",
+															"    pm.expect(jsonData).to.have.property(\"messages\").that.is.an(\"array\").that.is.empty;\r",
+															"    pm.expect(jsonData).to.have.property(\"timeGenerated\").that.is.a(\"string\");\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
 											"id": "6b184a7c-f995-4e9f-bceb-5cc7921673f7",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
 											},
 											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
 												"method": "PATCH",
 												"header": [
 													{
@@ -7092,7 +7123,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"pin\": \"magna voluptate\"\n}",
+													"raw": "{\n  \"pin\": \"2222\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
@@ -7100,11 +7131,120 @@
 														}
 													}
 												},
-												"url": "{{baseUrl}}/api/ProfileMaintenance/customer/reset_transaction_pin"
+												"url": "{{baseUrl_Dev}}/api/ProfileMaintenance/customer/reset_transaction_pin"
 											},
 											"response": [
 												{
 													"id": "b7bcbcc5-335f-4a25-85c9-d2d3f41c73e1",
+													"name": "Success",
+													"originalRequest": {
+														"method": "PATCH",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"pin\": \"magna voluptate\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/ProfileMaintenance/customer/reset_transaction_pin"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"data\": \"nulla sunt\",\n  \"message\": \"Duis magna\",\n  \"isSuccessful\": true,\n  \"messages\": [\n    \"eu\",\n    \"d\"\n  ],\n  \"timeGenerated\": \"2001-06-23T03:36:40.151Z\"\n}"
+												}
+											]
+										},
+										{
+											"name": "Reset_Wallet_PIN_Successful Copy",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "dceb66de-a311-45f0-bb73-1413aba1d1a2",
+														"exec": [
+															"const jsonData = pm.response.json();\r",
+															"\r",
+															"pm.test(\"Status code is 200\", () => {\r",
+															"    pm.response.to.have.status(200);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Response indicates PIN change was successful\", () => {\r",
+															"    pm.expect(jsonData).to.have.property(\"data\", null);\r",
+															"    pm.expect(jsonData).to.have.property(\"message\", \"Your pin has been successfully changed.\");\r",
+															"    pm.expect(jsonData).to.have.property(\"isSuccessful\", true);\r",
+															"    pm.expect(jsonData).to.have.property(\"messages\").that.is.an(\"array\").that.is.empty;\r",
+															"    pm.expect(jsonData).to.have.property(\"timeGenerated\").that.is.a(\"string\");\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "ef1210ad-265c-43db-8a40-1c285cefd308",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "PATCH",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"pin\": \"222\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl_Dev}}/api/ProfileMaintenance/customer/reset_transaction_pin"
+											},
+											"response": [
+												{
+													"id": "fd6ef2cf-0678-4b70-a744-2cc5b42b76b7",
 													"name": "Success",
 													"originalRequest": {
 														"method": "PATCH",
