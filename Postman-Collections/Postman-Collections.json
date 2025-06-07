@@ -9236,6 +9236,117 @@
 											"body": "{\n  \"data\": \"nulla sunt\",\n  \"message\": \"Duis magna\",\n  \"isSuccessful\": true,\n  \"messages\": [\n    \"eu\",\n    \"d\"\n  ],\n  \"timeGenerated\": \"2001-06-23T03:36:40.151Z\"\n}"
 										}
 									]
+								},
+								{
+									"name": "Already_Subscribe_Newsletter Copy",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "e6a4e466-742c-4c3d-b1c8-7c725c1be973",
+												"exec": [
+													"const jsonData = pm.response.json();\r",
+													"\r",
+													"pm.test(\"Status code is 200\", () => {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Response indicates email is already subscribed\", () => {\r",
+													"    pm.expect(jsonData).to.have.property(\"data\", \"Email is already subscribed.\");\r",
+													"    pm.expect(jsonData).to.have.property(\"message\", \"\");\r",
+													"    pm.expect(jsonData).to.have.property(\"isSuccessful\", true);\r",
+													"    pm.expect(jsonData).to.have.property(\"messages\").that.is.an(\"array\").that.is.empty;\r",
+													"    pm.expect(jsonData).to.have.property(\"timeGenerated\").that.is.a(\"string\");\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "70c21d58-993c-4e5b-89f4-164f2b782e0d",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl_Dev}}/api/Subscription/subscribe_to_newsletter?email=pawa1yopmail.com",
+											"host": [
+												"{{baseUrl_Dev}}"
+											],
+											"path": [
+												"api",
+												"Subscription",
+												"subscribe_to_newsletter"
+											],
+											"query": [
+												{
+													"key": "email",
+													"value": "pawa1yopmail.com"
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"id": "79096474-17c8-42f0-acf3-2b7d3f7d3bc6",
+											"name": "Success",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/Subscription/subscribe_to_newsletter?email=incididunt commodo",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"Subscription",
+														"subscribe_to_newsletter"
+													],
+													"query": [
+														{
+															"key": "email",
+															"value": "incididunt commodo"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n  \"data\": \"nulla sunt\",\n  \"message\": \"Duis magna\",\n  \"isSuccessful\": true,\n  \"messages\": [\n    \"eu\",\n    \"d\"\n  ],\n  \"timeGenerated\": \"2001-06-23T03:36:40.151Z\"\n}"
+										}
+									]
 								}
 							],
 							"id": "c24dca2f-f009-4aa2-8095-264840bac23a"
@@ -9244,7 +9355,32 @@
 							"name": "unsubscribe_from_newsletter",
 							"item": [
 								{
-									"name": "(USAGE: To unsubscribe from email updates subscription (newsletter))",
+									"name": "Unsubscribe_Newsletter_Successful",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "0560f1ff-d2b0-4427-822d-eef9e4bbf1ec",
+												"exec": [
+													"const jsonData = pm.response.json();\r",
+													"\r",
+													"pm.test(\"Status code is 200\", () => {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Response indicates successful newsletter unsubscription\", () => {\r",
+													"    pm.expect(jsonData).to.have.property(\"data\", \"You have successfully unsubscribed from our newsletter.\");\r",
+													"    pm.expect(jsonData).to.have.property(\"message\", \"\");\r",
+													"    pm.expect(jsonData).to.have.property(\"isSuccessful\", true);\r",
+													"    pm.expect(jsonData).to.have.property(\"messages\").that.is.an(\"array\").that.is.empty;\r",
+													"    pm.expect(jsonData).to.have.property(\"timeGenerated\").that.is.a(\"string\");\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
 									"id": "a63ca530-2bbc-4c3a-b9c1-dfbfa4772b72",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
@@ -9261,9 +9397,9 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl}}/api/Subscription/unsubscribe_from_newsletter?email=pawa2@yopmail.com",
+											"raw": "{{baseUrl_Dev}}/api/Subscription/unsubscribe_from_newsletter?email=pawa@yopmail.com",
 											"host": [
-												"{{baseUrl}}"
+												"{{baseUrl_Dev}}"
 											],
 											"path": [
 												"api",
@@ -9273,7 +9409,7 @@
 											"query": [
 												{
 													"key": "email",
-													"value": "pawa2@yopmail.com"
+													"value": "pawa@yopmail.com"
 												}
 											]
 										}
