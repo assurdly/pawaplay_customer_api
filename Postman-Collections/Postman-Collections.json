@@ -7897,7 +7897,7 @@
 											]
 										},
 										{
-											"name": "Add_Notification_Successful Copy",
+											"name": "Add_Notification_Invalid_ProfileID",
 											"event": [
 												{
 													"listen": "test",
@@ -7952,7 +7952,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"customerProfileID\": \"ff45989f-0acb-48d2-8016-625e13\",\n  \"notificationTitle\": \"Test\",\n  \"notificationMessage\": \"API test for this endpoint\"\n}",
+													"raw": "{\n  \"customerProfileID\": \"ff45989f-0acb-48d2-8016-625e1\",\n  \"notificationTitle\": \"Test1\",\n  \"notificationMessage\": \"API test for this endpoint\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
