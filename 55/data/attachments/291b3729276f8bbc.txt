@@ -1,0 +1,6 @@
+{
+  "isSetAllAsRead": true,
+  "notificationIDs": [
+    "98f289cf-229d-4b54-b80a-a897856b3a8a"
+  ]
+}
