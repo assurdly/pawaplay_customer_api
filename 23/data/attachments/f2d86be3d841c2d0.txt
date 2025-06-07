@@ -1,0 +1,6 @@
+{
+  "firstName": "",
+  "password": "",
+  "phoneNumber": "+2347081556097",
+  "referrerCode": "cu"
+}

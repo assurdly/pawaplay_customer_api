@@ -1,0 +1,14 @@
+const jsonData = pm.response.json();
+
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+
+pm.test("Response has expected properties", function () {
+    pm.expect(jsonData).to.have.property("data");
+    pm.expect(jsonData.data).to.have.property("token");
+    pm.expect(jsonData).to.have.property("message", "Your profile was created successfully.");
+    pm.expect(jsonData).to.have.property("isSuccessful", true);
+    pm.expect(jsonData).to.have.property("messages");
+    pm.expect(jsonData).to.have.property("timeGenerated");
+});
