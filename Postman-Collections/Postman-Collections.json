@@ -6543,14 +6543,14 @@
 														"exec": [
 															"const jsonData = pm.response.json();\r",
 															"\r",
-															"pm.test(\"Status code is 400\", () => {\r",
-															"    pm.response.to.have.status(400);\r",
+															"pm.test(\"Status code is 200\", () => {\r",
+															"    pm.response.to.have.status(200);\r",
 															"});\r",
 															"\r",
-															"pm.test(\"Response indicates new PIN cannot be the same as old PIN\", () => {\r",
-															"    pm.expect(jsonData).to.have.property(\"data\", \"\");\r",
-															"    pm.expect(jsonData).to.have.property(\"message\", \"Invalid request. Your new pin cannot be the same as the value inputted as old pin.\");\r",
-															"    pm.expect(jsonData).to.have.property(\"isSuccessful\", false);\r",
+															"pm.test(\"Response indicates successful PIN change\", () => {\r",
+															"    pm.expect(jsonData).to.have.property(\"data\", null);\r",
+															"    pm.expect(jsonData).to.have.property(\"message\", \"Your pin has been successfully changed.\");\r",
+															"    pm.expect(jsonData).to.have.property(\"isSuccessful\", true);\r",
 															"    pm.expect(jsonData).to.have.property(\"messages\").that.is.an(\"array\").that.is.empty;\r",
 															"    pm.expect(jsonData).to.have.property(\"timeGenerated\").that.is.a(\"string\");\r",
 															"});"
@@ -6597,6 +6597,224 @@
 											"response": [
 												{
 													"id": "6eebf1f8-d28e-4801-bec2-03bae8929de9",
+													"name": "Success",
+													"originalRequest": {
+														"method": "PATCH",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"newPin\": \"labore pariatur velit Excepteur\",\n  \"currentPin\": \"adipisicing non officia Ut Lorem\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/ProfileMaintenance/customer/change_wallet_pin"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"data\": \"nulla sunt\",\n  \"message\": \"Duis magna\",\n  \"isSuccessful\": true,\n  \"messages\": [\n    \"eu\",\n    \"d\"\n  ],\n  \"timeGenerated\": \"2001-06-23T03:36:40.151Z\"\n}"
+												}
+											]
+										},
+										{
+											"name": "Change_Wallet_PIN_Inorrect_PIN",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "ab8eaf5b-7dfe-49a8-94ff-31ece5a5cb64",
+														"exec": [
+															"const jsonData = pm.response.json();\r",
+															"\r",
+															"pm.test(\"Status code is 400\", () => {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Response indicates incorrect current PIN with attempt count\", () => {\r",
+															"    pm.expect(jsonData).to.have.property(\"data\", \"\");\r",
+															"    pm.expect(jsonData).to.have.property(\"message\").that.includes(\"Incorrect PIN! Kindly provide your current PIN\");\r",
+															"    pm.expect(jsonData).to.have.property(\"isSuccessful\", false);\r",
+															"    pm.expect(jsonData).to.have.property(\"messages\").that.is.an(\"array\").that.is.empty;\r",
+															"    pm.expect(jsonData).to.have.property(\"timeGenerated\").that.is.a(\"string\");\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "72eba9b9-f11a-437c-8ea4-a183e1c9b3cc",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "PATCH",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"newPin\": \"1111\",\n  \"currentPin\": \"0000\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl_Dev}}/api/ProfileMaintenance/customer/change_wallet_pin"
+											},
+											"response": [
+												{
+													"id": "6924fa1a-23e4-4563-81c4-c43a2d1f1dbb",
+													"name": "Success",
+													"originalRequest": {
+														"method": "PATCH",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"newPin\": \"labore pariatur velit Excepteur\",\n  \"currentPin\": \"adipisicing non officia Ut Lorem\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/ProfileMaintenance/customer/change_wallet_pin"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"data\": \"nulla sunt\",\n  \"message\": \"Duis magna\",\n  \"isSuccessful\": true,\n  \"messages\": [\n    \"eu\",\n    \"d\"\n  ],\n  \"timeGenerated\": \"2001-06-23T03:36:40.151Z\"\n}"
+												}
+											]
+										},
+										{
+											"name": "Change_Wallet_PIN_SamePIN Copy",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "ab8eaf5b-7dfe-49a8-94ff-31ece5a5cb64",
+														"exec": [
+															"const jsonData = pm.response.json();\r",
+															"\r",
+															"pm.test(\"Status code is 400\", () => {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Response indicates new PIN cannot be the same as old PIN\", () => {\r",
+															"    pm.expect(jsonData).to.have.property(\"data\", \"\");\r",
+															"    pm.expect(jsonData).to.have.property(\"message\", \"Invalid request. Your new pin cannot be the same as the value inputted as old pin.\");\r",
+															"    pm.expect(jsonData).to.have.property(\"isSuccessful\", false);\r",
+															"    pm.expect(jsonData).to.have.property(\"messages\").that.is.an(\"array\").that.is.empty;\r",
+															"    pm.expect(jsonData).to.have.property(\"timeGenerated\").that.is.a(\"string\");\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "60f12b6e-2a45-48b7-a70e-0ab23b2a3c63",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "PATCH",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"newPin\": \"0000\",\n  \"currentPin\": \"00\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl_Dev}}/api/ProfileMaintenance/customer/change_wallet_pin"
+											},
+											"response": [
+												{
+													"id": "176dc96d-669a-4638-90f6-233e7d286fc2",
 													"name": "Success",
 													"originalRequest": {
 														"method": "PATCH",
