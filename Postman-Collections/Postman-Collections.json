@@ -8530,6 +8530,31 @@
 									"item": [
 										{
 											"name": "(USAGE: To delete a notification.)",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "7a4d233b-d61e-4551-b832-3c9ba0899237",
+														"exec": [
+															"const jsonData = pm.response.json();\r",
+															"\r",
+															"pm.test(\"Status code is 200\", () => {\r",
+															"    pm.response.to.have.status(200);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Response indicates request was treated successfully\", () => {\r",
+															"    pm.expect(jsonData).to.have.property(\"data\", null);\r",
+															"    pm.expect(jsonData).to.have.property(\"message\", \"Your request has been treated successfully.\");\r",
+															"    pm.expect(jsonData).to.have.property(\"isSuccessful\", true);\r",
+															"    pm.expect(jsonData).to.have.property(\"messages\").that.is.an(\"array\").that.is.empty;\r",
+															"    pm.expect(jsonData).to.have.property(\"timeGenerated\").that.is.a(\"string\");\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
 											"id": "8c61986a-6ff2-48dc-939b-8a5314766810",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -8538,7 +8563,7 @@
 												"auth": {
 													"type": "bearer",
 													"bearer": {
-														"token": "{{bearerToken_Expired}}"
+														"token": "{{bearerToken}}"
 													}
 												},
 												"method": "DELETE",
@@ -8549,9 +8574,9 @@
 													}
 												],
 												"url": {
-													"raw": "{{baseUrl}}/api/Notifications/customer/delete_notification?notificationID=028ebbdb-37ef-483e-b6a3-8c44a0200a71",
+													"raw": "{{baseUrl_Dev}}/api/Notifications/customer/delete_notification?notificationID=40c48c68-b6ce-483e-ae74-dba650a85526",
 													"host": [
-														"{{baseUrl}}"
+														"{{baseUrl_Dev}}"
 													],
 													"path": [
 														"api",
@@ -8562,7 +8587,7 @@
 													"query": [
 														{
 															"key": "notificationID",
-															"value": "028ebbdb-37ef-483e-b6a3-8c44a0200a71"
+															"value": "40c48c68-b6ce-483e-ae74-dba650a85526"
 														}
 													]
 												}
