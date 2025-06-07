@@ -1,0 +1,5 @@
+{
+  "customerProfileID": "ff45989f-0acb-48d2-8016-625e13b98a44",
+  "notificationTitle": "Yo",
+  "notificationMessage": "API test for this endpoint"
+}
