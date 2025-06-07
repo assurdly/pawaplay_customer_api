@@ -4818,7 +4818,7 @@
 											"name": "Payment",
 											"item": [
 												{
-													"name": "card",
+													"name": "Card",
 													"item": [
 														{
 															"name": "(USAGE: To initiate token purchase using card.)",
