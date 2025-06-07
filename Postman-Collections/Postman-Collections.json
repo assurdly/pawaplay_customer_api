@@ -9261,7 +9261,7 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl}}/api/Subscription/unsubscribe_from_newsletter?email=incididunt commodo",
+											"raw": "{{baseUrl}}/api/Subscription/unsubscribe_from_newsletter?email=pawa2@yopmail.com",
 											"host": [
 												"{{baseUrl}}"
 											],
@@ -9273,7 +9273,7 @@
 											"query": [
 												{
 													"key": "email",
-													"value": "incididunt commodo"
+													"value": "pawa2@yopmail.com"
 												}
 											]
 										}
