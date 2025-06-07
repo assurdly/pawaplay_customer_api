@@ -7808,7 +7808,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"customerProfileID\": \"urn:uuid:ff45989f-0acb-48d2-8016-625e13b98a44\",\n  \"notificationTitle\": \"Test\",\n  \"notificationMessage\": \"API test for this endpoint\"\n}",
+													"raw": "{\n  \"ProfileID\": \"ff45989f-0acb-48d2-8016-625e13b98a44\",\n  \"notificationTitle\": \"Test\",\n  \"notificationMessage\": \"API test for this endpoint\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
