@@ -7500,11 +7500,47 @@
 							"item": [
 								{
 									"name": "(USAGE: To get all feedback/complaint subject categories.)",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "2765be34-10de-436a-97ba-7166d70661c6",
+												"exec": [
+													"const jsonData = pm.response.json();\r",
+													"\r",
+													"pm.test(\"Status code is 200\", () => {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Response indicates categories retrieved successfully\", () => {\r",
+													"    pm.expect(jsonData).to.have.property(\"message\", \"Categories retrieved successfully.\");\r",
+													"    pm.expect(jsonData).to.have.property(\"isSuccessful\", true);\r",
+													"    pm.expect(jsonData).to.have.property(\"data\").that.is.an(\"array\").with.length.above(0);\r",
+													"    pm.expect(jsonData.data).to.include.members([\r",
+													"        \"Unable to complete profile set up.\",\r",
+													"        \"Unable to add card.\",\r",
+													"        \"Unable to play games.\"\r",
+													"    ]);\r",
+													"    pm.expect(jsonData).to.have.property(\"messages\").that.is.an(\"array\").that.is.empty;\r",
+													"    pm.expect(jsonData).to.have.property(\"timeGenerated\").that.is.a(\"string\");\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
 									"id": "bf53524f-a0ea-4577-b37a-33d1a692e386",
 									"protocolProfileBehavior": {
 										"disableBodyPruning": true
 									},
 									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "{{bearerToken}}"
+											}
+										},
 										"method": "GET",
 										"header": [
 											{
@@ -7512,7 +7548,7 @@
 												"value": "application/json"
 											}
 										],
-										"url": "{{baseUrl}}/api/CustomerSupport/feedback_complaint/categories"
+										"url": "{{baseUrl_Dev}}/api/CustomerSupport/feedback_complaint/categories"
 									},
 									"response": [
 										{
