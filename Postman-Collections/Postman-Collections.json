@@ -4821,7 +4821,32 @@
 													"name": "Card",
 													"item": [
 														{
-															"name": "(USAGE: To initiate token purchase using card.)",
+															"name": "Token_Purchase_Card",
+															"event": [
+																{
+																	"listen": "test",
+																	"script": {
+																		"id": "5cd29eaf-974f-4ba8-8c6f-be197728477e",
+																		"exec": [
+																			"const jsonData = pm.response.json();\r",
+																			"\r",
+																			"pm.test(\"Status code is 200\", () => {\r",
+																			"    pm.response.to.have.status(200);\r",
+																			"});\r",
+																			"\r",
+																			"pm.test(\"Response indicates successful request with data string\", () => {\r",
+																			"    pm.expect(jsonData).to.have.property(\"data\").that.is.a(\"string\").and.includes(\"Pawaplay_\");\r",
+																			"    pm.expect(jsonData).to.have.property(\"message\", \"Request was processed successfully.\");\r",
+																			"    pm.expect(jsonData).to.have.property(\"isSuccessful\", true);\r",
+																			"    pm.expect(jsonData).to.have.property(\"messages\").that.is.an(\"array\").that.is.empty;\r",
+																			"    pm.expect(jsonData).to.have.property(\"timeGenerated\").that.is.a(\"string\");\r",
+																			"});"
+																		],
+																		"type": "text/javascript",
+																		"packages": {}
+																	}
+																}
+															],
 															"id": "ab8df288-83ba-4531-a843-8427f0c635a6",
 															"protocolProfileBehavior": {
 																"disableBodyPruning": true
@@ -4853,6 +4878,103 @@
 															"response": [
 																{
 																	"id": "e3264c2f-d4b5-49b3-8b01-d6745df5e80a",
+																	"name": "Success",
+																	"originalRequest": {
+																		"method": "POST",
+																		"header": [
+																			{
+																				"key": "Content-Type",
+																				"value": "application/json"
+																			},
+																			{
+																				"key": "Accept",
+																				"value": "application/json"
+																			},
+																			{
+																				"description": "Added as a part of security scheme: bearer",
+																				"key": "Authorization",
+																				"value": "Bearer <token>"
+																			}
+																		],
+																		"body": {
+																			"mode": "raw",
+																			"raw": "{\n  \"amount\": -55890856.454744056\n}",
+																			"options": {
+																				"raw": {
+																					"headerFamily": "json",
+																					"language": "json"
+																				}
+																			}
+																		},
+																		"url": "{{baseUrl}}/api/TokenPurchase/token_purchase/payment/card"
+																	},
+																	"status": "OK",
+																	"code": 200,
+																	"_postman_previewlanguage": "json",
+																	"header": [
+																		{
+																			"key": "Content-Type",
+																			"value": "application/json"
+																		}
+																	],
+																	"cookie": [],
+																	"responseTime": null,
+																	"body": "{\n  \"data\": \"nulla sunt\",\n  \"message\": \"Duis magna\",\n  \"isSuccessful\": true,\n  \"messages\": [\n    \"eu\",\n    \"d\"\n  ],\n  \"timeGenerated\": \"2001-06-23T03:36:40.151Z\"\n}"
+																}
+															]
+														},
+														{
+															"name": "Token_Purchase_Card_Unauthorized",
+															"event": [
+																{
+																	"listen": "test",
+																	"script": {
+																		"id": "5cd29eaf-974f-4ba8-8c6f-be197728477e",
+																		"exec": [
+																			"// Unauthorized error message not catered for"
+																		],
+																		"type": "text/javascript",
+																		"packages": {}
+																	}
+																}
+															],
+															"id": "2a624906-9ae6-43ab-ac5c-890d00d41f03",
+															"protocolProfileBehavior": {
+																"disableBodyPruning": true
+															},
+															"request": {
+																"auth": {
+																	"type": "bearer",
+																	"bearer": {
+																		"token": "{{bearerToken_Expired}}"
+																	}
+																},
+																"method": "POST",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	},
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"amount\": 500\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": "{{baseUrl_Dev}}/api/TokenPurchase/token_purchase/payment/card"
+															},
+															"response": [
+																{
+																	"id": "c9525340-2271-423e-ab6f-78662bcc6826",
 																	"name": "Success",
 																	"originalRequest": {
 																		"method": "POST",
