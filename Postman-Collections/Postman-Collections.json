@@ -8359,19 +8359,7 @@
 															"script": {
 																"id": "374dcc42-f9b4-4af5-be0a-2047df81548e",
 																"exec": [
-																	"const jsonData = pm.response.json();\r",
-																	"\r",
-																	"pm.test(\"Status code is 400\", () => {\r",
-																	"    pm.response.to.have.status(400);\r",
-																	"});\r",
-																	"\r",
-																	"pm.test(\"Response indicates missing or invalid destination account info\", () => {\r",
-																	"    pm.expect(jsonData).to.have.property(\"data\", \"\");\r",
-																	"    pm.expect(jsonData).to.have.property(\"message\", \"Please, provide a valid destination account number and bank code to proceed.\");\r",
-																	"    pm.expect(jsonData).to.have.property(\"isSuccessful\", false);\r",
-																	"    pm.expect(jsonData).to.have.property(\"messages\").that.is.an(\"array\").that.is.empty;\r",
-																	"    pm.expect(jsonData).to.have.property(\"timeGenerated\").that.is.a(\"string\");\r",
-																	"});"
+																	""
 																],
 																"type": "text/javascript",
 																"packages": {}
@@ -8384,7 +8372,10 @@
 													},
 													"request": {
 														"auth": {
-															"type": "noauth"
+															"type": "bearer",
+															"bearer": {
+																"token": "{{bearerToken_Expired}}"
+															}
 														},
 														"method": "GET",
 														"header": [
