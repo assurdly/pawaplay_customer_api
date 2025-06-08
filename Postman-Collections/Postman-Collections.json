@@ -8276,7 +8276,7 @@
 															}
 														],
 														"url": {
-															"raw": "{{baseUrl_Dev}}/api/WalletMaintenance/validate/destination_account_number?destinationAccountBankCode=UBA&destinationAccountNumber=2068915245",
+															"raw": "{{baseUrl_Dev}}/api/WalletMaintenance/validate/destination_account_number?destinationAccountBankCode=UBA&destinationAccountNumber=",
 															"host": [
 																"{{baseUrl_Dev}}"
 															],
@@ -8293,7 +8293,7 @@
 																},
 																{
 																	"key": "destinationAccountNumber",
-																	"value": "2068915245"
+																	"value": ""
 																}
 															]
 														}
