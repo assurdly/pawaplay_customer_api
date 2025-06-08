@@ -11476,7 +11476,7 @@
 							"id": "c24dca2f-f009-4aa2-8095-264840bac23a"
 						},
 						{
-							"name": "unsubscribe_from_newsletter",
+							"name": "Unsubscribe_from_newsletter",
 							"item": [
 								{
 									"name": "Unsubscribe_Newsletter_Successful",
@@ -11492,7 +11492,7 @@
 													"    pm.response.to.have.status(200);\r",
 													"});\r",
 													"\r",
-													"pm.test(\"Response indicates successful newsletter unsubscription\", () => {\r",
+													"pm.test(\"Response indicates newsletter unsubscription\", () => {\r",
 													"    pm.expect(jsonData).to.have.property(\"data\", \"You have successfully unsubscribed from our newsletter.\");\r",
 													"    pm.expect(jsonData).to.have.property(\"message\", \"\");\r",
 													"    pm.expect(jsonData).to.have.property(\"isSuccessful\", true);\r",
