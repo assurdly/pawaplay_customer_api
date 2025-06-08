@@ -5965,7 +5965,7 @@
 															"script": {
 																"id": "fcb85d63-19f1-4af4-a527-f461133a783c",
 																"exec": [
-																	"//This would be updated after fix"
+																	"//This would be updated after fix as the endpoin still respond with a 200"
 																],
 																"type": "text/javascript",
 																"packages": {}
