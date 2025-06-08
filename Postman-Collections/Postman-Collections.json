@@ -8418,7 +8418,7 @@
 									"id": "9677265d-08f5-4181-a6bf-6236410bdef7"
 								},
 								{
-									"name": "change_wallet_pin",
+									"name": "Change_wallet_pin",
 									"item": [
 										{
 											"name": "Change_Wallet_PIN_Successful",
@@ -8957,7 +8957,7 @@
 									"id": "dcc0fd53-2bfe-4348-8f17-11974443628a"
 								},
 								{
-									"name": "reset_transaction_pin",
+									"name": "Reset_transaction_pin",
 									"item": [
 										{
 											"name": "Reset_Wallet_PIN_Successful",
