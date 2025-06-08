@@ -4821,7 +4821,7 @@
 													"name": "Card",
 													"item": [
 														{
-															"name": "Token_Purchase_Card",
+															"name": "Token_Purchase_Card_Successful",
 															"event": [
 																{
 																	"listen": "test",
@@ -4878,6 +4878,200 @@
 															"response": [
 																{
 																	"id": "e3264c2f-d4b5-49b3-8b01-d6745df5e80a",
+																	"name": "Success",
+																	"originalRequest": {
+																		"method": "POST",
+																		"header": [
+																			{
+																				"key": "Content-Type",
+																				"value": "application/json"
+																			},
+																			{
+																				"key": "Accept",
+																				"value": "application/json"
+																			},
+																			{
+																				"description": "Added as a part of security scheme: bearer",
+																				"key": "Authorization",
+																				"value": "Bearer <token>"
+																			}
+																		],
+																		"body": {
+																			"mode": "raw",
+																			"raw": "{\n  \"amount\": -55890856.454744056\n}",
+																			"options": {
+																				"raw": {
+																					"headerFamily": "json",
+																					"language": "json"
+																				}
+																			}
+																		},
+																		"url": "{{baseUrl}}/api/TokenPurchase/token_purchase/payment/card"
+																	},
+																	"status": "OK",
+																	"code": 200,
+																	"_postman_previewlanguage": "json",
+																	"header": [
+																		{
+																			"key": "Content-Type",
+																			"value": "application/json"
+																		}
+																	],
+																	"cookie": [],
+																	"responseTime": null,
+																	"body": "{\n  \"data\": \"nulla sunt\",\n  \"message\": \"Duis magna\",\n  \"isSuccessful\": true,\n  \"messages\": [\n    \"eu\",\n    \"d\"\n  ],\n  \"timeGenerated\": \"2001-06-23T03:36:40.151Z\"\n}"
+																}
+															]
+														},
+														{
+															"name": "Token_Purchase_Card_Successful Copy",
+															"event": [
+																{
+																	"listen": "test",
+																	"script": {
+																		"id": "5cd29eaf-974f-4ba8-8c6f-be197728477e",
+																		"exec": [
+																			"const jsonData = pm.response.json();\r",
+																			"\r",
+																			"pm.test(\"Status code is 200\", () => {\r",
+																			"    pm.response.to.have.status(200);\r",
+																			"});\r",
+																			"\r",
+																			"pm.test(\"Response indicates successful request with data string\", () => {\r",
+																			"    pm.expect(jsonData).to.have.property(\"data\").that.is.a(\"string\").and.includes(\"Pawaplay_\");\r",
+																			"    pm.expect(jsonData).to.have.property(\"message\", \"Request was processed successfully.\");\r",
+																			"    pm.expect(jsonData).to.have.property(\"isSuccessful\", true);\r",
+																			"    pm.expect(jsonData).to.have.property(\"messages\").that.is.an(\"array\").that.is.empty;\r",
+																			"    pm.expect(jsonData).to.have.property(\"timeGenerated\").that.is.a(\"string\");\r",
+																			"});"
+																		],
+																		"type": "text/javascript",
+																		"packages": {}
+																	}
+																}
+															],
+															"id": "3e67c8d6-2f71-4085-8ed7-c960ed92e4b3",
+															"protocolProfileBehavior": {
+																"disableBodyPruning": true
+															},
+															"request": {
+																"method": "POST",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	},
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"amount\": -500\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": "{{baseUrl_Dev}}/api/TokenPurchase/token_purchase/payment/card"
+															},
+															"response": [
+																{
+																	"id": "9bcb89cf-672b-4fe9-adb0-f7e53e47369d",
+																	"name": "Success",
+																	"originalRequest": {
+																		"method": "POST",
+																		"header": [
+																			{
+																				"key": "Content-Type",
+																				"value": "application/json"
+																			},
+																			{
+																				"key": "Accept",
+																				"value": "application/json"
+																			},
+																			{
+																				"description": "Added as a part of security scheme: bearer",
+																				"key": "Authorization",
+																				"value": "Bearer <token>"
+																			}
+																		],
+																		"body": {
+																			"mode": "raw",
+																			"raw": "{\n  \"amount\": -55890856.454744056\n}",
+																			"options": {
+																				"raw": {
+																					"headerFamily": "json",
+																					"language": "json"
+																				}
+																			}
+																		},
+																		"url": "{{baseUrl}}/api/TokenPurchase/token_purchase/payment/card"
+																	},
+																	"status": "OK",
+																	"code": 200,
+																	"_postman_previewlanguage": "json",
+																	"header": [
+																		{
+																			"key": "Content-Type",
+																			"value": "application/json"
+																		}
+																	],
+																	"cookie": [],
+																	"responseTime": null,
+																	"body": "{\n  \"data\": \"nulla sunt\",\n  \"message\": \"Duis magna\",\n  \"isSuccessful\": true,\n  \"messages\": [\n    \"eu\",\n    \"d\"\n  ],\n  \"timeGenerated\": \"2001-06-23T03:36:40.151Z\"\n}"
+																}
+															]
+														},
+														{
+															"name": "Token_Purchase_Card_EmptyAmount",
+															"event": [
+																{
+																	"listen": "test",
+																	"script": {
+																		"id": "5cd29eaf-974f-4ba8-8c6f-be197728477e",
+																		"exec": [
+																			"//Error message for empty amount not implemented"
+																		],
+																		"type": "text/javascript",
+																		"packages": {}
+																	}
+																}
+															],
+															"id": "89e2ebba-b7f7-4927-9ad6-d6b0d09da03b",
+															"protocolProfileBehavior": {
+																"disableBodyPruning": true
+															},
+															"request": {
+																"method": "POST",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	},
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"amount\": \n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": "{{baseUrl_Dev}}/api/TokenPurchase/token_purchase/payment/card"
+															},
+															"response": [
+																{
+																	"id": "3c799ea2-3f2c-4800-b9ea-dd600a3c7da7",
 																	"name": "Success",
 																	"originalRequest": {
 																		"method": "POST",
