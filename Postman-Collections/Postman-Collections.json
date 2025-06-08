@@ -8229,7 +8229,7 @@
 													]
 												},
 												{
-													"name": "Validate_DestinationAccountNumber_WalletWithdrawal Copy",
+													"name": "Validate_DestinationAccountNumber_WalletWithdrawal_Invalid",
 													"event": [
 														{
 															"listen": "test",
@@ -8238,16 +8238,14 @@
 																"exec": [
 																	"const jsonData = pm.response.json();\r",
 																	"\r",
-																	"pm.test(\"Status code is 200\", () => {\r",
-																	"    pm.response.to.have.status(200);\r",
+																	"pm.test(\"Status code is 400\", () => {\r",
+																	"    pm.response.to.have.status(400);\r",
 																	"});\r",
 																	"\r",
-																	"pm.test(\"Response indicates successful processing with chargeFee details\", () => {\r",
-																	"    pm.expect(jsonData).to.have.property(\"data\");\r",
-																	"    pm.expect(jsonData.data).to.have.property(\"chargeFee\").that.is.an(\"array\").with.length.greaterThan(0);\r",
-																	"    pm.expect(jsonData.data.chargeFee[0]).to.include.all.keys(\"id\", \"lower\", \"upper\", \"charge\", \"transactionType\", \"chargeFeeName\");\r",
-																	"    pm.expect(jsonData).to.have.property(\"message\", \"Request was processed successfully.\");\r",
-																	"    pm.expect(jsonData).to.have.property(\"isSuccessful\", true);\r",
+																	"pm.test(\"Response indicates missing or invalid destination account info\", () => {\r",
+																	"    pm.expect(jsonData).to.have.property(\"data\", \"\");\r",
+																	"    pm.expect(jsonData).to.have.property(\"message\", \"Please, provide a valid destination account number and bank code to proceed.\");\r",
+																	"    pm.expect(jsonData).to.have.property(\"isSuccessful\", false);\r",
 																	"    pm.expect(jsonData).to.have.property(\"messages\").that.is.an(\"array\").that.is.empty;\r",
 																	"    pm.expect(jsonData).to.have.property(\"timeGenerated\").that.is.a(\"string\");\r",
 																	"});"
@@ -8276,7 +8274,7 @@
 															}
 														],
 														"url": {
-															"raw": "{{baseUrl_Dev}}/api/WalletMaintenance/validate/destination_account_number?destinationAccountBankCode=UBA&destinationAccountNumber=",
+															"raw": "{{baseUrl_Dev}}/api/WalletMaintenance/validate/destination_account_number?destinationAccountBankCode=&destinationAccountNumber=4758393047",
 															"host": [
 																"{{baseUrl_Dev}}"
 															],
@@ -8289,11 +8287,11 @@
 															"query": [
 																{
 																	"key": "destinationAccountBankCode",
-																	"value": "UBA"
+																	"value": ""
 																},
 																{
 																	"key": "destinationAccountNumber",
-																	"value": ""
+																	"value": "4758393047"
 																}
 															]
 														}
@@ -8301,6 +8299,126 @@
 													"response": [
 														{
 															"id": "a0476ac2-b734-4470-b0a5-44a7afb6a4c3",
+															"name": "Success",
+															"originalRequest": {
+																"method": "GET",
+																"header": [
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	},
+																	{
+																		"description": "Added as a part of security scheme: bearer",
+																		"key": "Authorization",
+																		"value": "Bearer <token>"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/api/WalletMaintenance/validate/destination_account_number?destinationAccountBankCode=incididunt commodo&destinationAccountNumber=incididunt commodo",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"WalletMaintenance",
+																		"validate",
+																		"destination_account_number"
+																	],
+																	"query": [
+																		{
+																			"key": "destinationAccountBankCode",
+																			"value": "incididunt commodo"
+																		},
+																		{
+																			"key": "destinationAccountNumber",
+																			"value": "incididunt commodo"
+																		}
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																}
+															],
+															"cookie": [],
+															"responseTime": null,
+															"body": "{\n  \"data\": {\n    \"bankCode\": \"nulla in sint ad\",\n    \"currency\": \"veniam mollit Duis ut\",\n    \"accountName\": \"aliqua magna\",\n    \"accountNumber\": \"voluptate\",\n    \"chargeFee\": [\n      {\n        \"id\": 66167103,\n        \"lower\": -53265721.95741934,\n        \"upper\": 41936536.82265186,\n        \"charge\": 2847041.903123945,\n        \"transactionType\": 53730008,\n        \"chargeFeeName\": \"amet in cillum in \"\n      },\n      {\n        \"id\": 42418072,\n        \"lower\": 25262998.10995595,\n        \"upper\": 94805283.71246648,\n        \"charge\": -73443519.61889908,\n        \"transactionType\": 85325431,\n        \"chargeFeeName\": \"pariatur in\"\n      }\n    ],\n    \"termsAndConditions\": \"ipsum aliqua\",\n    \"termsAndConditionsUrl\": \"voluptate Ut occaecat nisi Duis\"\n  },\n  \"message\": \"dolor veniam non aute ut\",\n  \"isSuccessful\": true,\n  \"messages\": [\n    \"Excepteur voluptate sed ad\",\n    \"nisi ipsum commodo\"\n  ],\n  \"timeGenerated\": \"2022-10-06T17:11:51.493Z\"\n}"
+														}
+													]
+												},
+												{
+													"name": "Validate_DestinationAccountNumber_WalletWithdrawal_Invalid Copy",
+													"event": [
+														{
+															"listen": "test",
+															"script": {
+																"id": "374dcc42-f9b4-4af5-be0a-2047df81548e",
+																"exec": [
+																	"const jsonData = pm.response.json();\r",
+																	"\r",
+																	"pm.test(\"Status code is 400\", () => {\r",
+																	"    pm.response.to.have.status(400);\r",
+																	"});\r",
+																	"\r",
+																	"pm.test(\"Response indicates missing or invalid destination account info\", () => {\r",
+																	"    pm.expect(jsonData).to.have.property(\"data\", \"\");\r",
+																	"    pm.expect(jsonData).to.have.property(\"message\", \"Please, provide a valid destination account number and bank code to proceed.\");\r",
+																	"    pm.expect(jsonData).to.have.property(\"isSuccessful\", false);\r",
+																	"    pm.expect(jsonData).to.have.property(\"messages\").that.is.an(\"array\").that.is.empty;\r",
+																	"    pm.expect(jsonData).to.have.property(\"timeGenerated\").that.is.a(\"string\");\r",
+																	"});"
+																],
+																"type": "text/javascript",
+																"packages": {}
+															}
+														}
+													],
+													"id": "9442238e-c49c-403d-86b1-43dd08f6cb5b",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
+														"auth": {
+															"type": "noauth"
+														},
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl_Dev}}/api/WalletMaintenance/validate/destination_account_number?destinationAccountBankCode=&destinationAccountNumber=4758393047",
+															"host": [
+																"{{baseUrl_Dev}}"
+															],
+															"path": [
+																"api",
+																"WalletMaintenance",
+																"validate",
+																"destination_account_number"
+															],
+															"query": [
+																{
+																	"key": "destinationAccountBankCode",
+																	"value": ""
+																},
+																{
+																	"key": "destinationAccountNumber",
+																	"value": "4758393047"
+																}
+															]
+														}
+													},
+													"response": [
+														{
+															"id": "b9096826-22c1-4774-953b-f767058a660e",
 															"name": "Success",
 															"originalRequest": {
 																"method": "GET",
