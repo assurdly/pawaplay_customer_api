@@ -9675,6 +9675,139 @@
 													"body": "{\n  \"data\": [\n    {\n      \"isRead\": false,\n      \"title\": \"velit in anim sit minim\",\n      \"message\": \"cillum exercitation\",\n      \"eventDate\": \"1959-01-15T18:15:59.726Z\",\n      \"notificationID\": \"urn:uuid:82fdab29-dc6d-8698-935e-2aa7497bc987\"\n    },\n    {\n      \"isRead\": true,\n      \"title\": \"minim amet enim\",\n      \"message\": \"commodo eu\",\n      \"eventDate\": \"1978-06-24T07:02:05.835Z\",\n      \"notificationID\": \"urn:uuid:500c59cd-0494-6b0f-f5c5-44421e65b6c0\"\n    }\n  ],\n  \"message\": \"oc\",\n  \"isSuccessful\": false,\n  \"messages\": [\n    \"qui dolor in culpa est\",\n    \"culpa dolor elit\"\n  ],\n  \"timeGenerated\": \"1984-05-22T03:31:28.917Z\"\n}"
 												}
 											]
+										},
+										{
+											"name": "Retrieve_Customer's_Notifications_PaginatedList_NotFound",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "492ebbe9-ba5a-4e79-a665-0b135d6d9708",
+														"exec": [
+															"const jsonData = pm.response.json();\r",
+															"\r",
+															"pm.test(\"Status code is 404\", () => {\r",
+															"    pm.response.to.have.status(404); \r",
+															"});\r",
+															"\r",
+															"pm.test(\"Response indicates no notification found\", () => {\r",
+															"    pm.expect(jsonData).to.have.property(\"data\", \"\");\r",
+															"    pm.expect(jsonData).to.have.property(\"message\").that.includes(\"No notification found\");\r",
+															"    pm.expect(jsonData).to.have.property(\"isSuccessful\", false);\r",
+															"    pm.expect(jsonData).to.have.property(\"messages\").that.is.an(\"array\").that.is.empty;\r",
+															"    pm.expect(jsonData).to.have.property(\"timeGenerated\").that.is.a(\"string\");\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "989d1901-2c5a-4a69-9ce5-23db5ec58014",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl_Dev}}/api/Notifications/customer/notifications?Skip=315273&Take=315273&To=2021-06-25T22:04:08.805Z&From=2021-06-07T22:04:08.805Z",
+													"host": [
+														"{{baseUrl_Dev}}"
+													],
+													"path": [
+														"api",
+														"Notifications",
+														"customer",
+														"notifications"
+													],
+													"query": [
+														{
+															"key": "Skip",
+															"value": "315273"
+														},
+														{
+															"key": "Take",
+															"value": "315273"
+														},
+														{
+															"key": "To",
+															"value": "2021-06-25T22:04:08.805Z"
+														},
+														{
+															"key": "From",
+															"value": "2021-06-07T22:04:08.805Z"
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "7c789c78-b203-4074-8ebe-d64d467abca1",
+													"name": "Success",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/Notifications/customer/notifications?Skip=315273&Take=315273&To=1949-12-25T22:04:08.805Z&From=1949-12-25T22:04:08.805Z",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"Notifications",
+																"customer",
+																"notifications"
+															],
+															"query": [
+																{
+																	"key": "Skip",
+																	"value": "315273"
+																},
+																{
+																	"key": "Take",
+																	"value": "315273"
+																},
+																{
+																	"key": "To",
+																	"value": "1949-12-25T22:04:08.805Z"
+																},
+																{
+																	"key": "From",
+																	"value": "1949-12-25T22:04:08.805Z"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"data\": [\n    {\n      \"isRead\": false,\n      \"title\": \"velit in anim sit minim\",\n      \"message\": \"cillum exercitation\",\n      \"eventDate\": \"1959-01-15T18:15:59.726Z\",\n      \"notificationID\": \"urn:uuid:82fdab29-dc6d-8698-935e-2aa7497bc987\"\n    },\n    {\n      \"isRead\": true,\n      \"title\": \"minim amet enim\",\n      \"message\": \"commodo eu\",\n      \"eventDate\": \"1978-06-24T07:02:05.835Z\",\n      \"notificationID\": \"urn:uuid:500c59cd-0494-6b0f-f5c5-44421e65b6c0\"\n    }\n  ],\n  \"message\": \"oc\",\n  \"isSuccessful\": false,\n  \"messages\": [\n    \"qui dolor in culpa est\",\n    \"culpa dolor elit\"\n  ],\n  \"timeGenerated\": \"1984-05-22T03:31:28.917Z\"\n}"
+												}
+											]
 										}
 									],
 									"id": "ee752b34-58f2-484a-8a7f-709f324890ee"
@@ -9738,7 +9871,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"customerProfileID\": \"ff45989f-0acb-48d2-8016-625e13b98a44\",\n  \"notificationTitle\": \"Big woman\",\n  \"notificationMessage\": \"API test for this endpoint\"\n}",
+													"raw": "{\n  \"customerProfileID\": \"ff45989f-0acb-48d2-8016-625e13b98a44\",\n  \"notificationTitle\": \"Kino\",\n  \"notificationMessage\": \"API test for this endpoint\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
