@@ -7705,9 +7705,9 @@
 																	}
 																],
 																"url": {
-																	"raw": "{{baseUrl}}/api/WalletMaintenance/get/wallet_transaction/status?transactionReference=incididunt commodo&isCreditTransaction=true",
+																	"raw": "{{baseUrl_Dev}}/api/WalletMaintenance/get/wallet_transaction/status?transactionReference=incididunt commodo&isCreditTransaction=true",
 																	"host": [
-																		"{{baseUrl}}"
+																		"{{baseUrl_Dev}}"
 																	],
 																	"path": [
 																		"api",
@@ -7797,7 +7797,7 @@
 									"name": "Validate_Account_Number",
 									"item": [
 										{
-											"name": "destination_account_number",
+											"name": "Destination_account_number",
 											"item": [
 												{
 													"name": "(USAGE: To validate a destination account number during withdrawal from wallet.)",
@@ -7898,7 +7898,7 @@
 									"id": "3fe84dc5-69fa-4561-b821-78d3b93c0e22"
 								},
 								{
-									"name": "fund_withdrawal",
+									"name": "Fund_withdrawal",
 									"item": [
 										{
 											"name": "(USAGE: To process withdrawal from customer wallet.)",
@@ -7988,7 +7988,7 @@
 							"name": "Transaction Pin",
 							"item": [
 								{
-									"name": "set_wallet_pin",
+									"name": "Set_wallet_pin",
 									"item": [
 										{
 											"name": "Set_Wallet_PIN_Successful",
