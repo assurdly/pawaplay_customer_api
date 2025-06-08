@@ -8478,6 +8478,12 @@
 												"disableBodyPruning": true
 											},
 											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
 												"method": "POST",
 												"header": [
 													{
@@ -8491,7 +8497,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"amount\": -26645730.588837147,\n  \"walletPin\": \"et in ex\",\n  \"destinationBankCode\": \"sint in dolor dolore\",\n  \"destinationAccountNumber\": \"proident aliquip dolor pariatur\"\n}",
+													"raw": "{\n  \"amount\": 100,\n  \"walletPin\": \"2222\",\n  \"destinationBankCode\": \"UBA\",\n  \"destinationAccountNumber\": \"4657489567\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
@@ -8499,7 +8505,7 @@
 														}
 													}
 												},
-												"url": "{{baseUrl}}/api/WalletMaintenance/fund_withdrawal"
+												"url": "{{baseUrl_Dev}}/api/WalletMaintenance/fund_withdrawal"
 											},
 											"response": [
 												{
