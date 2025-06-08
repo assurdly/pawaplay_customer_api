@@ -6929,7 +6929,7 @@
 											"name": "Change_password_Inapp",
 											"item": [
 												{
-													"name": "(USAGE: To change login password inside the app (when a customer remembers the current).)",
+													"name": "Change_Password_Inapp_Successful",
 													"id": "54fc4e03-69f2-44fc-a948-285ffb226457",
 													"protocolProfileBehavior": {
 														"disableBodyPruning": true
@@ -6945,7 +6945,8 @@
 														"header": [
 															{
 																"key": "Content-Type",
-																"value": "application/json"
+																"value": "application/json",
+																"disabled": true
 															},
 															{
 																"key": "Accept",
