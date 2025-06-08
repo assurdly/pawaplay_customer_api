@@ -8263,7 +8263,7 @@
 														"auth": {
 															"type": "bearer",
 															"bearer": {
-																"token": "{{bearerToken_Expired}}"
+																"token": "{{bearerToken}}"
 															}
 														},
 														"method": "GET",
@@ -8352,7 +8352,7 @@
 													]
 												},
 												{
-													"name": "Validate_DestinationAccountNumber_WalletWithdrawal_Invalid Copy",
+													"name": "Validate_DestinationAccountNumber_WalletWithdrawal_Unauthorized",
 													"event": [
 														{
 															"listen": "test",
