@@ -6783,6 +6783,19 @@
 														},
 														{
 															"name": "Customer_Basic_GeneralInformation_Successful",
+															"event": [
+																{
+																	"listen": "test",
+																	"script": {
+																		"id": "c95209b9-b176-41f6-9df3-3c4f3e21cc10",
+																		"exec": [
+																			"// Would be updated when this is fixed"
+																		],
+																		"type": "text/javascript",
+																		"packages": {}
+																	}
+																}
+															],
 															"id": "7f4b4a1f-e49f-4c52-a069-0be19164c37e",
 															"protocolProfileBehavior": {
 																"disableBodyPruning": true
