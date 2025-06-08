@@ -7635,7 +7635,7 @@
 														"auth": {
 															"type": "bearer",
 															"bearer": {
-																"token": "{{bearerToken_Expired}}"
+																"token": "{{bearerToken}}"
 															}
 														},
 														"method": "GET",
@@ -7685,10 +7685,10 @@
 											"id": "6f591d47-ab54-43aa-a7a4-2c791d2f5001"
 										},
 										{
-											"name": "wallet_transaction",
+											"name": "Wallet_transaction",
 											"item": [
 												{
-													"name": "status",
+													"name": "Status",
 													"item": [
 														{
 															"name": "(USAGE: To check the status of a request to credit/debit a customer's wallet using the transaction's unique reference.)",
@@ -7794,7 +7794,7 @@
 									"id": "bb14eff6-10f2-42fd-918d-dd8c0b4e621c"
 								},
 								{
-									"name": "validate",
+									"name": "Validate_Account_Number",
 									"item": [
 										{
 											"name": "destination_account_number",
