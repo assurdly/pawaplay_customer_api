@@ -2148,7 +2148,7 @@
 										"auth": {
 											"type": "bearer",
 											"bearer": {
-												"token": "{{bearerToken}}"
+												"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9zaWQiOiJmYjA0NGViMy01OWJjLTQxZmYtYjliNi04NmEzN2VlMDViZjUiLCJuL2EiOiIwNzA4MDUwNzM2NyIsIm5iZiI6MTc0OTM4MDY0NSwiZXhwIjoxNzQ5MzgxNTQ1LCJpYXQiOjE3NDkzODA2NDUsImlzcyI6Imh0dHA6Ly93d3cucGF3YXBsYXkubmciLCJhdWQiOiJodHRwOi8vd3d3LnBhd2FwbGF5Lm5nIn0.AncfMsrrPhjgLE9y0YTfunc3EGwJu_Wg86TJPl63q7c"
 											}
 										},
 										"method": "PATCH",
@@ -2164,7 +2164,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"newPassword\": \"Pawaplay2!\",\n  \"phoneNumberOrEmail\": \"07081556097\"\n}",
+											"raw": "\n{\n  \"newPassword\": \"Pawaplay2!\",\n  \"phoneNumberOrEmail\": \"07081556097\"\n}\n\n//{\n  //\"newPassword\": \"Testpawaplay12#\",\n  //\"phoneNumberOrEmail\": \"07080507367\"\n//}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
