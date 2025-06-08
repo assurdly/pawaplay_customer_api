@@ -4840,7 +4840,7 @@
 																],
 																"body": {
 																	"mode": "raw",
-																	"raw": "{\n  \"amount\": -55890856.454744056\n}",
+																	"raw": "{\n  \"amount\": 500\n}",
 																	"options": {
 																		"raw": {
 																			"headerFamily": "json",
@@ -4848,7 +4848,7 @@
 																		}
 																	}
 																},
-																"url": "{{baseUrl}}/api/TokenPurchase/token_purchase/payment/card"
+																"url": "{{baseUrl_Dev}}/api/TokenPurchase/token_purchase/payment/card"
 															},
 															"response": [
 																{
