@@ -6926,7 +6926,7 @@
 											"id": "aa4b5a81-eb47-4f58-8cea-c42fa75aeeb0"
 										},
 										{
-											"name": "change_password",
+											"name": "Change_password_Inapp",
 											"item": [
 												{
 													"name": "(USAGE: To change login password inside the app (when a customer remembers the current).)",
@@ -6945,8 +6945,7 @@
 														"header": [
 															{
 																"key": "Content-Type",
-																"value": "application/json",
-																"disabled": true
+																"value": "application/json"
 															},
 															{
 																"key": "Accept",
@@ -6955,7 +6954,7 @@
 														],
 														"body": {
 															"mode": "raw",
-															"raw": "{\n  \"newPassword\": \"Pawaplay1!\",\n  \"currentPassword\": \"Pawaplay1!\"\n}",
+															"raw": "{\n  \"newPassword\": \"Pawaplay2!\",\n  \"currentPassword\": \"Pawaplay1!\"\n}",
 															"options": {
 																"raw": {
 																	"headerFamily": "json",
