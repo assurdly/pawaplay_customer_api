@@ -6655,7 +6655,32 @@
 															]
 														},
 														{
-															"name": "Customer_BasicInformation_Successful Copy",
+															"name": "Customer_BasicInformation_NotFound",
+															"event": [
+																{
+																	"listen": "test",
+																	"script": {
+																		"id": "288fc08e-e316-4bcd-99c1-bd93404e63b5",
+																		"exec": [
+																			"const jsonData = pm.response.json();\r",
+																			"\r",
+																			"pm.test(\"Status code is 404\", () => {\r",
+																			"    pm.response.to.have.status(404);\r",
+																			"});\r",
+																			"\r",
+																			"pm.test(\"Response indicates profile not found\", () => {\r",
+																			"    pm.expect(jsonData).to.have.property(\"data\", \"\");\r",
+																			"    pm.expect(jsonData).to.have.property(\"message\").that.includes(\"Customer's profile was not found.\");\r",
+																			"    pm.expect(jsonData).to.have.property(\"isSuccessful\", false);\r",
+																			"    pm.expect(jsonData).to.have.property(\"messages\").that.is.an(\"array\").that.is.empty;\r",
+																			"    pm.expect(jsonData).to.have.property(\"timeGenerated\").that.is.a(\"string\");\r",
+																			"})"
+																		],
+																		"type": "text/javascript",
+																		"packages": {}
+																	}
+																}
+															],
 															"id": "6d87780f-37bb-49d5-8ca8-ecf65e8c727f",
 															"protocolProfileBehavior": {
 																"disableBodyPruning": true
