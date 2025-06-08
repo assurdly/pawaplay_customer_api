@@ -4924,26 +4924,14 @@
 															]
 														},
 														{
-															"name": "Token_Purchase_Card_Successful Copy",
+															"name": "Token_Purchase_Card_InvalidAmount",
 															"event": [
 																{
 																	"listen": "test",
 																	"script": {
 																		"id": "5cd29eaf-974f-4ba8-8c6f-be197728477e",
 																		"exec": [
-																			"const jsonData = pm.response.json();\r",
-																			"\r",
-																			"pm.test(\"Status code is 200\", () => {\r",
-																			"    pm.response.to.have.status(200);\r",
-																			"});\r",
-																			"\r",
-																			"pm.test(\"Response indicates successful request with data string\", () => {\r",
-																			"    pm.expect(jsonData).to.have.property(\"data\").that.is.a(\"string\").and.includes(\"Pawaplay_\");\r",
-																			"    pm.expect(jsonData).to.have.property(\"message\", \"Request was processed successfully.\");\r",
-																			"    pm.expect(jsonData).to.have.property(\"isSuccessful\", true);\r",
-																			"    pm.expect(jsonData).to.have.property(\"messages\").that.is.an(\"array\").that.is.empty;\r",
-																			"    pm.expect(jsonData).to.have.property(\"timeGenerated\").that.is.a(\"string\");\r",
-																			"});"
+																			"//Error message for invalid amount not implemented"
 																		],
 																		"type": "text/javascript",
 																		"packages": {}
