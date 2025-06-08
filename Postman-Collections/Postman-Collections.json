@@ -7132,7 +7132,7 @@
 															]
 														},
 														{
-															"name": "Authorize_WalletCreation_OTP.)",
+															"name": "Authorize_WalletCreation_OTP",
 															"id": "a1e795a6-be7e-4242-828d-254815a28572",
 															"protocolProfileBehavior": {
 																"disableBodyPruning": true
