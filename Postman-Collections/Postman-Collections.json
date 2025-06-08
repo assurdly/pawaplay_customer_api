@@ -7036,6 +7036,19 @@
 													"item": [
 														{
 															"name": "Wallet_Creation_Link_NIN_Successful",
+															"event": [
+																{
+																	"listen": "test",
+																	"script": {
+																		"id": "addcf77b-0e4b-4436-ae12-7a00bc42887b",
+																		"exec": [
+																			"// Would be tested when the endpoint is fixed "
+																		],
+																		"type": "text/javascript",
+																		"packages": {}
+																	}
+																}
+															],
 															"id": "7e34290d-64b0-40e1-8f75-cd064d092e45",
 															"protocolProfileBehavior": {
 																"disableBodyPruning": true
