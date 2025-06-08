@@ -8118,9 +8118,9 @@
 															}
 														],
 														"url": {
-															"raw": "{{baseUrl}}/api/WalletMaintenance/validate/destination_account_number?destinationAccountBankCode=incididunt commodo&destinationAccountNumber=incididunt commodo",
+															"raw": "{{baseUrl_Dev}}/api/WalletMaintenance/validate/destination_account_number?destinationAccountBankCode=UBA&destinationAccountNumber=2068915245",
 															"host": [
-																"{{baseUrl}}"
+																"{{baseUrl_Dev}}"
 															],
 															"path": [
 																"api",
@@ -8131,11 +8131,11 @@
 															"query": [
 																{
 																	"key": "destinationAccountBankCode",
-																	"value": "incididunt commodo"
+																	"value": "UBA"
 																},
 																{
 																	"key": "destinationAccountNumber",
-																	"value": "incididunt commodo"
+																	"value": "2068915245"
 																}
 															]
 														}
