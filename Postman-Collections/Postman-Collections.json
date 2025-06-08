@@ -7279,6 +7279,87 @@
 															"body": "{\n  \"data\": \"nulla sunt\",\n  \"message\": \"Duis magna\",\n  \"isSuccessful\": true,\n  \"messages\": [\n    \"eu\",\n    \"d\"\n  ],\n  \"timeGenerated\": \"2001-06-23T03:36:40.151Z\"\n}"
 														}
 													]
+												},
+												{
+													"name": "Re-initiate_WalletCreation_NoRequest",
+													"event": [
+														{
+															"listen": "test",
+															"script": {
+																"id": "b75e18d0-4760-4a58-b811-e64a2c0dbf77",
+																"exec": [
+																	"const jsonData = pm.response.json();\r",
+																	"\r",
+																	"pm.test(\"Status code is 400\", () => {\r",
+																	"    pm.response.to.have.status(400); \r",
+																	"});\r",
+																	"\r",
+																	"pm.test(\"Response indicates no pending wallet-creation request\", () => {\r",
+																	"    pm.expect(jsonData).to.have.property(\"data\", \"\");\r",
+																	"    pm.expect(jsonData).to.have.property(\"message\").that.includes(\"no pending wallet-creation request\");\r",
+																	"    pm.expect(jsonData).to.have.property(\"isSuccessful\", false);\r",
+																	"    pm.expect(jsonData).to.have.property(\"messages\").that.is.an(\"array\").that.is.empty;\r",
+																	"    pm.expect(jsonData).to.have.property(\"timeGenerated\").that.is.a(\"string\");\r",
+																	"});"
+																],
+																"type": "text/javascript",
+																"packages": {}
+															}
+														}
+													],
+													"id": "398cf082-05f1-4dab-8e48-c83730222cef",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
+														"auth": {
+															"type": "bearer",
+															"bearer": {
+																"token": "{{bearerToken}}"
+															}
+														},
+														"method": "POST",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"url": "{{baseUrl_Dev}}/api/WalletMaintenance/customer/resend_wallet_creation"
+													},
+													"response": [
+														{
+															"id": "f583767c-e939-489e-8996-faf934de60a4",
+															"name": "Success",
+															"originalRequest": {
+																"method": "POST",
+																"header": [
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	},
+																	{
+																		"description": "Added as a part of security scheme: bearer",
+																		"key": "Authorization",
+																		"value": "Bearer <token>"
+																	}
+																],
+																"url": "{{baseUrl}}/api/WalletMaintenance/customer/resend_wallet_creation"
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																}
+															],
+															"cookie": [],
+															"responseTime": null,
+															"body": "{\n  \"data\": \"nulla sunt\",\n  \"message\": \"Duis magna\",\n  \"isSuccessful\": true,\n  \"messages\": [\n    \"eu\",\n    \"d\"\n  ],\n  \"timeGenerated\": \"2001-06-23T03:36:40.151Z\"\n}"
+														}
+													]
 												}
 											],
 											"id": "e651fd70-f4db-4342-bb33-f036a4bc7d8e"
@@ -7317,7 +7398,7 @@
 																		}
 																	}
 																},
-																"url": "{{baseUrl}}/api/WalletMaintenance/customer/callback/set_wallet"
+																"url": "{{baseUrl_Dev}}/api/WalletMaintenance/customer/callback/set_wallet"
 															},
 															"response": [
 																{
