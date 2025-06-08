@@ -7520,7 +7520,32 @@
 													]
 												},
 												{
-													"name": "Get_Wallet _Information_Successful Copy",
+													"name": "Get_Wallet _Information_NoWallet",
+													"event": [
+														{
+															"listen": "test",
+															"script": {
+																"id": "396f5f59-757a-44cf-a91c-3c6907790673",
+																"exec": [
+																	"const jsonData = pm.response.json();\r",
+																	"\r",
+																	"pm.test(\"Status code is 404\", () => {\r",
+																	"    pm.response.to.have.status(404); \r",
+																	"});\r",
+																	"\r",
+																	"pm.test(\"Response indicates no wallet created\", () => {\r",
+																	"    pm.expect(jsonData).to.have.property(\"data\", \"\");\r",
+																	"    pm.expect(jsonData).to.have.property(\"message\").that.includes(\"You currently do not have a wallet created.\");\r",
+																	"    pm.expect(jsonData).to.have.property(\"isSuccessful\", false);\r",
+																	"    pm.expect(jsonData).to.have.property(\"messages\").that.is.an(\"array\").that.is.empty;\r",
+																	"    pm.expect(jsonData).to.have.property(\"timeGenerated\").that.is.a(\"string\");\r",
+																	"});"
+																],
+																"type": "text/javascript",
+																"packages": {}
+															}
+														}
+													],
 													"id": "a5a8eb9f-3258-43d0-834f-24bb1fdfcad5",
 													"protocolProfileBehavior": {
 														"disableBodyPruning": true
@@ -7582,10 +7607,10 @@
 									"id": "62927c88-21df-4e77-869a-b6c426f07c70"
 								},
 								{
-									"name": "get",
+									"name": "Get_Bank_Information",
 									"item": [
 										{
-											"name": "all_banks",
+											"name": "All_banks",
 											"item": [
 												{
 													"name": "Get_All_Banks",
