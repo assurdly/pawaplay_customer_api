@@ -7901,7 +7901,7 @@
 									"name": "Fund_withdrawal",
 									"item": [
 										{
-											"name": "(USAGE: To process withdrawal from customer wallet.)",
+											"name": "(USAGE: To process withdrawal from customer wallet",
 											"id": "6a02659a-6bd2-4322-b376-19fd92469fff",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
