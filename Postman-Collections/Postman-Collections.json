@@ -7222,7 +7222,7 @@
 											"id": "9aaa755e-c1ca-4d7d-891f-08dd4e0316ae"
 										},
 										{
-											"name": "resend_wallet_creation",
+											"name": "Resend_wallet_creation",
 											"item": [
 												{
 													"name": "Re-initiate_WalletCreation_successful",
@@ -7278,10 +7278,10 @@
 											"id": "e651fd70-f4db-4342-bb33-f036a4bc7d8e"
 										},
 										{
-											"name": "callback",
+											"name": "Callback",
 											"item": [
 												{
-													"name": "set_wallet",
+													"name": "Set_wallet",
 													"item": [
 														{
 															"name": "(USAGE: To update a customer's wallet-creation request status after one is created.)",
