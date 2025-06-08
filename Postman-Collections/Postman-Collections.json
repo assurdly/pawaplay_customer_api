@@ -10983,7 +10983,7 @@
 							"name": "protected",
 							"item": [
 								{
-									"name": "ServerTest_protected",
+									"name": "ServerTest_protected_Successful",
 									"event": [
 										{
 											"listen": "test",
@@ -11015,7 +11015,10 @@
 									},
 									"request": {
 										"auth": {
-											"type": "noauth"
+											"type": "bearer",
+											"bearer": {
+												"token": "{{bearerToken}}"
+											}
 										},
 										"method": "POST",
 										"header": [
@@ -11061,26 +11064,14 @@
 									]
 								},
 								{
-									"name": "ServerTest_protected Copy",
+									"name": "ServerTest_protected_Unauthorized",
 									"event": [
 										{
 											"listen": "test",
 											"script": {
 												"id": "4262159f-9580-4eff-91fc-fc9af0f3e620",
 												"exec": [
-													"const jsonData = pm.response.json();\r",
-													"\r",
-													"pm.test(\"Status code is 200\", () => {\r",
-													"    pm.response.to.have.status(200);\r",
-													"});\r",
-													"\r",
-													"pm.test(\"Response indicates server is running\", () => {\r",
-													"    pm.expect(jsonData).to.have.property(\"data\", \"Server is up and running.\");\r",
-													"    pm.expect(jsonData).to.have.property(\"message\", \"\");\r",
-													"    pm.expect(jsonData).to.have.property(\"isSuccessful\", true);\r",
-													"    pm.expect(jsonData).to.have.property(\"messages\").that.is.an(\"array\").that.is.empty;\r",
-													"    pm.expect(jsonData).to.have.property(\"timeGenerated\").that.is.a(\"string\");\r",
-													"});"
+													"// Unauthorized error message not implemented"
 												],
 												"type": "text/javascript",
 												"packages": {}
@@ -11148,7 +11139,7 @@
 					"name": "Subscription",
 					"item": [
 						{
-							"name": "subscribe_to_newsletter",
+							"name": "Subscribe_to_newsletter",
 							"item": [
 								{
 									"name": "Subscribe_Newsletter_Successful",
