@@ -5640,7 +5640,7 @@
 											"id": "d896dbf1-2e12-450d-8cf4-12d2f8b845a4"
 										},
 										{
-											"name": "save_payment_option",
+											"name": "Save_payment_option",
 											"item": [
 												{
 													"name": "Save_PaymentOption_Successful",
@@ -6264,7 +6264,7 @@
 											"id": "0b13e6bf-a759-4a81-b024-e265f5e48b62"
 										},
 										{
-											"name": "remove_payment_option",
+											"name": "Remove_payment_option",
 											"item": [
 												{
 													"name": "Delete_PaymentOption_Successful",
@@ -6354,10 +6354,38 @@
 											"id": "6f251d8e-cc45-45d9-8810-1c5a188bf393"
 										},
 										{
-											"name": "priority",
+											"name": "Priority",
 											"item": [
 												{
 													"name": "Get_Next _RequiredActivity_Successful",
+													"event": [
+														{
+															"listen": "test",
+															"script": {
+																"id": "23a9300c-936a-4fc4-840a-5da0c976d2fe",
+																"exec": [
+																	"const jsonData = pm.response.json();\r",
+																	"\r",
+																	"pm.test(\"Status code is 200\", () => {\r",
+																	"    pm.response.to.have.status(200);\r",
+																	"});\r",
+																	"\r",
+																	"pm.test(\"Response indicatesrequired action\", () => {\r",
+																	"    pm.expect(jsonData).to.have.property(\"data\").that.is.an(\"object\");\r",
+																	" pm.expect(jsonData.data).to.have.property(\"message\").that.is.a(\"string\").and.is.not.empty;\r",
+																	"    pm.expect(jsonData.data).to.have.property(\"priority\", \"LinkNIN\");\r",
+																	"    \r",
+																	"    pm.expect(jsonData).to.have.property(\"message\", \"Successful!\");\r",
+																	"    pm.expect(jsonData).to.have.property(\"isSuccessful\", true);\r",
+																	"    pm.expect(jsonData).to.have.property(\"messages\").that.is.an(\"array\").that.is.empty;\r",
+																	"    pm.expect(jsonData).to.have.property(\"timeGenerated\").that.is.a(\"string\");\r",
+																	"});"
+																],
+																"type": "text/javascript",
+																"packages": {}
+															}
+														}
+													],
 													"id": "a974a5e4-548e-4d91-819e-72087737d668",
 													"protocolProfileBehavior": {
 														"disableBodyPruning": true
@@ -6485,10 +6513,10 @@
 											"id": "0d6f97fe-bd6a-4436-a1b2-0d2df74816ed"
 										},
 										{
-											"name": "data",
+											"name": "Data",
 											"item": [
 												{
-													"name": "basic",
+													"name": "Get basic data",
 													"item": [
 														{
 															"name": "Customer_BasicInformation_Successful",
