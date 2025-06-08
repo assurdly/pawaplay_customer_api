@@ -9948,7 +9948,8 @@
 															"    pm.expect(jsonData).to.have.property(\"message\", \"Invalid request!\");\r",
 															"    pm.expect(jsonData).to.have.property(\"isSuccessful\", false);\r",
 															"    pm.expect(jsonData).to.have.property(\"messages\").that.is.an(\"array\").that.is.empty;\r",
-															"    pm.expect(jsonData).to.have.property(\"timeGenerated\").that.is.a(\"string\");"
+															"    pm.expect(jsonData).to.have.property(\"timeGenerated\").that.is.a(\"string\");\r",
+															"});"
 														],
 														"type": "text/javascript",
 														"packages": {}
