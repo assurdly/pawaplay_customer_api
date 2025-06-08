@@ -5693,7 +5693,7 @@
 														],
 														"body": {
 															"mode": "raw",
-															"raw": "{\n  \"type\": \"Card\", //or Bank\n  \"cardInformation\": {\n    \"cvv\": \"058\",\n    \"cardNumber\": \"5399412210558123\",\n    \"expiresInMMYY\": \"08/28\"\n  }\n}",
+															"raw": "{\n  \"type\": \"Card\", //or Bank\n  \"cardInformation\": {\n    \"cvv\": \"051\",\n    \"cardNumber\": \"5399412210558122\",\n    \"expiresInMMYY\": \"08/28\"\n  }\n}",
 															"options": {
 																"raw": {
 																	"headerFamily": "json",
@@ -5802,7 +5802,7 @@
 														],
 														"body": {
 															"mode": "raw",
-															"raw": "{\n  \"type\": \"Card\", //or Bank\n  \"cardInformation\": {\n    \"cvv\": \"05\",\n    \"cardNumber\": \"5399412210558123\",\n    \"expiresInMMYY\": \"08/28\"\n  }\n}",
+															"raw": "{\n  \"type\": \"Card\", //or Bank\n  \"cardInformation\": {\n    \"cvv\": \"0544\",\n    \"cardNumber\": \"5399412210558123\",\n    \"expiresInMMYY\": \"08/28\"\n  }\n}",
 															"options": {
 																"raw": {
 																	"headerFamily": "json",
@@ -5868,7 +5868,7 @@
 															"script": {
 																"id": "fcb85d63-19f1-4af4-a527-f461133a783c",
 																"exec": [
-																	"//This would be updated after fix"
+																	"//This would be updated after fix, as the endpoint still respond with a 200"
 																],
 																"type": "text/javascript",
 																"packages": {}
