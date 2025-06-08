@@ -9556,7 +9556,20 @@
 									"name": "Notifications",
 									"item": [
 										{
-											"name": "(USAGE: To retrieve a paginated list of a customer's notifications.)",
+											"name": "Retrieve_Customer's_Notifications_PaginatedList_Successful",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "492ebbe9-ba5a-4e79-a665-0b135d6d9708",
+														"exec": [
+															"//To be updated when we have list"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
 											"id": "980a00b5-89de-450d-9bda-97e93fe0161e",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -9570,9 +9583,9 @@
 													}
 												],
 												"url": {
-													"raw": "{{baseUrl}}/api/Notifications/customer/notifications?Skip=315273&Take=315273&To=1949-12-25T22:04:08.805Z&From=1949-12-25T22:04:08.805Z",
+													"raw": "{{baseUrl_Dev}}/api/Notifications/customer/notifications?Skip=315273&Take=315273&To=2025-06-25T22:04:08.805Z&From=2025-06-07T22:04:08.805Z",
 													"host": [
-														"{{baseUrl}}"
+														"{{baseUrl_Dev}}"
 													],
 													"path": [
 														"api",
@@ -9591,11 +9604,11 @@
 														},
 														{
 															"key": "To",
-															"value": "1949-12-25T22:04:08.805Z"
+															"value": "2025-06-25T22:04:08.805Z"
 														},
 														{
 															"key": "From",
-															"value": "1949-12-25T22:04:08.805Z"
+															"value": "2025-06-07T22:04:08.805Z"
 														}
 													]
 												}
