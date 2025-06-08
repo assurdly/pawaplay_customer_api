@@ -7026,7 +7026,7 @@
 							"name": "WalletMaintenance",
 							"item": [
 								{
-									"name": "customer",
+									"name": "Customer",
 									"item": [
 										{
 											"name": "Wallet",
@@ -7231,6 +7231,12 @@
 														"disableBodyPruning": true
 													},
 													"request": {
+														"auth": {
+															"type": "bearer",
+															"bearer": {
+																"token": "{{bearerToken}}"
+															}
+														},
 														"method": "POST",
 														"header": [
 															{
@@ -7238,7 +7244,7 @@
 																"value": "application/json"
 															}
 														],
-														"url": "{{baseUrl}}/api/WalletMaintenance/customer/resend_wallet_creation"
+														"url": "{{baseUrl_Dev}}/api/WalletMaintenance/customer/resend_wallet_creation"
 													},
 													"response": [
 														{
