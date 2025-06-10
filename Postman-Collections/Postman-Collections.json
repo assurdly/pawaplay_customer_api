@@ -4974,7 +4974,7 @@
 																			"});\r",
 																			"\r",
 																			"pm.test(\"Response indicates successful request with data string\", () => {\r",
-																			"    pm.expect(jsonData).to.have.property(\"data\").that.is.a(\"string\");\r",
+																			"    pm.expect(jsonData).to.have.property(\"data\").that.is.a(\"string\").and.include(\"Pawaplay\");\r",
 																			"    pm.expect(jsonData).to.have.property(\"message\", \"Request was processed successfully.\");\r",
 																			"    pm.expect(jsonData).to.have.property(\"isSuccessful\", true);\r",
 																			"    pm.expect(jsonData).to.have.property(\"messages\").that.is.an(\"array\").that.is.empty;\r",
@@ -5462,7 +5462,7 @@
 														],
 														"body": {
 															"mode": "raw",
-															"raw": "{\n  \"amount\": -21839000.639209777,\n  \"paymentDetails\": {\n    \"type\": \"Card\",\n    \"cardDetails\": {\n      \"referenceNumber\": \"voluptate sint eu\"\n    },\n    \"walletDetails\": {\n      \"pin\": \"Ut laborum Lorem do\"\n    }\n  },\n  \"uniqueTokenDistibutorID\": \"urn:uuid:b1792088-f899-d8c9-fd34-f7a2a72a6878\",\n  \"meterDetails\": {\n    \"meterNumber\": \"labore tempor\",\n    \"meterType\": \"Postpaid\",\n    \"meterActionIndicator\": \"DontSave\",\n    \"saveMeterDetailsAs\": \"\"\n  }\n}",
+															"raw": "{\n  \"amount\": 500,\n  \"paymentDetails\": {\n    \"type\": \"Card\",\n    \"cardDetails\": {\n      \"referenceNumber\": \"Pawaplay_e3f31bf5df9a4092ac1720d587805b4a\"\n    },\n    \"walletDetails\": {\n      \"pin\": \"0101\"\n    }\n  },\n  \"uniqueTokenDistibutorID\": \"2a1c7f2b-c1da-11ef-9235-de8a86b687fa\",\n  \"meterDetails\": {\n    \"meterNumber\": \"0100266255\",\n    \"meterType\": \"Postpaid\",\n    \"meterActionIndicator\": \"Save\",\n    \"saveMeterDetailsAs\": \"Test_One\"\n  }\n}",
 															"options": {
 																"raw": {
 																	"headerFamily": "json",
@@ -5470,7 +5470,7 @@
 																}
 															}
 														},
-														"url": "{{baseUrl}}/api/TokenPurchase/purchase/token"
+														"url": "{{baseUrl_Sandbox}}/api/TokenPurchase/purchase/token"
 													},
 													"response": [
 														{
