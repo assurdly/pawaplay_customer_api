@@ -6136,7 +6136,7 @@
 														],
 														"body": {
 															"mode": "raw",
-															"raw": "{\n  \"type\": \"Card\", //or Bank\n  \"cardInformation\": {\n    \"cvv\": \"052\",\n    \"cardNumber\": \"5399412210558125\",\n    \"expiresInMMYY\": \"08/28\"\n  }\n}",
+															"raw": "{\n  \"type\": \"Card\", //or Bank\n  \"cardInformation\": {\n    \"cvv\": \"058\",\n    \"cardNumber\": \"5399412210558123\",\n    \"expiresInMMYY\": \"08/28\"\n  }\n}",
 															"options": {
 																"raw": {
 																	"headerFamily": "json",
@@ -6144,7 +6144,7 @@
 																}
 															}
 														},
-														"url": "{{baseUrl_Dev}}/api/ProfileMaintenance/customer/save_payment_option"
+														"url": "{{baseUrl_Sandbox}}/api/ProfileMaintenance/customer/save_payment_option"
 													},
 													"response": [
 														{
@@ -6253,7 +6253,7 @@
 																}
 															}
 														},
-														"url": "{{baseUrl_Dev}}/api/ProfileMaintenance/customer/save_payment_option"
+														"url": "{{baseUrl_Sandbox}}/api/ProfileMaintenance/customer/save_payment_option"
 													},
 													"response": [
 														{
@@ -6350,7 +6350,7 @@
 																}
 															}
 														},
-														"url": "{{baseUrl_Dev}}/api/ProfileMaintenance/customer/save_payment_option"
+														"url": "{{baseUrl_Sandbox}}/api/ProfileMaintenance/customer/save_payment_option"
 													},
 													"response": [
 														{
@@ -6447,7 +6447,7 @@
 																}
 															}
 														},
-														"url": "{{baseUrl_Dev}}/api/ProfileMaintenance/customer/save_payment_option"
+														"url": "{{baseUrl_Sandbox}}/api/ProfileMaintenance/customer/save_payment_option"
 													},
 													"response": [
 														{
@@ -6556,7 +6556,7 @@
 																}
 															}
 														},
-														"url": "{{baseUrl_Dev}}/api/ProfileMaintenance/customer/save_payment_option"
+														"url": "{{baseUrl_Sandbox}}/api/ProfileMaintenance/customer/save_payment_option"
 													},
 													"response": [
 														{
