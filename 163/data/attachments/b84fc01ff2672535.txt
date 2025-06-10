@@ -1,0 +1,6 @@
+{
+  "amount": 50,
+  "walletPin": "2222",
+  "destinationBankCode": "UBA",
+  "destinationAccountNumber": "2086192456"
+}
