@@ -8236,9 +8236,9 @@
 																	}
 																],
 																"url": {
-																	"raw": "{{baseUrl_Dev}}/api/WalletMaintenance/get/wallet_transaction/status?transactionReference=incididunt commodo&isCreditTransaction=true",
+																	"raw": "{{baseUrl_Sandbox}}/api/WalletMaintenance/get/wallet_transaction/status?transactionReference=incididunt commodo&isCreditTransaction=true",
 																	"host": [
-																		"{{baseUrl_Dev}}"
+																		"{{baseUrl_Sandbox}}"
 																	],
 																	"path": [
 																		"api",
