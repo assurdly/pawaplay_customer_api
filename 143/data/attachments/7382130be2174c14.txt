@@ -1,0 +1,15 @@
+const jsonData = pm.response.json();
+
+pm.test("Status code is 200", () => {
+    pm.response.to.have.status(200);
+});
+
+pm.test("Response indicates successful processing with chargeFee details", () => {
+    pm.expect(jsonData).to.have.property("data");
+    pm.expect(jsonData.data).to.have.property("chargeFee").that.is.an("array").with.length.greaterThan(0);
+    pm.expect(jsonData.data.chargeFee[0]).to.include.all.keys("id", "lower", "upper", "charge", "transactionType", "chargeFeeName");
+    pm.expect(jsonData).to.have.property("message", "Request was processed successfully.");
+    pm.expect(jsonData).to.have.property("isSuccessful", true);
+    pm.expect(jsonData).to.have.property("messages").that.is.an("array").that.is.empty;
+    pm.expect(jsonData).to.have.property("timeGenerated").that.is.a("string");
+});
