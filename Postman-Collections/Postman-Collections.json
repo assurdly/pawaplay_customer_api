@@ -7346,7 +7346,20 @@
 																	"script": {
 																		"id": "addcf77b-0e4b-4436-ae12-7a00bc42887b",
 																		"exec": [
-																			"// Would be tested when the endpoint is fixed "
+																			"// This can only be tested from Sandbox\r",
+																			"const jsonData = pm.response.json();\r",
+																			"\r",
+																			"pm.test(\"Status code is 200\", () => {\r",
+																			"    pm.response.to.have.status(200);\r",
+																			"});\r",
+																			"\r",
+																			"pm.test(\"Response indicates OTP was sent successfully\", () => {\r",
+																			"    pm.expect(jsonData).to.have.property(\"data\", null);\r",
+																			"    pm.expect(jsonData).to.have.property(\"message\").that.includes(\"Otp has been sent\");\r",
+																			"    pm.expect(jsonData).to.have.property(\"isSuccessful\", true);\r",
+																			"    pm.expect(jsonData).to.have.property(\"messages\").that.is.an(\"array\").that.is.empty;\r",
+																			"    pm.expect(jsonData).to.have.property(\"timeGenerated\").that.is.a(\"string\");\r",
+																			"});"
 																		],
 																		"type": "text/javascript",
 																		"packages": {}
@@ -7437,6 +7450,32 @@
 														},
 														{
 															"name": "Authorize_WalletCreation_OTP",
+															"event": [
+																{
+																	"listen": "test",
+																	"script": {
+																		"id": "84e557ae-fbcf-4e79-a17b-2ce013cd66e9",
+																		"exec": [
+																			"// This can only be tested from Sandbox\r",
+																			"const jsonData = pm.response.json();\r",
+																			"\r",
+																			"pm.test(\"Status code is 200\", () => {\r",
+																			"    pm.response.to.have.status(200);\r",
+																			"});\r",
+																			"\r",
+																			"pm.test(\"Response indicates successful wallet generation request\", () => {\r",
+																			"    pm.expect(jsonData).to.have.property(\"data\", null);\r",
+																			"    pm.expect(jsonData).to.have.property(\"message\").that.includes(\"We've received your request\");\r",
+																			"    pm.expect(jsonData).to.have.property(\"isSuccessful\", true);\r",
+																			"    pm.expect(jsonData).to.have.property(\"messages\").that.is.an(\"array\").that.is.empty;\r",
+																			"    pm.expect(jsonData).to.have.property(\"timeGenerated\").that.is.a(\"string\");\r",
+																			"});"
+																		],
+																		"type": "text/javascript",
+																		"packages": {}
+																	}
+																}
+															],
 															"id": "a1e795a6-be7e-4242-828d-254815a28572",
 															"protocolProfileBehavior": {
 																"disableBodyPruning": true
