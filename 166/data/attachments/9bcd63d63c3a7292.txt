@@ -1,0 +1,19 @@
+{
+  "amount": 500,
+  "paymentDetails": {
+    "type": "Card",
+    "cardDetails": {
+      "referenceNumber": "Pawaplay_e3f31bf5df9a4092ac1720d587805b4a"
+    },
+    "walletDetails": {
+      "pin": "0101"
+    }
+  },
+  "uniqueTokenDistibutorID": "2a1c7f2b-c1da-11ef-9235-de8a86b687fa",
+  "meterDetails": {
+    "meterNumber": "0100266255",
+    "meterType": "Postpaid",
+    "meterActionIndicator": "Save",
+    "saveMeterDetailsAs": "Test_One"
+  }
+}
