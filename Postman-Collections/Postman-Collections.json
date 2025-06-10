@@ -8254,6 +8254,12 @@
 																"disableBodyPruning": true
 															},
 															"request": {
+																"auth": {
+																	"type": "bearer",
+																	"bearer": {
+																		"token": "{{bearerToken}}"
+																	}
+																},
 																"method": "GET",
 																"header": [
 																	{
@@ -8373,6 +8379,12 @@
 																"disableBodyPruning": true
 															},
 															"request": {
+																"auth": {
+																	"type": "bearer",
+																	"bearer": {
+																		"token": "{{bearerToken}}"
+																	}
+																},
 																"method": "GET",
 																"header": [
 																	{
@@ -8407,6 +8419,131 @@
 															"response": [
 																{
 																	"id": "6a90c27f-33a2-4c68-bf31-40c66aa59478",
+																	"name": "Success",
+																	"originalRequest": {
+																		"method": "GET",
+																		"header": [
+																			{
+																				"key": "Accept",
+																				"value": "application/json"
+																			},
+																			{
+																				"description": "Added as a part of security scheme: bearer",
+																				"key": "Authorization",
+																				"value": "Bearer <token>"
+																			}
+																		],
+																		"url": {
+																			"raw": "{{baseUrl}}/api/WalletMaintenance/get/wallet_transaction/status?transactionReference=incididunt commodo&isCreditTransaction=true",
+																			"host": [
+																				"{{baseUrl}}"
+																			],
+																			"path": [
+																				"api",
+																				"WalletMaintenance",
+																				"get",
+																				"wallet_transaction",
+																				"status"
+																			],
+																			"query": [
+																				{
+																					"key": "transactionReference",
+																					"value": "incididunt commodo"
+																				},
+																				{
+																					"key": "isCreditTransaction",
+																					"value": "true"
+																				}
+																			]
+																		}
+																	},
+																	"status": "OK",
+																	"code": 200,
+																	"_postman_previewlanguage": "json",
+																	"header": [
+																		{
+																			"key": "Content-Type",
+																			"value": "application/json"
+																		}
+																	],
+																	"cookie": [],
+																	"responseTime": null,
+																	"body": "{\n  \"data\": {\n    \"isPaymentSuccessful\": false\n  },\n  \"message\": \"pariatur incididunt\",\n  \"isSuccessful\": true,\n  \"messages\": [\n    \"occaecat est\",\n    \"in ad aliquip\"\n  ],\n  \"timeGenerated\": \"1956-12-16T07:26:44.839Z\"\n}"
+																}
+															]
+														},
+														{
+															"name": "Check_Request_Status_Unauthourized",
+															"event": [
+																{
+																	"listen": "test",
+																	"script": {
+																		"id": "9281c773-62fe-4fe2-ba7d-417435afe217",
+																		"exec": [
+																			"const jsonData = pm.response.json();\r",
+																			"\r",
+																			"pm.test(\"Status code is 404\", () => {\r",
+																			"    pm.response.to.have.status(404);\r",
+																			"});\r",
+																			"\r",
+																			"pm.test(\"Response indicates transaction not found\", () => {\r",
+																			"    pm.expect(jsonData).to.have.property(\"isSuccessful\", false);\r",
+																			"    pm.expect(jsonData).to.have.property(\"message\", \"Transaction was not found\");\r",
+																			"    pm.expect(jsonData).to.have.property(\"data\", \"\");\r",
+																			"    pm.expect(jsonData).to.have.property(\"messages\").that.is.an(\"array\").that.is.empty;\r",
+																			"    pm.expect(jsonData).to.have.property(\"timeGenerated\").that.is.a(\"string\");\r",
+																			"});"
+																		],
+																		"type": "text/javascript",
+																		"packages": {}
+																	}
+																}
+															],
+															"id": "e4f7c4f9-a366-48dc-958c-d621cfa88b03",
+															"protocolProfileBehavior": {
+																"disableBodyPruning": true
+															},
+															"request": {
+																"auth": {
+																	"type": "bearer",
+																	"bearer": {
+																		"token": "{{bearerToken_Expired}}"
+																	}
+																},
+																"method": "GET",
+																"header": [
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl_Sandbox}}/api/WalletMaintenance/get/wallet_transaction/status?transactionReference=Pawaplay_72effbb8cb5b4fe287c56f7ab528d6&isCreditTransaction=true",
+																	"host": [
+																		"{{baseUrl_Sandbox}}"
+																	],
+																	"path": [
+																		"api",
+																		"WalletMaintenance",
+																		"get",
+																		"wallet_transaction",
+																		"status"
+																	],
+																	"query": [
+																		{
+																			"key": "transactionReference",
+																			"value": "Pawaplay_72effbb8cb5b4fe287c56f7ab528d6"
+																		},
+																		{
+																			"key": "isCreditTransaction",
+																			"value": "true"
+																		}
+																	]
+																}
+															},
+															"response": [
+																{
+																	"id": "4d2dc991-c169-4cff-ad0f-403dba85b90c",
 																	"name": "Success",
 																	"originalRequest": {
 																		"method": "GET",
