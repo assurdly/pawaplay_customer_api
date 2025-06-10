@@ -4991,6 +4991,12 @@
 																"disableBodyPruning": true
 															},
 															"request": {
+																"auth": {
+																	"type": "bearer",
+																	"bearer": {
+																		"token": "{{bearerToken_Expired}}"
+																	}
+																},
 																"method": "POST",
 																"header": [
 																	{
@@ -5082,6 +5088,12 @@
 																"disableBodyPruning": true
 															},
 															"request": {
+																"auth": {
+																	"type": "bearer",
+																	"bearer": {
+																		"token": "{{bearerToken_Expired}}"
+																	}
+																},
 																"method": "POST",
 																"header": [
 																	{
@@ -5173,6 +5185,12 @@
 																"disableBodyPruning": true
 															},
 															"request": {
+																"auth": {
+																	"type": "bearer",
+																	"bearer": {
+																		"token": "{{bearerToken_Expired}}"
+																	}
+																},
 																"method": "POST",
 																"header": [
 																	{
