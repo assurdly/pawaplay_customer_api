@@ -4304,7 +4304,7 @@
 											"name": "Postpaid",
 											"item": [
 												{
-													"name": "Validate_MeterNumber_Postpaid",
+													"name": "Validate_MeterNumber_Postpaid_Sandbox",
 													"event": [
 														{
 															"listen": "test",
@@ -4357,9 +4357,9 @@
 															}
 														],
 														"url": {
-															"raw": "{{baseUrl_Dev}}/api/TokenPurchase/validate/meter_number?meterNumber=1010101010101 &meterType=Postpaid&distributorID=47f48bbb-91bd-40a9-9537-c2a0a7a51b1e",
+															"raw": "{{baseUrl_Sandbox}}/api/TokenPurchase/validate/meter_number?meterNumber=0100266255&meterType=Postpaid&distributorID=2a1c7f2b-c1da-11ef-9235-de8a86b687fa",
 															"host": [
-																"{{baseUrl_Dev}}"
+																"{{baseUrl_Sandbox}}"
 															],
 															"path": [
 																"api",
@@ -4370,7 +4370,7 @@
 															"query": [
 																{
 																	"key": "meterNumber",
-																	"value": "1010101010101 "
+																	"value": "0100266255"
 																},
 																{
 																	"key": "meterType",
@@ -4378,7 +4378,7 @@
 																},
 																{
 																	"key": "distributorID",
-																	"value": "47f48bbb-91bd-40a9-9537-c2a0a7a51b1e"
+																	"value": "2a1c7f2b-c1da-11ef-9235-de8a86b687fa"
 																}
 															]
 														}
@@ -4443,7 +4443,7 @@
 													]
 												},
 												{
-													"name": "Validate_MeterNumber_Postpaid Copy",
+													"name": "Validate_MeterNumber_Postpaid_Dev",
 													"event": [
 														{
 															"listen": "test",
@@ -5012,7 +5012,7 @@
 																		}
 																	}
 																},
-																"url": "{{baseUrl_Dev}}/api/TokenPurchase/token_purchase/payment/card"
+																"url": "{{baseUrl_Sandbox}}/api/TokenPurchase/token_purchase/payment/card"
 															},
 															"response": [
 																{
