@@ -5554,7 +5554,7 @@
 															}
 														],
 														"url": {
-															"raw": "{{baseUrl_Sandbox}}/api/TokenPurchase/purchase/token/status?uniqueReferenceID=00bae0bf-fddf-4418-ae4f-6ec01f6112e3",
+															"raw": "{{baseUrl_Sandbox}}/api/TokenPurchase/purchase/token/status?uniqueReferenceID=Pawaplay_72effbb8cb5b4fe287c56f7ab528d6b5",
 															"host": [
 																"{{baseUrl_Sandbox}}"
 															],
@@ -5568,7 +5568,7 @@
 															"query": [
 																{
 																	"key": "uniqueReferenceID",
-																	"value": "00bae0bf-fddf-4418-ae4f-6ec01f6112e3"
+																	"value": "Pawaplay_72effbb8cb5b4fe287c56f7ab528d6b5"
 																}
 															]
 														}
@@ -6653,7 +6653,7 @@
 																}
 															}
 														},
-														"url": "{{baseUrl_Dev}}/api/ProfileMaintenance/customer/save_payment_option"
+														"url": "{{baseUrl_Sandbox}}/api/ProfileMaintenance/customer/save_payment_option"
 													},
 													"response": [
 														{
@@ -7868,6 +7868,19 @@
 													"item": [
 														{
 															"name": "(USAGE: To update a customer's wallet-creation request status after one is created.)",
+															"event": [
+																{
+																	"listen": "test",
+																	"script": {
+																		"id": "607851c9-9b40-4e59-9e3d-de2fd9f2c938",
+																		"exec": [
+																			"// Can't nbe tested as we dont have access to the Prod API key"
+																		],
+																		"type": "text/javascript",
+																		"packages": {}
+																	}
+																}
+															],
 															"id": "8192849f-c74e-434a-a1b6-49d61f66a6be",
 															"protocolProfileBehavior": {
 																"disableBodyPruning": true
