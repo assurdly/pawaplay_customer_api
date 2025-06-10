@@ -3207,7 +3207,7 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl_Dev}}/api/ProfileMaintenance/customer/activity_history?Skip=315273&Take=315273&To=1949-12-25T22:04:08.805Z&From=1949-12-25T22:04:08.805Z&Type=All",
+											"raw": "{{baseUrl_Dev}}/api/ProfileMaintenance/customer/activity_history?Skip=315273&Take=315273&To=2025-06-01T22:04:08.805Z&From=2025-06-10T22:04:08.805Z&Type=All",
 											"host": [
 												"{{baseUrl_Dev}}"
 											],
@@ -3228,11 +3228,11 @@
 												},
 												{
 													"key": "To",
-													"value": "1949-12-25T22:04:08.805Z"
+													"value": "2025-06-01T22:04:08.805Z"
 												},
 												{
 													"key": "From",
-													"value": "1949-12-25T22:04:08.805Z"
+													"value": "2025-06-10T22:04:08.805Z"
 												},
 												{
 													"key": "Type",
