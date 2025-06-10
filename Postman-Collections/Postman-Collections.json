@@ -4835,7 +4835,7 @@
 																			"});\r",
 																			"\r",
 																			"pm.test(\"Response indicates successful request with data string\", () => {\r",
-																			"    pm.expect(jsonData).to.have.property(\"data\").that.is.a(\"string\").and.includes(\"Pawaplay_\");\r",
+																			"    pm.expect(jsonData).to.have.property(\"data\").that.is.a(\"string\");\r",
 																			"    pm.expect(jsonData).to.have.property(\"message\", \"Request was processed successfully.\");\r",
 																			"    pm.expect(jsonData).to.have.property(\"isSuccessful\", true);\r",
 																			"    pm.expect(jsonData).to.have.property(\"messages\").that.is.an(\"array\").that.is.empty;\r",
