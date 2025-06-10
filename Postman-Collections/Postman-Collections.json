@@ -7749,11 +7749,16 @@
 																	{
 																		"key": "Accept",
 																		"value": "application/json"
+																	},
+																	{
+																		"key": "X-api-key",
+																		"value": "PawaPlaySecretAPIKeyYBnWEoF9gPHVfJwriI4QC41eb+X",
+																		"type": "text"
 																	}
 																],
 																"body": {
 																	"mode": "raw",
-																	"raw": "{\n  \"phoneNumber\": \"nisi exercitation adipisicing non\",\n  \"generatedWalletNumber\": \"Lorem officia aute esse\",\n  \"generatedWalletHolderName\": \"laborum\"\n}",
+																	"raw": "{\n  \"phoneNumber\": \"07081556097\",\n  \"generatedWalletNumber\": \"0427817542\",\n  \"generatedWalletHolderName\": \"Morgan Nwaiku\"\n}",
 																	"options": {
 																		"raw": {
 																			"headerFamily": "json",
