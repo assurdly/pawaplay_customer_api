@@ -1,0 +1,18 @@
+const jsonData = pm.response.json();
+
+pm.test("Status code is 200", () => {
+    pm.response.to.have.status(200);
+});
+
+pm.test("Wallet creation response is valid and successful", () => {
+    pm.expect(jsonData).to.have.property("isSuccessful", true);
+    pm.expect(jsonData).to.have.property("message", "Request was processed successfully.");
+    pm.expect(jsonData).to.have.property("messages").that.is.an("array").that.is.empty;
+    pm.expect(jsonData).to.have.property("timeGenerated").that.is.a("string");
+    
+    pm.expect(jsonData.data).to.have.property("isWalletCreated", true);
+    pm.expect(jsonData.data).to.have.property("walletAccountName").that.is.a("string").and.is.not.empty;
+    pm.expect(jsonData.data).to.have.property("walletAccountNumber").that.is.a("string").and.is.not.empty;
+    pm.expect(jsonData.data).to.have.property("walletAvailableBalance").that.is.a("number");
+    pm.expect(jsonData.data).to.have.property("status", "Completed");
+});
