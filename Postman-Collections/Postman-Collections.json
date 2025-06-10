@@ -8887,6 +8887,224 @@
 											]
 										},
 										{
+											"name": "Withdrawal_Incorrect_PIN",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "738c575f-7703-4ae3-9b5e-e3dee999e41f",
+														"exec": [
+															"const jsonData = pm.response.json();\r",
+															"\r",
+															"pm.test(\"Status code is 400\", () => {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Response indicates incorrect PIN attempt\", () => {\r",
+															"    pm.expect(jsonData).to.have.property(\"isSuccessful\", false);\r",
+															"    pm.expect(jsonData).to.have.property(\"message\").that.includes(\"Incorrect PIN\");\r",
+															"    pm.expect(jsonData).to.have.property(\"data\", \"\");\r",
+															"    pm.expect(jsonData).to.have.property(\"messages\").that.is.an(\"array\").that.is.empty;\r",
+															"    pm.expect(jsonData).to.have.property(\"timeGenerated\").that.is.a(\"string\");\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "48951efc-835c-4ec4-ad7e-2a0d30318279",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"amount\": 100,\n  \"walletPin\": \"2222\",\n  \"destinationBankCode\": \"UBA\",\n  \"destinationAccountNumber\": \"2086193234\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl_Sandbox}}/api/WalletMaintenance/fund_withdrawal"
+											},
+											"response": [
+												{
+													"id": "c566ffaa-d5b6-4deb-b29a-83a3655bd888",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"amount\": -26645730.588837147,\n  \"walletPin\": \"et in ex\",\n  \"destinationBankCode\": \"sint in dolor dolore\",\n  \"destinationAccountNumber\": \"proident aliquip dolor pariatur\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/WalletMaintenance/fund_withdrawal"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"data\": {\n    \"status\": \"ex eu occaecat irure\",\n    \"message\": \"Ut ad\",\n    \"narration\": \"veniam ut dolor\",\n    \"transactionStan\": \"aliquip Excepteur in Lorem\",\n    \"transactionReference\": \"dolore cillum enim laboris\",\n    \"orinalTxnTransactionDate\": \"est consequat\",\n    \"paymentRecordID\": \"8b468bab-bae1-e16d-8942-2abd01f180bd\",\n    \"platformTransactionReference\": \"in minim aliquip voluptate aliqua\"\n  },\n  \"message\": \"in pariatur aute cillum\",\n  \"isSuccessful\": true,\n  \"messages\": [\n    \"id\",\n    \"voluptate fugiat\"\n  ],\n  \"timeGenerated\": \"1991-08-17T23:17:18.537Z\"\n}"
+												}
+											]
+										},
+										{
+											"name": "Withdrawal_PIN_Blocked",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "867eda8a-2b9a-40b6-99e1-b356d9124da1",
+														"exec": [
+															"const jsonData = pm.response.json();\r",
+															"\r",
+															"pm.test(\"Status code is 200\", () => {\r",
+															"    pm.response.to.have.status(200);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Response indicates blocked PIN\", () => {\r",
+															"    pm.expect(jsonData).to.have.property(\"isSuccessful\", false);\r",
+															"    pm.expect(jsonData).to.have.property(\"message\").that.includes(\"pin has been blocked\");\r",
+															"    pm.expect(jsonData).to.have.property(\"data\", \"\");\r",
+															"    pm.expect(jsonData).to.have.property(\"messages\").that.is.an(\"array\").that.is.empty;\r",
+															"    pm.expect(jsonData).to.have.property(\"timeGenerated\").that.is.a(\"string\");\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "7cc45036-8174-4132-bb2d-1efe857f83ac",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"amount\": 100,\n  \"walletPin\": \"0101\",\n  \"destinationBankCode\": \"UBA\",\n  \"destinationAccountNumber\": \"2086192590\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl_Sandbox}}/api/WalletMaintenance/fund_withdrawal"
+											},
+											"response": [
+												{
+													"id": "9552669b-b4e0-422e-9a9d-4666a739394e",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"amount\": -26645730.588837147,\n  \"walletPin\": \"et in ex\",\n  \"destinationBankCode\": \"sint in dolor dolore\",\n  \"destinationAccountNumber\": \"proident aliquip dolor pariatur\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/WalletMaintenance/fund_withdrawal"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"data\": {\n    \"status\": \"ex eu occaecat irure\",\n    \"message\": \"Ut ad\",\n    \"narration\": \"veniam ut dolor\",\n    \"transactionStan\": \"aliquip Excepteur in Lorem\",\n    \"transactionReference\": \"dolore cillum enim laboris\",\n    \"orinalTxnTransactionDate\": \"est consequat\",\n    \"paymentRecordID\": \"8b468bab-bae1-e16d-8942-2abd01f180bd\",\n    \"platformTransactionReference\": \"in minim aliquip voluptate aliqua\"\n  },\n  \"message\": \"in pariatur aute cillum\",\n  \"isSuccessful\": true,\n  \"messages\": [\n    \"id\",\n    \"voluptate fugiat\"\n  ],\n  \"timeGenerated\": \"1991-08-17T23:17:18.537Z\"\n}"
+												}
+											]
+										},
+										{
 											"name": "Withdrawal_Successful",
 											"id": "3f4b7460-356a-4c0f-b511-40061337ac37",
 											"protocolProfileBehavior": {
@@ -8912,7 +9130,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"amount\": 50,\n  \"walletPin\": \"2222\",\n  \"destinationBankCode\": \"UBA\",\n  \"destinationAccountNumber\": \"2086192590\"\n}",
+													"raw": "{\n  \"amount\": 100,\n  \"walletPin\": \"0101\",\n  \"destinationBankCode\": \"UBA\",\n  \"destinationAccountNumber\": \"2086192590\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
