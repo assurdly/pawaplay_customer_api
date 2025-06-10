@@ -5997,7 +5997,7 @@
 														],
 														"body": {
 															"mode": "raw",
-															"raw": "{\n  \"type\": \"Card\", //or Bank\n  \"cardInformation\": {\n    \"cvv\": \"052\",\n    \"cardNumber\": \"5399412210558122\",\n    \"expiresInMMYY\": \"08/28\"\n  }\n}",
+															"raw": "{\n  \"type\": \"Card\", //or Bank\n  \"cardInformation\": {\n    \"cvv\": \"052\",\n    \"cardNumber\": \"5399412210558125\",\n    \"expiresInMMYY\": \"08/28\"\n  }\n}",
 															"options": {
 																"raw": {
 																	"headerFamily": "json",
@@ -7377,7 +7377,7 @@
 																],
 																"body": {
 																	"mode": "raw",
-																	"raw": "{\n  \"nin\": \"85133981124\"\n}",
+																	"raw": "{\n  \"nin\": \"85133981123\"\n}",
 																	"options": {
 																		"raw": {
 																			"headerFamily": "json",
@@ -7385,7 +7385,7 @@
 																		}
 																	}
 																},
-																"url": "{{baseUrl_Dev}}/api/WalletMaintenance/customer/wallet_creation"
+																"url": "{{baseUrl_Sandbox}}/api/WalletMaintenance/customer/wallet_creation"
 															},
 															"response": [
 																{
@@ -7469,7 +7469,7 @@
 																		}
 																	}
 																},
-																"url": "{{baseUrl_Dev}}/api/WalletMaintenance/customer/wallet_creation/validate_otp"
+																"url": "{{baseUrl_Sandbox}}/api/WalletMaintenance/customer/wallet_creation/validate_otp"
 															},
 															"response": [
 																{
