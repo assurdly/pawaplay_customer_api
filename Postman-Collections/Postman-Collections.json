@@ -7761,7 +7761,7 @@
 																		}
 																	}
 																},
-																"url": "{{baseUrl_Dev}}/api/WalletMaintenance/customer/callback/set_wallet"
+																"url": "{{baseUrl_Sandbox}}/api/WalletMaintenance/customer/callback/set_wallet"
 															},
 															"response": [
 																{
@@ -7840,7 +7840,7 @@
 																"value": "application/json"
 															}
 														],
-														"url": "{{baseUrl_Dev}}/api/WalletMaintenance/customer/wallet_information"
+														"url": "{{baseUrl_Sandbox}}/api/WalletMaintenance/customer/wallet_information"
 													},
 													"response": [
 														{
