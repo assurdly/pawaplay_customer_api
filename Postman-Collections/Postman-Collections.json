@@ -5554,9 +5554,9 @@
 															}
 														],
 														"url": {
-															"raw": "{{baseUrl}}/api/TokenPurchase/purchase/token/status?uniqueReferenceID=incididunt commodo",
+															"raw": "{{baseUrl_Sandbox}}/api/TokenPurchase/purchase/token/status?uniqueReferenceID=58b80b6a-db50-4036-aeb2-b9da18ca4fb2",
 															"host": [
-																"{{baseUrl}}"
+																"{{baseUrl_Sandbox}}"
 															],
 															"path": [
 																"api",
@@ -5568,7 +5568,7 @@
 															"query": [
 																{
 																	"key": "uniqueReferenceID",
-																	"value": "incididunt commodo"
+																	"value": "58b80b6a-db50-4036-aeb2-b9da18ca4fb2"
 																}
 															]
 														}
@@ -8236,7 +8236,7 @@
 																	}
 																],
 																"url": {
-																	"raw": "{{baseUrl_Sandbox}}/api/WalletMaintenance/get/wallet_transaction/status?transactionReference=incididunt commodo&isCreditTransaction=true",
+																	"raw": "{{baseUrl_Sandbox}}/api/WalletMaintenance/get/wallet_transaction/status?transactionReference=58b80b6a-db50-4036-aeb2-b9da18ca4fb2&isCreditTransaction=true",
 																	"host": [
 																		"{{baseUrl_Sandbox}}"
 																	],
@@ -8250,7 +8250,7 @@
 																	"query": [
 																		{
 																			"key": "transactionReference",
-																			"value": "incididunt commodo"
+																			"value": "58b80b6a-db50-4036-aeb2-b9da18ca4fb2"
 																		},
 																		{
 																			"key": "isCreditTransaction",
