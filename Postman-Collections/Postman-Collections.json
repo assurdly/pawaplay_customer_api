@@ -7569,6 +7569,19 @@
 											"item": [
 												{
 													"name": "Re-initiate_WalletCreation_successful",
+													"event": [
+														{
+															"listen": "test",
+															"script": {
+																"id": "b92391bf-305f-4881-af8b-5b1b026f5e4f",
+																"exec": [
+																	"// This can only be tested from Sandbox"
+																],
+																"type": "text/javascript",
+																"packages": {}
+															}
+														}
+													],
 													"id": "bc002fe4-cba9-4bcd-ad9a-dee6583f85e8",
 													"protocolProfileBehavior": {
 														"disableBodyPruning": true
@@ -7587,7 +7600,7 @@
 																"value": "application/json"
 															}
 														],
-														"url": "{{baseUrl_Dev}}/api/WalletMaintenance/customer/resend_wallet_creation"
+														"url": "{{baseUrl_Sandbox}}/api/WalletMaintenance/customer/resend_wallet_creation"
 													},
 													"response": [
 														{
@@ -7631,6 +7644,7 @@
 															"script": {
 																"id": "b75e18d0-4760-4a58-b811-e64a2c0dbf77",
 																"exec": [
+																	"// This can only be tested from Sandbox\r",
 																	"const jsonData = pm.response.json();\r",
 																	"\r",
 																	"pm.test(\"Status code is 400\", () => {\r",
@@ -7668,7 +7682,7 @@
 																"value": "application/json"
 															}
 														],
-														"url": "{{baseUrl_Dev}}/api/WalletMaintenance/customer/resend_wallet_creation"
+														"url": "{{baseUrl_Sandbox}}/api/WalletMaintenance/customer/resend_wallet_creation"
 													},
 													"response": [
 														{
