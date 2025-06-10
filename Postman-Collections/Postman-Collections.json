@@ -10317,7 +10317,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"pin\": \"2222\"\n}",
+													"raw": "{\n  \"pin\": \"0101\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
