@@ -5554,7 +5554,7 @@
 															}
 														],
 														"url": {
-															"raw": "{{baseUrl_Sandbox}}/api/TokenPurchase/purchase/token/status?uniqueReferenceID=2a1c7f2b-c1da-11ef-9235-de8a86b687fa",
+															"raw": "{{baseUrl_Sandbox}}/api/TokenPurchase/purchase/token/status?uniqueReferenceID=00bae0bf-fddf-4418-ae4f-6ec01f6112e3",
 															"host": [
 																"{{baseUrl_Sandbox}}"
 															],
@@ -5568,7 +5568,7 @@
 															"query": [
 																{
 																	"key": "uniqueReferenceID",
-																	"value": "2a1c7f2b-c1da-11ef-9235-de8a86b687fa"
+																	"value": "00bae0bf-fddf-4418-ae4f-6ec01f6112e3"
 																}
 															]
 														}
@@ -8236,7 +8236,7 @@
 																	}
 																],
 																"url": {
-																	"raw": "{{baseUrl_Sandbox}}/api/WalletMaintenance/get/wallet_transaction/status?transactionReference=58b80b6a-db50-4036-aeb2-b9da18ca4fb2&isCreditTransaction=true",
+																	"raw": "{{baseUrl_Sandbox}}/api/WalletMaintenance/get/wallet_transaction/status?transactionReference=00bae0bf-fddf-4418-ae4f-6ec01f6112e3&isCreditTransaction=true",
 																	"host": [
 																		"{{baseUrl_Sandbox}}"
 																	],
@@ -8250,7 +8250,7 @@
 																	"query": [
 																		{
 																			"key": "transactionReference",
-																			"value": "58b80b6a-db50-4036-aeb2-b9da18ca4fb2"
+																			"value": "00bae0bf-fddf-4418-ae4f-6ec01f6112e3"
 																		},
 																		{
 																			"key": "isCreditTransaction",
