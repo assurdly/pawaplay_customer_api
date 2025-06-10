@@ -1,1 +1,0 @@
-{"type":"https://tools.ietf.org/html/rfc7231#section-6.5.1","title":"One or more validation errors occurred.","status":400,"traceId":"00-199aa62ae6d8d116d513d9e042137567-1aeae9fb5b84d711-00","errors":{"$.customerProfileID":["The JSON value could not be converted to System.Guid. Path: $.customerProfileID | LineNumber: 1 | BytePositionInLine: 54."]}}
