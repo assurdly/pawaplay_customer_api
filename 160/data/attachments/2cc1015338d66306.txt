@@ -1,0 +1,14 @@
+// This can only be tested from Sandbox
+const jsonData = pm.response.json();
+
+pm.test("Status code is 200", () => {
+    pm.response.to.have.status(200);
+});
+
+pm.test("Response indicates successful wallet generation request", () => {
+    pm.expect(jsonData).to.have.property("data", null);
+    pm.expect(jsonData).to.have.property("message").that.includes("We've received your request");
+    pm.expect(jsonData).to.have.property("isSuccessful", true);
+    pm.expect(jsonData).to.have.property("messages").that.is.an("array").that.is.empty;
+    pm.expect(jsonData).to.have.property("timeGenerated").that.is.a("string");
+});
