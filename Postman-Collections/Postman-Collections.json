@@ -8037,7 +8037,7 @@
 																"value": "application/json"
 															}
 														],
-														"url": "{{baseUrl_Dev}}/api/WalletMaintenance/get/all_banks"
+														"url": "{{baseUrl_Sandbox}}/api/WalletMaintenance/get/all_banks"
 													},
 													"response": [
 														{
