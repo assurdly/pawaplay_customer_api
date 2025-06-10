@@ -8642,6 +8642,90 @@
 													"body": "{\n  \"data\": {\n    \"status\": \"ex eu occaecat irure\",\n    \"message\": \"Ut ad\",\n    \"narration\": \"veniam ut dolor\",\n    \"transactionStan\": \"aliquip Excepteur in Lorem\",\n    \"transactionReference\": \"dolore cillum enim laboris\",\n    \"orinalTxnTransactionDate\": \"est consequat\",\n    \"paymentRecordID\": \"8b468bab-bae1-e16d-8942-2abd01f180bd\",\n    \"platformTransactionReference\": \"in minim aliquip voluptate aliqua\"\n  },\n  \"message\": \"in pariatur aute cillum\",\n  \"isSuccessful\": true,\n  \"messages\": [\n    \"id\",\n    \"voluptate fugiat\"\n  ],\n  \"timeGenerated\": \"1991-08-17T23:17:18.537Z\"\n}"
 												}
 											]
+										},
+										{
+											"name": "(USAGE: To process withdrawal from customer wallet Copy",
+											"id": "3f4b7460-356a-4c0f-b511-40061337ac37",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"amount\": 100,\n  \"walletPin\": \"2222\",\n  \"destinationBankCode\": \"UBA\",\n  \"destinationAccountNumber\": \"4657489567\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl_Dev}}/api/WalletMaintenance/fund_withdrawal"
+											},
+											"response": [
+												{
+													"id": "5b032cda-36fe-49d1-b96b-abd3b9ba2b0e",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"amount\": -26645730.588837147,\n  \"walletPin\": \"et in ex\",\n  \"destinationBankCode\": \"sint in dolor dolore\",\n  \"destinationAccountNumber\": \"proident aliquip dolor pariatur\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/WalletMaintenance/fund_withdrawal"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"data\": {\n    \"status\": \"ex eu occaecat irure\",\n    \"message\": \"Ut ad\",\n    \"narration\": \"veniam ut dolor\",\n    \"transactionStan\": \"aliquip Excepteur in Lorem\",\n    \"transactionReference\": \"dolore cillum enim laboris\",\n    \"orinalTxnTransactionDate\": \"est consequat\",\n    \"paymentRecordID\": \"8b468bab-bae1-e16d-8942-2abd01f180bd\",\n    \"platformTransactionReference\": \"in minim aliquip voluptate aliqua\"\n  },\n  \"message\": \"in pariatur aute cillum\",\n  \"isSuccessful\": true,\n  \"messages\": [\n    \"id\",\n    \"voluptate fugiat\"\n  ],\n  \"timeGenerated\": \"1991-08-17T23:17:18.537Z\"\n}"
+												}
+											]
 										}
 									],
 									"id": "8ce198dc-d5ca-4313-9d39-851c95bc1dff"
