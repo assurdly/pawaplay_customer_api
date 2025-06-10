@@ -11470,249 +11470,6 @@
 					"id": "02ac77eb-14db-4d73-83ed-43ee7a60b007"
 				},
 				{
-					"name": "ServerTest",
-					"item": [
-						{
-							"name": "Public",
-							"item": [
-								{
-									"name": "ServerTest_Public",
-									"event": [
-										{
-											"listen": "test",
-											"script": {
-												"id": "4514fbf3-1f77-49de-86be-47aa1db86093",
-												"exec": [
-													"const jsonData = pm.response.json();\r",
-													"\r",
-													"pm.test(\"Status code is 200\", () => {\r",
-													"    pm.response.to.have.status(200);\r",
-													"});\r",
-													"\r",
-													"pm.test(\"Response indicates server is running\", () => {\r",
-													"    pm.expect(jsonData).to.have.property(\"data\", \"Server is up and running.\");\r",
-													"    pm.expect(jsonData).to.have.property(\"message\", \"\");\r",
-													"    pm.expect(jsonData).to.have.property(\"isSuccessful\", true);\r",
-													"    pm.expect(jsonData).to.have.property(\"messages\").that.is.an(\"array\").that.is.empty;\r",
-													"    pm.expect(jsonData).to.have.property(\"timeGenerated\").that.is.a(\"string\");\r",
-													"});"
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										}
-									],
-									"id": "89190c50-4776-482a-8941-ea63a5d329a4",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"auth": {
-											"type": "noauth"
-										},
-										"method": "POST",
-										"header": [
-											{
-												"key": "Accept",
-												"value": "application/json"
-											}
-										],
-										"url": "{{baseUrl_Dev}}/api/ServerTest/public"
-									},
-									"response": [
-										{
-											"id": "0ed0c68b-e560-4ec4-b19b-12e32a3033ee",
-											"name": "Success",
-											"originalRequest": {
-												"method": "POST",
-												"header": [
-													{
-														"key": "Accept",
-														"value": "application/json"
-													},
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"url": "{{baseUrl}}/api/ServerTest/public"
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "json",
-											"header": [
-												{
-													"key": "Content-Type",
-													"value": "application/json"
-												}
-											],
-											"cookie": [],
-											"responseTime": null,
-											"body": "{\n  \"data\": \"nulla sunt\",\n  \"message\": \"Duis magna\",\n  \"isSuccessful\": true,\n  \"messages\": [\n    \"eu\",\n    \"d\"\n  ],\n  \"timeGenerated\": \"2001-06-23T03:36:40.151Z\"\n}"
-										}
-									]
-								}
-							],
-							"id": "d0b13ca9-9ade-45f4-873c-91c06b545e8c"
-						},
-						{
-							"name": "protected",
-							"item": [
-								{
-									"name": "ServerTest_protected_Successful",
-									"event": [
-										{
-											"listen": "test",
-											"script": {
-												"id": "4262159f-9580-4eff-91fc-fc9af0f3e620",
-												"exec": [
-													"const jsonData = pm.response.json();\r",
-													"\r",
-													"pm.test(\"Status code is 200\", () => {\r",
-													"    pm.response.to.have.status(200);\r",
-													"});\r",
-													"\r",
-													"pm.test(\"Response indicates server is running\", () => {\r",
-													"    pm.expect(jsonData).to.have.property(\"data\", \"Server is up and running.\");\r",
-													"    pm.expect(jsonData).to.have.property(\"message\", \"\");\r",
-													"    pm.expect(jsonData).to.have.property(\"isSuccessful\", true);\r",
-													"    pm.expect(jsonData).to.have.property(\"messages\").that.is.an(\"array\").that.is.empty;\r",
-													"    pm.expect(jsonData).to.have.property(\"timeGenerated\").that.is.a(\"string\");\r",
-													"});"
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										}
-									],
-									"id": "77a8f700-b4b1-4ba1-8db7-b6260d4be468",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"auth": {
-											"type": "bearer",
-											"bearer": {
-												"token": "{{bearerToken}}"
-											}
-										},
-										"method": "POST",
-										"header": [
-											{
-												"key": "Accept",
-												"value": "application/json"
-											}
-										],
-										"url": "{{baseUrl_Dev}}/api/ServerTest/protected"
-									},
-									"response": [
-										{
-											"id": "76b20bd0-f485-4352-a916-be5561f5da2b",
-											"name": "Success",
-											"originalRequest": {
-												"method": "POST",
-												"header": [
-													{
-														"key": "Accept",
-														"value": "application/json"
-													},
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"url": "{{baseUrl}}/api/ServerTest/protected"
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "json",
-											"header": [
-												{
-													"key": "Content-Type",
-													"value": "application/json"
-												}
-											],
-											"cookie": [],
-											"responseTime": null,
-											"body": "{\n  \"data\": \"nulla sunt\",\n  \"message\": \"Duis magna\",\n  \"isSuccessful\": true,\n  \"messages\": [\n    \"eu\",\n    \"d\"\n  ],\n  \"timeGenerated\": \"2001-06-23T03:36:40.151Z\"\n}"
-										}
-									]
-								},
-								{
-									"name": "ServerTest_protected_Unauthorized",
-									"event": [
-										{
-											"listen": "test",
-											"script": {
-												"id": "4262159f-9580-4eff-91fc-fc9af0f3e620",
-												"exec": [
-													"// Unauthorized error message not implemented"
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										}
-									],
-									"id": "7cdc6aea-0f80-4d51-9b0f-7c33ff184e15",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"auth": {
-											"type": "noauth"
-										},
-										"method": "POST",
-										"header": [
-											{
-												"key": "Accept",
-												"value": "application/json"
-											}
-										],
-										"url": "{{baseUrl_Dev}}/api/ServerTest/protected"
-									},
-									"response": [
-										{
-											"id": "6e686cf7-ee0f-46e6-abe7-9c5488c08419",
-											"name": "Success",
-											"originalRequest": {
-												"method": "POST",
-												"header": [
-													{
-														"key": "Accept",
-														"value": "application/json"
-													},
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"url": "{{baseUrl}}/api/ServerTest/protected"
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "json",
-											"header": [
-												{
-													"key": "Content-Type",
-													"value": "application/json"
-												}
-											],
-											"cookie": [],
-											"responseTime": null,
-											"body": "{\n  \"data\": \"nulla sunt\",\n  \"message\": \"Duis magna\",\n  \"isSuccessful\": true,\n  \"messages\": [\n    \"eu\",\n    \"d\"\n  ],\n  \"timeGenerated\": \"2001-06-23T03:36:40.151Z\"\n}"
-										}
-									]
-								}
-							],
-							"id": "d04370b9-e32e-42cf-8e7f-34b81aff05fc"
-						}
-					],
-					"id": "d621edbc-9a73-4f2e-ac34-b7a06e3bc676"
-				},
-				{
 					"name": "Subscription",
 					"item": [
 						{
@@ -12390,6 +12147,249 @@
 						}
 					],
 					"id": "8295cd15-9fab-43b4-ac42-5a342648572d"
+				},
+				{
+					"name": "ServerTest",
+					"item": [
+						{
+							"name": "Public",
+							"item": [
+								{
+									"name": "ServerTest_Public",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "4514fbf3-1f77-49de-86be-47aa1db86093",
+												"exec": [
+													"const jsonData = pm.response.json();\r",
+													"\r",
+													"pm.test(\"Status code is 200\", () => {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Response indicates server is running\", () => {\r",
+													"    pm.expect(jsonData).to.have.property(\"data\", \"Server is up and running.\");\r",
+													"    pm.expect(jsonData).to.have.property(\"message\", \"\");\r",
+													"    pm.expect(jsonData).to.have.property(\"isSuccessful\", true);\r",
+													"    pm.expect(jsonData).to.have.property(\"messages\").that.is.an(\"array\").that.is.empty;\r",
+													"    pm.expect(jsonData).to.have.property(\"timeGenerated\").that.is.a(\"string\");\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "89190c50-4776-482a-8941-ea63a5d329a4",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": "{{baseUrl_Dev}}/api/ServerTest/public"
+									},
+									"response": [
+										{
+											"id": "0ed0c68b-e560-4ec4-b19b-12e32a3033ee",
+											"name": "Success",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": "{{baseUrl}}/api/ServerTest/public"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n  \"data\": \"nulla sunt\",\n  \"message\": \"Duis magna\",\n  \"isSuccessful\": true,\n  \"messages\": [\n    \"eu\",\n    \"d\"\n  ],\n  \"timeGenerated\": \"2001-06-23T03:36:40.151Z\"\n}"
+										}
+									]
+								}
+							],
+							"id": "d0b13ca9-9ade-45f4-873c-91c06b545e8c"
+						},
+						{
+							"name": "protected",
+							"item": [
+								{
+									"name": "ServerTest_protected_Successful",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "4262159f-9580-4eff-91fc-fc9af0f3e620",
+												"exec": [
+													"const jsonData = pm.response.json();\r",
+													"\r",
+													"pm.test(\"Status code is 200\", () => {\r",
+													"    pm.response.to.have.status(200);\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Response indicates server is running\", () => {\r",
+													"    pm.expect(jsonData).to.have.property(\"data\", \"Server is up and running.\");\r",
+													"    pm.expect(jsonData).to.have.property(\"message\", \"\");\r",
+													"    pm.expect(jsonData).to.have.property(\"isSuccessful\", true);\r",
+													"    pm.expect(jsonData).to.have.property(\"messages\").that.is.an(\"array\").that.is.empty;\r",
+													"    pm.expect(jsonData).to.have.property(\"timeGenerated\").that.is.a(\"string\");\r",
+													"});"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "77a8f700-b4b1-4ba1-8db7-b6260d4be468",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": {
+												"token": "{{bearerToken}}"
+											}
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": "{{baseUrl_Dev}}/api/ServerTest/protected"
+									},
+									"response": [
+										{
+											"id": "76b20bd0-f485-4352-a916-be5561f5da2b",
+											"name": "Success",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": "{{baseUrl}}/api/ServerTest/protected"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n  \"data\": \"nulla sunt\",\n  \"message\": \"Duis magna\",\n  \"isSuccessful\": true,\n  \"messages\": [\n    \"eu\",\n    \"d\"\n  ],\n  \"timeGenerated\": \"2001-06-23T03:36:40.151Z\"\n}"
+										}
+									]
+								},
+								{
+									"name": "ServerTest_protected_Unauthorized",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"id": "4262159f-9580-4eff-91fc-fc9af0f3e620",
+												"exec": [
+													"// Unauthorized error message not implemented"
+												],
+												"type": "text/javascript",
+												"packages": {}
+											}
+										}
+									],
+									"id": "7cdc6aea-0f80-4d51-9b0f-7c33ff184e15",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": "{{baseUrl_Dev}}/api/ServerTest/protected"
+									},
+									"response": [
+										{
+											"id": "6e686cf7-ee0f-46e6-abe7-9c5488c08419",
+											"name": "Success",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: bearer",
+														"key": "Authorization",
+														"value": "Bearer <token>"
+													}
+												],
+												"url": "{{baseUrl}}/api/ServerTest/protected"
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n  \"data\": \"nulla sunt\",\n  \"message\": \"Duis magna\",\n  \"isSuccessful\": true,\n  \"messages\": [\n    \"eu\",\n    \"d\"\n  ],\n  \"timeGenerated\": \"2001-06-23T03:36:40.151Z\"\n}"
+										}
+									]
+								}
+							],
+							"id": "d04370b9-e32e-42cf-8e7f-34b81aff05fc"
+						}
+					],
+					"id": "d621edbc-9a73-4f2e-ac34-b7a06e3bc676"
 				}
 			],
 			"id": "f758df99-8356-431a-9a0d-2ac7352fe1e9"
