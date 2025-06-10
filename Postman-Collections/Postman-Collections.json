@@ -9021,7 +9021,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"pin\": \"0000\"\n}",
+													"raw": "{\n  \"pin\": \"0011\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
@@ -9029,7 +9029,7 @@
 														}
 													}
 												},
-												"url": "{{baseUrl_Dev}}/api/ProfileMaintenance/customer/set_wallet_pin"
+												"url": "{{baseUrl_Sandbox}}/api/ProfileMaintenance/customer/set_wallet_pin"
 											},
 											"response": [
 												{
