@@ -8560,7 +8560,32 @@
 									"name": "Fund_withdrawal",
 									"item": [
 										{
-											"name": "(USAGE: To process withdrawal from customer wallet",
+											"name": "Withdrawal_NoWallet",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "aac4ded3-85d0-4d6d-b9fb-ec881b5b9137",
+														"exec": [
+															"const jsonData = pm.response.json();\r",
+															"\r",
+															"pm.test(\"Status code is 400\", () => {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Response indicates no wallet and prompts NIN linking\", () => {\r",
+															"    pm.expect(jsonData).to.have.property(\"isSuccessful\", false);\r",
+															"    pm.expect(jsonData).to.have.property(\"message\", \"You currently have no wallet. Please, proceed to link your NIN to generate one.\");\r",
+															"    pm.expect(jsonData).to.have.property(\"data\", \"\");\r",
+															"    pm.expect(jsonData).to.have.property(\"messages\").that.is.an(\"array\").that.is.empty;\r",
+															"    pm.expect(jsonData).to.have.property(\"timeGenerated\").that.is.a(\"string\");\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
 											"id": "6a02659a-6bd2-4322-b376-19fd92469fff",
 											"protocolProfileBehavior": {
 												"disableBodyPruning": true
@@ -8593,11 +8618,120 @@
 														}
 													}
 												},
-												"url": "{{baseUrl_Dev}}/api/WalletMaintenance/fund_withdrawal"
+												"url": "{{baseUrl_Sandbox}}/api/WalletMaintenance/fund_withdrawal"
 											},
 											"response": [
 												{
 													"id": "610c995c-cef2-4686-8384-5e725555c58c",
+													"name": "Success",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: bearer",
+																"key": "Authorization",
+																"value": "Bearer <token>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"amount\": -26645730.588837147,\n  \"walletPin\": \"et in ex\",\n  \"destinationBankCode\": \"sint in dolor dolore\",\n  \"destinationAccountNumber\": \"proident aliquip dolor pariatur\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/WalletMaintenance/fund_withdrawal"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"responseTime": null,
+													"body": "{\n  \"data\": {\n    \"status\": \"ex eu occaecat irure\",\n    \"message\": \"Ut ad\",\n    \"narration\": \"veniam ut dolor\",\n    \"transactionStan\": \"aliquip Excepteur in Lorem\",\n    \"transactionReference\": \"dolore cillum enim laboris\",\n    \"orinalTxnTransactionDate\": \"est consequat\",\n    \"paymentRecordID\": \"8b468bab-bae1-e16d-8942-2abd01f180bd\",\n    \"platformTransactionReference\": \"in minim aliquip voluptate aliqua\"\n  },\n  \"message\": \"in pariatur aute cillum\",\n  \"isSuccessful\": true,\n  \"messages\": [\n    \"id\",\n    \"voluptate fugiat\"\n  ],\n  \"timeGenerated\": \"1991-08-17T23:17:18.537Z\"\n}"
+												}
+											]
+										},
+										{
+											"name": "Withdrawal_NoPIN_Set",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"id": "aac4ded3-85d0-4d6d-b9fb-ec881b5b9137",
+														"exec": [
+															"const jsonData = pm.response.json();\r",
+															"\r",
+															"pm.test(\"Status code is 400\", () => {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Response indicates no wallet and prompts NIN linking\", () => {\r",
+															"    pm.expect(jsonData).to.have.property(\"isSuccessful\", false);\r",
+															"    pm.expect(jsonData).to.have.property(\"message\", \"You currently have no wallet. Please, proceed to link your NIN to generate one.\");\r",
+															"    pm.expect(jsonData).to.have.property(\"data\", \"\");\r",
+															"    pm.expect(jsonData).to.have.property(\"messages\").that.is.an(\"array\").that.is.empty;\r",
+															"    pm.expect(jsonData).to.have.property(\"timeGenerated\").that.is.a(\"string\");\r",
+															"});"
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"id": "f2c782e2-c742-4d10-93c3-09454f5ce4c9",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{bearerToken}}"
+													}
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"amount\": 100,\n  \"walletPin\": \"2222\",\n  \"destinationBankCode\": \"UBA\",\n  \"destinationAccountNumber\": \"4657489567\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl_Sandbox}}/api/WalletMaintenance/fund_withdrawal"
+											},
+											"response": [
+												{
+													"id": "5e9096f9-6815-4d19-99e1-93b0983960ce",
 													"name": "Success",
 													"originalRequest": {
 														"method": "POST",
