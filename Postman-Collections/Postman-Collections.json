@@ -7821,62 +7821,6 @@
 											"name": "Wallet_information",
 											"item": [
 												{
-													"name": "Get_Wallet _Information_Successful",
-													"id": "ffb584be-0597-43b9-8070-bba752524f5d",
-													"protocolProfileBehavior": {
-														"disableBodyPruning": true
-													},
-													"request": {
-														"auth": {
-															"type": "bearer",
-															"bearer": {
-																"token": "{{bearerToken}}"
-															}
-														},
-														"method": "GET",
-														"header": [
-															{
-																"key": "Accept",
-																"value": "application/json"
-															}
-														],
-														"url": "{{baseUrl_Sandbox}}/api/WalletMaintenance/customer/wallet_information"
-													},
-													"response": [
-														{
-															"id": "cfa617e7-47bf-46e0-8fa8-c304a7c3090a",
-															"name": "Success",
-															"originalRequest": {
-																"method": "GET",
-																"header": [
-																	{
-																		"key": "Accept",
-																		"value": "application/json"
-																	},
-																	{
-																		"description": "Added as a part of security scheme: bearer",
-																		"key": "Authorization",
-																		"value": "Bearer <token>"
-																	}
-																],
-																"url": "{{baseUrl}}/api/WalletMaintenance/customer/wallet_information"
-															},
-															"status": "OK",
-															"code": 200,
-															"_postman_previewlanguage": "json",
-															"header": [
-																{
-																	"key": "Content-Type",
-																	"value": "application/json"
-																}
-															],
-															"cookie": [],
-															"responseTime": null,
-															"body": "{\n  \"data\": {\n    \"isWalletCreated\": true,\n    \"walletAccountName\": \"esse reprehenderit dolor consequat nisi\",\n    \"walletAccountNumber\": \"dolor adipis\",\n    \"walletAvailableBalance\": 33100753.979005188,\n    \"status\": \"Completed\"\n  },\n  \"message\": \"culpa cupidata\",\n  \"isSuccessful\": false,\n  \"messages\": [\n    \"irure sed esse est\",\n    \"et elit\"\n  ],\n  \"timeGenerated\": \"1995-01-26T15:23:57.139Z\"\n}"
-														}
-													]
-												},
-												{
 													"name": "Get_Wallet _Information_NoWallet",
 													"event": [
 														{
@@ -7921,11 +7865,97 @@
 																"value": "application/json"
 															}
 														],
-														"url": "{{baseUrl_Dev}}/api/WalletMaintenance/customer/wallet_information"
+														"url": "{{baseUrl_Sandbox}}/api/WalletMaintenance/customer/wallet_information"
 													},
 													"response": [
 														{
 															"id": "8c7ddd16-0044-4555-9687-c73d25d5e174",
+															"name": "Success",
+															"originalRequest": {
+																"method": "GET",
+																"header": [
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	},
+																	{
+																		"description": "Added as a part of security scheme: bearer",
+																		"key": "Authorization",
+																		"value": "Bearer <token>"
+																	}
+																],
+																"url": "{{baseUrl}}/api/WalletMaintenance/customer/wallet_information"
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																}
+															],
+															"cookie": [],
+															"responseTime": null,
+															"body": "{\n  \"data\": {\n    \"isWalletCreated\": true,\n    \"walletAccountName\": \"esse reprehenderit dolor consequat nisi\",\n    \"walletAccountNumber\": \"dolor adipis\",\n    \"walletAvailableBalance\": 33100753.979005188,\n    \"status\": \"Completed\"\n  },\n  \"message\": \"culpa cupidata\",\n  \"isSuccessful\": false,\n  \"messages\": [\n    \"irure sed esse est\",\n    \"et elit\"\n  ],\n  \"timeGenerated\": \"1995-01-26T15:23:57.139Z\"\n}"
+														}
+													]
+												},
+												{
+													"name": "Get_Wallet _Information_Successful",
+													"event": [
+														{
+															"listen": "test",
+															"script": {
+																"id": "74eddebd-234f-495e-8071-b2790f3b3c9d",
+																"exec": [
+																	"const jsonData = pm.response.json();\r",
+																	"\r",
+																	"pm.test(\"Status code is 200\", () => {\r",
+																	"    pm.response.to.have.status(200);\r",
+																	"});\r",
+																	"\r",
+																	"pm.test(\"Wallet creation response is valid and successful\", () => {\r",
+																	"    pm.expect(jsonData).to.have.property(\"isSuccessful\", true);\r",
+																	"    pm.expect(jsonData).to.have.property(\"message\", \"Request was processed successfully.\");\r",
+																	"    pm.expect(jsonData).to.have.property(\"messages\").that.is.an(\"array\").that.is.empty;\r",
+																	"    pm.expect(jsonData).to.have.property(\"timeGenerated\").that.is.a(\"string\");\r",
+																	"    \r",
+																	"    pm.expect(jsonData.data).to.have.property(\"isWalletCreated\", true);\r",
+																	"    pm.expect(jsonData.data).to.have.property(\"walletAccountName\").that.is.a(\"string\").and.is.not.empty;\r",
+																	"    pm.expect(jsonData.data).to.have.property(\"walletAccountNumber\").that.is.a(\"string\").and.is.not.empty;\r",
+																	"    pm.expect(jsonData.data).to.have.property(\"walletAvailableBalance\").that.is.a(\"number\");\r",
+																	"    pm.expect(jsonData.data).to.have.property(\"status\", \"Completed\");\r",
+																	"});"
+																],
+																"type": "text/javascript",
+																"packages": {}
+															}
+														}
+													],
+													"id": "ffb584be-0597-43b9-8070-bba752524f5d",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
+														"auth": {
+															"type": "bearer",
+															"bearer": {
+																"token": "{{bearerToken}}"
+															}
+														},
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"url": "{{baseUrl_Sandbox}}/api/WalletMaintenance/customer/wallet_information"
+													},
+													"response": [
+														{
+															"id": "cfa617e7-47bf-46e0-8fa8-c304a7c3090a",
 															"name": "Success",
 															"originalRequest": {
 																"method": "GET",
