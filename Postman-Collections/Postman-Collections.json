@@ -8222,7 +8222,33 @@
 													"name": "Status",
 													"item": [
 														{
-															"name": "(USAGE: To check the status of a request to credit/debit a customer's wallet using the transaction's unique reference.)",
+															"name": "Check_Request_Status_Successful",
+															"event": [
+																{
+																	"listen": "test",
+																	"script": {
+																		"id": "9281c773-62fe-4fe2-ba7d-417435afe217",
+																		"exec": [
+																			"const jsonData = pm.response.json();\r",
+																			"\r",
+																			"pm.test(\"Status code is 200\", () => {\r",
+																			"    pm.response.to.have.status(200);\r",
+																			"});\r",
+																			"\r",
+																			"pm.test(\"Response indicates successful payment\", () => {\r",
+																			"    pm.expect(jsonData).to.have.property(\"isSuccessful\", true);\r",
+																			"    pm.expect(jsonData).to.have.property(\"message\", \"Payment is successful.\");\r",
+																			"    pm.expect(jsonData).to.have.property(\"data\").that.is.an(\"object\");\r",
+																			"    pm.expect(jsonData.data).to.have.property(\"isPaymentSuccessful\", true);\r",
+																			"    pm.expect(jsonData).to.have.property(\"messages\").that.is.an(\"array\").that.is.empty;\r",
+																			"    pm.expect(jsonData).to.have.property(\"timeGenerated\").that.is.a(\"string\");\r",
+																			"});"
+																		],
+																		"type": "text/javascript",
+																		"packages": {}
+																	}
+																}
+															],
 															"id": "bf1b948e-f5e6-483f-ad05-06069fc8bac4",
 															"protocolProfileBehavior": {
 																"disableBodyPruning": true
@@ -8262,6 +8288,125 @@
 															"response": [
 																{
 																	"id": "25de9bea-e338-4cd6-a84e-6df431a93d66",
+																	"name": "Success",
+																	"originalRequest": {
+																		"method": "GET",
+																		"header": [
+																			{
+																				"key": "Accept",
+																				"value": "application/json"
+																			},
+																			{
+																				"description": "Added as a part of security scheme: bearer",
+																				"key": "Authorization",
+																				"value": "Bearer <token>"
+																			}
+																		],
+																		"url": {
+																			"raw": "{{baseUrl}}/api/WalletMaintenance/get/wallet_transaction/status?transactionReference=incididunt commodo&isCreditTransaction=true",
+																			"host": [
+																				"{{baseUrl}}"
+																			],
+																			"path": [
+																				"api",
+																				"WalletMaintenance",
+																				"get",
+																				"wallet_transaction",
+																				"status"
+																			],
+																			"query": [
+																				{
+																					"key": "transactionReference",
+																					"value": "incididunt commodo"
+																				},
+																				{
+																					"key": "isCreditTransaction",
+																					"value": "true"
+																				}
+																			]
+																		}
+																	},
+																	"status": "OK",
+																	"code": 200,
+																	"_postman_previewlanguage": "json",
+																	"header": [
+																		{
+																			"key": "Content-Type",
+																			"value": "application/json"
+																		}
+																	],
+																	"cookie": [],
+																	"responseTime": null,
+																	"body": "{\n  \"data\": {\n    \"isPaymentSuccessful\": false\n  },\n  \"message\": \"pariatur incididunt\",\n  \"isSuccessful\": true,\n  \"messages\": [\n    \"occaecat est\",\n    \"in ad aliquip\"\n  ],\n  \"timeGenerated\": \"1956-12-16T07:26:44.839Z\"\n}"
+																}
+															]
+														},
+														{
+															"name": "Check_Request_Status_NoFound",
+															"event": [
+																{
+																	"listen": "test",
+																	"script": {
+																		"id": "9281c773-62fe-4fe2-ba7d-417435afe217",
+																		"exec": [
+																			"const jsonData = pm.response.json();\r",
+																			"\r",
+																			"pm.test(\"Status code is 404\", () => {\r",
+																			"    pm.response.to.have.status(404);\r",
+																			"});\r",
+																			"\r",
+																			"pm.test(\"Response indicates transaction not found\", () => {\r",
+																			"    pm.expect(jsonData).to.have.property(\"isSuccessful\", false);\r",
+																			"    pm.expect(jsonData).to.have.property(\"message\", \"Transaction was not found\");\r",
+																			"    pm.expect(jsonData).to.have.property(\"data\", \"\");\r",
+																			"    pm.expect(jsonData).to.have.property(\"messages\").that.is.an(\"array\").that.is.empty;\r",
+																			"    pm.expect(jsonData).to.have.property(\"timeGenerated\").that.is.a(\"string\");\r",
+																			"});"
+																		],
+																		"type": "text/javascript",
+																		"packages": {}
+																	}
+																}
+															],
+															"id": "4b2f0023-dafe-45a7-80d7-516eb7cd5bd3",
+															"protocolProfileBehavior": {
+																"disableBodyPruning": true
+															},
+															"request": {
+																"method": "GET",
+																"header": [
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl_Sandbox}}/api/WalletMaintenance/get/wallet_transaction/status?transactionReference=Pawaplay_72effbb8cb5b4fe287c56f7ab528d6&isCreditTransaction=true",
+																	"host": [
+																		"{{baseUrl_Sandbox}}"
+																	],
+																	"path": [
+																		"api",
+																		"WalletMaintenance",
+																		"get",
+																		"wallet_transaction",
+																		"status"
+																	],
+																	"query": [
+																		{
+																			"key": "transactionReference",
+																			"value": "Pawaplay_72effbb8cb5b4fe287c56f7ab528d6"
+																		},
+																		{
+																			"key": "isCreditTransaction",
+																			"value": "true"
+																		}
+																	]
+																}
+															},
+															"response": [
+																{
+																	"id": "6a90c27f-33a2-4c68-bf31-40c66aa59478",
 																	"name": "Success",
 																	"originalRequest": {
 																		"method": "GET",
