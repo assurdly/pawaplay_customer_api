@@ -5997,7 +5997,7 @@
 														],
 														"body": {
 															"mode": "raw",
-															"raw": "{\n  \"type\": \"Card\", //or Bank\n  \"cardInformation\": {\n    \"cvv\": \"051\",\n    \"cardNumber\": \"5399412210558122\",\n    \"expiresInMMYY\": \"08/28\"\n  }\n}",
+															"raw": "{\n  \"type\": \"Card\", //or Bank\n  \"cardInformation\": {\n    \"cvv\": \"052\",\n    \"cardNumber\": \"5399412210558122\",\n    \"expiresInMMYY\": \"08/28\"\n  }\n}",
 															"options": {
 																"raw": {
 																	"headerFamily": "json",
