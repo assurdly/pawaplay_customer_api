@@ -9005,8 +9005,8 @@
 														"exec": [
 															"const jsonData = pm.response.json();\r",
 															"\r",
-															"pm.test(\"Status code is 200\", () => {\r",
-															"    pm.response.to.have.status(200);\r",
+															"pm.test(\"Status code is 400\", () => {\r",
+															"    pm.response.to.have.status(400);\r",
 															"});\r",
 															"\r",
 															"pm.test(\"Response indicates blocked PIN\", () => {\r",
