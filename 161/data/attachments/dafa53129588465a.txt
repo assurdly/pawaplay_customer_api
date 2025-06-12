@@ -1,6 +1,0 @@
-{
-  "firstName": "Zee 1",
-  "password": "",
-  "phoneNumber": "+2348153353130",
-  "referrerCode": "cu"
-}
