@@ -5545,7 +5545,7 @@
 											"name": "Get token-purchase status",
 											"item": [
 												{
-													"name": "(USAGE: To get an updated status on a pending/processing token-purchase request, using received unique reference ID.)",
+													"name": "Get_pending/processing _Update_Successful",
 													"event": [
 														{
 															"listen": "test",
