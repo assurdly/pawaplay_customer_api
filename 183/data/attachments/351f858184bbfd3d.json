@@ -1,0 +1,6 @@
+{
+    "Content-Length": "0",
+    "Date": "Fri, 13 Jun 2025 18:59:22 GMT",
+    "Server": "Kestrel",
+    "WWW-Authenticate": "Bearer error=\"invalid_token\""
+}
