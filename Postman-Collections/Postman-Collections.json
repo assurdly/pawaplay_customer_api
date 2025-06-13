@@ -5578,7 +5578,7 @@
 															}
 														],
 														"url": {
-															"raw": "{{baseUrl_Sandbox}}/api/TokenPurchase/purchase/token/status?uniqueReferenceID=202506132031b0b00bfa5a7e49b0b4d514e07e575aa5",
+															"raw": "{{baseUrl_Sandbox}}/api/TokenPurchase/purchase/token/status?uniqueReferenceID=202506132052cac70cfb4c21476cb3835e8de21cfaf2",
 															"host": [
 																"{{baseUrl_Sandbox}}"
 															],
@@ -5592,7 +5592,7 @@
 															"query": [
 																{
 																	"key": "uniqueReferenceID",
-																	"value": "202506132031b0b00bfa5a7e49b0b4d514e07e575aa5"
+																	"value": "202506132052cac70cfb4c21476cb3835e8de21cfaf2"
 																}
 															]
 														}
