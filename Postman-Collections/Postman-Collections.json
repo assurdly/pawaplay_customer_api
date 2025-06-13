@@ -5480,7 +5480,7 @@
 														],
 														"body": {
 															"mode": "raw",
-															"raw": "{\n  \"amount\": 500,\n  \"paymentDetails\": {\n    \"type\": \"Card\",\n    \"cardDetails\": {\n      \"referenceNumber\": \"Pawaplay_72effbb8cb5b4fe287c56f7ab528d6b5\"\n    },\n    \"walletDetails\": {\n      \"pin\": \"0101\"\n    }\n  },\n  \"uniqueTokenDistibutorID\": \"2a1c7f2b-c1da-11ef-9235-de8a86b687fa\",\n  \"meterDetails\": {\n    \"meterNumber\": \"0100266255\",\n    \"meterType\": \"Postpaid\",\n    \"meterActionIndicator\": \"Save\",\n    \"saveMeterDetailsAs\": \"Test_One\"\n  }\n}",
+															"raw": "{\n  \"amount\": 500,\n  \"paymentDetails\": {\n    \"type\": \"Card\",\n    \"cardDetails\": {\n      \"referenceNumber\": \"Pawaplay_a7dd0ea6571f47eda82ee759acc7b59c\"\n    },\n    \"walletDetails\": {\n      \"pin\": \"0101\"\n    }\n  },\n  \"uniqueTokenDistibutorID\": \"02506132031b0b00bfa5a7e49b0b4d514e07e575aa5\",\n  \"meterDetails\": {\n    \"meterNumber\": \"0100266255\",\n    \"meterType\": \"Postpaid\",\n    \"meterActionIndicator\": \"Save\",\n    \"saveMeterDetailsAs\": \"Test_One\"\n  }\n}",
 															"options": {
 																"raw": {
 																	"headerFamily": "json",
