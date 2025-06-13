@@ -1,8 +1,0 @@
-{
-  "type": "Card", 
-  "cardInformation": {
-    "cvv": "052",
-    "cardNumber": "5399412210558125",
-    "expiresInMMYY": "08/28"
-  }
-}
