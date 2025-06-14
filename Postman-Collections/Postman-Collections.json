@@ -7833,7 +7833,7 @@
 																		}
 																	}
 																},
-																"url": "{{baseUrl_Sandbox}}/api/WalletMaintenance/customer/wallet_creation"
+																"url": "{{baseUrl}}/api/WalletMaintenance/customer/wallet_creation"
 															},
 															"response": [
 																{
@@ -7943,7 +7943,7 @@
 																		}
 																	}
 																},
-																"url": "{{baseUrl_Sandbox}}/api/WalletMaintenance/customer/wallet_creation/validate_otp"
+																"url": "{{baseUrl}}/api/WalletMaintenance/customer/wallet_creation/validate_otp"
 															},
 															"response": [
 																{
