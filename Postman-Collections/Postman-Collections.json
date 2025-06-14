@@ -3207,7 +3207,7 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl_Sandbox}}/api/ProfileMaintenance/customer/activity_history?Skip=0&Take=100&To=2025-06-01T22:04:08.805Z&From=2025-06-14T22:04:08.805Z&Type=All",
+											"raw": "{{baseUrl_Sandbox}}/api/ProfileMaintenance/customer/activity_history?Skip=0&Take=100&From=2025-06-01T22:04:08.805Z&To=2025-06-14T22:04:08.805Z&Type=All",
 											"host": [
 												"{{baseUrl_Sandbox}}"
 											],
@@ -3227,11 +3227,11 @@
 													"value": "100"
 												},
 												{
-													"key": "To",
+													"key": "From",
 													"value": "2025-06-01T22:04:08.805Z"
 												},
 												{
-													"key": "From",
+													"key": "To",
 													"value": "2025-06-14T22:04:08.805Z"
 												},
 												{
