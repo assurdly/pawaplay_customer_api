@@ -5701,6 +5701,19 @@
 											"item": [
 												{
 													"name": "Process_token_purchase_card",
+													"event": [
+														{
+															"listen": "test",
+															"script": {
+																"id": "8855db14-0609-4712-a6ce-f63538180bce",
+																"exec": [
+																	"//This would be updated when the endpoint is fixed"
+																],
+																"type": "text/javascript",
+																"packages": {}
+															}
+														}
+													],
 													"id": "d6f15f4f-25f7-4992-b48d-c920c25a4a92",
 													"protocolProfileBehavior": {
 														"disableBodyPruning": true
