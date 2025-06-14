@@ -3207,7 +3207,7 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl_Sandbox}}/api/ProfileMaintenance/customer/activity_history?Skip=315273&Take=315273&To=2025-06-01T22:04:08.805Z&From=2025-06-14T22:04:08.805Z&Type=All",
+											"raw": "{{baseUrl_Sandbox}}/api/ProfileMaintenance/customer/activity_history?Skip=0&Take=100&To=2025-06-01T22:04:08.805Z&From=2025-06-14T22:04:08.805Z&Type=All",
 											"host": [
 												"{{baseUrl_Sandbox}}"
 											],
@@ -3220,11 +3220,11 @@
 											"query": [
 												{
 													"key": "Skip",
-													"value": "315273"
+													"value": "0"
 												},
 												{
 													"key": "Take",
-													"value": "315273"
+													"value": "100"
 												},
 												{
 													"key": "To",
@@ -3358,9 +3358,9 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl_Dev}}/api/ProfileMaintenance/customer/activity_history?Skip=315273&Take=315273&To=2020-12-25T22:04:08.805Z&From=202-12-25T22:04:08.805Z&Type=All",
+											"raw": "{{baseUrl_Sandbox}}/api/ProfileMaintenance/customer/activity_history?Skip=315273&Take=315273&To=2020-12-25T22:04:08.805Z&From=202-12-25T22:04:08.805Z&Type=All",
 											"host": [
-												"{{baseUrl_Dev}}"
+												"{{baseUrl_Sandbox}}"
 											],
 											"path": [
 												"api",
@@ -3493,9 +3493,9 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl_Dev}}/api/ProfileMaintenance/customer/activity_history?Skip=315273&Take=315273&To=2020-12-25T22:04:08.805Z&From=202-12-25T22:04:08.805Z&Type=All",
+											"raw": "{{baseUrl_Sandbox}}/api/ProfileMaintenance/customer/activity_history?Skip=315273&Take=315273&To=2020-12-25T22:04:08.805Z&From=202-12-25T22:04:08.805Z&Type=All",
 											"host": [
-												"{{baseUrl_Dev}}"
+												"{{baseUrl_Sandbox}}"
 											],
 											"path": [
 												"api",
