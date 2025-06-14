@@ -3181,7 +3181,7 @@
 											"script": {
 												"id": "5b9b1dba-ff60-430b-a7fb-d7cd7a727e9f",
 												"exec": [
-													"//To be updated when a bill and payment trasnaction is made"
+													"//To be updated when a bill and payment transaction is made"
 												],
 												"type": "text/javascript",
 												"packages": {}
@@ -3207,9 +3207,9 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl_Dev}}/api/ProfileMaintenance/customer/activity_history?Skip=315273&Take=315273&To=2025-06-01T22:04:08.805Z&From=2025-06-10T22:04:08.805Z&Type=All",
+											"raw": "{{baseUrl_Sandbox}}/api/ProfileMaintenance/customer/activity_history?Skip=315273&Take=315273&To=2025-06-01T22:04:08.805Z&From=2025-06-14T22:04:08.805Z&Type=All",
 											"host": [
-												"{{baseUrl_Dev}}"
+												"{{baseUrl_Sandbox}}"
 											],
 											"path": [
 												"api",
@@ -3232,7 +3232,7 @@
 												},
 												{
 													"key": "From",
-													"value": "2025-06-10T22:04:08.805Z"
+													"value": "2025-06-14T22:04:08.805Z"
 												},
 												{
 													"key": "Type",
