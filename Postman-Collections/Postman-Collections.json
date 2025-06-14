@@ -5461,6 +5461,178 @@
 																	"body": "{\n  \"data\": \"nulla sunt\",\n  \"message\": \"Duis magna\",\n  \"isSuccessful\": true,\n  \"messages\": [\n    \"eu\",\n    \"d\"\n  ],\n  \"timeGenerated\": \"2001-06-23T03:36:40.151Z\"\n}"
 																}
 															]
+														},
+														{
+															"name": "(USAGE: To confirm the status of a payment made with card (e.g: for token purchase) using the unique transaction reference Copy",
+															"id": "857f7ca7-2e30-4f39-a927-2b29a07279f2",
+															"protocolProfileBehavior": {
+																"disableBodyPruning": true
+															},
+															"request": {
+																"method": "POST",
+																"header": [
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl_Sandbox}}/api/TokenPurchase/payment/card/status?uniqueTransactionReference=025061322324ded8358eef6485d95af456a8396b6c7",
+																	"host": [
+																		"{{baseUrl_Sandbox}}"
+																	],
+																	"path": [
+																		"api",
+																		"TokenPurchase",
+																		"payment",
+																		"card",
+																		"status"
+																	],
+																	"query": [
+																		{
+																			"key": "uniqueTransactionReference",
+																			"value": "025061322324ded8358eef6485d95af456a8396b6c7"
+																		}
+																	]
+																}
+															},
+															"response": [
+																{
+																	"id": "8ac35e01-4ee3-47c4-a147-62200bb660c9",
+																	"name": "Success",
+																	"originalRequest": {
+																		"method": "POST",
+																		"header": [
+																			{
+																				"key": "Accept",
+																				"value": "application/json"
+																			},
+																			{
+																				"description": "Added as a part of security scheme: bearer",
+																				"key": "Authorization",
+																				"value": "Bearer <token>"
+																			}
+																		],
+																		"url": {
+																			"raw": "{{baseUrl}}/api/TokenPurchase/payment/card/status?uniqueTransactionReference=incididunt commodo",
+																			"host": [
+																				"{{baseUrl}}"
+																			],
+																			"path": [
+																				"api",
+																				"TokenPurchase",
+																				"payment",
+																				"card",
+																				"status"
+																			],
+																			"query": [
+																				{
+																					"key": "uniqueTransactionReference",
+																					"value": "incididunt commodo"
+																				}
+																			]
+																		}
+																	},
+																	"status": "OK",
+																	"code": 200,
+																	"_postman_previewlanguage": "json",
+																	"header": [
+																		{
+																			"key": "Content-Type",
+																			"value": "application/json"
+																		}
+																	],
+																	"cookie": [],
+																	"responseTime": null,
+																	"body": "{\n  \"data\": \"nulla sunt\",\n  \"message\": \"Duis magna\",\n  \"isSuccessful\": true,\n  \"messages\": [\n    \"eu\",\n    \"d\"\n  ],\n  \"timeGenerated\": \"2001-06-23T03:36:40.151Z\"\n}"
+																}
+															]
+														},
+														{
+															"name": "(USAGE: To confirm the status of a payment made with card (e.g: for token purchase) using the unique transaction reference Copy 2",
+															"id": "e20ec91e-de03-45e2-99a3-e5f5e0345cf1",
+															"protocolProfileBehavior": {
+																"disableBodyPruning": true
+															},
+															"request": {
+																"method": "POST",
+																"header": [
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl_Sandbox}}/api/TokenPurchase/payment/card/status?uniqueTransactionReference=025061322324ded8358eef6485d95af456a8396b6c7",
+																	"host": [
+																		"{{baseUrl_Sandbox}}"
+																	],
+																	"path": [
+																		"api",
+																		"TokenPurchase",
+																		"payment",
+																		"card",
+																		"status"
+																	],
+																	"query": [
+																		{
+																			"key": "uniqueTransactionReference",
+																			"value": "025061322324ded8358eef6485d95af456a8396b6c7"
+																		}
+																	]
+																}
+															},
+															"response": [
+																{
+																	"id": "515b7ce4-fa77-4bb6-9b4b-98b0d8aaef05",
+																	"name": "Success",
+																	"originalRequest": {
+																		"method": "POST",
+																		"header": [
+																			{
+																				"key": "Accept",
+																				"value": "application/json"
+																			},
+																			{
+																				"description": "Added as a part of security scheme: bearer",
+																				"key": "Authorization",
+																				"value": "Bearer <token>"
+																			}
+																		],
+																		"url": {
+																			"raw": "{{baseUrl}}/api/TokenPurchase/payment/card/status?uniqueTransactionReference=incididunt commodo",
+																			"host": [
+																				"{{baseUrl}}"
+																			],
+																			"path": [
+																				"api",
+																				"TokenPurchase",
+																				"payment",
+																				"card",
+																				"status"
+																			],
+																			"query": [
+																				{
+																					"key": "uniqueTransactionReference",
+																					"value": "incididunt commodo"
+																				}
+																			]
+																		}
+																	},
+																	"status": "OK",
+																	"code": 200,
+																	"_postman_previewlanguage": "json",
+																	"header": [
+																		{
+																			"key": "Content-Type",
+																			"value": "application/json"
+																		}
+																	],
+																	"cookie": [],
+																	"responseTime": null,
+																	"body": "{\n  \"data\": \"nulla sunt\",\n  \"message\": \"Duis magna\",\n  \"isSuccessful\": true,\n  \"messages\": [\n    \"eu\",\n    \"d\"\n  ],\n  \"timeGenerated\": \"2001-06-23T03:36:40.151Z\"\n}"
+																}
+															]
 														}
 													],
 													"id": "8d967286-0323-46a0-b4b2-ab2fe9e8d8c3"
