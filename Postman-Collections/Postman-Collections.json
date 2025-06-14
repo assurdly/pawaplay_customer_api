@@ -4593,7 +4593,7 @@
 													]
 												},
 												{
-													"name": "InValidate_DistributoID_MeterNumber_Postpaid",
+													"name": "Invalidate_DistributoID_MeterNumber_Postpaid",
 													"event": [
 														{
 															"listen": "test",
