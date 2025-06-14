@@ -3181,7 +3181,7 @@
 											"script": {
 												"id": "5b9b1dba-ff60-430b-a7fb-d7cd7a727e9f",
 												"exec": [
-													"//To be updated when a bill and payment transaction is made"
+													"//To be updated when when fixed"
 												],
 												"type": "text/javascript",
 												"packages": {}
