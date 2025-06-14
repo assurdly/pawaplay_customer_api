@@ -1,0 +1,14 @@
+const response = pm.response.json();
+
+pm.test("Validate status code and response schema", () => {
+    pm.response.to.have.status(400);
+
+    pm.expect(response).to.be.an("object");
+    pm.expect(response).to.include({
+        data: "",
+        message: "Provided phone number is linked to an existing profile.",
+        isSuccessful: false
+    });
+    pm.expect(response).to.have.property("messages").that.is.an("array");
+    pm.expect(response).to.have.property("timeGenerated").that.is.a("string");
+});
