@@ -10169,7 +10169,7 @@
 														}
 													}
 												},
-												"url": "{{baseUrl_Sandbox}}/api/ProfileMaintenance/customer/set_wallet_pin"
+												"url": "{{baseUrl}}/api/ProfileMaintenance/customer/set_wallet_pin"
 											},
 											"response": [
 												{
