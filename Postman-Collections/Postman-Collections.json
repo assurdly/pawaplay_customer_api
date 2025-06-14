@@ -5810,7 +5810,7 @@
 															"script": {
 																"id": "e23052a1-12a3-4545-915f-d7c32979983a",
 																"exec": [
-																	"// Not yet tested as no purchase has been made yet "
+																	"// When the endpoint is called the user gets a 500 error code "
 																],
 																"type": "text/javascript",
 																"packages": {}
