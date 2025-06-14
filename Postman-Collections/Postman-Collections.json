@@ -5574,7 +5574,7 @@
 															]
 														},
 														{
-															"name": "(USAGE: To confirm the status of a payment made with card (e.g: for token purchase) using the unique transaction reference Copy 2",
+															"name": "Confirm_Status_Card_Payment_Unauthorized",
 															"id": "e20ec91e-de03-45e2-99a3-e5f5e0345cf1",
 															"protocolProfileBehavior": {
 																"disableBodyPruning": true
