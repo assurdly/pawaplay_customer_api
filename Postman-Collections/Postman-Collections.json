@@ -5378,6 +5378,19 @@
 													"item": [
 														{
 															"name": "Confirm_Status_Card_Payment_Successful",
+															"event": [
+																{
+																	"listen": "test",
+																	"script": {
+																		"id": "902b2fa6-23c8-4c5d-b9b2-1ca561a57776",
+																		"exec": [
+																			"//No iformation retrieved this would be updated when fixed"
+																		],
+																		"type": "text/javascript",
+																		"packages": {}
+																	}
+																}
+															],
 															"id": "822cdf5c-75c6-469d-b345-d8ae1e517b8c",
 															"protocolProfileBehavior": {
 																"disableBodyPruning": true
@@ -5500,6 +5513,12 @@
 																"disableBodyPruning": true
 															},
 															"request": {
+																"auth": {
+																	"type": "bearer",
+																	"bearer": {
+																		"token": "{{bearerToken}}"
+																	}
+																},
 																"method": "POST",
 																"header": [
 																	{
@@ -5586,6 +5605,12 @@
 																"disableBodyPruning": true
 															},
 															"request": {
+																"auth": {
+																	"type": "bearer",
+																	"bearer": {
+																		"token": "{{bearerToken_Expired}}"
+																	}
+																},
 																"method": "POST",
 																"header": [
 																	{
