@@ -3207,7 +3207,7 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl_Sandbox}}/api/ProfileMaintenance/customer/activity_history?Skip=0&Take=100&From=2025-06-01T22:04:08.805Z&To=2025-06-14T22:04:08.805Z&Type=All",
+											"raw": "{{baseUrl_Sandbox}}/api/ProfileMaintenance/customer/activity_history?Skip=0&Take=20&Type=All",
 											"host": [
 												"{{baseUrl_Sandbox}}"
 											],
@@ -3224,15 +3224,17 @@
 												},
 												{
 													"key": "Take",
-													"value": "100"
+													"value": "20"
 												},
 												{
 													"key": "From",
-													"value": "2025-06-01T22:04:08.805Z"
+													"value": "2025-06-01T22:04:08.805Z",
+													"disabled": true
 												},
 												{
 													"key": "To",
-													"value": "2025-06-14T22:04:08.805Z"
+													"value": "2025-06-14T22:04:08.805Z",
+													"disabled": true
 												},
 												{
 													"key": "Type",
