@@ -5391,7 +5391,7 @@
 																	}
 																],
 																"url": {
-																	"raw": "{{baseUrl_Sandbox}}/api/TokenPurchase/payment/card/status?uniqueTransactionReference=2025061322324ded8358eef6485d95af456a8396b6c7",
+																	"raw": "{{baseUrl_Sandbox}}/api/TokenPurchase/payment/card/status?uniqueTransactionReference=31cba90c-c392-4658-9d1a-e1495546d167",
 																	"host": [
 																		"{{baseUrl_Sandbox}}"
 																	],
@@ -5405,7 +5405,7 @@
 																	"query": [
 																		{
 																			"key": "uniqueTransactionReference",
-																			"value": "2025061322324ded8358eef6485d95af456a8396b6c7"
+																			"value": "31cba90c-c392-4658-9d1a-e1495546d167"
 																		}
 																	]
 																}
