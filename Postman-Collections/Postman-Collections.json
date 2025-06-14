@@ -3181,7 +3181,16 @@
 											"script": {
 												"id": "5b9b1dba-ff60-430b-a7fb-d7cd7a727e9f",
 												"exec": [
-													"//To be updated when when fixed"
+													"const response = pm.response.json();\r",
+													"\r",
+													"pm.test(\"Status is 200\", () => pm.response.to.have.status(200));\r",
+													"\r",
+													"pm.test(\"Transaction successful\", () => \r",
+													"    pm.expect(response.data[0].status).to.eql(\"Successful\")\r",
+													");\r",
+													"\r",
+													"\r",
+													""
 												],
 												"type": "text/javascript",
 												"packages": {}
