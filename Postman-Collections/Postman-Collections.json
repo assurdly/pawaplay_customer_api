@@ -5391,9 +5391,9 @@
 																	}
 																],
 																"url": {
-																	"raw": "{{baseUrl}}/api/TokenPurchase/payment/card/status?uniqueTransactionReference=incididunt commodo",
+																	"raw": "{{baseUrl_Sandbox}}/api/TokenPurchase/payment/card/status?uniqueTransactionReference=2025061322324ded8358eef6485d95af456a8396b6c7",
 																	"host": [
-																		"{{baseUrl}}"
+																		"{{baseUrl_Sandbox}}"
 																	],
 																	"path": [
 																		"api",
@@ -5405,7 +5405,7 @@
 																	"query": [
 																		{
 																			"key": "uniqueTransactionReference",
-																			"value": "incididunt commodo"
+																			"value": "2025061322324ded8358eef6485d95af456a8396b6c7"
 																		}
 																	]
 																}
