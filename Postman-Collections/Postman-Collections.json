@@ -5377,7 +5377,7 @@
 													"name": "Confirm card payemnt token purchase status",
 													"item": [
 														{
-															"name": "(USAGE: To confirm the status of a payment made with card (e.g: for token purchase) using the unique transaction reference",
+															"name": "Confirm_Status_Card_Payment_Successful",
 															"id": "822cdf5c-75c6-469d-b345-d8ae1e517b8c",
 															"protocolProfileBehavior": {
 																"disableBodyPruning": true
@@ -5463,7 +5463,7 @@
 															]
 														},
 														{
-															"name": "(USAGE: To confirm the status of a payment made with card (e.g: for token purchase) using the unique transaction reference Copy",
+															"name": "Confirm_Status_Card_Payment_NotFound",
 															"event": [
 																{
 																	"listen": "test",
