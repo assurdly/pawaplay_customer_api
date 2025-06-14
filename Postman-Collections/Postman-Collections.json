@@ -7656,6 +7656,19 @@
 											"item": [
 												{
 													"name": "Change_Password_Inapp_Successful",
+													"event": [
+														{
+															"listen": "test",
+															"script": {
+																"id": "dd8c47f0-d7b4-498d-8b71-5440d14eaaca",
+																"exec": [
+																	"// 400 error message logged on bug report"
+																],
+																"type": "text/javascript",
+																"packages": {}
+															}
+														}
+													],
 													"id": "54fc4e03-69f2-44fc-a948-285ffb226457",
 													"protocolProfileBehavior": {
 														"disableBodyPruning": true
