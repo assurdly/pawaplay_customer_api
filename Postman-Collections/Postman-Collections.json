@@ -3102,150 +3102,6 @@
 							"name": "Activity_history",
 							"item": [
 								{
-									"name": "Retrieve_Bill/Payment_Transaction_Successful",
-									"event": [
-										{
-											"listen": "test",
-											"script": {
-												"id": "5b9b1dba-ff60-430b-a7fb-d7cd7a727e9f",
-												"exec": [
-													"const response = pm.response.json();\r",
-													"\r",
-													"pm.test(\"Status is 200\", () => pm.response.to.have.status(200));\r",
-													"\r",
-													"pm.test(\"Transaction successful\", () => \r",
-													"    pm.expect(response.data[0].status).to.eql(\"Successful\")\r",
-													");\r",
-													"\r",
-													"\r",
-													""
-												],
-												"type": "text/javascript",
-												"packages": {}
-											}
-										}
-									],
-									"id": "4c8469fd-02b7-42ef-866d-ecb3dbafeac0",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
-									"request": {
-										"auth": {
-											"type": "bearer",
-											"bearer": {
-												"token": "{{bearerToken}}"
-											}
-										},
-										"method": "GET",
-										"header": [
-											{
-												"key": "Accept",
-												"value": "application/json"
-											}
-										],
-										"url": {
-											"raw": "{{baseUrl_Sandbox}}/api/ProfileMaintenance/customer/activity_history?Skip=0&Take=20&From=2025-06-01T22:04:08.805Z&To=2025-06-14T22:04:08.805Z&Type=All",
-											"host": [
-												"{{baseUrl_Sandbox}}"
-											],
-											"path": [
-												"api",
-												"ProfileMaintenance",
-												"customer",
-												"activity_history"
-											],
-											"query": [
-												{
-													"key": "Skip",
-													"value": "0"
-												},
-												{
-													"key": "Take",
-													"value": "20"
-												},
-												{
-													"key": "From",
-													"value": "2025-06-01T22:04:08.805Z"
-												},
-												{
-													"key": "To",
-													"value": "2025-06-14T22:04:08.805Z"
-												},
-												{
-													"key": "Type",
-													"value": "All"
-												}
-											]
-										}
-									},
-									"response": [
-										{
-											"id": "7224b0d1-b6f9-4a41-b3e7-0e48d1a58fbe",
-											"name": "Success",
-											"originalRequest": {
-												"method": "GET",
-												"header": [
-													{
-														"key": "Accept",
-														"value": "application/json"
-													},
-													{
-														"description": "Added as a part of security scheme: bearer",
-														"key": "Authorization",
-														"value": "Bearer <token>"
-													}
-												],
-												"url": {
-													"raw": "{{baseUrl}}/api/ProfileMaintenance/customer/activity_history?Skip=315273&Take=315273&To=1949-12-25T22:04:08.805Z&From=1949-12-25T22:04:08.805Z&Type=All",
-													"host": [
-														"{{baseUrl}}"
-													],
-													"path": [
-														"api",
-														"ProfileMaintenance",
-														"customer",
-														"activity_history"
-													],
-													"query": [
-														{
-															"key": "Skip",
-															"value": "315273"
-														},
-														{
-															"key": "Take",
-															"value": "315273"
-														},
-														{
-															"key": "To",
-															"value": "1949-12-25T22:04:08.805Z"
-														},
-														{
-															"key": "From",
-															"value": "1949-12-25T22:04:08.805Z"
-														},
-														{
-															"key": "Type",
-															"value": "All"
-														}
-													]
-												}
-											},
-											"status": "OK",
-											"code": 200,
-											"_postman_previewlanguage": "json",
-											"header": [
-												{
-													"key": "Content-Type",
-													"value": "application/json"
-												}
-											],
-											"cookie": [],
-											"responseTime": null,
-											"body": "{\n  \"data\": [\n    {\n      \"status\": \"id dolor\",\n      \"amount\": 79651514.6822505,\n      \"billData\": {\n        \"tokenCode\": \"laborum non Ut adipisicing\",\n        \"meterName\": \"nulla Lorem Excepteur\",\n        \"meterNumber\": \"Duis nostrud dolore veniam\",\n        \"referenceNumber\": \"proident voluptate dolore quis aliqua\"\n      },\n      \"description\": \"qui\",\n      \"paymentMethod\": \"sunt nisi ullamco velit\",\n      \"activityDate\": \"2009-02-09T02:36:51.792Z\",\n      \"uniqueReferenceID\": \"commodo minim\",\n      \"transactionData\": {\n        \"paymentFor\": \"culpa do\",\n        \"referenceNumber\": \"elit Lorem quis enim et\",\n        \"source\": {\n          \"bank\": \"voluptate culpa quis elit\",\n          \"sourceHolderName\": \"fugiat sed velit\",\n          \"sourceHolderNumber\": \"in nisi\"\n        },\n        \"destination\": {\n          \"bank\": \"et Excepteur\",\n          \"destinationHolderName\": \"fugiat non deserunt\",\n          \"destinationHolderNumber\": \"velit\"\n        }\n      },\n      \"activityCategory\": \"All\"\n    },\n    {\n      \"status\": \"est dolor\",\n      \"amount\": 19317281.098676547,\n      \"billData\": {\n        \"tokenCode\": \"in enim\",\n        \"meterName\": \"velit occaecat culpa dolore\",\n        \"meterNumber\": \"id occaecat eiusmod veniam\",\n        \"referenceNumber\": \"proident adipisicing dolor dolore deserunt\"\n      },\n      \"description\": \"fugiat enim incididunt\",\n      \"paymentMethod\": \"minim ad eiusmod\",\n      \"activityDate\": \"1973-09-11T08:34:55.270Z\",\n      \"uniqueReferenceID\": \"anim aliqua tempor\",\n      \"transactionData\": {\n        \"paymentFor\": \"sit dolor labore occaecat\",\n        \"referenceNumber\": \"aliqua exercitation pariatur\",\n        \"source\": {\n          \"bank\": \"culpa ea magna aliqua irure\",\n          \"sourceHolderName\": \"labore\",\n          \"sourceHolderNumber\": \"in elit nisi pariatur aliqua\"\n        },\n        \"destination\": {\n          \"bank\": \"in Lorem\",\n          \"destinationHolderName\": \"irure ea minim\",\n          \"destinationHolderNumber\": \"officia Duis sit\"\n        }\n      },\n      \"activityCategory\": \"All\"\n    }\n  ],\n  \"message\": \"do amet exercitation culpa\",\n  \"isSuccessful\": false,\n  \"messages\": [\n    \"dolor reprehenderit in irure\",\n    \"aliquip anim proident ut\"\n  ],\n  \"timeGenerated\": \"1959-07-26T17:48:16.077Z\"\n}"
-										}
-									]
-								},
-								{
 									"name": "Retrieve_Bill/Payment_Transaction_NoHitory",
 									"event": [
 										{
@@ -4365,9 +4221,9 @@
 																	}
 																],
 																"url": {
-																	"raw": "{{baseUrl_Dev}}/api/ProfileMaintenance/customer/data/basic?customerProfileID=77c427e8-c82b-46c7-9dea-795fce6d56e4",
+																	"raw": "{{baseUrl_Sandbox}}/api/ProfileMaintenance/customer/data/basic?customerProfileID=77c427e8-c82b-46c7-9dea-795fce6d56e4",
 																	"host": [
-																		"{{baseUrl_Dev}}"
+																		"{{baseUrl_Sandbox}}"
 																	],
 																	"path": [
 																		"api",
