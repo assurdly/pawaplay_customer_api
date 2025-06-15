@@ -1,8 +1,0 @@
-{
-  "password": "Pawaplay1!",
-  "phoneNumberOrEmail": "07081556097"
-}
-
-
-
-
