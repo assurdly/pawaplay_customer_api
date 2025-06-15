@@ -1801,7 +1801,11 @@
 													"    pm.expect(jsonData).to.have.property(\"messages\").that.is.an(\"array\");\r",
 													"    pm.expect(jsonData.messages).to.be.empty;\r",
 													"    pm.expect(jsonData).to.have.property(\"timeGenerated\").that.is.a(\"string\");\r",
-													"});"
+													"});\r",
+													"\r",
+													"pm.test(\"Access token in the response is set as a collection variable\", function (){\r",
+													"    pm.collectionVariables.set(\"accessToken\", jsonData.data.token);\r",
+													"})"
 												],
 												"type": "text/javascript",
 												"packages": {}
@@ -3358,7 +3362,7 @@
 										"auth": {
 											"type": "bearer",
 											"bearer": {
-												"token": "{{bearerToken}}"
+												"token": "{{accessToken}}"
 											}
 										},
 										"method": "GET",
@@ -3369,9 +3373,9 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl_Sandbox}}/api/ProfileMaintenance/customer/activity_history?Skip=315273&Take=315273&To=2020-12-25T22:04:08.805Z&From=202-12-25T22:04:08.805Z&Type=All",
+											"raw": "{{baseUrl}}/api/ProfileMaintenance/customer/activity_history?Skip=315273&Take=315273&To=2020-12-25T22:04:08.805Z&From=202-12-25T22:04:08.805Z&Type=All",
 											"host": [
-												"{{baseUrl_Sandbox}}"
+												"{{baseUrl}}"
 											],
 											"path": [
 												"api",
@@ -3504,9 +3508,9 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl_Sandbox}}/api/ProfileMaintenance/customer/activity_history?Skip=315273&Take=315273&To=2020-12-25T22:04:08.805Z&From=202-12-25T22:04:08.805Z&Type=All",
+											"raw": "{{baseUrl}}/api/ProfileMaintenance/customer/activity_history?Skip=315273&Take=315273&To=2020-12-25T22:04:08.805Z&From=202-12-25T22:04:08.805Z&Type=All",
 											"host": [
-												"{{baseUrl_Sandbox}}"
+												"{{baseUrl}}"
 											],
 											"path": [
 												"api",
@@ -7287,6 +7291,10 @@
 		{
 			"key": "baseUrl",
 			"value": "/"
+		},
+		{
+			"key": "accessToken",
+			"value": ""
 		}
 	]
 }
