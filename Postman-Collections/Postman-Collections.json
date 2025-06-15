@@ -5209,7 +5209,7 @@
 												"auth": {
 													"type": "bearer",
 													"bearer": {
-														"token": "{{bearerToken}}"
+														"token": "{{accessToken}}"
 													}
 												},
 												"method": "POST",
@@ -7180,9 +7180,33 @@
 	"auth": {
 		"type": "bearer",
 		"bearer": {
-			"token": "{{bearerToken}}"
+			"token": "{{accessToken}}"
 		}
 	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "eecd29e4-ede4-42a2-b58b-571e95a5717e",
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "ff0b5eee-5e61-42d8-b8e4-0460d36b4483",
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
 	"variable": [
 		{
 			"key": "baseUrl",
