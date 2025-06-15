@@ -6404,7 +6404,7 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl_Dev}}/api/Subscription/subscribe_to_newsletter?email=pawa1@yopmail.com",
+											"raw": "{{baseUrl_Dev}}/api/Subscription/subscribe_to_newsletter?email={{$randomFirstName}}@yopmail.com",
 											"host": [
 												"{{baseUrl_Dev}}"
 											],
@@ -6416,7 +6416,7 @@
 											"query": [
 												{
 													"key": "email",
-													"value": "pawa1@yopmail.com"
+													"value": "{{$randomFirstName}}@yopmail.com"
 												}
 											]
 										}
