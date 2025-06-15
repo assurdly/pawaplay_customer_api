@@ -1,1 +1,0 @@
-//Error message for empty amount not implemented

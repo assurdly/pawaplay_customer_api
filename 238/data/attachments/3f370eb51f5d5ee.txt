@@ -1,0 +1,5 @@
+{
+  "customerProfileID": "266ae351-e6b1-4a4c-bdee-35e35d84dda2",
+  "notificationTitle": "Kino",
+  "notificationMessage": "API test for this endpoint"
+}
