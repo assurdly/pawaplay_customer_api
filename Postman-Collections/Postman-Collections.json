@@ -4093,7 +4093,23 @@
 															"script": {
 																"id": "399fbdb5-519f-4674-8aad-0266bdccd3ff",
 																"exec": [
-																	"// Unauthorized not catered for"
+																	"// Unauthorized not catered for\r",
+																	"\r",
+																	"//Error message not catered for\r",
+																	"pm.test('Status code is 401', function () {\r",
+																	"    pm.response.to.have.status(401);\r",
+																	"});\r",
+																	"\r",
+																	"pm.test('Response body should be an object', function () {\r",
+																	"    pm.expect(pm.response.json()).to.be.an('object');\r",
+																	"});\r",
+																	"\r",
+																	"// Validate error message in response body (assuming a standard error message structure)\r",
+																	"pm.test('Response body should contain an error message', function () {\r",
+																	"    const responseBody = pm.response.json();\r",
+																	"    pm.expect(responseBody).to.have.property('error');\r",
+																	"});\r",
+																	""
 																],
 																"type": "text/javascript",
 																"packages": {}
@@ -4504,7 +4520,23 @@
 																	"script": {
 																		"id": "47603d65-6bc9-453d-b737-d2db1a99007c",
 																		"exec": [
-																			"//Unauthorized not catered for"
+																			"//Unauthorized not catered for\r",
+																			"\r",
+																			"//Error message not catered for\r",
+																			"pm.test('Status code is 401', function () {\r",
+																			"    pm.response.to.have.status(401);\r",
+																			"});\r",
+																			"\r",
+																			"pm.test('Response body should be an object', function () {\r",
+																			"    pm.expect(pm.response.json()).to.be.an('object');\r",
+																			"});\r",
+																			"\r",
+																			"// Validate error message in response body (assuming a standard error message structure)\r",
+																			"pm.test('Response body should contain an error message', function () {\r",
+																			"    const responseBody = pm.response.json();\r",
+																			"    pm.expect(responseBody).to.have.property('error');\r",
+																			"});\r",
+																			""
 																		],
 																		"type": "text/javascript",
 																		"packages": {}
@@ -4880,7 +4912,23 @@
 											"script": {
 												"id": "2765be34-10de-436a-97ba-7166d70661c6",
 												"exec": [
-													"//Unauthorized not catered for"
+													"//Unauthorized not catered for\r",
+													"\r",
+													"//Error message not catered for\r",
+													"pm.test('Status code is 401', function () {\r",
+													"    pm.response.to.have.status(401);\r",
+													"});\r",
+													"\r",
+													"pm.test('Response body should be an object', function () {\r",
+													"    pm.expect(pm.response.json()).to.be.an('object');\r",
+													"});\r",
+													"\r",
+													"// Validate error message in response body (assuming a standard error message structure)\r",
+													"pm.test('Response body should contain an error message', function () {\r",
+													"    const responseBody = pm.response.json();\r",
+													"    pm.expect(responseBody).to.have.property('error');\r",
+													"});\r",
+													""
 												],
 												"type": "text/javascript",
 												"packages": {}
