@@ -7159,7 +7159,7 @@
 										"auth": {
 											"type": "bearer",
 											"bearer": {
-												"token": "{{bearerToken}}"
+												"token": "{{accessToken}}"
 											}
 										},
 										"method": "POST",
