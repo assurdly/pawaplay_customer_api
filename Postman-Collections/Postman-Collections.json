@@ -19,110 +19,6 @@
 									"name": "Sign_up",
 									"item": [
 										{
-											"name": "Onboard - Successful",
-											"event": [
-												{
-													"listen": "test",
-													"script": {
-														"id": "e9ab977e-c58f-4292-9dcc-d5f352f76e3e",
-														"exec": [
-															"const jsonData = pm.response.json();\r",
-															"\r",
-															"pm.test(\"Status code is 200\", function () {\r",
-															"    pm.response.to.have.status(200);\r",
-															"});\r",
-															"\r",
-															"pm.test(\"Response has expected properties\", function () {\r",
-															"    pm.expect(jsonData).to.have.property(\"data\");\r",
-															"    pm.expect(jsonData.data).to.have.property(\"token\");\r",
-															"    pm.expect(jsonData).to.have.property(\"message\", \"Your profile was created successfully.\");\r",
-															"    pm.expect(jsonData).to.have.property(\"isSuccessful\", true);\r",
-															"    pm.expect(jsonData).to.have.property(\"messages\");\r",
-															"    pm.expect(jsonData).to.have.property(\"timeGenerated\");\r",
-															"});"
-														],
-														"type": "text/javascript",
-														"packages": {}
-													}
-												}
-											],
-											"id": "faafe282-c8fb-42fa-87e5-66c4738a523c",
-											"protocolProfileBehavior": {
-												"disableBodyPruning": true
-											},
-											"request": {
-												"method": "POST",
-												"header": [
-													{
-														"key": "Content-Type",
-														"value": "application/json"
-													},
-													{
-														"key": "Accept",
-														"value": "application/json"
-													}
-												],
-												"body": {
-													"mode": "raw",
-													"raw": "{\n  \"firstName\": \"zeeMan_Two\",\n  \"password\": \"Pawaplay1!\",\n  \"phoneNumber\": \"+2347081556097\",\n  \"referrerCode\": \"cu\"\n}",
-													"options": {
-														"raw": {
-															"headerFamily": "json",
-															"language": "json"
-														}
-													}
-												},
-												"url": "{{baseUrl_Dev}}/api/Onboarding/customer/sign_up"
-											},
-											"response": [
-												{
-													"id": "57eb19e8-4ba6-4418-b17b-70dc72554b6a",
-													"name": "Success",
-													"originalRequest": {
-														"method": "POST",
-														"header": [
-															{
-																"key": "Content-Type",
-																"value": "application/json"
-															},
-															{
-																"key": "Accept",
-																"value": "application/json"
-															},
-															{
-																"description": "Added as a part of security scheme: bearer",
-																"key": "Authorization",
-																"value": "Bearer <token>"
-															}
-														],
-														"body": {
-															"mode": "raw",
-															"raw": "{\n  \"firstName\": \"dolor tempor nisi\",\n  \"password\": \"incididunt\",\n  \"phoneNumber\": \"anim tempor eu\",\n  \"referrerCode\": \"cu\"\n}",
-															"options": {
-																"raw": {
-																	"headerFamily": "json",
-																	"language": "json"
-																}
-															}
-														},
-														"url": "{{baseUrl}}/api/Onboarding/customer/sign_up"
-													},
-													"status": "OK",
-													"code": 200,
-													"_postman_previewlanguage": "json",
-													"header": [
-														{
-															"key": "Content-Type",
-															"value": "application/json"
-														}
-													],
-													"cookie": [],
-													"responseTime": null,
-													"body": "{\n  \"data\": {\n    \"token\": \"veniam consectetur\"\n  },\n  \"message\": \"dolore velit consectetur ex\",\n  \"isSuccessful\": false,\n  \"messages\": [\n    \"non anim eiusmod\",\n    \"ipsum laborum proident sunt\"\n  ],\n  \"timeGenerated\": \"1966-02-22T23:36:49.559Z\"\n}"
-												}
-											]
-										},
-										{
 											"name": "Onboard - Empty_Name",
 											"event": [
 												{
@@ -590,7 +486,7 @@
 												"auth": {
 													"type": "bearer",
 													"bearer": {
-														"token": "{{bearerToken}}"
+														"token": "{{accessToken}}"
 													}
 												},
 												"method": "GET",
@@ -5751,7 +5647,7 @@
 												"auth": {
 													"type": "bearer",
 													"bearer": {
-														"token": "{{bearerToken}}"
+														"token": "{{accessToken}}"
 													}
 												},
 												"method": "PATCH",
