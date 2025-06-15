@@ -5500,6 +5500,20 @@
 													"script": {
 														"id": "4b828d06-e8f4-4365-af0f-41b70be2373a",
 														"exec": [
+															"//Error message not catered for\r",
+															"pm.test('Status code is 401', function () {\r",
+															"    pm.response.to.have.status(401);\r",
+															"});\r",
+															"\r",
+															"pm.test('Response body should be an object', function () {\r",
+															"    pm.expect(pm.response.json()).to.be.an('object');\r",
+															"});\r",
+															"\r",
+															"// Validate error message in response body (assuming a standard error message structure)\r",
+															"pm.test('Response body should contain an error message', function () {\r",
+															"    const responseBody = pm.response.json();\r",
+															"    pm.expect(responseBody).to.have.property('error');\r",
+															"});\r",
 															""
 														],
 														"type": "text/javascript",
@@ -5515,7 +5529,7 @@
 												"auth": {
 													"type": "bearer",
 													"bearer": {
-														"token": "{{bearerToken_Expired}}"
+														"token": "{{bearerToken}}"
 													}
 												},
 												"method": "POST",
@@ -5536,7 +5550,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"customerProfileID\": \"ff45989f-0acb-48d2-8016-625e13b98a44\",\n  \"notificationTitle\": \"Test\",\n  \"notificationMessage\": \"How are you today\"\n}",
+													"raw": "{\n  \"customerProfileID\": \"266ae351-e6b1-4a4c-bdee-35e35d84dda2\",\n  \"notificationTitle\": \"Test\",\n  \"notificationMessage\": \"How are you today\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
