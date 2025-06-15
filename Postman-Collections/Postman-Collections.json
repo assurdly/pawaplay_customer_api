@@ -5930,7 +5930,25 @@
 													"script": {
 														"id": "820f88ce-90b2-47b8-9740-257a2f9cf85a",
 														"exec": [
-															"// Unauthourized not caterd for"
+															"// Unauthourized not caterd for\r",
+															"\r",
+															"//Error message not catered for\r",
+															"pm.test('Status code is 401', function () {\r",
+															"    pm.response.to.have.status(401);\r",
+															"});\r",
+															"\r",
+															"pm.test('Response body should be an object', function () {\r",
+															"    pm.expect(pm.response.json()).to.be.an('object');\r",
+															"});\r",
+															"\r",
+															"// Validate error message in response body (assuming a standard error message structure)\r",
+															"pm.test('Response body should contain an error message', function () {\r",
+															"    const responseBody = pm.response.json();\r",
+															"    pm.expect(responseBody).to.have.property('error');\r",
+															"});\r",
+															"\r",
+															"\r",
+															""
 														],
 														"type": "text/javascript",
 														"packages": {}
