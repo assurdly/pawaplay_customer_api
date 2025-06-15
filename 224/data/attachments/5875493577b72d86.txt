@@ -1,0 +1,1 @@
+{"data":"","message":"Invalid request! Please, provide a valid recipient phone number to proceed.","isSuccessful":false,"messages":[],"timeGenerated":"2025-06-15T09:23:34.4195461Z"}
