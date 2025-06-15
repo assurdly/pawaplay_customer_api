@@ -1,4 +1,0 @@
-{
-  "newPin": "0000",
-  "currentPin": "00"
-}

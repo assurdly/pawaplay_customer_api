@@ -1,0 +1,1 @@
+{"data":null,"message":"Your request has been treated successfully.","isSuccessful":true,"messages":[],"timeGenerated":"2025-06-15T10:12:28.9832826Z"}

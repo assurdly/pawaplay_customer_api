@@ -1,0 +1,12 @@
+{
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9zaWQiOiIyNjZhZTM1MS1lNmIxLTRhNGMtYmRlZS0zNWUzNWQ4NGRkYTIiLCJuL2EiOiIwODExMzAzNjgyOCIsIm5iZiI6MTc0OTk3ODc0NSwiZXhwIjoxNzQ5OTc5NjQ1LCJpYXQiOjE3NDk5Nzg3NDUsImlzcyI6Imh0dHA6Ly93d3cucGF3YXBsYXkubmciLCJhdWQiOiJodHRwOi8vd3d3LnBhd2FwbGF5Lm5nIn0.E_SQ_2wYz0xRmSB7uHQbiSvOiQfS8Emwb0EOK1JEtPY",
+    "User-Agent": "PostmanRuntime/7.39.1",
+    "Cache-Control": "no-cache",
+    "Postman-Token": "c55560c3-9e4f-4806-a79f-340766d49b29",
+    "Host": "pawaplay.ng:6200",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Connection": "keep-alive",
+    "Content-Length": "89"
+}
