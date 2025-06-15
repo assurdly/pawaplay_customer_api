@@ -540,7 +540,21 @@
 													"script": {
 														"id": "9ae82941-cb2f-4698-9295-23fea5bac0b9",
 														"exec": [
-															"//To be updated when this is fixed as this was not catered for"
+															"//Error message not catered for\r",
+															"pm.test('Status code is 401', function () {\r",
+															"    pm.response.to.have.status(401);\r",
+															"});\r",
+															"\r",
+															"pm.test('Response body should be an object', function () {\r",
+															"    pm.expect(pm.response.json()).to.be.an('object');\r",
+															"});\r",
+															"\r",
+															"// Validate error message in response body (assuming a standard error message structure)\r",
+															"pm.test('Response body should contain an error message', function () {\r",
+															"    const responseBody = pm.response.json();\r",
+															"    pm.expect(responseBody).to.have.property('error');\r",
+															"});\r",
+															""
 														],
 														"type": "text/javascript",
 														"packages": {}
@@ -4436,7 +4450,7 @@
 																"auth": {
 																	"type": "bearer",
 																	"bearer": {
-																		"token": "{{bearerToken}}"
+																		"token": "{{accessToken}}"
 																	}
 																},
 																"method": "GET",
