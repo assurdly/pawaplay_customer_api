@@ -609,7 +609,21 @@
 													"script": {
 														"id": "9ae82941-cb2f-4698-9295-23fea5bac0b9",
 														"exec": [
-															"//No error response message"
+															"//Error message not catered for\r",
+															"pm.test('Status code is 401', function () {\r",
+															"    pm.response.to.have.status(401);\r",
+															"});\r",
+															"\r",
+															"pm.test('Response body should be an object', function () {\r",
+															"    pm.expect(pm.response.json()).to.be.an('object');\r",
+															"});\r",
+															"\r",
+															"// Validate error message in response body (assuming a standard error message structure)\r",
+															"pm.test('Response body should contain an error message', function () {\r",
+															"    const responseBody = pm.response.json();\r",
+															"    pm.expect(responseBody).to.have.property('error');\r",
+															"});\r",
+															""
 														],
 														"type": "text/javascript",
 														"packages": {}
@@ -3378,7 +3392,21 @@
 											"script": {
 												"id": "38e69121-71d9-43e2-bb32-43547c2568ae",
 												"exec": [
-													"//Error message not catered for"
+													"//Error message not catered for\r",
+													"pm.test('Status code is 401', function () {\r",
+													"    pm.response.to.have.status(401);\r",
+													"});\r",
+													"\r",
+													"pm.test('Response body should be an object', function () {\r",
+													"    pm.expect(pm.response.json()).to.be.an('object');\r",
+													"});\r",
+													"\r",
+													"// Validate error message in response body (assuming a standard error message structure)\r",
+													"pm.test('Response body should contain an error message', function () {\r",
+													"    const responseBody = pm.response.json();\r",
+													"    pm.expect(responseBody).to.have.property('error');\r",
+													"});\r",
+													""
 												],
 												"type": "text/javascript",
 												"packages": {}
@@ -3404,9 +3432,9 @@
 											}
 										],
 										"url": {
-											"raw": "{{baseUrl}}/api/ProfileMaintenance/customer/activity_history?Skip=315273&Take=315273&To=2020-12-25T22:04:08.805Z&From=202-12-25T22:04:08.805Z&Type=All",
+											"raw": "{{baseUrl_Dev}}/api/ProfileMaintenance/customer/activity_history?Skip=315273&Take=315273&To=2020-12-25T22:04:08.805Z&From=202-12-25T22:04:08.805Z&Type=All",
 											"host": [
-												"{{baseUrl}}"
+												"{{baseUrl_Dev}}"
 											],
 											"path": [
 												"api",
