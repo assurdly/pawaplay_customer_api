@@ -1,6 +1,0 @@
-{
-  "firstName": "zeeMan_Two",
-  "password": "Pawaplay1!",
-  "phoneNumber": "+2347081556097",
-  "referrerCode": "cu"
-}

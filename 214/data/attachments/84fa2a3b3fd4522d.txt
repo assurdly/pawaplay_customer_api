@@ -1,1 +1,0 @@
-{"data":"","message":"Invalid email address input. Please, check and try again.","isSuccessful":false,"messages":[],"timeGenerated":"2025-06-14T20:22:47.1681838Z"}
