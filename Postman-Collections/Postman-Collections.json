@@ -5230,7 +5230,7 @@
 												],
 												"body": {
 													"mode": "raw",
-													"raw": "{\n  \"customerProfileID\": \"ff45989f-0acb-48d2-8016-625e13b98a44\",\n  \"notificationTitle\": \"Kino\",\n  \"notificationMessage\": \"API test for this endpoint\"\n}",
+													"raw": "{\n  \"customerProfileID\": \"266ae351-e6b1-4a4c-bdee-35e35d84dda2\",\n  \"notificationTitle\": \"Kino\",\n  \"notificationMessage\": \"API test for this endpoint\"\n}",
 													"options": {
 														"raw": {
 															"headerFamily": "json",
