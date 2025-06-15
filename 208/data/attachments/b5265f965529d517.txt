@@ -1,6 +1,0 @@
-{
-  "amount": 100,
-  "walletPin": "0101",
-  "destinationBankCode": "UBA",
-  "destinationAccountNumber": "2086192590"
-}
