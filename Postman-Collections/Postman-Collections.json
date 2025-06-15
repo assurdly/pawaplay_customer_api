@@ -4270,7 +4270,7 @@
 																"auth": {
 																	"type": "bearer",
 																	"bearer": {
-																		"token": "{{bearerToken}}"
+																		"token": "{{accessToken}}"
 																	}
 																},
 																"method": "GET",
@@ -4286,7 +4286,7 @@
 																	}
 																],
 																"url": {
-																	"raw": "{{baseUrl_Dev}}/api/ProfileMaintenance/customer/data/basic?customerProfileID=77c427e8-c82b-46c7-9dea-795fce6d56e4",
+																	"raw": "{{baseUrl_Dev}}/api/ProfileMaintenance/customer/data/basic?customerProfileID=266ae351-e6b1-4a4c-bdee-35e35d84dda2",
 																	"host": [
 																		"{{baseUrl_Dev}}"
 																	],
@@ -4300,7 +4300,7 @@
 																	"query": [
 																		{
 																			"key": "customerProfileID",
-																			"value": "77c427e8-c82b-46c7-9dea-795fce6d56e4"
+																			"value": "266ae351-e6b1-4a4c-bdee-35e35d84dda2"
 																		},
 																		{
 																			"key": "API",
