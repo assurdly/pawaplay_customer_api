@@ -5452,6 +5452,1845 @@
 								}
 							],
 							"id": "26b5041f-b1c3-43a6-b212-0fa64cdaeb91"
+						},
+						{
+							"name": "Profile_Maintenance Copy",
+							"item": [
+								{
+									"name": "customer",
+									"item": [
+										{
+											"name": "Add_email",
+											"item": [
+												{
+													"name": "Add_emailAddress_Successful",
+													"event": [
+														{
+															"listen": "test",
+															"script": {
+																"id": "335f9a41-16f8-4494-a34a-a3c4ad2b3d2f",
+																"exec": [
+																	"const jsonData = pm.response.json();\r",
+																	"\r",
+																	"pm.test(\"Status code is 200\", () => {\r",
+																	"    pm.response.to.have.status(200);\r",
+																	"});\r",
+																	"\r",
+																	"pm.test(\"Response fields are present and valid\", () => {\r",
+																	"    pm.expect(jsonData).to.have.property(\"data\", null);\r",
+																	"    pm.expect(jsonData).to.have.property(\"message\").that.includes(\"Yippee! Your email address has been added successfully!\");\r",
+																	"    pm.expect(jsonData).to.have.property(\"isSuccessful\", true);\r",
+																	"    pm.expect(jsonData).to.have.property(\"messages\").that.is.an(\"array\").that.is.empty;\r",
+																	"    pm.expect(jsonData).to.have.property(\"timeGenerated\").that.is.a(\"string\");\r",
+																	"});"
+																],
+																"type": "text/javascript",
+																"packages": {}
+															}
+														}
+													],
+													"id": "3203fef1-8a2c-4cba-9066-67c42716d866",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
+														"auth": {
+															"type": "bearer",
+															"bearer": {
+																"token": "{{bearerToken}}"
+															}
+														},
+														"method": "PATCH",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"email\": \"pawa2@yopmail.com\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl_Dev}}/api/ProfileMaintenance/customer/add_email"
+													},
+													"response": [
+														{
+															"id": "da303265-8b45-4a10-90bb-b19b38ea7a23",
+															"name": "Success",
+															"originalRequest": {
+																"method": "PATCH",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	},
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	},
+																	{
+																		"description": "Added as a part of security scheme: bearer",
+																		"key": "Authorization",
+																		"value": "Bearer <token>"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"email\": \"deserunt voluptate\"\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": "{{baseUrl}}/api/ProfileMaintenance/customer/add_email"
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																}
+															],
+															"cookie": [],
+															"responseTime": null,
+															"body": "{\n  \"data\": \"nulla sunt\",\n  \"message\": \"Duis magna\",\n  \"isSuccessful\": true,\n  \"messages\": [\n    \"eu\",\n    \"d\"\n  ],\n  \"timeGenerated\": \"2001-06-23T03:36:40.151Z\"\n}"
+														}
+													]
+												},
+												{
+													"name": "Add_emailAddress_AlreadyAdded",
+													"event": [
+														{
+															"listen": "test",
+															"script": {
+																"id": "335f9a41-16f8-4494-a34a-a3c4ad2b3d2f",
+																"exec": [
+																	"const jsonData = pm.response.json();\r",
+																	"\r",
+																	"pm.test(\"Status code is 400\", () => {\r",
+																	"    pm.response.to.have.status(400);\r",
+																	"});\r",
+																	"\r",
+																	"pm.test(\"Response body contains expected fields\", () => {\r",
+																	"    pm.expect(jsonData).to.have.property(\"data\", \"\");\r",
+																	"    pm.expect(jsonData).to.have.property(\"message\").that.includes(\"You have already added an email address to your profile.\");\r",
+																	"    pm.expect(jsonData).to.have.property(\"isSuccessful\", false);\r",
+																	"});\r",
+																	"\r",
+																	"pm.test(\"Response structure is correct\", () => {\r",
+																	"    pm.expect(jsonData).to.have.property(\"messages\").that.is.an(\"array\").that.is.empty;\r",
+																	"    pm.expect(jsonData).to.have.property(\"timeGenerated\").that.is.a(\"string\");\r",
+																	"});"
+																],
+																"type": "text/javascript",
+																"packages": {}
+															}
+														}
+													],
+													"id": "60361590-89bd-4d5b-b4e9-f642eaad9f56",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
+														"auth": {
+															"type": "bearer",
+															"bearer": {
+																"token": "{{bearerToken}}"
+															}
+														},
+														"method": "PATCH",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"email\": \"pawa8@yopmail.com\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl_Dev}}/api/ProfileMaintenance/customer/add_email"
+													},
+													"response": [
+														{
+															"id": "1bbc19d1-242b-44f1-9518-9416949914bf",
+															"name": "Success",
+															"originalRequest": {
+																"method": "PATCH",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	},
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	},
+																	{
+																		"description": "Added as a part of security scheme: bearer",
+																		"key": "Authorization",
+																		"value": "Bearer <token>"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"email\": \"deserunt voluptate\"\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": "{{baseUrl}}/api/ProfileMaintenance/customer/add_email"
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																}
+															],
+															"cookie": [],
+															"responseTime": null,
+															"body": "{\n  \"data\": \"nulla sunt\",\n  \"message\": \"Duis magna\",\n  \"isSuccessful\": true,\n  \"messages\": [\n    \"eu\",\n    \"d\"\n  ],\n  \"timeGenerated\": \"2001-06-23T03:36:40.151Z\"\n}"
+														}
+													]
+												},
+												{
+													"name": "Add_emailAddress_AlreadyLinked",
+													"event": [
+														{
+															"listen": "test",
+															"script": {
+																"id": "335f9a41-16f8-4494-a34a-a3c4ad2b3d2f",
+																"exec": [
+																	"const jsonData = pm.response.json();\r",
+																	"\r",
+																	"pm.test(\"Status code is 400\", () => {\r",
+																	"    pm.response.to.have.status(400);\r",
+																	"});\r",
+																	"\r",
+																	"pm.test(\"Response body contains expected fields\", () => {\r",
+																	"    pm.expect(jsonData).to.have.property(\"data\", \"\");\r",
+																	"    pm.expect(jsonData).to.have.property(\"message\").that.includes(\"The email address is already linked to a profile.\");\r",
+																	"    pm.expect(jsonData).to.have.property(\"isSuccessful\", false);\r",
+																	"});\r",
+																	"\r",
+																	"pm.test(\"Response structure is correct\", () => {\r",
+																	"    pm.expect(jsonData).to.have.property(\"messages\").that.is.an(\"array\").that.is.empty;\r",
+																	"    pm.expect(jsonData).to.have.property(\"timeGenerated\").that.is.a(\"string\");\r",
+																	"});"
+																],
+																"type": "text/javascript",
+																"packages": {}
+															}
+														}
+													],
+													"id": "eae167c7-e9e1-4195-bd48-f18be6543ff0",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
+														"auth": {
+															"type": "bearer",
+															"bearer": {
+																"token": "{{bearerToken}}"
+															}
+														},
+														"method": "PATCH",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"email\": \"pawa2@yopmail.com\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl_Dev}}/api/ProfileMaintenance/customer/add_email"
+													},
+													"response": [
+														{
+															"id": "6ef418bf-1dcb-44a3-b21e-8fa2aa57699b",
+															"name": "Success",
+															"originalRequest": {
+																"method": "PATCH",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	},
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	},
+																	{
+																		"description": "Added as a part of security scheme: bearer",
+																		"key": "Authorization",
+																		"value": "Bearer <token>"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"email\": \"deserunt voluptate\"\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": "{{baseUrl}}/api/ProfileMaintenance/customer/add_email"
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																}
+															],
+															"cookie": [],
+															"responseTime": null,
+															"body": "{\n  \"data\": \"nulla sunt\",\n  \"message\": \"Duis magna\",\n  \"isSuccessful\": true,\n  \"messages\": [\n    \"eu\",\n    \"d\"\n  ],\n  \"timeGenerated\": \"2001-06-23T03:36:40.151Z\"\n}"
+														}
+													]
+												},
+												{
+													"name": "Add_emailAddress_Unauthorized",
+													"event": [
+														{
+															"listen": "test",
+															"script": {
+																"id": "9466025b-69df-4763-9237-afc069d031f6",
+																"exec": [
+																	"//Unauthorized response body not catered for "
+																],
+																"type": "text/javascript",
+																"packages": {}
+															}
+														}
+													],
+													"id": "09afb4dc-7c2e-49b6-9bbd-da4194d4ceb7",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
+														"auth": {
+															"type": "bearer",
+															"bearer": {
+																"token": "{{bearerToken_Expired}}"
+															}
+														},
+														"method": "PATCH",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"email\": \"pawa1@yopmail.com\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl_Dev}}/api/ProfileMaintenance/customer/add_email"
+													},
+													"response": [
+														{
+															"id": "4ab05884-eefb-4c49-9022-b6b2ed1ff87a",
+															"name": "Success",
+															"originalRequest": {
+																"method": "PATCH",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	},
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	},
+																	{
+																		"description": "Added as a part of security scheme: bearer",
+																		"key": "Authorization",
+																		"value": "Bearer <token>"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"email\": \"deserunt voluptate\"\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": "{{baseUrl}}/api/ProfileMaintenance/customer/add_email"
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																}
+															],
+															"cookie": [],
+															"responseTime": null,
+															"body": "{\n  \"data\": \"nulla sunt\",\n  \"message\": \"Duis magna\",\n  \"isSuccessful\": true,\n  \"messages\": [\n    \"eu\",\n    \"d\"\n  ],\n  \"timeGenerated\": \"2001-06-23T03:36:40.151Z\"\n}"
+														}
+													]
+												}
+											],
+											"id": "33e3abd8-8615-4960-a2d7-05d34a7e074f"
+										},
+										{
+											"name": "Save_payment_option",
+											"item": [
+												{
+													"name": "Save_PaymentOption_Successful",
+													"event": [
+														{
+															"listen": "test",
+															"script": {
+																"id": "fcb85d63-19f1-4af4-a527-f461133a783c",
+																"exec": [
+																	"const jsonData = pm.response.json();\r",
+																	"\r",
+																	"pm.test(\"Status code is 200\", () => {\r",
+																	"    pm.response.to.have.status(200);\r",
+																	"});\r",
+																	"\r",
+																	"pm.test(\"Response fields are valid\", () => {\r",
+																	"    pm.expect(jsonData).to.have.property(\"data\", null);\r",
+																	"    pm.expect(jsonData).to.have.property(\"message\").that.includes(\"Your card information has been successfully saved.\");\r",
+																	"    pm.expect(jsonData).to.have.property(\"isSuccessful\", true);\r",
+																	"    pm.expect(jsonData).to.have.property(\"messages\").that.is.an(\"array\").that.is.empty;\r",
+																	"    pm.expect(jsonData).to.have.property(\"timeGenerated\").that.is.a(\"string\");\r",
+																	"});"
+																],
+																"type": "text/javascript",
+																"packages": {}
+															}
+														}
+													],
+													"id": "e23915ec-22ca-419b-9c42-9d7732a32eae",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
+														"auth": {
+															"type": "bearer",
+															"bearer": {
+																"token": "{{bearerToken}}"
+															}
+														},
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"type\": \"Card\", //or Bank\n  \"cardInformation\": {\n    \"cvv\": \"058\",\n    \"cardNumber\": \"5399412210558129\",\n    \"expiresInMMYY\": \"08/28\"\n  }\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl_Sandbox}}/api/ProfileMaintenance/customer/save_payment_option"
+													},
+													"response": [
+														{
+															"id": "4dfaf7c9-4f16-4d25-9f00-338bb494f71f",
+															"name": "Success",
+															"originalRequest": {
+																"method": "POST",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	},
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	},
+																	{
+																		"description": "Added as a part of security scheme: bearer",
+																		"key": "Authorization",
+																		"value": "Bearer <token>"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"type\": \"Card\",\n  \"cardInformation\": {\n    \"cvv\": 50287222,\n    \"cardNumber\": \"commodo nulla\",\n    \"expiresInMMYY\": \"minim fugiat voluptate deserunt\"\n  }\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": "{{baseUrl}}/api/ProfileMaintenance/customer/save_payment_option"
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																}
+															],
+															"cookie": [],
+															"responseTime": null,
+															"body": "{\n  \"data\": \"nulla sunt\",\n  \"message\": \"Duis magna\",\n  \"isSuccessful\": true,\n  \"messages\": [\n    \"eu\",\n    \"d\"\n  ],\n  \"timeGenerated\": \"2001-06-23T03:36:40.151Z\"\n}"
+														}
+													]
+												},
+												{
+													"name": "Save_PaymentOption_Invalid_CVV",
+													"event": [
+														{
+															"listen": "test",
+															"script": {
+																"id": "fcb85d63-19f1-4af4-a527-f461133a783c",
+																"exec": [
+																	"const jsonData = pm.response.json();\r",
+																	"\r",
+																	"pm.test(\"Status code is 400\", () => {\r",
+																	"    pm.response.to.have.status(400); \r",
+																	"});\r",
+																	"\r",
+																	"pm.test(\"Response fields for invalid CVV are correct\", () => {\r",
+																	"    pm.expect(jsonData).to.have.property(\"data\", \"\");\r",
+																	"    pm.expect(jsonData).to.have.property(\"message\").that.includes(\"Invalid CVV value. Please, confirm and try again.\");\r",
+																	"    pm.expect(jsonData).to.have.property(\"isSuccessful\", false);\r",
+																	"    pm.expect(jsonData).to.have.property(\"messages\").that.is.an(\"array\").that.is.empty;\r",
+																	"    pm.expect(jsonData).to.have.property(\"timeGenerated\").that.is.a(\"string\");\r",
+																	"});"
+																],
+																"type": "text/javascript",
+																"packages": {}
+															}
+														}
+													],
+													"id": "8c476d08-61be-4aa5-9290-3edcaf6d521a",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
+														"auth": {
+															"type": "bearer",
+															"bearer": {
+																"token": "{{bearerToken}}"
+															}
+														},
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"type\": \"Card\", //or Bank\n  \"cardInformation\": {\n    \"cvv\": \"0544\",\n    \"cardNumber\": \"5399412210558123\",\n    \"expiresInMMYY\": \"08/28\"\n  }\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl_Sandbox}}/api/ProfileMaintenance/customer/save_payment_option"
+													},
+													"response": [
+														{
+															"id": "5d4f3640-fd23-454b-91d7-4e340d6c6672",
+															"name": "Success",
+															"originalRequest": {
+																"method": "POST",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	},
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	},
+																	{
+																		"description": "Added as a part of security scheme: bearer",
+																		"key": "Authorization",
+																		"value": "Bearer <token>"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"type\": \"Card\",\n  \"cardInformation\": {\n    \"cvv\": 50287222,\n    \"cardNumber\": \"commodo nulla\",\n    \"expiresInMMYY\": \"minim fugiat voluptate deserunt\"\n  }\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": "{{baseUrl}}/api/ProfileMaintenance/customer/save_payment_option"
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																}
+															],
+															"cookie": [],
+															"responseTime": null,
+															"body": "{\n  \"data\": \"nulla sunt\",\n  \"message\": \"Duis magna\",\n  \"isSuccessful\": true,\n  \"messages\": [\n    \"eu\",\n    \"d\"\n  ],\n  \"timeGenerated\": \"2001-06-23T03:36:40.151Z\"\n}"
+														}
+													]
+												},
+												{
+													"name": "Save_PaymentOption_Invalid_cardNumber",
+													"event": [
+														{
+															"listen": "test",
+															"script": {
+																"id": "fcb85d63-19f1-4af4-a527-f461133a783c",
+																"exec": [
+																	"//This would be updated after fix, as the endpoint still respond with a 200"
+																],
+																"type": "text/javascript",
+																"packages": {}
+															}
+														}
+													],
+													"id": "48bfa10b-1c4e-484d-bda2-abaed717e857",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
+														"auth": {
+															"type": "bearer",
+															"bearer": {
+																"token": "{{bearerToken}}"
+															}
+														},
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"type\": \"Card\", //or Bank\n  \"cardInformation\": {\n    \"cvv\": \"058\",\n    \"cardNumber\": \"539\",\n    \"expiresInMMYY\": \"08/28\"\n  }\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl_Sandbox}}/api/ProfileMaintenance/customer/save_payment_option"
+													},
+													"response": [
+														{
+															"id": "979cb3e9-c36c-4928-8f1e-2f3b22bd67dd",
+															"name": "Success",
+															"originalRequest": {
+																"method": "POST",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	},
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	},
+																	{
+																		"description": "Added as a part of security scheme: bearer",
+																		"key": "Authorization",
+																		"value": "Bearer <token>"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"type\": \"Card\",\n  \"cardInformation\": {\n    \"cvv\": 50287222,\n    \"cardNumber\": \"commodo nulla\",\n    \"expiresInMMYY\": \"minim fugiat voluptate deserunt\"\n  }\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": "{{baseUrl}}/api/ProfileMaintenance/customer/save_payment_option"
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																}
+															],
+															"cookie": [],
+															"responseTime": null,
+															"body": "{\n  \"data\": \"nulla sunt\",\n  \"message\": \"Duis magna\",\n  \"isSuccessful\": true,\n  \"messages\": [\n    \"eu\",\n    \"d\"\n  ],\n  \"timeGenerated\": \"2001-06-23T03:36:40.151Z\"\n}"
+														}
+													]
+												},
+												{
+													"name": "Save_PaymentOption_ExpiredCard",
+													"event": [
+														{
+															"listen": "test",
+															"script": {
+																"id": "fcb85d63-19f1-4af4-a527-f461133a783c",
+																"exec": [
+																	"//This would be updated after fix as the endpoint still respond with a 200"
+																],
+																"type": "text/javascript",
+																"packages": {}
+															}
+														}
+													],
+													"id": "7e8f0aab-4dab-462f-a033-b9fefddb2677",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
+														"auth": {
+															"type": "bearer",
+															"bearer": {
+																"token": "{{bearerToken}}"
+															}
+														},
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"type\": \"Card\", //or Bank\n  \"cardInformation\": {\n    \"cvv\": \"058\",\n    \"cardNumber\": \"5399412210558123\",\n    \"expiresInMMYY\": \"08/19\"\n  }\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl_Sandbox}}/api/ProfileMaintenance/customer/save_payment_option"
+													},
+													"response": [
+														{
+															"id": "0ca0b906-415c-447a-a2c4-236106c2f7ab",
+															"name": "Success",
+															"originalRequest": {
+																"method": "POST",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	},
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	},
+																	{
+																		"description": "Added as a part of security scheme: bearer",
+																		"key": "Authorization",
+																		"value": "Bearer <token>"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"type\": \"Card\",\n  \"cardInformation\": {\n    \"cvv\": 50287222,\n    \"cardNumber\": \"commodo nulla\",\n    \"expiresInMMYY\": \"minim fugiat voluptate deserunt\"\n  }\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": "{{baseUrl}}/api/ProfileMaintenance/customer/save_payment_option"
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																}
+															],
+															"cookie": [],
+															"responseTime": null,
+															"body": "{\n  \"data\": \"nulla sunt\",\n  \"message\": \"Duis magna\",\n  \"isSuccessful\": true,\n  \"messages\": [\n    \"eu\",\n    \"d\"\n  ],\n  \"timeGenerated\": \"2001-06-23T03:36:40.151Z\"\n}"
+														}
+													]
+												},
+												{
+													"name": "Save_PaymentOption_AlreadyAdded",
+													"event": [
+														{
+															"listen": "test",
+															"script": {
+																"id": "fcb85d63-19f1-4af4-a527-f461133a783c",
+																"exec": [
+																	"const jsonData = pm.response.json();\r",
+																	"\r",
+																	"pm.test(\"Status code is 400 error code\", () => {\r",
+																	"    pm.response.to.have.status(400); \r",
+																	"});\r",
+																	"\r",
+																	"pm.test(\"Response fields are valid for duplicate payment option\", () => {\r",
+																	"    pm.expect(jsonData).to.have.property(\"data\", \"\");\r",
+																	"    pm.expect(jsonData).to.have.property(\"message\").that.includes(\"You might have added the same payment option before. Please, confirm and try again.\");\r",
+																	"    pm.expect(jsonData).to.have.property(\"isSuccessful\", false);\r",
+																	"    pm.expect(jsonData).to.have.property(\"messages\").that.is.an(\"array\").that.is.empty;\r",
+																	"    pm.expect(jsonData).to.have.property(\"timeGenerated\").that.is.a(\"string\");\r",
+																	"});"
+																],
+																"type": "text/javascript",
+																"packages": {}
+															}
+														}
+													],
+													"id": "1356fd8e-6e99-453e-8859-de62329a5286",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
+														"auth": {
+															"type": "bearer",
+															"bearer": {
+																"token": "{{bearerToken}}"
+															}
+														},
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"type\": \"Card\", //or Bank\n  \"cardInformation\": {\n    \"cvv\": \"058\",\n    \"cardNumber\": \"5399412210558123\",\n    \"expiresInMMYY\": \"08/28\"\n  }\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl_Sandbox}}/api/ProfileMaintenance/customer/save_payment_option"
+													},
+													"response": [
+														{
+															"id": "38fcbd38-6445-4d6a-af81-bac2a9545f53",
+															"name": "Success",
+															"originalRequest": {
+																"method": "POST",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	},
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	},
+																	{
+																		"description": "Added as a part of security scheme: bearer",
+																		"key": "Authorization",
+																		"value": "Bearer <token>"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"type\": \"Card\",\n  \"cardInformation\": {\n    \"cvv\": 50287222,\n    \"cardNumber\": \"commodo nulla\",\n    \"expiresInMMYY\": \"minim fugiat voluptate deserunt\"\n  }\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": "{{baseUrl}}/api/ProfileMaintenance/customer/save_payment_option"
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																}
+															],
+															"cookie": [],
+															"responseTime": null,
+															"body": "{\n  \"data\": \"nulla sunt\",\n  \"message\": \"Duis magna\",\n  \"isSuccessful\": true,\n  \"messages\": [\n    \"eu\",\n    \"d\"\n  ],\n  \"timeGenerated\": \"2001-06-23T03:36:40.151Z\"\n}"
+														}
+													]
+												},
+												{
+													"name": "Save_PaymentOption_Unauthorized",
+													"event": [
+														{
+															"listen": "test",
+															"script": {
+																"id": "fcb85d63-19f1-4af4-a527-f461133a783c",
+																"exec": [
+																	"// Unauthorized not catered for"
+																],
+																"type": "text/javascript",
+																"packages": {}
+															}
+														}
+													],
+													"id": "b61d7b3a-0277-4f5e-a2b1-8de6efcb0eed",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
+														"auth": {
+															"type": "bearer",
+															"bearer": {
+																"token": "{{bearerToken_Expired}}"
+															}
+														},
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"type\": \"Card\", //or Bank\n  \"cardInformation\": {\n    \"cvv\": \"058\",\n    \"cardNumber\": \"5399412210558123\",\n    \"expiresInMMYY\": \"08/28\"\n  }\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl_Sandbox}}/api/ProfileMaintenance/customer/save_payment_option"
+													},
+													"response": [
+														{
+															"id": "e9d53a39-22e1-4116-bb7b-105c59e0433d",
+															"name": "Success",
+															"originalRequest": {
+																"method": "POST",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	},
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	},
+																	{
+																		"description": "Added as a part of security scheme: bearer",
+																		"key": "Authorization",
+																		"value": "Bearer <token>"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"type\": \"Card\",\n  \"cardInformation\": {\n    \"cvv\": 50287222,\n    \"cardNumber\": \"commodo nulla\",\n    \"expiresInMMYY\": \"minim fugiat voluptate deserunt\"\n  }\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": "{{baseUrl}}/api/ProfileMaintenance/customer/save_payment_option"
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																}
+															],
+															"cookie": [],
+															"responseTime": null,
+															"body": "{\n  \"data\": \"nulla sunt\",\n  \"message\": \"Duis magna\",\n  \"isSuccessful\": true,\n  \"messages\": [\n    \"eu\",\n    \"d\"\n  ],\n  \"timeGenerated\": \"2001-06-23T03:36:40.151Z\"\n}"
+														}
+													]
+												}
+											],
+											"id": "ba2093b4-e8e7-48e2-8f48-d8fc89334bd3"
+										},
+										{
+											"name": "Remove_payment_option",
+											"item": [
+												{
+													"name": "Delete_PaymentOption_Successful",
+													"id": "793728be-33d3-4d33-99bc-a05f5168245f",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
+														"method": "DELETE",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/ProfileMaintenance/customer/remove_payment_option?optionID=urn:uuid:2ec58017-79ee-1e8f-5971-a5156d2671e3",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"ProfileMaintenance",
+																"customer",
+																"remove_payment_option"
+															],
+															"query": [
+																{
+																	"key": "optionID",
+																	"value": "urn:uuid:2ec58017-79ee-1e8f-5971-a5156d2671e3"
+																}
+															]
+														}
+													},
+													"response": [
+														{
+															"id": "a668a577-238d-4d2a-b770-d9871772c3a0",
+															"name": "Success",
+															"originalRequest": {
+																"method": "DELETE",
+																"header": [
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	},
+																	{
+																		"description": "Added as a part of security scheme: bearer",
+																		"key": "Authorization",
+																		"value": "Bearer <token>"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl}}/api/ProfileMaintenance/customer/remove_payment_option?optionID=urn:uuid:2ec58017-79ee-1e8f-5971-a5156d2671e3",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"ProfileMaintenance",
+																		"customer",
+																		"remove_payment_option"
+																	],
+																	"query": [
+																		{
+																			"key": "optionID",
+																			"value": "urn:uuid:2ec58017-79ee-1e8f-5971-a5156d2671e3"
+																		}
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																}
+															],
+															"cookie": [],
+															"responseTime": null,
+															"body": "{\n  \"data\": \"nulla sunt\",\n  \"message\": \"Duis magna\",\n  \"isSuccessful\": true,\n  \"messages\": [\n    \"eu\",\n    \"d\"\n  ],\n  \"timeGenerated\": \"2001-06-23T03:36:40.151Z\"\n}"
+														}
+													]
+												}
+											],
+											"id": "02271d2f-4a7d-455e-9792-c1facf15a727"
+										},
+										{
+											"name": "Priority",
+											"item": [
+												{
+													"name": "Get_Next _RequiredActivity_Successful",
+													"event": [
+														{
+															"listen": "test",
+															"script": {
+																"id": "23a9300c-936a-4fc4-840a-5da0c976d2fe",
+																"exec": [
+																	"const jsonData = pm.response.json();\r",
+																	"\r",
+																	"pm.test(\"Status code is 200\", () => {\r",
+																	"    pm.response.to.have.status(200);\r",
+																	"});\r",
+																	"\r",
+																	"pm.test(\"Response indicatesrequired action\", () => {\r",
+																	"    pm.expect(jsonData).to.have.property(\"data\").that.is.an(\"object\");\r",
+																	" pm.expect(jsonData.data).to.have.property(\"message\").that.is.a(\"string\").and.is.not.empty;\r",
+																	"    pm.expect(jsonData.data).to.have.property(\"priority\", \"LinkNIN\");\r",
+																	"    \r",
+																	"    pm.expect(jsonData).to.have.property(\"message\", \"Successful!\");\r",
+																	"    pm.expect(jsonData).to.have.property(\"isSuccessful\", true);\r",
+																	"    pm.expect(jsonData).to.have.property(\"messages\").that.is.an(\"array\").that.is.empty;\r",
+																	"    pm.expect(jsonData).to.have.property(\"timeGenerated\").that.is.a(\"string\");\r",
+																	"});"
+																],
+																"type": "text/javascript",
+																"packages": {}
+															}
+														}
+													],
+													"id": "6f26a7c9-fb51-4988-adc0-fd33a1833e3a",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
+														"auth": {
+															"type": "bearer",
+															"bearer": {
+																"token": "{{bearerToken}}"
+															}
+														},
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"url": "{{baseUrl_Dev}}/api/ProfileMaintenance/customer/priority"
+													},
+													"response": [
+														{
+															"id": "4d01a314-25fd-4c3e-b3af-9350cfa3ac07",
+															"name": "Success",
+															"originalRequest": {
+																"method": "GET",
+																"header": [
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	},
+																	{
+																		"description": "Added as a part of security scheme: bearer",
+																		"key": "Authorization",
+																		"value": "Bearer <token>"
+																	}
+																],
+																"url": "{{baseUrl}}/api/ProfileMaintenance/customer/priority"
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																}
+															],
+															"cookie": [],
+															"responseTime": null,
+															"body": "{\n  \"data\": {\n    \"message\": \"anim qui incididunt magna\",\n    \"priority\": \"SetWalletPin\"\n  },\n  \"message\": \"sunt Ut\",\n  \"isSuccessful\": true,\n  \"messages\": [\n    \"enim laboris exercitation id\",\n    \"ipsum elit mollit nulla\"\n  ],\n  \"timeGenerated\": \"1972-05-25T21:02:25.697Z\"\n}"
+														}
+													]
+												},
+												{
+													"name": "Get_Next _RequiredActivity_Unauthorized",
+													"event": [
+														{
+															"listen": "test",
+															"script": {
+																"id": "399fbdb5-519f-4674-8aad-0266bdccd3ff",
+																"exec": [
+																	"// Unauthorized not catered for"
+																],
+																"type": "text/javascript",
+																"packages": {}
+															}
+														}
+													],
+													"id": "fd0ef5f1-f53d-44da-abee-faca91a2902c",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
+														"auth": {
+															"type": "bearer",
+															"bearer": {
+																"token": "{{bearerToken_Expired}}"
+															}
+														},
+														"method": "GET",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"url": "{{baseUrl_Dev}}/api/ProfileMaintenance/customer/priority"
+													},
+													"response": [
+														{
+															"id": "c0d845f3-d092-4328-8600-fc9badbbcd80",
+															"name": "Success",
+															"originalRequest": {
+																"method": "GET",
+																"header": [
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	},
+																	{
+																		"description": "Added as a part of security scheme: bearer",
+																		"key": "Authorization",
+																		"value": "Bearer <token>"
+																	}
+																],
+																"url": "{{baseUrl}}/api/ProfileMaintenance/customer/priority"
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																}
+															],
+															"cookie": [],
+															"responseTime": null,
+															"body": "{\n  \"data\": {\n    \"message\": \"anim qui incididunt magna\",\n    \"priority\": \"SetWalletPin\"\n  },\n  \"message\": \"sunt Ut\",\n  \"isSuccessful\": true,\n  \"messages\": [\n    \"enim laboris exercitation id\",\n    \"ipsum elit mollit nulla\"\n  ],\n  \"timeGenerated\": \"1972-05-25T21:02:25.697Z\"\n}"
+														}
+													]
+												}
+											],
+											"id": "3e01d343-8286-4738-85de-5c461faaa0d9"
+										},
+										{
+											"name": "Data",
+											"item": [
+												{
+													"name": "Get basic data",
+													"item": [
+														{
+															"name": "Customer_BasicInformation_Successful",
+															"event": [
+																{
+																	"listen": "test",
+																	"script": {
+																		"id": "f2c8546c-30f0-4453-b16a-2470aec3d930",
+																		"exec": [
+																			"//No API key provided for Sandbox\r",
+																			"const jsonData = pm.response.json();\r",
+																			"\r",
+																			"pm.test(\"Status code is 200\", () => {\r",
+																			"    pm.response.to.have.status(200);\r",
+																			"});\r",
+																			"\r",
+																			"pm.test(\"Data object contains expected fields\", () => {\r",
+																			"    pm.expect(jsonData.data).to.be.an(\"object\");\r",
+																			"    pm.expect(jsonData.data).to.have.property(\"id\").that.is.a(\"string\");\r",
+																			"    pm.expect(jsonData.data).to.have.property(\"email\").that.is.a(\"string\");\r",
+																			"    pm.expect(jsonData.data).to.have.property(\"phoneNumber\").that.is.a(\"string\");\r",
+																			"});\r",
+																			"\r",
+																			"pm.test(\"Top-level response fields are present\", () => {\r",
+																			"    pm.expect(jsonData).to.have.property(\"message\").that.is.a(\"string\");\r",
+																			"    pm.expect(jsonData.message).to.include(\"Request was processed successfully.\");\r",
+																			"    pm.expect(jsonData).to.have.property(\"isSuccessful\", true);\r",
+																			"    pm.expect(jsonData).to.have.property(\"messages\").that.is.an(\"array\").that.is.empty;\r",
+																			"    pm.expect(jsonData).to.have.property(\"timeGenerated\").that.is.a(\"string\");\r",
+																			"});\r",
+																			"\r",
+																			""
+																		],
+																		"type": "text/javascript",
+																		"packages": {}
+																	}
+																}
+															],
+															"id": "a0edf026-331d-400c-9d3c-e014b222011b",
+															"protocolProfileBehavior": {
+																"disableBodyPruning": true
+															},
+															"request": {
+																"auth": {
+																	"type": "bearer",
+																	"bearer": {
+																		"token": "{{bearerToken}}"
+																	}
+																},
+																"method": "GET",
+																"header": [
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	},
+																	{
+																		"key": "x-api-key",
+																		"value": "PawaPlaySecretAPIKeyYBnWEoF9gPHVfJwriI4QC41eb+X",
+																		"type": "text"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl_Dev}}/api/ProfileMaintenance/customer/data/basic?customerProfileID=77c427e8-c82b-46c7-9dea-795fce6d56e4",
+																	"host": [
+																		"{{baseUrl_Dev}}"
+																	],
+																	"path": [
+																		"api",
+																		"ProfileMaintenance",
+																		"customer",
+																		"data",
+																		"basic"
+																	],
+																	"query": [
+																		{
+																			"key": "customerProfileID",
+																			"value": "77c427e8-c82b-46c7-9dea-795fce6d56e4"
+																		},
+																		{
+																			"key": "API",
+																			"value": "PawaPlaySecretAPIKeyYBnWEoF9gPHVfJwriI4QC41eb+X",
+																			"disabled": true
+																		}
+																	]
+																}
+															},
+															"response": [
+																{
+																	"id": "e5fc368f-f8c1-44d3-b524-296a9c7f9b0d",
+																	"name": "Success",
+																	"originalRequest": {
+																		"method": "GET",
+																		"header": [
+																			{
+																				"key": "Accept",
+																				"value": "application/json"
+																			},
+																			{
+																				"description": "Added as a part of security scheme: bearer",
+																				"key": "Authorization",
+																				"value": "Bearer <token>"
+																			}
+																		],
+																		"url": {
+																			"raw": "{{baseUrl}}/api/ProfileMaintenance/customer/data/basic?customerProfileID=urn:uuid:2ec58017-79ee-1e8f-5971-a5156d2671e3",
+																			"host": [
+																				"{{baseUrl}}"
+																			],
+																			"path": [
+																				"api",
+																				"ProfileMaintenance",
+																				"customer",
+																				"data",
+																				"basic"
+																			],
+																			"query": [
+																				{
+																					"key": "customerProfileID",
+																					"value": "urn:uuid:2ec58017-79ee-1e8f-5971-a5156d2671e3"
+																				}
+																			]
+																		}
+																	},
+																	"status": "OK",
+																	"code": 200,
+																	"_postman_previewlanguage": "json",
+																	"header": [
+																		{
+																			"key": "Content-Type",
+																			"value": "application/json"
+																		}
+																	],
+																	"cookie": [],
+																	"responseTime": null,
+																	"body": "{\n  \"data\": {\n    \"id\": \"f6e38d46-0972-3407-8816-92cfb8fcba0b\",\n    \"email\": \"nostrud exercitation sit cillum\",\n    \"phoneNumber\": \"elit ex deserunt\"\n  },\n  \"message\": \"Ut occaecat in laboris culpa\",\n  \"isSuccessful\": false,\n  \"messages\": [\n    \"aliquip non\",\n    \"aute dolor esse\"\n  ],\n  \"timeGenerated\": \"1950-05-29T06:53:21.931Z\"\n}"
+																}
+															]
+														},
+														{
+															"name": "Customer_BasicInformation_NotFound",
+															"event": [
+																{
+																	"listen": "test",
+																	"script": {
+																		"id": "288fc08e-e316-4bcd-99c1-bd93404e63b5",
+																		"exec": [
+																			"const jsonData = pm.response.json();\r",
+																			"\r",
+																			"pm.test(\"Status code is 404\", () => {\r",
+																			"    pm.response.to.have.status(404);\r",
+																			"});\r",
+																			"\r",
+																			"pm.test(\"Response indicates profile not found\", () => {\r",
+																			"    pm.expect(jsonData).to.have.property(\"data\", \"\");\r",
+																			"    pm.expect(jsonData).to.have.property(\"message\").that.includes(\"Customer's profile was not found.\");\r",
+																			"    pm.expect(jsonData).to.have.property(\"isSuccessful\", false);\r",
+																			"    pm.expect(jsonData).to.have.property(\"messages\").that.is.an(\"array\").that.is.empty;\r",
+																			"    pm.expect(jsonData).to.have.property(\"timeGenerated\").that.is.a(\"string\");\r",
+																			"})"
+																		],
+																		"type": "text/javascript",
+																		"packages": {}
+																	}
+																}
+															],
+															"id": "bb6e1806-4baa-442c-bb81-882cd5329aac",
+															"protocolProfileBehavior": {
+																"disableBodyPruning": true
+															},
+															"request": {
+																"auth": {
+																	"type": "bearer",
+																	"bearer": {
+																		"token": "{{bearerToken}}"
+																	}
+																},
+																"method": "GET",
+																"header": [
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	},
+																	{
+																		"key": "x-api-key",
+																		"value": "PawaPlaySecretAPIKeyYBnWEoF9gPHVfJwriI4QC41eb+X",
+																		"type": "text"
+																	}
+																],
+																"url": {
+																	"raw": "{{baseUrl_Dev}}/api/ProfileMaintenance/customer/data/basic?customerProfileID=77c427e8-c82b-46c7-9dea-795fce6d56e4",
+																	"host": [
+																		"{{baseUrl_Dev}}"
+																	],
+																	"path": [
+																		"api",
+																		"ProfileMaintenance",
+																		"customer",
+																		"data",
+																		"basic"
+																	],
+																	"query": [
+																		{
+																			"key": "customerProfileID",
+																			"value": "77c427e8-c82b-46c7-9dea-795fce6d56e4"
+																		},
+																		{
+																			"key": "API",
+																			"value": "PawaPlaySecretAPIKeyYBnWEoF9gPHVfJwriI4QC41eb+X",
+																			"disabled": true
+																		}
+																	]
+																}
+															},
+															"response": [
+																{
+																	"id": "402f32ac-e16d-4bc3-82d7-ab9fa08ae51b",
+																	"name": "Success",
+																	"originalRequest": {
+																		"method": "GET",
+																		"header": [
+																			{
+																				"key": "Accept",
+																				"value": "application/json"
+																			},
+																			{
+																				"description": "Added as a part of security scheme: bearer",
+																				"key": "Authorization",
+																				"value": "Bearer <token>"
+																			}
+																		],
+																		"url": {
+																			"raw": "{{baseUrl}}/api/ProfileMaintenance/customer/data/basic?customerProfileID=urn:uuid:2ec58017-79ee-1e8f-5971-a5156d2671e3",
+																			"host": [
+																				"{{baseUrl}}"
+																			],
+																			"path": [
+																				"api",
+																				"ProfileMaintenance",
+																				"customer",
+																				"data",
+																				"basic"
+																			],
+																			"query": [
+																				{
+																					"key": "customerProfileID",
+																					"value": "urn:uuid:2ec58017-79ee-1e8f-5971-a5156d2671e3"
+																				}
+																			]
+																		}
+																	},
+																	"status": "OK",
+																	"code": 200,
+																	"_postman_previewlanguage": "json",
+																	"header": [
+																		{
+																			"key": "Content-Type",
+																			"value": "application/json"
+																		}
+																	],
+																	"cookie": [],
+																	"responseTime": null,
+																	"body": "{\n  \"data\": {\n    \"id\": \"f6e38d46-0972-3407-8816-92cfb8fcba0b\",\n    \"email\": \"nostrud exercitation sit cillum\",\n    \"phoneNumber\": \"elit ex deserunt\"\n  },\n  \"message\": \"Ut occaecat in laboris culpa\",\n  \"isSuccessful\": false,\n  \"messages\": [\n    \"aliquip non\",\n    \"aute dolor esse\"\n  ],\n  \"timeGenerated\": \"1950-05-29T06:53:21.931Z\"\n}"
+																}
+															]
+														},
+														{
+															"name": "Customer_Basic_GeneralInformation_Successful",
+															"event": [
+																{
+																	"listen": "test",
+																	"script": {
+																		"id": "c95209b9-b176-41f6-9df3-3c4f3e21cc10",
+																		"exec": [
+																			"// Would be updated when this is fixed"
+																		],
+																		"type": "text/javascript",
+																		"packages": {}
+																	}
+																}
+															],
+															"id": "de1f8706-e9ab-4f3c-a9af-6bc3706804ed",
+															"protocolProfileBehavior": {
+																"disableBodyPruning": true
+															},
+															"request": {
+																"auth": {
+																	"type": "bearer",
+																	"bearer": {
+																		"token": "{{bearerToken}}"
+																	}
+																},
+																"method": "GET",
+																"header": [
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	}
+																],
+																"url": "{{baseUrl_Dev}}/api/ProfileMaintenance/customer/data"
+															},
+															"response": [
+																{
+																	"id": "05f6a2e3-74c5-4a61-b931-c3b2f3e27ac9",
+																	"name": "Success",
+																	"originalRequest": {
+																		"method": "GET",
+																		"header": [
+																			{
+																				"key": "Accept",
+																				"value": "application/json"
+																			},
+																			{
+																				"description": "Added as a part of security scheme: bearer",
+																				"key": "Authorization",
+																				"value": "Bearer <token>"
+																			}
+																		],
+																		"url": "{{baseUrl}}/api/ProfileMaintenance/customer/data"
+																	},
+																	"status": "OK",
+																	"code": 200,
+																	"_postman_previewlanguage": "json",
+																	"header": [
+																		{
+																			"key": "Content-Type",
+																			"value": "application/json"
+																		}
+																	],
+																	"cookie": [],
+																	"responseTime": null,
+																	"body": "{\n  \"data\": {\n    \"walletData\": {\n      \"isWalletCreated\": false,\n      \"walletAccountName\": \"ex\",\n      \"walletAccountNumber\": \"nulla cillum\",\n      \"walletAvailableBalance\": -42936399.32661386,\n      \"status\": \"PendingWalletCreation\"\n    },\n    \"profileData\": {\n      \"email\": \"aliqua dolor\",\n      \"isPinSet\": true,\n      \"profileID\": \"29130f9a-e8ba-cab6-8947-4a0c30dc516e\",\n      \"fullName\": \"proident irure ut\",\n      \"needsPinReset\": true,\n      \"phoneNumber\": \"Lorem proident\",\n      \"referralCode\": \"magna\",\n      \"savedMeters\": {\n        \"hasMeterSaved\": false,\n        \"savedMeters\": [\n          {\n            \"recordID\": \"urn:uuid:d174fdfa-c33c-0001-61f7-5be18a694858\",\n            \"savedAs\": \"tempor deserunt \",\n            \"meterNumber\": \"pariatur dolore\",\n            \"meterOwnerName\": \"labore n\"\n          },\n          {\n            \"recordID\": \"urn:uuid:7f1727a0-1a5e-ae6c-6ee9-ba46a0e167a4\",\n            \"savedAs\": \"cillum officia esse id\",\n            \"meterNumber\": \"velit officia laborum dolore commodo\",\n            \"meterOwnerName\": \"consectetur nisi\"\n          }\n        ]\n      },\n      \"savedPaymentOptions\": {\n        \"hasPaymentOptionSaved\": true,\n        \"savedPaymentOptions\": [\n          {\n            \"recordID\": \"urn:uuid:b897f586-ba49-9c29-0b0e-f23fc1bdf210\",\n            \"cardNumber\": \"anim dolore nostrud\",\n            \"cardHolderName\": \"magna laborum officia\"\n          },\n          {\n            \"recordID\": \"6eb5df52-8d43-99d4-7a86-ae549d21d1bf\",\n            \"cardNumber\": \"et laboris exercitation dolore\",\n            \"cardHolderName\": \"qui Excepteur laborum\"\n          }\n        ]\n      },\n      \"profilePriority\": {\n        \"message\": \"consequat proident\",\n        \"priority\": \"NoPendingEvent\"\n      }\n    }\n  },\n  \"message\": \"sit dolore anim proident\",\n  \"isSuccessful\": false,\n  \"messages\": [\n    \"cillum\",\n    \"sint dolore consectetur anim mollit\"\n  ],\n  \"timeGenerated\": \"1962-02-18T10:06:01.865Z\"\n}"
+																}
+															]
+														},
+														{
+															"name": "Customer_Basic_GeneralInformation_Unauthorized",
+															"event": [
+																{
+																	"listen": "test",
+																	"script": {
+																		"id": "47603d65-6bc9-453d-b737-d2db1a99007c",
+																		"exec": [
+																			"//Unauthorized not catered for"
+																		],
+																		"type": "text/javascript",
+																		"packages": {}
+																	}
+																}
+															],
+															"id": "27cf65b3-59c7-4189-b063-aae5ec0888e0",
+															"protocolProfileBehavior": {
+																"disableBodyPruning": true
+															},
+															"request": {
+																"auth": {
+																	"type": "bearer",
+																	"bearer": {
+																		"token": "{{bearerToken_Expired}}"
+																	}
+																},
+																"method": "GET",
+																"header": [
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	}
+																],
+																"url": "{{baseUrl_Dev}}/api/ProfileMaintenance/customer/data"
+															},
+															"response": [
+																{
+																	"id": "436f17c3-1235-433f-8aea-4cd0dedd1ce7",
+																	"name": "Success",
+																	"originalRequest": {
+																		"method": "GET",
+																		"header": [
+																			{
+																				"key": "Accept",
+																				"value": "application/json"
+																			},
+																			{
+																				"description": "Added as a part of security scheme: bearer",
+																				"key": "Authorization",
+																				"value": "Bearer <token>"
+																			}
+																		],
+																		"url": "{{baseUrl}}/api/ProfileMaintenance/customer/data"
+																	},
+																	"status": "OK",
+																	"code": 200,
+																	"_postman_previewlanguage": "json",
+																	"header": [
+																		{
+																			"key": "Content-Type",
+																			"value": "application/json"
+																		}
+																	],
+																	"cookie": [],
+																	"responseTime": null,
+																	"body": "{\n  \"data\": {\n    \"walletData\": {\n      \"isWalletCreated\": false,\n      \"walletAccountName\": \"ex\",\n      \"walletAccountNumber\": \"nulla cillum\",\n      \"walletAvailableBalance\": -42936399.32661386,\n      \"status\": \"PendingWalletCreation\"\n    },\n    \"profileData\": {\n      \"email\": \"aliqua dolor\",\n      \"isPinSet\": true,\n      \"profileID\": \"29130f9a-e8ba-cab6-8947-4a0c30dc516e\",\n      \"fullName\": \"proident irure ut\",\n      \"needsPinReset\": true,\n      \"phoneNumber\": \"Lorem proident\",\n      \"referralCode\": \"magna\",\n      \"savedMeters\": {\n        \"hasMeterSaved\": false,\n        \"savedMeters\": [\n          {\n            \"recordID\": \"urn:uuid:d174fdfa-c33c-0001-61f7-5be18a694858\",\n            \"savedAs\": \"tempor deserunt \",\n            \"meterNumber\": \"pariatur dolore\",\n            \"meterOwnerName\": \"labore n\"\n          },\n          {\n            \"recordID\": \"urn:uuid:7f1727a0-1a5e-ae6c-6ee9-ba46a0e167a4\",\n            \"savedAs\": \"cillum officia esse id\",\n            \"meterNumber\": \"velit officia laborum dolore commodo\",\n            \"meterOwnerName\": \"consectetur nisi\"\n          }\n        ]\n      },\n      \"savedPaymentOptions\": {\n        \"hasPaymentOptionSaved\": true,\n        \"savedPaymentOptions\": [\n          {\n            \"recordID\": \"urn:uuid:b897f586-ba49-9c29-0b0e-f23fc1bdf210\",\n            \"cardNumber\": \"anim dolore nostrud\",\n            \"cardHolderName\": \"magna laborum officia\"\n          },\n          {\n            \"recordID\": \"6eb5df52-8d43-99d4-7a86-ae549d21d1bf\",\n            \"cardNumber\": \"et laboris exercitation dolore\",\n            \"cardHolderName\": \"qui Excepteur laborum\"\n          }\n        ]\n      },\n      \"profilePriority\": {\n        \"message\": \"consequat proident\",\n        \"priority\": \"NoPendingEvent\"\n      }\n    }\n  },\n  \"message\": \"sit dolore anim proident\",\n  \"isSuccessful\": false,\n  \"messages\": [\n    \"cillum\",\n    \"sint dolore consectetur anim mollit\"\n  ],\n  \"timeGenerated\": \"1962-02-18T10:06:01.865Z\"\n}"
+																}
+															]
+														}
+													],
+													"id": "671f9c40-43ab-43f2-94f2-2de645dbf0dc"
+												}
+											],
+											"id": "8051c7a8-1a7c-4aba-b56f-69c32e3fdcab"
+										},
+										{
+											"name": "Change_password_Inapp",
+											"item": [
+												{
+													"name": "Change_Password_Inapp_Successful",
+													"event": [
+														{
+															"listen": "test",
+															"script": {
+																"id": "dd8c47f0-d7b4-498d-8b71-5440d14eaaca",
+																"exec": [
+																	"// 400 error message logged on bug report"
+																],
+																"type": "text/javascript",
+																"packages": {}
+															}
+														}
+													],
+													"id": "894c1aae-538e-4e46-8c4d-8a35aeeff771",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
+														"auth": {
+															"type": "bearer",
+															"bearer": {
+																"token": "{{bearerToken}}"
+															}
+														},
+														"method": "PATCH",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json",
+																"disabled": true
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"newPassword\": \"Pawaplay2!\",\n  \"currentPassword\": \"Pawaplay1!\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl_Dev}}/api/ProfileMaintenance/customer/change_password"
+													},
+													"response": [
+														{
+															"id": "84463737-97af-4704-883f-ef5e320040ee",
+															"name": "Success",
+															"originalRequest": {
+																"method": "PATCH",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	},
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	},
+																	{
+																		"description": "Added as a part of security scheme: bearer",
+																		"key": "Authorization",
+																		"value": "Bearer <token>"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"newPassword\": \"do sit Lorem consectetur et\",\n  \"currentPassword\": \"esse labore consectetur elit\"\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": "{{baseUrl}}/api/ProfileMaintenance/customer/change_password"
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																}
+															],
+															"cookie": [],
+															"responseTime": null,
+															"body": "{\n  \"data\": \"nulla sunt\",\n  \"message\": \"Duis magna\",\n  \"isSuccessful\": true,\n  \"messages\": [\n    \"eu\",\n    \"d\"\n  ],\n  \"timeGenerated\": \"2001-06-23T03:36:40.151Z\"\n}"
+														}
+													]
+												}
+											],
+											"id": "3880cac1-be62-434f-ada7-956e24d37ccb"
+										}
+									],
+									"id": "1b8dbc07-26b7-4438-ae69-8cf1c0846a7d"
+								}
+							],
+							"id": "329b86ab-06a5-4b13-9b10-f80a1f98d965"
 						}
 					],
 					"id": "3f9ee485-19c6-4048-998d-0ec566937292"
