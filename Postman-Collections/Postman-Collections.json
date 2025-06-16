@@ -4296,7 +4296,13 @@
 																	"body": "{\n  \"data\": {\n    \"id\": \"f6e38d46-0972-3407-8816-92cfb8fcba0b\",\n    \"email\": \"nostrud exercitation sit cillum\",\n    \"phoneNumber\": \"elit ex deserunt\"\n  },\n  \"message\": \"Ut occaecat in laboris culpa\",\n  \"isSuccessful\": false,\n  \"messages\": [\n    \"aliquip non\",\n    \"aute dolor esse\"\n  ],\n  \"timeGenerated\": \"1950-05-29T06:53:21.931Z\"\n}"
 																}
 															]
-														},
+														}
+													],
+													"id": "d01848ef-2b38-4f09-9f1c-2cd9c9eabd1e"
+												},
+												{
+													"name": "Get General data",
+													"item": [
 														{
 															"name": "Customer_Basic_GeneralInformation_Successful",
 															"event": [
@@ -4452,7 +4458,7 @@
 															]
 														}
 													],
-													"id": "d01848ef-2b38-4f09-9f1c-2cd9c9eabd1e"
+													"id": "44533b19-569d-4547-a24a-b5d46da958d2"
 												}
 											],
 											"id": "aa4b5a81-eb47-4f58-8cea-c42fa75aeeb0"
