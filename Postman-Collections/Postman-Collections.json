@@ -4094,9 +4094,9 @@
 																	}
 																],
 																"url": {
-																	"raw": "{{baseUrl_Dev}}/api/ProfileMaintenance/customer/data/basic?customerProfileID=e8e4d8db-d453-48fd-9b3a-1e720aed089d",
+																	"raw": "{{baseUrl_Sandbox}}/api/ProfileMaintenance/customer/data/basic?customerProfileID=e8e4d8db-d453-48fd-9b3a-1e720aed089d",
 																	"host": [
-																		"{{baseUrl_Dev}}"
+																		"{{baseUrl_Sandbox}}"
 																	],
 																	"path": [
 																		"api",
@@ -4336,7 +4336,7 @@
 																		"value": "application/json"
 																	}
 																],
-																"url": "{{baseUrl_Dev}}/api/ProfileMaintenance/customer/data"
+																"url": "{{baseUrl_Sandbox}}/api/ProfileMaintenance/customer/data"
 															},
 															"response": [
 																{
