@@ -1,6 +1,0 @@
-{
-    "Content-Length": "0",
-    "Date": "Sun, 15 Jun 2025 08:29:43 GMT",
-    "Server": "Kestrel",
-    "WWW-Authenticate": "Bearer error=\"invalid_token\", error_description=\"The token expired at '06/03/2025 21:25:25'\""
-}
