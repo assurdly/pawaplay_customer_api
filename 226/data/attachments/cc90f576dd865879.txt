@@ -1,5 +1,0 @@
-{
-  "recipient": "07081556097",
-  "usageReason": "Validation",
-  "deliveryType": "Both"
-}
