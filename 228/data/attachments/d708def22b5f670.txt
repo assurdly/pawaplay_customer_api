@@ -1,5 +1,0 @@
-{
-  "recipient": "07081556097",
-  "receivedCode": "487766",
-  "usageReason": "ProfileUpdate"
-}

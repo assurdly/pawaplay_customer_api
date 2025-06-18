@@ -1,4 +1,0 @@
-{
-  "newPassword": "Pawaplay2!",
-  "phoneNumberOrEmail": "07081556096"
-}
