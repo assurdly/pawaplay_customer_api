@@ -1,0 +1,1 @@
+{"data":"Server is up and running.","message":"","isSuccessful":true,"messages":[],"timeGenerated":"2025-06-18T08:05:19.6626912Z"}
