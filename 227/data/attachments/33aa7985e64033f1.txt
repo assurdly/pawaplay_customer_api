@@ -1,5 +1,0 @@
-{
-  "recipient": "07081556097",
-  "usageReason": "OnboardingValidation",
-  "deliveryType": "Text"
-}

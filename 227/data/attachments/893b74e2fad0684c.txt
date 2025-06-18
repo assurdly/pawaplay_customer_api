@@ -1,6 +1,0 @@
-{
-  "isSetAllAsRead": true,
-  "notificationIDs": [
-    
-  ]
-}
