@@ -3702,7 +3702,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"amount\": 100,\n  \"walletPin\": \"2222\",\n  \"destinationBankCode\": \"UBA\",\n  \"destinationAccountNumber\": \"4657489567\"\n}",
+											"raw": "{\n  \"amount\": 100,\n  \"walletPin\": \"0101\",\n  \"destinationBankCode\": \"UBA\",\n  \"destinationAccountNumber\": \"4657489567\"\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
