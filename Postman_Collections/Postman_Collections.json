@@ -723,7 +723,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"newPin\": \"1111\",\n  \"currentPin\": \"0000\"\n}",
+											"raw": "{\n  \"newPin\": \"0101\",\n  \"currentPin\": \"1111\"\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
