@@ -533,7 +533,7 @@
 											]
 										},
 										{
-											"name": "Reissue_Authorization_Token_Expired",
+											"name": "Reissue_Unauthorization_Token_Expired",
 											"event": [
 												{
 													"listen": "test",
@@ -614,7 +614,7 @@
 											]
 										},
 										{
-											"name": "Reissue_Authorization_Invalid_Token",
+											"name": "Reissue_Unauthorization_Invalid_Token",
 											"event": [
 												{
 													"listen": "test",
