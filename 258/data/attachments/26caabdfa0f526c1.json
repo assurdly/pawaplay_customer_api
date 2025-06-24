@@ -1,0 +1,7 @@
+{
+    "Content-Type": "application/json",
+    "Date": "Tue, 24 Jun 2025 18:23:21 GMT",
+    "Server": "Kestrel",
+    "Transfer-Encoding": "chunked",
+    "WWW-Authenticate": "Bearer"
+}

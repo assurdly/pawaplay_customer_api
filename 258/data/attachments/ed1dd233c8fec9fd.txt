@@ -1,0 +1,1 @@
+{"data":"You have successfully subscribed to our newsletter.","message":"","isSuccessful":true,"messages":[],"timeGenerated":"2025-06-24T19:23:22.1851932Z"}
