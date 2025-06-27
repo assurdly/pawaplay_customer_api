@@ -63,7 +63,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"password\": \"Pawaplay1!\",\n  \"phoneNumberOrEmail\": \"07081556097\"\n}",
+							"raw": "{\n  \"password\": \"Pawaplay2!\",\n  \"phoneNumberOrEmail\": \"07081556097\"\n}",
 							"options": {
 								"raw": {
 									"headerFamily": "json",
