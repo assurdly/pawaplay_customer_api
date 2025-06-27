@@ -1,9 +1,0 @@
-{
-    "Accept": "application/json",
-    "User-Agent": "PostmanRuntime/7.39.1",
-    "Cache-Control": "no-cache",
-    "Postman-Token": "b04c4cc6-6f69-47f5-ba54-6ae844b95537",
-    "Host": "pawaplay.ng:6200",
-    "Accept-Encoding": "gzip, deflate, br",
-    "Connection": "keep-alive"
-}
