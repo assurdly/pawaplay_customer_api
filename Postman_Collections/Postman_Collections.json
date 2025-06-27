@@ -71,7 +71,7 @@
 								}
 							}
 						},
-						"url": "{{baseUrl_Sandbox}}/api/Onboarding/customer/login"
+						"url": "{{baseUrl_Sandbox}}}/api/Onboarding/customer/login"
 					},
 					"response": [
 						{
