@@ -4578,7 +4578,7 @@
 													]
 												},
 												{
-													"name": "Change_Password_Inapp_Successful Copy",
+													"name": "Change_Password_Inapp_Incorrect_PhoneNumber",
 													"event": [
 														{
 															"listen": "test",
@@ -4587,22 +4587,17 @@
 																"exec": [
 																	"const response = pm.response.json();\r",
 																	"\r",
-																	"pm.test(\"Status code is 200\", () => {\r",
-																	"    pm.response.to.have.status(200);\r",
+																	"pm.test(\"Status code is 400\", () => {\r",
+																	"    pm.response.to.have.status(400);\r",
 																	"});\r",
 																	"\r",
-																	"pm.test(\"Response is successful\", () => {\r",
-																	"    pm.expect(response.isSuccessful).to.eql(true);\r",
+																	"pm.test(\"Response is not successful\", () => {\r",
+																	"    pm.expect(response.isSuccessful).to.eql(false);\r",
 																	"});\r",
 																	"\r",
-																	"pm.test(\"Data is null\", () => {\r",
-																	"    pm.expect(response.data).to.eql(null);\r",
-																	"});\r",
-																	"\r",
-																	"pm.test(\"Correct message is returned\", () => {\r",
-																	"    pm.expect(response.message).to.eql(\"Your password has been changed successfully.\");\r",
-																	"});\r",
-																	""
+																	"pm.test(\"Response message contains attempt warning\", () => {\r",
+																	"    pm.expect(response.message).to.include(\"Incorrect phone number or password\");\r",
+																	"});"
 																],
 																"type": "text/javascript",
 																"packages": {}
@@ -4647,6 +4642,116 @@
 													"response": [
 														{
 															"id": "9d137fe7-569b-496c-aa2c-9fdcb8d21833",
+															"name": "Success",
+															"originalRequest": {
+																"method": "PATCH",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	},
+																	{
+																		"key": "Accept",
+																		"value": "application/json"
+																	},
+																	{
+																		"description": "Added as a part of security scheme: bearer",
+																		"key": "Authorization",
+																		"value": "Bearer <token>"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"newPassword\": \"do sit Lorem consectetur et\",\n  \"currentPassword\": \"esse labore consectetur elit\"\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": "{{baseUrl}}/api/ProfileMaintenance/customer/change_password"
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "json",
+															"header": [
+																{
+																	"key": "Content-Type",
+																	"value": "application/json"
+																}
+															],
+															"cookie": [],
+															"responseTime": null,
+															"body": "{\n  \"data\": \"nulla sunt\",\n  \"message\": \"Duis magna\",\n  \"isSuccessful\": true,\n  \"messages\": [\n    \"eu\",\n    \"d\"\n  ],\n  \"timeGenerated\": \"2001-06-23T03:36:40.151Z\"\n}"
+														}
+													]
+												},
+												{
+													"name": "Change_Password_Inapp_Unauthorized",
+													"event": [
+														{
+															"listen": "test",
+															"script": {
+																"id": "dd8c47f0-d7b4-498d-8b71-5440d14eaaca",
+																"exec": [
+																	"const response = pm.response.json();\r",
+																	"\r",
+																	"pm.test(\"Status code is 400\", () => {\r",
+																	"    pm.response.to.have.status(400);\r",
+																	"});\r",
+																	"\r",
+																	"pm.test(\"Response is not successful\", () => {\r",
+																	"    pm.expect(response.isSuccessful).to.eql(false);\r",
+																	"});\r",
+																	"\r",
+																	"pm.test(\"Response message contains attempt warning\", () => {\r",
+																	"    pm.expect(response.message).to.include(\"Incorrect phone number or password\");\r",
+																	"});"
+																],
+																"type": "text/javascript",
+																"packages": {}
+															}
+														}
+													],
+													"id": "84eda814-33f9-4c4c-8e99-6047c783c77d",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
+														"auth": {
+															"type": "bearer",
+															"bearer": {
+																"token": "{{bearerToken_Expired}}"
+															}
+														},
+														"method": "PATCH",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json",
+																"disabled": true
+															},
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"newPassword\": \"Pawaplay1!\",\n  \"currentPassword\": \"Pawaplay2!\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl_Dev}}/api/ProfileMaintenance/customer/change_password"
+													},
+													"response": [
+														{
+															"id": "00d2e755-850c-498a-9326-ebfa1d32fe27",
 															"name": "Success",
 															"originalRequest": {
 																"method": "PATCH",
