@@ -1,0 +1,1 @@
+{"data":[],"message":"No history found.","isSuccessful":true,"messages":[],"timeGenerated":"2025-06-27T15:22:36.604983Z"}
