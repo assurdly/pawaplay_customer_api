@@ -1,4 +1,0 @@
-{
-  "password": "Testpawaplay1#",
-  "phoneNumberOrEmail": "09131518721"
-}

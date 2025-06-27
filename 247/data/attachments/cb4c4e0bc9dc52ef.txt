@@ -1,5 +1,0 @@
-{
-  "phoneNumber": "07081556097",
-  "generatedWalletNumber": "0427817542",
-  "generatedWalletHolderName": "Morgan Nwaiku"
-}
