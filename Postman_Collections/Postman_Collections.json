@@ -2447,7 +2447,7 @@
 															}
 														],
 														"url": {
-															"raw": "{{baseUrl_Sandbox}}/api/WalletMaintenance/get/wallet_transaction/status?transactionReference=Pawaplay_72effbb8cb5b4fe287c56f7ab528d6&isCreditTransaction=true",
+															"raw": "{{baseUrl_Sandbox}}/api/WalletMaintenance/get/wallet_transaction/status?transactionReference=Pawaplay_72effbb8cb5b4fe287c56f7ab528&isCreditTransaction=true",
 															"host": [
 																"{{baseUrl_Sandbox}}"
 															],
@@ -2461,7 +2461,7 @@
 															"query": [
 																{
 																	"key": "transactionReference",
-																	"value": "Pawaplay_72effbb8cb5b4fe287c56f7ab528d6"
+																	"value": "Pawaplay_72effbb8cb5b4fe287c56f7ab528"
 																},
 																{
 																	"key": "isCreditTransaction",
