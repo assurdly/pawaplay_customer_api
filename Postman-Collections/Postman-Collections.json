@@ -2088,7 +2088,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "\n{\n  \"newPassword\": \"Pawaplay2!\",\n  \"phoneNumberOrEmail\": \"07081556097\"\n}\n\n//{\n  //\"newPassword\": \"Testpawaplay12#\",\n  //\"phoneNumberOrEmail\": \"07080507367\"\n//}",
+											"raw": "\n{\n  \"newPassword\": \"Pawaplay1!\",\n  \"phoneNumberOrEmail\": \"07081556097\"\n}\n\n//{\n  //\"newPassword\": \"Testpawaplay12#\",\n  //\"phoneNumberOrEmail\": \"07080507367\"\n//}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
