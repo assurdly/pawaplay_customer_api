@@ -71,7 +71,7 @@
 								}
 							}
 						},
-						"url": "{{baseUrl_Dev}}}/api/Onboarding/customer/login"
+						"url": "{{baseUrl_Dev}}/api/Onboarding/customer/login"
 					},
 					"response": [
 						{
