@@ -1,0 +1,1 @@
+{"data":null,"message":"Password reset is successful.","isSuccessful":true,"messages":[],"timeGenerated":"2025-06-27T20:16:22.3476643Z"}
