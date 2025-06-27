@@ -4697,17 +4697,18 @@
 																"exec": [
 																	"const response = pm.response.json();\r",
 																	"\r",
-																	"pm.test(\"Status code is 400\", () => {\r",
-																	"    pm.response.to.have.status(400);\r",
+																	"pm.test(\"Status code is 401\", () => {\r",
+																	"    pm.response.to.have.status(401);\r",
 																	"});\r",
 																	"\r",
 																	"pm.test(\"Response is not successful\", () => {\r",
 																	"    pm.expect(response.isSuccessful).to.eql(false);\r",
 																	"});\r",
 																	"\r",
-																	"pm.test(\"Response message contains attempt warning\", () => {\r",
-																	"    pm.expect(response.message).to.include(\"Incorrect phone number or password\");\r",
-																	"});"
+																	"pm.test(\"Message indicates unauthorized request\", () => {\r",
+																	"    pm.expect(response.message).to.include(\"Unauthorized request!\");\r",
+																	"});\r",
+																	""
 																],
 																"type": "text/javascript",
 																"packages": {}
