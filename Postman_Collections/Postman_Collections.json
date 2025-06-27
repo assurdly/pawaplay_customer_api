@@ -6217,7 +6217,20 @@
 															"script": {
 																"id": "5cd29eaf-974f-4ba8-8c6f-be197728477e",
 																"exec": [
-																	"//Error message for invalid amount not implemented"
+																	"const response = pm.response.json();\r",
+																	"\r",
+																	"pm.test(\"Status code is 400\", () => {\r",
+																	"    pm.response.to.have.status(400);\r",
+																	"});\r",
+																	"\r",
+																	"pm.test(\"Response is not successful\", () => {\r",
+																	"    pm.expect(response.isSuccessful).to.eql(false);\r",
+																	"});\r",
+																	"\r",
+																	"pm.test(\"Correct message is returned\", () => {\r",
+																	"    pm.expect(response.message).to.eql(\"Invalid request! Amount cannot be zero (0).\");\r",
+																	"});\r",
+																	""
 																],
 																"type": "text/javascript",
 																"packages": {}
@@ -6232,7 +6245,7 @@
 														"auth": {
 															"type": "bearer",
 															"bearer": {
-																"token": "{{bearerToken_Expired}}"
+																"token": "{{bearerToken}}"
 															}
 														},
 														"method": "POST",
@@ -6329,7 +6342,7 @@
 														"auth": {
 															"type": "bearer",
 															"bearer": {
-																"token": "{{bearerToken_Expired}}"
+																"token": "{{bearerToken}}"
 															}
 														},
 														"method": "POST",
