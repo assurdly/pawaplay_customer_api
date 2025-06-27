@@ -1,0 +1,11 @@
+{
+    "Accept": "application/json",
+    "x-api-key": "PawaPlaySecretAPIKeyYBnWEoF9gPHVfJwriI4QC41eb+X",
+    "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9zaWQiOiIyNjZhZTM1MS1lNmIxLTRhNGMtYmRlZS0zNWUzNWQ4NGRkYTIiLCJuL2EiOiIwODExMzAzNjgyOCIsIm5iZiI6MTc1MTAzNDM1NiwiZXhwIjoxNzUxMDM1MjU2LCJpYXQiOjE3NTEwMzQzNTYsImlzcyI6Imh0dHA6Ly93d3cucGF3YXBsYXkubmciLCJhdWQiOiJodHRwOi8vd3d3LnBhd2FwbGF5Lm5nIn0.Qi0s5sUpgB7cmddqb9g4oE6GlszGnqew8sJIMzTxfTA",
+    "User-Agent": "PostmanRuntime/7.39.1",
+    "Cache-Control": "no-cache",
+    "Postman-Token": "dc271f26-3d8a-4d4e-a345-1915d6b75ef7",
+    "Host": "{{baseurl_sandbox}}",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Connection": "keep-alive"
+}
