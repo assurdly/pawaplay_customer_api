@@ -1,7 +1,0 @@
-{
-    "Content-Type": "application/json",
-    "Date": "Tue, 24 Jun 2025 18:07:35 GMT",
-    "Server": "Kestrel",
-    "Transfer-Encoding": "chunked",
-    "WWW-Authenticate": "Bearer error=\"invalid_token\""
-}
