@@ -1,7 +1,0 @@
-{
-  "Data": "",
-  "Message": "Unauthorized request! You need to be logged in to access resource.",
-  "IsSuccessful": false,
-  "Messages": [],
-  "TimeGenerated": "2025-06-24T19:20:13.2749554Z"
-}
