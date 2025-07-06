@@ -1,0 +1,4 @@
+{
+  "newPassword": "Pawaplay1!",
+  "currentPassword": "Pawaplay2!"
+}

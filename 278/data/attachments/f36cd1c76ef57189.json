@@ -1,0 +1,10 @@
+{
+    "Accept": "application/json",
+    "x-api-key": "PawaPlaySecretAPIKeyYBnWEoF9gPHVfJwriI4QC41eb+X",
+    "User-Agent": "PostmanRuntime/7.39.1",
+    "Cache-Control": "no-cache",
+    "Postman-Token": "78fb8de4-1875-484c-a4f0-e8d30f42f72a",
+    "Host": "{{baseurl_sandbox}}",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Connection": "keep-alive"
+}
